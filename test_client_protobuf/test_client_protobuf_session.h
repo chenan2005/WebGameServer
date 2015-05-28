@@ -1,7 +1,7 @@
 #pragma once
 #include "iod_session.h"
 
-class sample_session :
+class test_client_protobuf_session :
 	public iod_session
 {
 public:
@@ -12,8 +12,8 @@ public:
 		LOGIN_STATE_LOGINED,
 	};
 
-	sample_session(void);
-	virtual ~sample_session(void);
+	test_client_protobuf_session(void);
+	virtual ~test_client_protobuf_session(void);
 
 	virtual void on_packet(iod_packet* packet);
 

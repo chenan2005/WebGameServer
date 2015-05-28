@@ -1,16 +1,16 @@
-#include "sample_session.h"
+#include "test_client_session.h"
 #include "test_helper.h"
 
-sample_session::sample_session(void) : login_stat(LOGIN_STATE_NONE), last_send_command_time(0)
+test_client_session::test_client_session(void) : login_stat(LOGIN_STATE_NONE), last_send_command_time(0)
 {
 	username[0] = 0;
 }
 
-sample_session::~sample_session(void)
+test_client_session::~test_client_session(void)
 {
 }
 
-void sample_session::on_packet( iod_packet* packet )
+void test_client_session::on_packet( iod_packet* packet )
 {
 	if (test_helper::check_cmd(packet, SESSION_CMD_LOGIN)) {
 		send_command(SESSION_CMD_LOGIN_RES, get_username());
@@ -43,14 +43,14 @@ void sample_session::on_packet( iod_packet* packet )
 	}
 }
 
-void sample_session::on_closed( int reason )
+void test_client_session::on_closed( int reason )
 {
 	//iod_log_info("user %s, connection closed %d", get_username(), reason);
 
 	login_stat = LOGIN_STATE_NONE;
 }
 
-void sample_session::set_username( const char* username, int length /*= 0*/ )
+void test_client_session::set_username( const char* username, int length /*= 0*/ )
 {
 	if (length == 0)
 		length = (int)strlen(username);
@@ -62,7 +62,7 @@ void sample_session::set_username( const char* username, int length /*= 0*/ )
 	this->username[length] = 0;
 }
 
-void sample_session::send_command( const char* cmd, const char* data, int data_length /*= 0*/ )
+void test_client_session::send_command( const char* cmd, const char* data, int data_length /*= 0*/ )
 {
 	static char s_send_buffer[_MAX_PACKET_LENGTH];
 

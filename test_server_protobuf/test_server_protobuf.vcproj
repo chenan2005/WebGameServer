@@ -2,8 +2,8 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="8.00"
-	Name="sample_server"
-	ProjectGUID="{FEC9F0FA-F8DD-4729-AA3D-F18DF14A2A8C}"
+	Name="test_server_protobuf"
+	ProjectGUID="{825FDE88-8431-476B-B055-CB4102920501}"
 	RootNamespace="IODWeb_Gs"
 	Keyword="Win32Proj"
 	>
@@ -40,7 +40,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="../common;&quot;../3rdparty/libevent-2.0.22-stable&quot;"
+				AdditionalIncludeDirectories="../common;&quot;../3rdparty/libevent-2.0.22-stable&quot;;../protocol"
 				PreprocessorDefinitions="WIN32;_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -264,42 +264,38 @@
 				</File>
 			</Filter>
 		</Filter>
-		<Filter
-			Name="server"
+		<File
+			RelativePath="..\protocol\test_helper.cpp"
 			>
-			<File
-				RelativePath=".\iod_sample_server.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\iod_sample_server.h"
-				>
-			</File>
-			<File
-				RelativePath=".\sample_session.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\sample_session.h"
-				>
-			</File>
-			<File
-				RelativePath=".\sample_session_manager.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\sample_session_manager.h"
-				>
-			</File>
-			<File
-				RelativePath=".\test_helper.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\test_helper.h"
-				>
-			</File>
-		</Filter>
+		</File>
+		<File
+			RelativePath="..\protocol\test_helper.h"
+			>
+		</File>
+		<File
+			RelativePath=".\test_server_protobuf.cpp"
+			>
+		</File>
+		<File
+			RelativePath=".\test_server_protobuf.h"
+			>
+		</File>
+		<File
+			RelativePath=".\test_server_protobuf_session.cpp"
+			>
+		</File>
+		<File
+			RelativePath=".\test_server_protobuf_session.h"
+			>
+		</File>
+		<File
+			RelativePath=".\test_server_protobuf_session_manager.cpp"
+			>
+		</File>
+		<File
+			RelativePath=".\test_server_protobuf_session_manager.h"
+			>
+		</File>
 	</Files>
 	<Globals>
 	</Globals>

@@ -1,21 +1,21 @@
-#include "iod_sample_server.h"
-#include "sample_session_manager.h"
+#include "test_server.h"
+#include "test_server_session_manager.h"
 #include "iod_network.h"
 #include "iod_logsystem.h"
 
-implement_server_instance(iod_sample_server);
+implement_server_instance(test_server);
 
-iod_sample_server::iod_sample_server(void)
+test_server::test_server(void)
 {
 }
 
-iod_sample_server::~iod_sample_server(void)
+test_server::~test_server(void)
 {
 }
 
-bool iod_sample_server::initialize_server()
+bool test_server::initialize_server()
 {
-	session_manager = new sample_session_manager;
+	session_manager = new test_server_session_manager;
 
 	session_manager->l_info = iod_network::start_listener(session_manager, "0.0.0.0:12345");
 
@@ -29,13 +29,13 @@ bool iod_sample_server::initialize_server()
 	return true;
 }
 
-int iod_sample_server::update_server()
+int test_server::update_server()
 {
 	session_manager->check_sessions();
 	return 0;
 }
 
-void iod_sample_server::shutdown_server()
+void test_server::shutdown_server()
 {
 	//if (session_manager->l_info)
 	//	iod_network::shutdown_listener(session_manager->l_info);
@@ -45,7 +45,7 @@ void iod_sample_server::shutdown_server()
 	iod_log_info("server shutdown");
 }
 
-void iod_sample_server::on_winsys_kbhit( int c )
+void test_server::on_winsys_kbhit( int c )
 {
 	if (c == 'p') {
 		const iod_netstatistics& stat = session_manager->netstatistics;

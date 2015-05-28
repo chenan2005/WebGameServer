@@ -4,7 +4,7 @@
 #include <set>
 #include "iod_server.h"
 
-class sample_session;
+class test_client_session;
 
 class test_client : public iod_server
 {
@@ -20,7 +20,7 @@ public:
 	
 protected:
 
-	std::set< sample_session* > sessions;
+	std::set< test_client_session* > sessions;
 };
 
 #endif

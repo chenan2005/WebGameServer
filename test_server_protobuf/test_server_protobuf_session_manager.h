@@ -2,14 +2,14 @@
 
 #include "iod_session_creator.h"
 
-class sample_session;
+class test_server_protobuf_session;
 
-class sample_session_manager :
+class test_server_protobuf_session_manager :
 	public iod_session_creator
 {
 public:
-	sample_session_manager(void);
-	virtual ~sample_session_manager(void);
+	test_server_protobuf_session_manager(void);
+	virtual ~test_server_protobuf_session_manager(void);
 
 	virtual iod_session* on_none_session_packet(connection_info* conn_info, iod_packet* packet);
 
@@ -27,5 +27,5 @@ public:
 
 protected:
 
-	std::map< std::string, sample_session* > sessions;
+	std::map< std::string, test_server_protobuf_session* > sessions;
 };

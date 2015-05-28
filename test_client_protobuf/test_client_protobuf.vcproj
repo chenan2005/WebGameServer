@@ -2,9 +2,9 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="8.00"
-	Name="test_client"
-	ProjectGUID="{B6B04E8D-7AD5-44CD-94CA-8AACB389D2FB}"
-	RootNamespace="test_client"
+	Name="test_client_protobuf"
+	ProjectGUID="{10C8D923-9604-4E0C-B235-900A5D8325F3}"
+	RootNamespace="test_client_protobuf"
 	Keyword="Win32Proj"
 	>
 	<Platforms>
@@ -265,19 +265,19 @@
 			</Filter>
 		</Filter>
 		<File
-			RelativePath=".\test_client.cpp"
+			RelativePath=".\test_client_protobuf.cpp"
 			>
 		</File>
 		<File
-			RelativePath=".\test_client.h"
+			RelativePath=".\test_client_protobuf.h"
 			>
 		</File>
 		<File
-			RelativePath=".\test_client_session.cpp"
+			RelativePath=".\test_client_protobuf_session.cpp"
 			>
 		</File>
 		<File
-			RelativePath=".\test_client_session.h"
+			RelativePath=".\test_client_protobuf_session.h"
 			>
 		</File>
 		<File

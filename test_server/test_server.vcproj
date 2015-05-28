@@ -2,9 +2,9 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="8.00"
-	Name="test_client"
-	ProjectGUID="{B6B04E8D-7AD5-44CD-94CA-8AACB389D2FB}"
-	RootNamespace="test_client"
+	Name="test_server"
+	ProjectGUID="{FEC9F0FA-F8DD-4729-AA3D-F18DF14A2A8C}"
+	RootNamespace="IODWeb_Gs"
 	Keyword="Win32Proj"
 	>
 	<Platforms>
@@ -20,7 +20,7 @@
 			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
 			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="1"
-			CharacterSet="1"
+			CharacterSet="0"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -265,27 +265,35 @@
 			</Filter>
 		</Filter>
 		<File
-			RelativePath=".\test_client.cpp"
-			>
-		</File>
-		<File
-			RelativePath=".\test_client.h"
-			>
-		</File>
-		<File
-			RelativePath=".\test_client_session.cpp"
-			>
-		</File>
-		<File
-			RelativePath=".\test_client_session.h"
-			>
-		</File>
-		<File
 			RelativePath="..\protocol\test_helper.cpp"
 			>
 		</File>
 		<File
 			RelativePath="..\protocol\test_helper.h"
+			>
+		</File>
+		<File
+			RelativePath=".\test_server.cpp"
+			>
+		</File>
+		<File
+			RelativePath=".\test_server.h"
+			>
+		</File>
+		<File
+			RelativePath=".\test_server_session.cpp"
+			>
+		</File>
+		<File
+			RelativePath=".\test_server_session.h"
+			>
+		</File>
+		<File
+			RelativePath=".\test_server_session_manager.cpp"
+			>
+		</File>
+		<File
+			RelativePath=".\test_server_session_manager.h"
 			>
 		</File>
 	</Files>
