@@ -3,7 +3,7 @@
 #include "test_helper.h"
 #include "iod_utility.h"
 
-sample_session_manager::sample_session_manager(void) : create_session_count(0), destroy_session_count(0)
+sample_session_manager::sample_session_manager(void) : create_session_count(0), destroy_session_count(0), l_info(0)
 {
 }
 
@@ -52,7 +52,7 @@ void sample_session_manager::check_sessions()
 	std::map< std::string, sample_session* >::iterator it = sessions.begin();
 	while (it != sessions.end()) {
 		if (it->second->get_net_stat() != iod_session::SNS_CONNECTED
-			&& iod_utility::get_time_msec() > it->second->get_last_net_state_time() + 20000) {
+			&& iod_utility::get_time_msec() > it->second->get_last_net_state_time() + 10000) {
 			delete it->second;
 			destroy_session_count++;
 			it = sessions.erase(it);

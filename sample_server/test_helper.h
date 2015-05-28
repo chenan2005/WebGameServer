@@ -1,7 +1,6 @@
 #pragma once
 
-#include "iod_logsystem.h"
-#include "iod_utility.h"
+#include "iod_common.h"
 
 class iod_packet;
 

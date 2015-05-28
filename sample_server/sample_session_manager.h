@@ -1,6 +1,5 @@
 #pragma once
-#include <map>
-#include <string>
+
 #include "iod_session_creator.h"
 
 class sample_session;
@@ -23,6 +22,8 @@ public:
 	unsigned int create_session_count;
 
 	unsigned int destroy_session_count;
+
+	listener_info* l_info;
 
 protected:
 

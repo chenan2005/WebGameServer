@@ -5,7 +5,7 @@
 
 implement_server_instance(test_client);
 
-const int TEST_SESSION_COUNT = 1000;
+const int TEST_SESSION_COUNT = 2000;
 
 test_client::test_client(void)
 {

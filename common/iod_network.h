@@ -98,7 +98,7 @@ int process_none_session_data(iod_session_creator* session_creator, connection_i
 inline void bind_session_connection(struct connection_info* conn_info, iod_session* session, int net_state) {
 	session->conn_info = conn_info;
 	conn_info->session = session;
-	session->net_state = (iod_session::session_net_state)net_state;
+	session->set_net_state((iod_session::session_net_state)net_state);
 }
 
 inline void unbind_session_connection(struct connection_info* conn_info, iod_session* session) {
@@ -106,5 +106,5 @@ inline void unbind_session_connection(struct connection_info* conn_info, iod_ses
 		conn_info->session = 0;
 	if (session->conn_info == conn_info)
 		session->conn_info = 0;
-	session->net_state = iod_session::SNS_NONE;
+	session->set_net_state(iod_session::SNS_NONE);
 }

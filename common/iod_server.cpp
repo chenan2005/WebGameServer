@@ -82,6 +82,12 @@ inline void winsys_wait_key() {
 
 int main(int argc, char *argv[])
 {
+#ifdef WIN32
+#ifdef _DEBUG
+	_CrtSetDbgFlag ( _CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF );
+#endif //_DEBUG
+#endif //WIN32
+
 	iod_server* server_instance = iod_server::instance();
 
 	if (!server_instance) {
@@ -127,6 +133,12 @@ int main(int argc, char *argv[])
 #ifdef WIN32
 	winsys_wait_key();
 #endif
+
+//#ifdef WIN32
+//#ifdef _DEBUG
+//	_CrtDumpMemoryLeaks();
+//#endif
+//#endif
 
 	return 0;
 }

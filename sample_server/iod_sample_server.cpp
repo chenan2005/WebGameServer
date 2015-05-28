@@ -17,7 +17,12 @@ bool iod_sample_server::initialize_server()
 {
 	session_manager = new sample_session_manager;
 
-	iod_network::start_listener(session_manager, "0.0.0.0:12345");
+	session_manager->l_info = iod_network::start_listener(session_manager, "0.0.0.0:12345");
+
+	if (!session_manager->l_info){
+		iod_log_error("server initialize failed!");
+		return false;
+	}
 
 	iod_log_info("server initialized");
 
@@ -32,6 +37,9 @@ int iod_sample_server::update_server()
 
 void iod_sample_server::shutdown_server()
 {
+	//if (session_manager->l_info)
+	//	iod_network::shutdown_listener(session_manager->l_info);
+
 	delete session_manager;
 
 	iod_log_info("server shutdown");
