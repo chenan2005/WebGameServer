@@ -1,0 +1,8 @@
+debug
+release
+3rdparty
+protocol_define
+*.ncb
+*.suo
+*.user
+*.exe
