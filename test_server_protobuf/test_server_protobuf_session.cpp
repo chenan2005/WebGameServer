@@ -2,10 +2,13 @@
 #include "iod_logsystem.h"
 #include "iod_test.pb.h"
 
+using namespace iod::protobuf::test;
+
 REG_PROTO_MSG_HANDLE_BEGIN(test_server_protobuf_session, iod_session_with_proto_base_msg)
 
-ADD_PROTO_MSG_HANDLE(iod::protobuf::test::kReqTestInfoFieldNumber, test_server_protobuf_session::on_req_test_info);
-ADD_PROTO_MSG_HANDLE(iod::protobuf::test::kReqLogoutFieldNumber, test_server_protobuf_session::on_req_logout);
+ADD_PROTO_MSG_HANDLE(_req_login, test_server_protobuf_session::on_req_login);
+ADD_PROTO_MSG_HANDLE(_req_test_info, test_server_protobuf_session::on_req_test_info);
+ADD_PROTO_MSG_HANDLE(_req_logout, test_server_protobuf_session::on_req_logout);
 
 REG_PROTO_MSG_HANDLE_END(test_server_protobuf_session)
 
@@ -19,14 +22,25 @@ test_server_protobuf_session::~test_server_protobuf_session(void)
 {
 }
 
+void test_server_protobuf_session::on_req_login(iod::protobuf::common::base_msg* msg)
+{
+	SAFE_GET_EXTENSION(msg, req_login, req);
+
+	set_login_state(LOGIN_STATE_LOGINED);
+}
+
 void test_server_protobuf_session::on_req_test_info(iod::protobuf::common::base_msg* msg)
 {
-
+	SAFE_GET_EXTENSION(msg, req_test_info, req);
+	res_test_info res;
+	res.set_info("response" + req.info());
+	send_message(_res_test_info, res);
 }
 
 void test_server_protobuf_session::on_req_logout( iod::protobuf::common::base_msg* msg )
 {
-
+	SAFE_GET_EXTENSION(msg, req_logout, req);
+	close(0);
 }
 
 void test_server_protobuf_session::on_closed( int reason )

@@ -40,18 +40,13 @@ int test_client_protobuf::update_server()
 		else if (session->get_net_stat() == iod_session::SNS_CONNECTED && iod_utility::get_time_msec() > session->get_last_send_command_time() + 5) {
 			
 			if (session->get_login_state() == test_client_protobuf_session::LOGIN_STATE_NONE) {
-				session->start_login("abcdefg", 10);
+				session->send_req_authentication(session->get_username());
+			}
+			else if (session->get_login_state() == test_client_protobuf_session::LOGIN_STATE_AUTHENTICATED) {
+				session->send_req_login(session->get_authorization().c_str());
 			}
 			else if (session->get_login_state() == test_client_protobuf_session::LOGIN_STATE_LOGINED) {
-				//int r = rand() % 100;
-				//if (r == 1) {
-				//	session->send_command(SESSION_CMD_LOGOUT, 0);
-				//}
-				//else {
-				//	session->send_command(SESSION_CMD_INFO, "test info");
-				//	session->send_command(SESSION_CMD_INFO, "test info 1");	
-				//}
-				//session->send_command(SESSION_CMD_INFO, "test info");
+				session->send_req_test_info("test info");
 			}
 		}
 		it++;

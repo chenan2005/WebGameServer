@@ -20,7 +20,17 @@ void iod_session_with_proto_base_msg::on_message( iod::protobuf::common::base_ms
 	(this->*(msg_handler_map[msg->messge_id()]))(msg);
 }
 
-bool iod_session_with_proto_base_msg::send_message( iod::protobuf::common::base_msg* msg )
+void iod_session_with_proto_base_msg::on_packet( iod_packet* packet )
+{
+	iod::protobuf::common::base_msg* msg = new iod::protobuf::common::base_msg;
+	if (msg->ParseFromArray(packet->get_data(), packet->get_length()))
+	{
+		on_message(msg);
+	}
+	delete msg;
+}
+
+bool iod_session_with_proto_base_msg::send_base_msg( iod::protobuf::common::base_msg* msg )
 {
 	static char msg_serialize_buff[_MAX_PACKET_LENGTH];
 
@@ -33,15 +43,7 @@ bool iod_session_with_proto_base_msg::send_message( iod::protobuf::common::base_
 
 	send(packet);
 
-	return true;
-}
+	destroy_packet(packet);
 
-void iod_session_with_proto_base_msg::on_packet( iod_packet* packet )
-{
-	iod::protobuf::common::base_msg* msg = new iod::protobuf::common::base_msg;
-	if (msg->ParseFromArray(packet->get_data(), packet->get_length()))
-	{
-		on_message(msg);
-	}
-	delete msg;
+	return true;
 }

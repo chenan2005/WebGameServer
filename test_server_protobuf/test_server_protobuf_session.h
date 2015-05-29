@@ -17,8 +17,8 @@ public:
 	test_server_protobuf_session(void);
 	virtual ~test_server_protobuf_session(void);
 
+	virtual void on_req_login(iod::protobuf::common::base_msg* msg);
 	virtual void on_req_test_info(iod::protobuf::common::base_msg* msg);
-
 	virtual void on_req_logout(iod::protobuf::common::base_msg* msg);
 
 	virtual void on_closed(int reason);

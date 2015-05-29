@@ -30,3 +30,24 @@ iod_session* iod_session_creator_with_proto_base_msg::on_none_session_packet( st
 
 	return session;
 }
+
+bool iod_session_creator_with_proto_base_msg::send_base_msg_to(struct connection_info* conn_info, iod::protobuf::common::base_msg* msg)
+{
+	static char none_session_msg_serialize_buff[_MAX_PACKET_LENGTH];
+
+	if (!conn_info || !conn_info->conn_buffev)
+		return false;
+
+	iod_packet* packet = create_packet();
+
+	if (!msg->SerializeToArray(none_session_msg_serialize_buff, sizeof(none_session_msg_serialize_buff)))
+		return false;
+
+	packet->set_data(none_session_msg_serialize_buff, msg->ByteSize());
+
+	send_to(conn_info, packet);
+
+	destroy_packet(packet);
+
+	return true;
+}

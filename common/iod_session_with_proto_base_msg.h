@@ -30,12 +30,19 @@ public:\
 
 //注册消息处理函数
 #define ADD_PROTO_MSG_HANDLE(mapid, mapfun) \
-	m[mapid] = (GProtoHandlerFunc)&mapfun;
+	m[mapid.number()] = (GProtoHandlerFunc)&mapfun;
 
 //注册消息处理函数实现-结束
 #define REG_PROTO_MSG_HANDLE_END(classname) \
 } \
 	classname::_register_of_##classname classname::_instance_of_regist_##classname;
+
+//-------------------------------------------------------------------------------
+
+#define SAFE_GET_EXTENSION(msg, extname, varname) \
+	if (!msg->HasExtension(_##extname)) \
+		return; \
+	const extname& varname = msg->GetExtension(_##extname);
 
 //-------------------------------------------------------------------------------
 
@@ -52,9 +59,23 @@ public:
 
 	void on_message(iod::protobuf::common::base_msg* msg);
 
-	bool send_message(iod::protobuf::common::base_msg* msg);
+	//发送消息
+	template <typename _proto_TypeTraits, ::google::protobuf::internal::FieldType _field_type,  bool _is_packed>
+	inline bool send_message(
+		const ::google::protobuf::internal::ExtensionIdentifier<iod::protobuf::common::base_msg, _proto_TypeTraits, _field_type, _is_packed>& id,	
+		typename _proto_TypeTraits::ConstType msg)	
+	{
+		iod::protobuf::common::base_msg base_msg;
+		base_msg.set_messge_id(id.number());
+		base_msg.MutableExtension(id)->CopyFrom(msg);
+		return send_base_msg(&base_msg);
+	}
 
 	virtual void on_packet(iod_packet* packet);
+
+protected:
+
+	bool send_base_msg(iod::protobuf::common::base_msg* msg);
 
 };
 

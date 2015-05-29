@@ -1,6 +1,16 @@
 #include "test_client_protobuf_session.h"
 #include "iod_test.pb.h"
 
+using namespace iod::protobuf::test;
+
+REG_PROTO_MSG_HANDLE_BEGIN(test_client_protobuf_session, iod_session_with_proto_base_msg)
+
+ADD_PROTO_MSG_HANDLE(_res_authentication, test_client_protobuf_session::on_res_authentication)
+ADD_PROTO_MSG_HANDLE(_res_login, test_client_protobuf_session::on_res_login)
+ADD_PROTO_MSG_HANDLE(_res_test_info, test_client_protobuf_session::on_res_test_info)
+
+REG_PROTO_MSG_HANDLE_END(test_client_protobuf_session)
+
 test_client_protobuf_session::test_client_protobuf_session(void) : login_stat(LOGIN_STATE_NONE), last_send_command_time(0)
 {
 	username[0] = 0;
@@ -8,11 +18,6 @@ test_client_protobuf_session::test_client_protobuf_session(void) : login_stat(LO
 
 test_client_protobuf_session::~test_client_protobuf_session(void)
 {
-}
-
-void test_client_protobuf_session::on_message( iod::protobuf::common::base_msg* msg )
-{
-
 }
 
 void test_client_protobuf_session::on_closed( int reason )
@@ -34,18 +39,82 @@ void test_client_protobuf_session::set_username( const char* username, int lengt
 	this->username[length] = 0;
 }
 
-void test_client_protobuf_session::start_login( const char* authentication, int length )
+void test_client_protobuf_session::send_req_authentication(const char* authentication, int length)
 {
-	iod::protobuf::test::req_authentication req;
+	if (length == 0)
+		length = (int)strlen(authentication);
+
+	req_authentication req;
 	req.set_userid(get_username());
 	req.set_authentication(authentication, length);
 
-	iod::protobuf::common::base_msg msg;
-	msg.MutableExtension(iod::protobuf::test::_req_authentication)->CopyFrom(req);
+	send_message(_req_authentication, req);
 
-	msg.set_messge_id(iod::protobuf::test::kReqAuthenticationFieldNumber);
+	set_login_state(LOGIN_STATE_AUTHENTICATING);
 
-	send_message(&msg);
+	update_last_send_command_time();
+}
+
+void test_client_protobuf_session::send_req_login(const char* authorization, int length /*= 0*/)
+{
+	if (length == 0)
+		length = (int)strlen(authorization);
+
+	req_login req;
+	req.set_userid(get_username());
+	req.set_authorization(authorization, length);
+
+	send_message(_req_login, req);
 
 	set_login_state(LOGIN_STATE_LOGINING);
+
+	update_last_send_command_time();
+}
+
+void test_client_protobuf_session::send_req_test_info(const char* info, int length /*= 0*/)
+{
+	if (length == 0)
+		length = (int)strlen(info);
+	
+	req_test_info req;
+	req.set_info(info, length);
+
+	send_message(_req_test_info, req);
+
+	update_last_send_command_time();
+}
+
+void test_client_protobuf_session::send_req_logout()
+{
+	req_logout req;
+	send_message(_req_logout, req);
+	update_last_send_command_time();
+}
+
+void test_client_protobuf_session::on_res_authentication(iod::protobuf::common::base_msg* msg)
+{
+	SAFE_GET_EXTENSION(msg, res_authentication, res);
+	if (res.result() == 0) {
+		set_login_state(LOGIN_STATE_AUTHENTICATED);
+		this->authorization = res.authorization();
+	}
+	else {
+		set_login_state(LOGIN_STATE_NONE);
+	}
+}
+
+void test_client_protobuf_session::on_res_login(iod::protobuf::common::base_msg* msg)
+{
+	SAFE_GET_EXTENSION(msg, res_login, res);
+	if (res.result() == 0) {
+		set_login_state(LOGIN_STATE_LOGINED);
+	}
+	else {
+		set_login_state(LOGIN_STATE_NONE);
+	}
+}
+
+void test_client_protobuf_session::on_res_test_info(iod::protobuf::common::base_msg* msg)
+{
+	SAFE_GET_EXTENSION(msg, res_test_info, res);
 }

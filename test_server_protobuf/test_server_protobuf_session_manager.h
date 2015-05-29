@@ -30,5 +30,9 @@ public:
 
 protected:
 
+	bool validate_authentication(const std::string& userid, const std::string& authentication, std::string& authorization);
+
+	bool validate_authorization(const std::string& userid, const std::string& authorization);
+
 	std::map< std::string, test_server_protobuf_session* > sessions;
 };

@@ -36,6 +36,8 @@ public:
 
 	virtual iod_session* on_none_session_packet(connection_info* conn_info, iod_packet* packet) = 0;
 
+	bool send_to(connection_info* conn_info, iod_packet* packet);
+
 	iod_netstatistics netstatistics;
 
 private:

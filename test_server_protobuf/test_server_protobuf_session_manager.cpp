@@ -4,11 +4,13 @@
 #include "iod_utility.h"
 #include "iod_logsystem.h"
 
+using namespace iod::protobuf::test;
+
 REG_PROTO_MSG_HANDLE_BEGIN(test_server_protobuf_session_manager, iod_session_creator_with_proto_base_msg)
 
-ADD_PROTO_MSG_HANDLE(iod::protobuf::test::kReqAuthenticationFieldNumber, test_server_protobuf_session_manager::on_req_authentication)
+ADD_PROTO_MSG_HANDLE(_req_authentication, test_server_protobuf_session_manager::on_req_authentication)
 
-ADD_PROTO_MSG_HANDLE(iod::protobuf::test::kReqLoginFieldNumber, test_server_protobuf_session_manager::on_req_login)
+ADD_PROTO_MSG_HANDLE(_req_login, test_server_protobuf_session_manager::on_req_login)
 
 REG_PROTO_MSG_HANDLE_END(test_server_protobuf_session_manager)
 
@@ -28,11 +30,50 @@ test_server_protobuf_session_manager::~test_server_protobuf_session_manager(void
 
 iod_session* test_server_protobuf_session_manager::on_req_authentication( struct connection_info* conn_info, iod::protobuf::common::base_msg* msg )
 {
+	SAFE_GET_NONE_SESSION_EXTENSION(msg, req_authentication, req);
+
+	iod::protobuf::test::res_authentication res;
+
+	string authoriztion("");
+	if (!validate_authentication(req.userid(), req.authentication(), authoriztion)) {
+		res.set_result(-1);
+	}
+	else {
+		res.set_result(0);
+		res.set_authorization(authoriztion);
+	}
+	
+	send_message_to(conn_info, iod::protobuf::test::_res_authentication, res);
+	
 	return 0;
 }
 
 iod_session* test_server_protobuf_session_manager::on_req_login( struct connection_info* conn_info, iod::protobuf::common::base_msg* msg )
 {
+	SAFE_GET_NONE_SESSION_EXTENSION(msg, req_login, req);
+
+	res_login res;
+	res.set_userid(req.userid());
+
+	if (validate_authorization(req.userid(), req.authorization())) {
+		const char* username = req.userid().c_str();
+		if (sessions.find(username) == sessions.end()) {
+			test_server_protobuf_session* session = new test_server_protobuf_session;
+			session->set_username(username);
+			sessions[username] = session;
+			create_session_count++;
+		}
+		
+		res.set_result(0);
+		send_message_to(conn_info, _res_login, res);
+
+		return sessions[username];
+	}
+	else {
+		res.set_result(-1);
+		send_message_to(conn_info, _res_login, res);
+	}
+
 	return 0;
 }
 
@@ -49,4 +90,18 @@ void test_server_protobuf_session_manager::check_sessions()
 		}
 		it++;
 	}
+}
+
+bool test_server_protobuf_session_manager::validate_authentication(const std::string& userid, const std::string& authentication, std::string& authorization)
+{
+	if (userid == authentication) {
+		authorization = userid;
+		return true;
+	}
+	return false;
+}
+
+bool test_server_protobuf_session_manager::validate_authorization(const std::string& userid, const std::string& authorization)
+{
+	return userid == authorization;
 }
