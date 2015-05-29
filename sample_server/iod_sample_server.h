@@ -16,7 +16,11 @@ protected:
 
 	virtual bool initialize_server();
 
+	virtual int update_server();
+
 	virtual void shutdown_server();
+
+	virtual void on_winsys_kbhit(int c);
 
 private:
 

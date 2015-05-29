@@ -291,6 +291,14 @@
 				RelativePath=".\sample_session_manager.h"
 				>
 			</File>
+			<File
+				RelativePath=".\test_helper.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\test_helper.h"
+				>
+			</File>
 		</Filter>
 	</Files>
 	<Globals>

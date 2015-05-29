@@ -1,7 +1,6 @@
 #include "iod_session.h"
-#include "iod_utility.h"
-#include "iod_network.h"
 #include "iod_logsystem.h"
+#include "iod_network.h"
 
 iod_session::iod_session() : conn_info(0), net_state(SNS_NONE)
 {
@@ -27,22 +26,33 @@ void iod_session::close(int reason)
 		iod_network::destroy_connection(conn_info, reason);
 }
 
-void iod_session::on_packet(iod_packet* packet)
+bool iod_session::send( iod_packet* packet )
 {
-	
+	if (net_state != SNS_CONNECTED)
+		return false;
+
+	int send_bytes = packet->write(conn_info->conn_buffev);
+
+	if (send_bytes <= 0)
+		return false;
+
+	iod_session_creator* session_creator = conn_info->session_creator;
+	if (session_creator) {
+		session_creator->netstatistics.send_byte_count += send_bytes;
+		session_creator->netstatistics.send_packet_count++;
+	}
+
+	return true;
 }
 
 void iod_session::on_connected()
 {
-	iod_log_info("connect success");
-	set_net_state(SNS_CONNECTED);
+	//iod_log_info("connect success");
 }
 
 void iod_session::on_closed(int reason)
 {
-	iod_log_info("connection close: %d", reason);
-	conn_info = 0;
-	set_net_state(SNS_NONE);
+	//iod_log_info("connection close: %d", reason);
 }
 
 void iod_session::set_net_state(session_net_state net_state)

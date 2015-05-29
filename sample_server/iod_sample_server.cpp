@@ -24,9 +24,42 @@ bool iod_sample_server::initialize_server()
 	return true;
 }
 
+int iod_sample_server::update_server()
+{
+	session_manager->check_sessions();
+	return 0;
+}
+
 void iod_sample_server::shutdown_server()
 {
 	delete session_manager;
 
 	iod_log_info("server shutdown");
+}
+
+void iod_sample_server::on_winsys_kbhit( int c )
+{
+	if (c == 'p') {
+		const iod_netstatistics& stat = session_manager->netstatistics;
+		iod_log_info("\nrecv byte count: %llu"
+			"\nrecv packet count:%u"
+			"\nsend byte count:%llu"
+			"\nsend packet count:%u"
+			"\nincoming connection count:%u"
+			"\nincoming connection close count:%u"
+			"\ncreate session count:%u"
+			"\ndestroy session count:%u"
+			"\ncurrent session count:%u"
+			"\nrunning time ms:%u", 
+			(unsigned long long)stat.recv_byte_count, 
+			stat.recv_packet_count, 
+			(unsigned long long)stat.send_byte_count,
+			stat.send_packet_count,
+			stat.incoming_conn_count,
+			stat.incoming_conn_close_count,
+			session_manager->create_session_count,
+			session_manager->destroy_session_count,
+			session_manager->get_session_count(),
+			iod_utility::get_time_msec());
+	}
 }

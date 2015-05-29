@@ -265,11 +265,27 @@
 			</Filter>
 		</Filter>
 		<File
+			RelativePath="..\sample_server\sample_session.cpp"
+			>
+		</File>
+		<File
+			RelativePath="..\sample_server\sample_session.h"
+			>
+		</File>
+		<File
 			RelativePath=".\test_client.cpp"
 			>
 		</File>
 		<File
 			RelativePath=".\test_client.h"
+			>
+		</File>
+		<File
+			RelativePath="..\sample_server\test_helper.cpp"
+			>
+		</File>
+		<File
+			RelativePath="..\sample_server\test_helper.h"
 			>
 		</File>
 	</Files>

@@ -58,8 +58,9 @@ protected:
 	update involved
 	*************************************************************
 	*/
-
-
+	
+	virtual int update_server() = 0;
+	
 	/**
 	*************************************************************
 	shutdown service involved

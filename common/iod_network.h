@@ -1,6 +1,5 @@
 #pragma once
 
-#include "iod_common.h"
 #include "iod_packet.h"
 #include "iod_session.h"
 #include "iod_session_creator.h"
@@ -55,13 +54,23 @@ struct connection_info* start_connection(iod_session* session,	//´¦ÀíÏûÏ¢µÄ¶Ô»°Ê
 
 //¹Ø±Õ¼àÌý
 inline void shutdown_listener(struct listener_info* l_info) {
+	if (l_info->listener)
+		evconnlistener_free(l_info->listener);
 	delete l_info;
 }
 
 //¹Ø±Õ/Ïú»ÙÁ¬½Ó
-inline void destroy_connection(struct connection_info* conn_info, int reason) {
-	if (conn_info->session)
+inline void destroy_connection(struct connection_info* conn_info, int reason) {	
+	if (conn_info->session) {
 		conn_info->session->on_closed(reason);
+		unbind_session_connection(conn_info, conn_info->session);
+	}
+	if (conn_info->conn_buffev)
+		bufferevent_free(conn_info->conn_buffev);
+
+	if (conn_info->session_creator)
+		conn_info->session_creator->netstatistics.incoming_conn_close_count++;
+
 	delete conn_info;
 }
 
@@ -82,10 +91,20 @@ int process_session_data(iod_session* session, struct bufferevent *bev);
 
 //´¦ÀíÍøÂçÊý¾Ý£¨Î´½¨Á¢»á»°£©
 int process_none_session_data(iod_session_creator* session_creator, connection_info* conn_info);
+
 }
 
 //°ó¶¨ÍøÂçÁ¬½ÓºÍ»á»°
-inline void bind_connection_session(struct connection_info* conn_info, iod_session* session) {
+inline void bind_session_connection(struct connection_info* conn_info, iod_session* session, int net_state) {
 	session->conn_info = conn_info;
 	conn_info->session = session;
+	session->net_state = (iod_session::session_net_state)net_state;
+}
+
+inline void unbind_session_connection(struct connection_info* conn_info, iod_session* session) {
+	if (conn_info->session == session)
+		conn_info->session = 0;
+	if (session->conn_info == conn_info)
+		session->conn_info = 0;
+	session->net_state = iod_session::SNS_NONE;
 }

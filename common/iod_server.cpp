@@ -25,9 +25,7 @@ int iod_server::update()
 {
 	iod_network::update();
 
-	shutdown_log_system();
-
-	return 0;
+	return update_server();
 }
 
 void iod_server::shutdown()
@@ -97,6 +95,9 @@ int main(int argc, char *argv[])
 		winsys_wait_key();
 		return -1;
 	}
+
+	//初始化时间
+	iod_utility::get_time_msec();
 
 	while (true)
 	{

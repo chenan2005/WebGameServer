@@ -1,8 +1,9 @@
 #include "iod_packet.h"
-#include "iod_common.h"
 
 int iod_packet::read(struct bufferevent* bufev)
 {
+	reset();
+
 	struct evbuffer* buf = bufferevent_get_input(bufev);
 	size_t buffer_len = evbuffer_get_length(buf);
 	ev_uint16_t data_length = 0;
@@ -33,8 +34,15 @@ int iod_packet::read(struct bufferevent* bufev)
 
 int iod_packet::write(struct bufferevent *bufev)
 {
+	if (!this->data)
+		return -1;
+
 	ev_uint16_t data_length = htons((ev_uint16_t)this->length);
 	if (bufferevent_write(bufev, &data_length, sizeof(ev_uint16_t)) == -1)
 		return -1;
-	return bufferevent_write(bufev, this->data, this->length);
+	
+	if (bufferevent_write(bufev, this->data, this->length) == -1)
+		return -1;
+
+	return length + (int)sizeof(ev_uint16_t);
 }

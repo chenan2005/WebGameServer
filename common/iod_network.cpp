@@ -60,7 +60,7 @@ struct listener_info* start_listener(iod_session_creator* session_creator, /*¶Ô»
 	if (!listener)
 	{
 		iod_log_crit("add_listener %s failed, could not create listener : %d!", bind_addr, iod_net_last_errno);
-		delete l_info;
+		shutdown_listener(l_info);
 		return 0;
 	}
 
@@ -93,19 +93,21 @@ struct connection_info* iod_network::start_connection(iod_session* session, /*´¦
 
 	connection_info* conn_info = new connection_info();
 	memset(conn_info, 0, sizeof(connection_info));
-	conn_info->session = session;
 	conn_info->timeout_secs = conn_timeout_secs;
 	conn_info->highmark = conn_highmark;
+	conn_info->conn_buffev = bev;
 
 	bufferevent_setcb(bev, 0, 0, conn_eventcb, conn_info);
 
 	if (bufferevent_socket_connect(bev, (struct sockaddr *)&sin, sizeof(sin)) < 0) {
 		iod_log_crit("can not start connect %s", target_addr);
-		delete conn_info;
+		destroy_connection(conn_info, 0);
 		return 0;
 	}
 
-	iod_log_info("start connecting %s", target_addr);
+	bind_session_connection(conn_info, session, iod_session::SNS_CONNECTING);
+
+	//iod_log_info("start connecting %s", target_addr);
 
 	return conn_info;
 }
@@ -122,7 +124,7 @@ void new_connection_cb(struct evconnlistener *listener, evutil_socket_t fd, stru
 	}
 
 	struct sockaddr_in* sin = (struct sockaddr_in*)sa;
-	iod_log_info("new incomming connection %s:%d, socket %d", inet_ntoa(sin->sin_addr), ntohs(sin->sin_port), (int)fd);
+	//iod_log_info("new incomming connection %s:%d, socket %d", inet_ntoa(sin->sin_addr), ntohs(sin->sin_port), (int)fd);
 
 	connection_info* conn_info = new connection_info();
 	memset(conn_info, 0, sizeof(connection_info));
@@ -144,6 +146,9 @@ void new_connection_cb(struct evconnlistener *listener, evutil_socket_t fd, stru
 
 	bufferevent_setcb(bev, conn_readcb, conn_writecb, conn_eventcb, conn_info);
 	bufferevent_enable(bev, conn_info->timeout_secs > 0 ? (EV_READ | EV_TIMEOUT) : EV_READ);
+
+	if (conn_info->session_creator)
+		conn_info->session_creator->netstatistics.incoming_conn_count++;
 }
 
 void conn_readcb(struct bufferevent *bev, void *user_data)
@@ -191,8 +196,10 @@ void conn_eventcb(struct bufferevent *bev, short events, void *user_data)
 			bufferevent_setcb(bev, conn_readcb, conn_writecb, conn_eventcb, conn_info);
 			bufferevent_enable(bev, conn_info->timeout_secs > 0 ? (EV_READ | EV_TIMEOUT) : EV_READ);
 
-			if (conn_info->session)
+			if (conn_info->session) {
+				bind_session_connection(conn_info, conn_info->session, iod_session::SNS_CONNECTED);
 				conn_info->session->on_connected();
+			}
 		}
 	}
 }
@@ -208,15 +215,25 @@ int process_session_data(iod_session* session, struct bufferevent *bev)
 
 		read_result = packet->read(bev);
 
-		if (read_result > 0)
+		if (read_result > 0) {
 			session->on_packet(packet);
+			const connection_info* conn_info = session->get_connection_info();
+			if (conn_info)
+			{
+				iod_session_creator* session_creator = conn_info->session_creator;
+				if (session_creator) {
+					session_creator->netstatistics.recv_byte_count += read_result;
+					session_creator->netstatistics.recv_packet_count++;
+				}
+			}
+		}
 		else
 			break;
 
-		delete packet;
+		session->destroy_packet(packet);
 	}
 
-	delete packet;
+	session->destroy_packet(packet);
 
 	return read_result;
 }
@@ -235,17 +252,20 @@ int process_none_session_data(iod_session_creator* session_creator, connection_i
 		if (read_result > 0) {
 			iod_session* session = session_creator->on_none_session_packet(conn_info, packet);
 			if (session) {
-				bind_connection_session(conn_info, session);
+				bind_session_connection(conn_info, session, iod_session::SNS_CONNECTED);
+				session->on_packet(packet);
 				break;
 			}
+			session_creator->netstatistics.recv_byte_count += read_result;
+			session_creator->netstatistics.recv_packet_count++;
 		}
 		else
 			break;
 
-		delete packet;
+		session_creator->destroy_packet(packet);
 	}
 
-	delete packet;
+	session_creator->destroy_packet(packet);
 
 	return read_result;
 }

@@ -16,13 +16,14 @@ struct connection_info
 	iod_session_creator* session_creator;
 	iod_session* session;
 	struct bufferevent *conn_buffev;
-	int timeout_secs;		
+	int timeout_secs;
 	int highmark;
 };
 
 class iod_session
 {
-	friend void bind_connection_session(struct connection_info *, iod_session *);
+	friend void bind_session_connection(struct connection_info *, iod_session *, int);
+	friend void unbind_session_connection(struct connection_info *, iod_session *);
 
 public:
 
@@ -32,7 +33,6 @@ public:
 		SNS_NONE = 0,
 		SNS_CONNECTING,
 		SNS_CONNECTED,
-		SNS_LOST,
 	};
 	
 	iod_session();
@@ -40,24 +40,29 @@ public:
 	virtual ~iod_session(void);
 
 	//----------------------------------------------------
+	//重载回调
+	//----------------------------------------------------
+
+	inline virtual iod_packet* create_packet() { return iod_packet::create(); }
+
+	inline virtual void destroy_packet(iod_packet* packet) { iod_packet::destroy(packet); } 
+
+	virtual void on_packet(iod_packet* packet) = 0;
+
+	virtual void on_connected();
+
+	virtual void on_closed(int reason);
+
+
+	//----------------------------------------------------
 	//行为
 	//----------------------------------------------------
 
 	bool connect(const char* target_addr);
 
-	void close(int reason);
+	void close(int reason = 0);
 
-	//----------------------------------------------------
-	//回调
-	//----------------------------------------------------
-
-	virtual iod_packet* create_packet() { return iod_packet::create(); }
-
-	virtual void on_packet(iod_packet* packet);
-
-	virtual void on_connected();
-
-	virtual void on_closed(int reason);
+	bool send(iod_packet* packet);
 
 	//----------------------------------------------------
 	//属性
@@ -66,6 +71,8 @@ public:
 	inline const struct connection_info * get_connection_info() const { return conn_info; }
 
 	inline session_net_state get_net_stat() const { return net_state; }
+
+	inline unsigned int get_last_net_state_time() const { return last_net_state_time; }
 
 	//----------------------------------------------------
 
