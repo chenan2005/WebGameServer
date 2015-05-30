@@ -1,6 +1,7 @@
 //·þÎñÆ÷¿ò¼Ü
 
-#pragma once
+#ifndef __IOD_SERVER_H__
+#define __IOD_SERVER_H__
 
 #define implement_server_instance(classname)  classname __instance_of_##classname
 
@@ -88,3 +89,5 @@ private:
 
 	static iod_server* _server_instance;
 };
+
+#endif

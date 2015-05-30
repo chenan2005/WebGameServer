@@ -5,7 +5,7 @@
 
 implement_server_instance(test_client_pb);
 
-const int TEST_SESSION_COUNT = 500;
+const int TEST_SESSION_COUNT = 200;
 
 test_client_pb::test_client_pb(void)
 {

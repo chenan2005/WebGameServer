@@ -1,5 +1,5 @@
-#ifndef __IOD_SESSION_CREATOR_H__
-#define __IOD_SESSION_CREATOR_H__
+#ifndef __IOD_SESSION_MANAGER_H__
+#define __IOD_SESSION_MANAGER_H__
 
 #include "iod_session.h"
 

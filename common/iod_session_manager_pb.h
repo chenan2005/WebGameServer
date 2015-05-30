@@ -1,5 +1,5 @@
-#ifndef __IOD_SESSION_CREATOR_WITH_PROTO_BASE_MSG_H__
-#define __IOD_SESSION_CREATOR_WITH_PROTO_BASE_MSG_H__
+#ifndef __IOD_SESSION_MANAGER_PB_H__
+#define __IOD_SESSION_MANAGER_PB_H__
 
 #include "iod_session_manager.h"
 #include "iod_session_pb.h"

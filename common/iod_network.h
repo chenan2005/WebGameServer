@@ -1,4 +1,5 @@
-#pragma once
+#ifndef __IOD_NETWORK_H__
+#define __IOD_NETWORK_H__
 
 #include "iod_packet.h"
 #include "iod_session.h"
@@ -113,3 +114,5 @@ inline void unbind_session_connection(struct connection_info* conn_info, iod_ses
 		session->conn_info = 0;
 	session->set_net_state(iod_session::SNS_NONE);
 }
+
+#endif

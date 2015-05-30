@@ -1,5 +1,5 @@
-#ifndef __IOD_SESSION_WITH_PROTO_BASE_MSG_H__
-#define __IOD_SESSION_WITH_PROTO_BASE_MSG_H__
+#ifndef __IOD_SESSION_PB_H__
+#define __IOD_SESSION_PB_H__
 
 #include "iod_session.h"
 #include "common/iod_common.pb.h"

@@ -1,4 +1,6 @@
-#pragma once
+#ifndef __IOD_LOGSYSTEM_H__
+#define __IOD_LOGSYSTEM_H__
+
 #include "iod_singleton.h"
 
 #define iod_log_info(format, ...) iod_log_debug(format, __VA_ARGS__)
@@ -14,3 +16,5 @@ private:
 	iod_logsystem(void);
 	virtual ~iod_logsystem(void);
 };
+
+#endif
