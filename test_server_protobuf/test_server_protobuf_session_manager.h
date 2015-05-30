@@ -18,6 +18,10 @@ public:
 
 	virtual iod_session* on_req_login(struct connection_info* conn_info, iod::protobuf::common::base_msg* msg);
 
+	void kickout(iod_session* session, int reason);
+
+	void random_kick(int num);
+
 	void check_sessions();
 
 	inline unsigned int get_session_count() const { return (unsigned int)sessions.size(); }

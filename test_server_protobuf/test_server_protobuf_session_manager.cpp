@@ -77,6 +77,30 @@ iod_session* test_server_protobuf_session_manager::on_req_login( struct connecti
 	return 0;
 }
 
+void test_server_protobuf_session_manager::kickout(iod_session* session, int reason)
+{
+	notify_kickout notify;
+	notify.set_kick_reason(reason);
+	send_message_to(session->get_connection_info(), _notify_kickout, notify);
+	session->flush();
+	session->shedule_timer(2000, (iod_timer_handler::FNC_TIMER_CALLBACK)&test_server_protobuf_session::on_timer_close_session, 0, true);
+}
+
+void test_server_protobuf_session_manager::random_kick(int num)
+{
+	int kick_num = 0;
+	std::map< std::string, test_server_protobuf_session* >::iterator it = sessions.begin();
+	while (it != sessions.end()) {
+		if (it->second->get_net_stat() == iod_session::SNS_CONNECTED) {
+			kickout(it->second, 1);
+			kick_num++;
+		}
+		if (kick_num >= num)
+			break;
+		it++;
+	}
+}
+
 void test_server_protobuf_session_manager::check_sessions()
 {
 	std::map< std::string, test_server_protobuf_session* >::iterator it = sessions.begin();

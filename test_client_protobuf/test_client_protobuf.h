@@ -18,6 +18,8 @@ public:
 
 	virtual void shutdown_server();
 	
+	virtual void on_winsys_kbhit(int c);
+
 protected:
 
 	std::set< test_client_protobuf_session* > sessions;

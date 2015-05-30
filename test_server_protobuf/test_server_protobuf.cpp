@@ -70,4 +70,7 @@ void test_server_protobuf::on_winsys_kbhit( int c )
 			session_manager->get_session_count(),
 			iod_utility::get_time_msec());
 	}
+	else if (c =='k') {
+		session_manager->random_kick(1);
+	}
 }

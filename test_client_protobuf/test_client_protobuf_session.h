@@ -30,11 +30,14 @@ public:
 	void send_req_login(const char* authorization, int length = 0);
 	void send_req_test_info(const char* info, int length = 0);
 	void send_req_logout();
+	void send_req_test_response_time(ev_uint64_t t);
 
 	//处理消息
 	virtual void on_res_authentication(iod::protobuf::common::base_msg* msg);
 	virtual void on_res_login(iod::protobuf::common::base_msg* msg);
 	virtual void on_res_test_info(iod::protobuf::common::base_msg* msg);
+	virtual void on_res_test_response_time(iod::protobuf::common::base_msg* msg);
+	virtual void on_notify_kickout(iod::protobuf::common::base_msg* msg);
 
 	inline const char* get_username() const {
 		return username;
@@ -52,10 +55,18 @@ public:
 		return authorization;
 	}
 
+	inline unsigned int get_next_try_login_time() const {
+		return next_try_login_time;
+	}
+
 protected:
 
 	inline void set_login_state(int state) {
-		this->login_stat = state;
+		if (state != this->login_stat) {
+			this->login_stat = state;
+			if (state == LOGIN_STATE_NONE)
+				next_try_login_time = iod_utility::get_time_msec() + rand() % 11000;
+		}
 	}
 
 	inline void update_last_send_command_time() {
@@ -69,4 +80,6 @@ protected:
 	int login_stat;
 
 	unsigned int last_send_command_time;
+
+	unsigned int next_try_login_time;
 };

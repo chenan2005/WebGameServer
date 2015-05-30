@@ -41,13 +41,13 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				AdditionalIncludeDirectories="../common;../protocol;&quot;../3rdparty/libevent-2.0.22-stable&quot;;&quot;../3rdparty/protobuf-2.5.0/&quot;"
-				PreprocessorDefinitions="WIN32;_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS"
+				PreprocessorDefinitions="WIN32;_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
 				UsePrecompiledHeader="0"
 				WarningLevel="3"
-				Detect64BitPortabilityProblems="true"
+				Detect64BitPortabilityProblems="false"
 				DebugInformationFormat="4"
 			/>
 			<Tool
@@ -260,6 +260,14 @@
 				</File>
 				<File
 					RelativePath="..\common\iod_session_creator.h"
+					>
+				</File>
+				<File
+					RelativePath="..\common\iod_timer_handler.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\common\iod_timer_handler.h"
 					>
 				</File>
 				<Filter

@@ -20,6 +20,9 @@ public:
 	virtual void on_req_login(iod::protobuf::common::base_msg* msg);
 	virtual void on_req_test_info(iod::protobuf::common::base_msg* msg);
 	virtual void on_req_logout(iod::protobuf::common::base_msg* msg);
+	virtual void on_req_test_response_time(iod::protobuf::common::base_msg* msg);
+
+	virtual void on_timer_close_session(void*) { close(); }
 
 	virtual void on_closed(int reason);
 

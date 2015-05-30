@@ -20,7 +20,7 @@ struct iod_netstatistics
 	ev_uint32_t incoming_conn_close_count;
 };
 
-class iod_session_creator
+class iod_session_creator : public iod_timer_handler
 {
 public:
 	iod_session_creator(void);

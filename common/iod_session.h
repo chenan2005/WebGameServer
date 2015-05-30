@@ -8,6 +8,7 @@
 */
 
 #include "iod_packet.h"
+#include "iod_timer_handler.h"
 
 class iod_session;
 class iod_session_creator;
@@ -21,7 +22,7 @@ struct connection_info
 	int highmark;
 };
 
-class iod_session
+class iod_session : public iod_timer_handler
 {
 	friend void bind_session_connection(struct connection_info *, iod_session *, int);
 	friend void unbind_session_connection(struct connection_info *, iod_session *);
@@ -65,11 +66,13 @@ public:
 
 	bool send(iod_packet* packet);
 
+	void flush();
+
 	//----------------------------------------------------
 	// Ù–‘
 	//----------------------------------------------------
 
-	inline const struct connection_info * get_connection_info() const { return conn_info; }
+	inline struct connection_info * get_connection_info() const { return conn_info; }
 
 	inline session_net_state get_net_stat() const { return net_state; }
 

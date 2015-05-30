@@ -33,6 +33,18 @@ message res_test_info {
 message req_logout {
 }
 
+message req_test_response_time {
+	required sint64 req_timestamp = 1;
+}
+
+message res_test_response_time {
+	required sint64 req_timestamp = 1;
+}
+
+message notify_kickout {
+	optional sint32 kick_reason = 1;
+}
+
 message test_msg_1 {
 	optional bytes test_data = 1;
 }
@@ -102,6 +114,9 @@ extend iod.protobuf.common.base_msg {
 	optional req_test_info _req_test_info = 1004;
 	optional res_test_info _res_test_info = 1005;
 	optional req_logout _req_logout = 1006;	
+	optional req_test_response_time _req_test_response_time = 1007;
+	optional res_test_response_time _res_test_response_time = 1008;
+	optional notify_kickout _notify_kickout = 1009;
 	optional test_msg_1 _test_msg_1 =5001;
 	optional test_msg_2 _test_msg_2 =5002;
 	optional test_msg_3 _test_msg_3 =5003;

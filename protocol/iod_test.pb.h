@@ -43,6 +43,9 @@ class res_login;
 class req_test_info;
 class res_test_info;
 class req_logout;
+class req_test_response_time;
+class res_test_response_time;
+class notify_kickout;
 class test_msg_1;
 class test_msg_2;
 class test_msg_3;
@@ -707,6 +710,252 @@ class req_logout : public ::google::protobuf::Message {
 
   void InitAsDefaultInstance();
   static req_logout* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class req_test_response_time : public ::google::protobuf::Message {
+ public:
+  req_test_response_time();
+  virtual ~req_test_response_time();
+
+  req_test_response_time(const req_test_response_time& from);
+
+  inline req_test_response_time& operator=(const req_test_response_time& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const req_test_response_time& default_instance();
+
+  void Swap(req_test_response_time* other);
+
+  // implements Message ----------------------------------------------
+
+  req_test_response_time* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const req_test_response_time& from);
+  void MergeFrom(const req_test_response_time& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // required sint64 req_timestamp = 1;
+  inline bool has_req_timestamp() const;
+  inline void clear_req_timestamp();
+  static const int kReqTimestampFieldNumber = 1;
+  inline ::google::protobuf::int64 req_timestamp() const;
+  inline void set_req_timestamp(::google::protobuf::int64 value);
+
+  // @@protoc_insertion_point(class_scope:iod.protobuf.test.req_test_response_time)
+ private:
+  inline void set_has_req_timestamp();
+  inline void clear_has_req_timestamp();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::int64 req_timestamp_;
+
+  mutable int _cached_size_;
+  ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
+
+  friend void  protobuf_AddDesc_iod_5ftest_2eproto();
+  friend void protobuf_AssignDesc_iod_5ftest_2eproto();
+  friend void protobuf_ShutdownFile_iod_5ftest_2eproto();
+
+  void InitAsDefaultInstance();
+  static req_test_response_time* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class res_test_response_time : public ::google::protobuf::Message {
+ public:
+  res_test_response_time();
+  virtual ~res_test_response_time();
+
+  res_test_response_time(const res_test_response_time& from);
+
+  inline res_test_response_time& operator=(const res_test_response_time& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const res_test_response_time& default_instance();
+
+  void Swap(res_test_response_time* other);
+
+  // implements Message ----------------------------------------------
+
+  res_test_response_time* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const res_test_response_time& from);
+  void MergeFrom(const res_test_response_time& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // required sint64 req_timestamp = 1;
+  inline bool has_req_timestamp() const;
+  inline void clear_req_timestamp();
+  static const int kReqTimestampFieldNumber = 1;
+  inline ::google::protobuf::int64 req_timestamp() const;
+  inline void set_req_timestamp(::google::protobuf::int64 value);
+
+  // @@protoc_insertion_point(class_scope:iod.protobuf.test.res_test_response_time)
+ private:
+  inline void set_has_req_timestamp();
+  inline void clear_has_req_timestamp();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::int64 req_timestamp_;
+
+  mutable int _cached_size_;
+  ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
+
+  friend void  protobuf_AddDesc_iod_5ftest_2eproto();
+  friend void protobuf_AssignDesc_iod_5ftest_2eproto();
+  friend void protobuf_ShutdownFile_iod_5ftest_2eproto();
+
+  void InitAsDefaultInstance();
+  static res_test_response_time* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class notify_kickout : public ::google::protobuf::Message {
+ public:
+  notify_kickout();
+  virtual ~notify_kickout();
+
+  notify_kickout(const notify_kickout& from);
+
+  inline notify_kickout& operator=(const notify_kickout& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const notify_kickout& default_instance();
+
+  void Swap(notify_kickout* other);
+
+  // implements Message ----------------------------------------------
+
+  notify_kickout* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const notify_kickout& from);
+  void MergeFrom(const notify_kickout& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional sint32 kick_reason = 1;
+  inline bool has_kick_reason() const;
+  inline void clear_kick_reason();
+  static const int kKickReasonFieldNumber = 1;
+  inline ::google::protobuf::int32 kick_reason() const;
+  inline void set_kick_reason(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:iod.protobuf.test.notify_kickout)
+ private:
+  inline void set_has_kick_reason();
+  inline void clear_has_kick_reason();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::int32 kick_reason_;
+
+  mutable int _cached_size_;
+  ::google::protobuf::uint32 _has_bits_[(1 + 31) / 32];
+
+  friend void  protobuf_AddDesc_iod_5ftest_2eproto();
+  friend void protobuf_AssignDesc_iod_5ftest_2eproto();
+  friend void protobuf_ShutdownFile_iod_5ftest_2eproto();
+
+  void InitAsDefaultInstance();
+  static notify_kickout* default_instance_;
 };
 // -------------------------------------------------------------------
 
@@ -2478,6 +2727,18 @@ static const int kReqLogoutFieldNumber = 1006;
 extern ::google::protobuf::internal::ExtensionIdentifier< ::iod::protobuf::common::base_msg,
     ::google::protobuf::internal::MessageTypeTraits< ::iod::protobuf::test::req_logout >, 11, false >
   _req_logout;
+static const int kReqTestResponseTimeFieldNumber = 1007;
+extern ::google::protobuf::internal::ExtensionIdentifier< ::iod::protobuf::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::iod::protobuf::test::req_test_response_time >, 11, false >
+  _req_test_response_time;
+static const int kResTestResponseTimeFieldNumber = 1008;
+extern ::google::protobuf::internal::ExtensionIdentifier< ::iod::protobuf::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::iod::protobuf::test::res_test_response_time >, 11, false >
+  _res_test_response_time;
+static const int kNotifyKickoutFieldNumber = 1009;
+extern ::google::protobuf::internal::ExtensionIdentifier< ::iod::protobuf::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::iod::protobuf::test::notify_kickout >, 11, false >
+  _notify_kickout;
 static const int kTestMsg1FieldNumber = 5001;
 extern ::google::protobuf::internal::ExtensionIdentifier< ::iod::protobuf::common::base_msg,
     ::google::protobuf::internal::MessageTypeTraits< ::iod::protobuf::test::test_msg_1 >, 11, false >
@@ -3190,6 +3451,84 @@ inline void res_test_info::set_allocated_info(::std::string* info) {
 // -------------------------------------------------------------------
 
 // req_logout
+
+// -------------------------------------------------------------------
+
+// req_test_response_time
+
+// required sint64 req_timestamp = 1;
+inline bool req_test_response_time::has_req_timestamp() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void req_test_response_time::set_has_req_timestamp() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void req_test_response_time::clear_has_req_timestamp() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void req_test_response_time::clear_req_timestamp() {
+  req_timestamp_ = GOOGLE_LONGLONG(0);
+  clear_has_req_timestamp();
+}
+inline ::google::protobuf::int64 req_test_response_time::req_timestamp() const {
+  return req_timestamp_;
+}
+inline void req_test_response_time::set_req_timestamp(::google::protobuf::int64 value) {
+  set_has_req_timestamp();
+  req_timestamp_ = value;
+}
+
+// -------------------------------------------------------------------
+
+// res_test_response_time
+
+// required sint64 req_timestamp = 1;
+inline bool res_test_response_time::has_req_timestamp() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void res_test_response_time::set_has_req_timestamp() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void res_test_response_time::clear_has_req_timestamp() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void res_test_response_time::clear_req_timestamp() {
+  req_timestamp_ = GOOGLE_LONGLONG(0);
+  clear_has_req_timestamp();
+}
+inline ::google::protobuf::int64 res_test_response_time::req_timestamp() const {
+  return req_timestamp_;
+}
+inline void res_test_response_time::set_req_timestamp(::google::protobuf::int64 value) {
+  set_has_req_timestamp();
+  req_timestamp_ = value;
+}
+
+// -------------------------------------------------------------------
+
+// notify_kickout
+
+// optional sint32 kick_reason = 1;
+inline bool notify_kickout::has_kick_reason() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void notify_kickout::set_has_kick_reason() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void notify_kickout::clear_has_kick_reason() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void notify_kickout::clear_kick_reason() {
+  kick_reason_ = 0;
+  clear_has_kick_reason();
+}
+inline ::google::protobuf::int32 notify_kickout::kick_reason() const {
+  return kick_reason_;
+}
+inline void notify_kickout::set_kick_reason(::google::protobuf::int32 value) {
+  set_has_kick_reason();
+  kick_reason_ = value;
+}
 
 // -------------------------------------------------------------------
 

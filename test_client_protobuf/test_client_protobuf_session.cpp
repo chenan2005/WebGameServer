@@ -1,5 +1,6 @@
 #include "test_client_protobuf_session.h"
 #include "iod_test.pb.h"
+#include "iod_logsystem.h"
 
 using namespace iod::protobuf::test;
 
@@ -8,10 +9,12 @@ REG_PROTO_MSG_HANDLE_BEGIN(test_client_protobuf_session, iod_session_with_proto_
 ADD_PROTO_MSG_HANDLE(_res_authentication, test_client_protobuf_session::on_res_authentication)
 ADD_PROTO_MSG_HANDLE(_res_login, test_client_protobuf_session::on_res_login)
 ADD_PROTO_MSG_HANDLE(_res_test_info, test_client_protobuf_session::on_res_test_info)
+ADD_PROTO_MSG_HANDLE(_res_test_response_time, test_client_protobuf_session::on_res_test_response_time)
+ADD_PROTO_MSG_HANDLE(_notify_kickout, test_client_protobuf_session::on_notify_kickout)
 
 REG_PROTO_MSG_HANDLE_END(test_client_protobuf_session)
 
-test_client_protobuf_session::test_client_protobuf_session(void) : login_stat(LOGIN_STATE_NONE), last_send_command_time(0)
+test_client_protobuf_session::test_client_protobuf_session(void) : login_stat(LOGIN_STATE_NONE), last_send_command_time(0), next_try_login_time(0)
 {
 	username[0] = 0;
 }
@@ -24,7 +27,7 @@ void test_client_protobuf_session::on_closed( int reason )
 {
 	//iod_log_info("user %s, connection closed %d", get_username(), reason);
 
-	login_stat = LOGIN_STATE_NONE;
+	set_login_state(LOGIN_STATE_NONE);
 }
 
 void test_client_protobuf_session::set_username( const char* username, int length /*= 0*/ )
@@ -91,6 +94,14 @@ void test_client_protobuf_session::send_req_logout()
 	update_last_send_command_time();
 }
 
+void test_client_protobuf_session::send_req_test_response_time(ev_uint64_t t)
+{
+	req_test_response_time req;
+	req.set_req_timestamp(t);
+	send_message(_req_test_response_time, req);
+	//update_last_send_command_time();
+}
+
 void test_client_protobuf_session::on_res_authentication(iod::protobuf::common::base_msg* msg)
 {
 	SAFE_GET_EXTENSION(msg, res_authentication, res);
@@ -117,4 +128,16 @@ void test_client_protobuf_session::on_res_login(iod::protobuf::common::base_msg*
 void test_client_protobuf_session::on_res_test_info(iod::protobuf::common::base_msg* msg)
 {
 	SAFE_GET_EXTENSION(msg, res_test_info, res);
+}
+
+void test_client_protobuf_session::on_res_test_response_time(iod::protobuf::common::base_msg* msg)
+{
+	SAFE_GET_EXTENSION(msg, res_test_response_time, res);
+	iod_log_info("user %s, response time %llu", get_username(), iod_utility::get_time_usec() - res.req_timestamp());
+}
+
+void test_client_protobuf_session::on_notify_kickout(iod::protobuf::common::base_msg* msg)
+{
+	SAFE_GET_EXTENSION(msg, notify_kickout, notify);
+	iod_log_info("user %s kickout by server, reason %d", get_username(), notify.kick_reason());
 }

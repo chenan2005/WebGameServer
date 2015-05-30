@@ -9,6 +9,7 @@ REG_PROTO_MSG_HANDLE_BEGIN(test_server_protobuf_session, iod_session_with_proto_
 ADD_PROTO_MSG_HANDLE(_req_login, test_server_protobuf_session::on_req_login);
 ADD_PROTO_MSG_HANDLE(_req_test_info, test_server_protobuf_session::on_req_test_info);
 ADD_PROTO_MSG_HANDLE(_req_logout, test_server_protobuf_session::on_req_logout);
+ADD_PROTO_MSG_HANDLE(_req_test_response_time, test_server_protobuf_session::on_req_test_response_time);
 
 REG_PROTO_MSG_HANDLE_END(test_server_protobuf_session)
 
@@ -41,6 +42,14 @@ void test_server_protobuf_session::on_req_logout( iod::protobuf::common::base_ms
 {
 	SAFE_GET_EXTENSION(msg, req_logout, req);
 	close(0);
+}
+
+void test_server_protobuf_session::on_req_test_response_time(iod::protobuf::common::base_msg* msg)
+{
+	SAFE_GET_EXTENSION(msg, req_test_response_time, req);
+	res_test_response_time res;
+	res.set_req_timestamp(req.req_timestamp());
+	send_message(_res_test_response_time, res);
 }
 
 void test_server_protobuf_session::on_closed( int reason )

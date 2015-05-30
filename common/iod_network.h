@@ -74,6 +74,11 @@ inline void destroy_connection(struct connection_info* conn_info, int reason) {
 	delete conn_info;
 }
 
+inline void flush_connection(struct connection_info* conn_info) {
+	if (conn_info && conn_info->conn_buffev)
+		bufferevent_flush(conn_info->conn_buffev, EV_WRITE, BEV_FLUSH);
+}
+
 //新连接回调
 void new_connection_cb(struct evconnlistener *, evutil_socket_t, struct sockaddr *, int socklen, void *);
 

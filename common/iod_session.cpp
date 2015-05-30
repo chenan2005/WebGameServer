@@ -45,6 +45,11 @@ bool iod_session::send( iod_packet* packet )
 	return true;
 }
 
+void iod_session::flush()
+{
+	iod_network::flush_connection(conn_info);
+}
+
 void iod_session::on_connected()
 {
 	//iod_log_info("connect success");

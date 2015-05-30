@@ -43,6 +43,15 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 const ::google::protobuf::Descriptor* req_logout_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   req_logout_reflection_ = NULL;
+const ::google::protobuf::Descriptor* req_test_response_time_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  req_test_response_time_reflection_ = NULL;
+const ::google::protobuf::Descriptor* res_test_response_time_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  res_test_response_time_reflection_ = NULL;
+const ::google::protobuf::Descriptor* notify_kickout_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  notify_kickout_reflection_ = NULL;
 const ::google::protobuf::Descriptor* test_msg_1_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   test_msg_1_reflection_ = NULL;
@@ -221,7 +230,52 @@ void protobuf_AssignDesc_iod_5ftest_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(req_logout));
-  test_msg_1_descriptor_ = file->message_type(7);
+  req_test_response_time_descriptor_ = file->message_type(7);
+  static const int req_test_response_time_offsets_[1] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(req_test_response_time, req_timestamp_),
+  };
+  req_test_response_time_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      req_test_response_time_descriptor_,
+      req_test_response_time::default_instance_,
+      req_test_response_time_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(req_test_response_time, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(req_test_response_time, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(req_test_response_time));
+  res_test_response_time_descriptor_ = file->message_type(8);
+  static const int res_test_response_time_offsets_[1] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(res_test_response_time, req_timestamp_),
+  };
+  res_test_response_time_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      res_test_response_time_descriptor_,
+      res_test_response_time::default_instance_,
+      res_test_response_time_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(res_test_response_time, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(res_test_response_time, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(res_test_response_time));
+  notify_kickout_descriptor_ = file->message_type(9);
+  static const int notify_kickout_offsets_[1] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(notify_kickout, kick_reason_),
+  };
+  notify_kickout_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      notify_kickout_descriptor_,
+      notify_kickout::default_instance_,
+      notify_kickout_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(notify_kickout, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(notify_kickout, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(notify_kickout));
+  test_msg_1_descriptor_ = file->message_type(10);
   static const int test_msg_1_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(test_msg_1, test_data_),
   };
@@ -236,7 +290,7 @@ void protobuf_AssignDesc_iod_5ftest_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(test_msg_1));
-  test_msg_2_descriptor_ = file->message_type(8);
+  test_msg_2_descriptor_ = file->message_type(11);
   static const int test_msg_2_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(test_msg_2, test_data_),
   };
@@ -251,7 +305,7 @@ void protobuf_AssignDesc_iod_5ftest_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(test_msg_2));
-  test_msg_3_descriptor_ = file->message_type(9);
+  test_msg_3_descriptor_ = file->message_type(12);
   static const int test_msg_3_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(test_msg_3, test_data_),
   };
@@ -266,7 +320,7 @@ void protobuf_AssignDesc_iod_5ftest_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(test_msg_3));
-  test_msg_4_descriptor_ = file->message_type(10);
+  test_msg_4_descriptor_ = file->message_type(13);
   static const int test_msg_4_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(test_msg_4, test_data_),
   };
@@ -281,7 +335,7 @@ void protobuf_AssignDesc_iod_5ftest_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(test_msg_4));
-  test_msg_5_descriptor_ = file->message_type(11);
+  test_msg_5_descriptor_ = file->message_type(14);
   static const int test_msg_5_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(test_msg_5, test_data_),
   };
@@ -296,7 +350,7 @@ void protobuf_AssignDesc_iod_5ftest_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(test_msg_5));
-  test_msg_6_descriptor_ = file->message_type(12);
+  test_msg_6_descriptor_ = file->message_type(15);
   static const int test_msg_6_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(test_msg_6, test_data_),
   };
@@ -311,7 +365,7 @@ void protobuf_AssignDesc_iod_5ftest_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(test_msg_6));
-  test_msg_7_descriptor_ = file->message_type(13);
+  test_msg_7_descriptor_ = file->message_type(16);
   static const int test_msg_7_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(test_msg_7, test_data_),
   };
@@ -326,7 +380,7 @@ void protobuf_AssignDesc_iod_5ftest_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(test_msg_7));
-  test_msg_8_descriptor_ = file->message_type(14);
+  test_msg_8_descriptor_ = file->message_type(17);
   static const int test_msg_8_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(test_msg_8, test_data_),
   };
@@ -341,7 +395,7 @@ void protobuf_AssignDesc_iod_5ftest_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(test_msg_8));
-  test_msg_9_descriptor_ = file->message_type(15);
+  test_msg_9_descriptor_ = file->message_type(18);
   static const int test_msg_9_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(test_msg_9, test_data_),
   };
@@ -356,7 +410,7 @@ void protobuf_AssignDesc_iod_5ftest_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(test_msg_9));
-  test_msg_10_descriptor_ = file->message_type(16);
+  test_msg_10_descriptor_ = file->message_type(19);
   static const int test_msg_10_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(test_msg_10, test_data_),
   };
@@ -371,7 +425,7 @@ void protobuf_AssignDesc_iod_5ftest_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(test_msg_10));
-  test_msg_11_descriptor_ = file->message_type(17);
+  test_msg_11_descriptor_ = file->message_type(20);
   static const int test_msg_11_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(test_msg_11, test_data_),
   };
@@ -386,7 +440,7 @@ void protobuf_AssignDesc_iod_5ftest_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(test_msg_11));
-  test_msg_12_descriptor_ = file->message_type(18);
+  test_msg_12_descriptor_ = file->message_type(21);
   static const int test_msg_12_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(test_msg_12, test_data_),
   };
@@ -401,7 +455,7 @@ void protobuf_AssignDesc_iod_5ftest_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(test_msg_12));
-  test_msg_13_descriptor_ = file->message_type(19);
+  test_msg_13_descriptor_ = file->message_type(22);
   static const int test_msg_13_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(test_msg_13, test_data_),
   };
@@ -416,7 +470,7 @@ void protobuf_AssignDesc_iod_5ftest_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(test_msg_13));
-  test_msg_14_descriptor_ = file->message_type(20);
+  test_msg_14_descriptor_ = file->message_type(23);
   static const int test_msg_14_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(test_msg_14, test_data_),
   };
@@ -431,7 +485,7 @@ void protobuf_AssignDesc_iod_5ftest_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(test_msg_14));
-  test_msg_15_descriptor_ = file->message_type(21);
+  test_msg_15_descriptor_ = file->message_type(24);
   static const int test_msg_15_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(test_msg_15, test_data_),
   };
@@ -446,7 +500,7 @@ void protobuf_AssignDesc_iod_5ftest_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(test_msg_15));
-  test_msg_16_descriptor_ = file->message_type(22);
+  test_msg_16_descriptor_ = file->message_type(25);
   static const int test_msg_16_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(test_msg_16, test_data_),
   };
@@ -461,7 +515,7 @@ void protobuf_AssignDesc_iod_5ftest_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(test_msg_16));
-  test_msg_17_descriptor_ = file->message_type(23);
+  test_msg_17_descriptor_ = file->message_type(26);
   static const int test_msg_17_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(test_msg_17, test_data_),
   };
@@ -476,7 +530,7 @@ void protobuf_AssignDesc_iod_5ftest_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(test_msg_17));
-  test_msg_18_descriptor_ = file->message_type(24);
+  test_msg_18_descriptor_ = file->message_type(27);
   static const int test_msg_18_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(test_msg_18, test_data_),
   };
@@ -491,7 +545,7 @@ void protobuf_AssignDesc_iod_5ftest_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(test_msg_18));
-  test_msg_19_descriptor_ = file->message_type(25);
+  test_msg_19_descriptor_ = file->message_type(28);
   static const int test_msg_19_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(test_msg_19, test_data_),
   };
@@ -506,7 +560,7 @@ void protobuf_AssignDesc_iod_5ftest_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(test_msg_19));
-  test_msg_20_descriptor_ = file->message_type(26);
+  test_msg_20_descriptor_ = file->message_type(29);
   static const int test_msg_20_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(test_msg_20, test_data_),
   };
@@ -547,6 +601,12 @@ void protobuf_RegisterTypes(const ::std::string&) {
     res_test_info_descriptor_, &res_test_info::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     req_logout_descriptor_, &req_logout::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    req_test_response_time_descriptor_, &req_test_response_time::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    res_test_response_time_descriptor_, &res_test_response_time::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    notify_kickout_descriptor_, &notify_kickout::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     test_msg_1_descriptor_, &test_msg_1::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
@@ -606,6 +666,12 @@ void protobuf_ShutdownFile_iod_5ftest_2eproto() {
   delete res_test_info_reflection_;
   delete req_logout::default_instance_;
   delete req_logout_reflection_;
+  delete req_test_response_time::default_instance_;
+  delete req_test_response_time_reflection_;
+  delete res_test_response_time::default_instance_;
+  delete res_test_response_time_reflection_;
+  delete notify_kickout::default_instance_;
+  delete notify_kickout_reflection_;
   delete test_msg_1::default_instance_;
   delete test_msg_1_reflection_;
   delete test_msg_2::default_instance_;
@@ -664,82 +730,94 @@ void protobuf_AddDesc_iod_5ftest_2eproto() {
     "userid\030\001 \001(\t\022\025\n\rauthorization\030\002 \001(\t\"+\n\tr"
     "es_login\022\016\n\006userid\030\001 \001(\t\022\016\n\006result\030\002 \001(\021"
     "\"\035\n\rreq_test_info\022\014\n\004info\030\001 \001(\t\"\035\n\rres_t"
-    "est_info\022\014\n\004info\030\001 \001(\t\"\014\n\nreq_logout\"\037\n\n"
-    "test_msg_1\022\021\n\ttest_data\030\001 \001(\014\"\037\n\ntest_ms"
-    "g_2\022\021\n\ttest_data\030\001 \001(\014\"\037\n\ntest_msg_3\022\021\n\t"
-    "test_data\030\001 \001(\014\"\037\n\ntest_msg_4\022\021\n\ttest_da"
-    "ta\030\001 \001(\014\"\037\n\ntest_msg_5\022\021\n\ttest_data\030\001 \001("
-    "\014\"\037\n\ntest_msg_6\022\021\n\ttest_data\030\001 \001(\014\"\037\n\nte"
-    "st_msg_7\022\021\n\ttest_data\030\001 \001(\014\"\037\n\ntest_msg_"
-    "8\022\021\n\ttest_data\030\001 \001(\014\"\037\n\ntest_msg_9\022\021\n\tte"
-    "st_data\030\001 \001(\014\" \n\013test_msg_10\022\021\n\ttest_dat"
-    "a\030\001 \001(\014\" \n\013test_msg_11\022\021\n\ttest_data\030\001 \001("
-    "\014\" \n\013test_msg_12\022\021\n\ttest_data\030\001 \001(\014\" \n\013t"
-    "est_msg_13\022\021\n\ttest_data\030\001 \001(\014\" \n\013test_ms"
-    "g_14\022\021\n\ttest_data\030\001 \001(\014\" \n\013test_msg_15\022\021"
-    "\n\ttest_data\030\001 \001(\014\" \n\013test_msg_16\022\021\n\ttest"
-    "_data\030\001 \001(\014\" \n\013test_msg_17\022\021\n\ttest_data\030"
-    "\001 \001(\014\" \n\013test_msg_18\022\021\n\ttest_data\030\001 \001(\014\""
-    " \n\013test_msg_19\022\021\n\ttest_data\030\001 \001(\014\" \n\013tes"
-    "t_msg_20\022\021\n\ttest_data\030\001 \001(\014:b\n\023_req_auth"
-    "entication\022\035.iod.protobuf.common.base_ms"
-    "g\030\350\007 \001(\0132%.iod.protobuf.test.req_authent"
-    "ication:b\n\023_res_authentication\022\035.iod.pro"
-    "tobuf.common.base_msg\030\351\007 \001(\0132%.iod.proto"
-    "buf.test.res_authentication:P\n\n_req_logi"
-    "n\022\035.iod.protobuf.common.base_msg\030\352\007 \001(\0132"
-    "\034.iod.protobuf.test.req_login:P\n\n_res_lo"
-    "gin\022\035.iod.protobuf.common.base_msg\030\353\007 \001("
-    "\0132\034.iod.protobuf.test.res_login:X\n\016_req_"
-    "test_info\022\035.iod.protobuf.common.base_msg"
-    "\030\354\007 \001(\0132 .iod.protobuf.test.req_test_inf"
-    "o:X\n\016_res_test_info\022\035.iod.protobuf.commo"
-    "n.base_msg\030\355\007 \001(\0132 .iod.protobuf.test.re"
-    "s_test_info:R\n\013_req_logout\022\035.iod.protobu"
-    "f.common.base_msg\030\356\007 \001(\0132\035.iod.protobuf."
-    "test.req_logout:R\n\013_test_msg_1\022\035.iod.pro"
-    "tobuf.common.base_msg\030\211\' \001(\0132\035.iod.proto"
-    "buf.test.test_msg_1:R\n\013_test_msg_2\022\035.iod"
-    ".protobuf.common.base_msg\030\212\' \001(\0132\035.iod.p"
-    "rotobuf.test.test_msg_2:R\n\013_test_msg_3\022\035"
-    ".iod.protobuf.common.base_msg\030\213\' \001(\0132\035.i"
-    "od.protobuf.test.test_msg_3:R\n\013_test_msg"
-    "_4\022\035.iod.protobuf.common.base_msg\030\214\' \001(\013"
-    "2\035.iod.protobuf.test.test_msg_4:R\n\013_test"
-    "_msg_5\022\035.iod.protobuf.common.base_msg\030\215\'"
-    " \001(\0132\035.iod.protobuf.test.test_msg_5:R\n\013_"
-    "test_msg_6\022\035.iod.protobuf.common.base_ms"
-    "g\030\216\' \001(\0132\035.iod.protobuf.test.test_msg_6:"
-    "R\n\013_test_msg_7\022\035.iod.protobuf.common.bas"
-    "e_msg\030\217\' \001(\0132\035.iod.protobuf.test.test_ms"
-    "g_7:R\n\013_test_msg_8\022\035.iod.protobuf.common"
-    ".base_msg\030\220\' \001(\0132\035.iod.protobuf.test.tes"
-    "t_msg_8:R\n\013_test_msg_9\022\035.iod.protobuf.co"
-    "mmon.base_msg\030\221\' \001(\0132\035.iod.protobuf.test"
-    ".test_msg_9:T\n\014_test_msg_10\022\035.iod.protob"
-    "uf.common.base_msg\030\222\' \001(\0132\036.iod.protobuf"
-    ".test.test_msg_10:T\n\014_test_msg_11\022\035.iod."
-    "protobuf.common.base_msg\030\223\' \001(\0132\036.iod.pr"
-    "otobuf.test.test_msg_11:T\n\014_test_msg_12\022"
-    "\035.iod.protobuf.common.base_msg\030\224\' \001(\0132\036."
-    "iod.protobuf.test.test_msg_12:T\n\014_test_m"
-    "sg_13\022\035.iod.protobuf.common.base_msg\030\225\' "
-    "\001(\0132\036.iod.protobuf.test.test_msg_13:T\n\014_"
-    "test_msg_14\022\035.iod.protobuf.common.base_m"
-    "sg\030\226\' \001(\0132\036.iod.protobuf.test.test_msg_1"
-    "4:T\n\014_test_msg_15\022\035.iod.protobuf.common."
-    "base_msg\030\227\' \001(\0132\036.iod.protobuf.test.test"
-    "_msg_15:T\n\014_test_msg_16\022\035.iod.protobuf.c"
-    "ommon.base_msg\030\230\' \001(\0132\036.iod.protobuf.tes"
-    "t.test_msg_16:T\n\014_test_msg_17\022\035.iod.prot"
-    "obuf.common.base_msg\030\231\' \001(\0132\036.iod.protob"
-    "uf.test.test_msg_17:T\n\014_test_msg_18\022\035.io"
-    "d.protobuf.common.base_msg\030\232\' \001(\0132\036.iod."
-    "protobuf.test.test_msg_18:T\n\014_test_msg_1"
-    "9\022\035.iod.protobuf.common.base_msg\030\233\' \001(\0132"
-    "\036.iod.protobuf.test.test_msg_19:T\n\014_test"
-    "_msg_20\022\035.iod.protobuf.common.base_msg\030\234"
-    "\' \001(\0132\036.iod.protobuf.test.test_msg_20", 3357);
+    "est_info\022\014\n\004info\030\001 \001(\t\"\014\n\nreq_logout\"/\n\026"
+    "req_test_response_time\022\025\n\rreq_timestamp\030"
+    "\001 \002(\022\"/\n\026res_test_response_time\022\025\n\rreq_t"
+    "imestamp\030\001 \002(\022\"%\n\016notify_kickout\022\023\n\013kick"
+    "_reason\030\001 \001(\021\"\037\n\ntest_msg_1\022\021\n\ttest_data"
+    "\030\001 \001(\014\"\037\n\ntest_msg_2\022\021\n\ttest_data\030\001 \001(\014\""
+    "\037\n\ntest_msg_3\022\021\n\ttest_data\030\001 \001(\014\"\037\n\ntest"
+    "_msg_4\022\021\n\ttest_data\030\001 \001(\014\"\037\n\ntest_msg_5\022"
+    "\021\n\ttest_data\030\001 \001(\014\"\037\n\ntest_msg_6\022\021\n\ttest"
+    "_data\030\001 \001(\014\"\037\n\ntest_msg_7\022\021\n\ttest_data\030\001"
+    " \001(\014\"\037\n\ntest_msg_8\022\021\n\ttest_data\030\001 \001(\014\"\037\n"
+    "\ntest_msg_9\022\021\n\ttest_data\030\001 \001(\014\" \n\013test_m"
+    "sg_10\022\021\n\ttest_data\030\001 \001(\014\" \n\013test_msg_11\022"
+    "\021\n\ttest_data\030\001 \001(\014\" \n\013test_msg_12\022\021\n\ttes"
+    "t_data\030\001 \001(\014\" \n\013test_msg_13\022\021\n\ttest_data"
+    "\030\001 \001(\014\" \n\013test_msg_14\022\021\n\ttest_data\030\001 \001(\014"
+    "\" \n\013test_msg_15\022\021\n\ttest_data\030\001 \001(\014\" \n\013te"
+    "st_msg_16\022\021\n\ttest_data\030\001 \001(\014\" \n\013test_msg"
+    "_17\022\021\n\ttest_data\030\001 \001(\014\" \n\013test_msg_18\022\021\n"
+    "\ttest_data\030\001 \001(\014\" \n\013test_msg_19\022\021\n\ttest_"
+    "data\030\001 \001(\014\" \n\013test_msg_20\022\021\n\ttest_data\030\001"
+    " \001(\014:b\n\023_req_authentication\022\035.iod.protob"
+    "uf.common.base_msg\030\350\007 \001(\0132%.iod.protobuf"
+    ".test.req_authentication:b\n\023_res_authent"
+    "ication\022\035.iod.protobuf.common.base_msg\030\351"
+    "\007 \001(\0132%.iod.protobuf.test.res_authentica"
+    "tion:P\n\n_req_login\022\035.iod.protobuf.common"
+    ".base_msg\030\352\007 \001(\0132\034.iod.protobuf.test.req"
+    "_login:P\n\n_res_login\022\035.iod.protobuf.comm"
+    "on.base_msg\030\353\007 \001(\0132\034.iod.protobuf.test.r"
+    "es_login:X\n\016_req_test_info\022\035.iod.protobu"
+    "f.common.base_msg\030\354\007 \001(\0132 .iod.protobuf."
+    "test.req_test_info:X\n\016_res_test_info\022\035.i"
+    "od.protobuf.common.base_msg\030\355\007 \001(\0132 .iod"
+    ".protobuf.test.res_test_info:R\n\013_req_log"
+    "out\022\035.iod.protobuf.common.base_msg\030\356\007 \001("
+    "\0132\035.iod.protobuf.test.req_logout:j\n\027_req"
+    "_test_response_time\022\035.iod.protobuf.commo"
+    "n.base_msg\030\357\007 \001(\0132).iod.protobuf.test.re"
+    "q_test_response_time:j\n\027_res_test_respon"
+    "se_time\022\035.iod.protobuf.common.base_msg\030\360"
+    "\007 \001(\0132).iod.protobuf.test.res_test_respo"
+    "nse_time:Z\n\017_notify_kickout\022\035.iod.protob"
+    "uf.common.base_msg\030\361\007 \001(\0132!.iod.protobuf"
+    ".test.notify_kickout:R\n\013_test_msg_1\022\035.io"
+    "d.protobuf.common.base_msg\030\211\' \001(\0132\035.iod."
+    "protobuf.test.test_msg_1:R\n\013_test_msg_2\022"
+    "\035.iod.protobuf.common.base_msg\030\212\' \001(\0132\035."
+    "iod.protobuf.test.test_msg_2:R\n\013_test_ms"
+    "g_3\022\035.iod.protobuf.common.base_msg\030\213\' \001("
+    "\0132\035.iod.protobuf.test.test_msg_3:R\n\013_tes"
+    "t_msg_4\022\035.iod.protobuf.common.base_msg\030\214"
+    "\' \001(\0132\035.iod.protobuf.test.test_msg_4:R\n\013"
+    "_test_msg_5\022\035.iod.protobuf.common.base_m"
+    "sg\030\215\' \001(\0132\035.iod.protobuf.test.test_msg_5"
+    ":R\n\013_test_msg_6\022\035.iod.protobuf.common.ba"
+    "se_msg\030\216\' \001(\0132\035.iod.protobuf.test.test_m"
+    "sg_6:R\n\013_test_msg_7\022\035.iod.protobuf.commo"
+    "n.base_msg\030\217\' \001(\0132\035.iod.protobuf.test.te"
+    "st_msg_7:R\n\013_test_msg_8\022\035.iod.protobuf.c"
+    "ommon.base_msg\030\220\' \001(\0132\035.iod.protobuf.tes"
+    "t.test_msg_8:R\n\013_test_msg_9\022\035.iod.protob"
+    "uf.common.base_msg\030\221\' \001(\0132\035.iod.protobuf"
+    ".test.test_msg_9:T\n\014_test_msg_10\022\035.iod.p"
+    "rotobuf.common.base_msg\030\222\' \001(\0132\036.iod.pro"
+    "tobuf.test.test_msg_10:T\n\014_test_msg_11\022\035"
+    ".iod.protobuf.common.base_msg\030\223\' \001(\0132\036.i"
+    "od.protobuf.test.test_msg_11:T\n\014_test_ms"
+    "g_12\022\035.iod.protobuf.common.base_msg\030\224\' \001"
+    "(\0132\036.iod.protobuf.test.test_msg_12:T\n\014_t"
+    "est_msg_13\022\035.iod.protobuf.common.base_ms"
+    "g\030\225\' \001(\0132\036.iod.protobuf.test.test_msg_13"
+    ":T\n\014_test_msg_14\022\035.iod.protobuf.common.b"
+    "ase_msg\030\226\' \001(\0132\036.iod.protobuf.test.test_"
+    "msg_14:T\n\014_test_msg_15\022\035.iod.protobuf.co"
+    "mmon.base_msg\030\227\' \001(\0132\036.iod.protobuf.test"
+    ".test_msg_15:T\n\014_test_msg_16\022\035.iod.proto"
+    "buf.common.base_msg\030\230\' \001(\0132\036.iod.protobu"
+    "f.test.test_msg_16:T\n\014_test_msg_17\022\035.iod"
+    ".protobuf.common.base_msg\030\231\' \001(\0132\036.iod.p"
+    "rotobuf.test.test_msg_17:T\n\014_test_msg_18"
+    "\022\035.iod.protobuf.common.base_msg\030\232\' \001(\0132\036"
+    ".iod.protobuf.test.test_msg_18:T\n\014_test_"
+    "msg_19\022\035.iod.protobuf.common.base_msg\030\233\'"
+    " \001(\0132\036.iod.protobuf.test.test_msg_19:T\n\014"
+    "_test_msg_20\022\035.iod.protobuf.common.base_"
+    "msg\030\234\' \001(\0132\036.iod.protobuf.test.test_msg_"
+    "20", 3802);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "iod_test.proto", &protobuf_RegisterTypes);
   req_authentication::default_instance_ = new req_authentication();
@@ -749,6 +827,9 @@ void protobuf_AddDesc_iod_5ftest_2eproto() {
   req_test_info::default_instance_ = new req_test_info();
   res_test_info::default_instance_ = new res_test_info();
   req_logout::default_instance_ = new req_logout();
+  req_test_response_time::default_instance_ = new req_test_response_time();
+  res_test_response_time::default_instance_ = new res_test_response_time();
+  notify_kickout::default_instance_ = new notify_kickout();
   test_msg_1::default_instance_ = new test_msg_1();
   test_msg_2::default_instance_ = new test_msg_2();
   test_msg_3::default_instance_ = new test_msg_3();
@@ -797,6 +878,18 @@ void protobuf_AddDesc_iod_5ftest_2eproto() {
     &::iod::protobuf::common::base_msg::default_instance(),
     1006, 11, false, false,
     &::iod::protobuf::test::req_logout::default_instance());
+  ::google::protobuf::internal::ExtensionSet::RegisterMessageExtension(
+    &::iod::protobuf::common::base_msg::default_instance(),
+    1007, 11, false, false,
+    &::iod::protobuf::test::req_test_response_time::default_instance());
+  ::google::protobuf::internal::ExtensionSet::RegisterMessageExtension(
+    &::iod::protobuf::common::base_msg::default_instance(),
+    1008, 11, false, false,
+    &::iod::protobuf::test::res_test_response_time::default_instance());
+  ::google::protobuf::internal::ExtensionSet::RegisterMessageExtension(
+    &::iod::protobuf::common::base_msg::default_instance(),
+    1009, 11, false, false,
+    &::iod::protobuf::test::notify_kickout::default_instance());
   ::google::protobuf::internal::ExtensionSet::RegisterMessageExtension(
     &::iod::protobuf::common::base_msg::default_instance(),
     5001, 11, false, false,
@@ -884,6 +977,9 @@ void protobuf_AddDesc_iod_5ftest_2eproto() {
   req_test_info::default_instance_->InitAsDefaultInstance();
   res_test_info::default_instance_->InitAsDefaultInstance();
   req_logout::default_instance_->InitAsDefaultInstance();
+  req_test_response_time::default_instance_->InitAsDefaultInstance();
+  res_test_response_time::default_instance_->InitAsDefaultInstance();
+  notify_kickout::default_instance_->InitAsDefaultInstance();
   test_msg_1::default_instance_->InitAsDefaultInstance();
   test_msg_2::default_instance_->InitAsDefaultInstance();
   test_msg_3::default_instance_->InitAsDefaultInstance();
@@ -2610,6 +2706,632 @@ void req_logout::Swap(req_logout* other) {
   ::google::protobuf::Metadata metadata;
   metadata.descriptor = req_logout_descriptor_;
   metadata.reflection = req_logout_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int req_test_response_time::kReqTimestampFieldNumber;
+#endif  // !_MSC_VER
+
+req_test_response_time::req_test_response_time()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+}
+
+void req_test_response_time::InitAsDefaultInstance() {
+}
+
+req_test_response_time::req_test_response_time(const req_test_response_time& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+}
+
+void req_test_response_time::SharedCtor() {
+  _cached_size_ = 0;
+  req_timestamp_ = GOOGLE_LONGLONG(0);
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+req_test_response_time::~req_test_response_time() {
+  SharedDtor();
+}
+
+void req_test_response_time::SharedDtor() {
+  if (this != default_instance_) {
+  }
+}
+
+void req_test_response_time::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* req_test_response_time::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return req_test_response_time_descriptor_;
+}
+
+const req_test_response_time& req_test_response_time::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_iod_5ftest_2eproto();
+  return *default_instance_;
+}
+
+req_test_response_time* req_test_response_time::default_instance_ = NULL;
+
+req_test_response_time* req_test_response_time::New() const {
+  return new req_test_response_time;
+}
+
+void req_test_response_time::Clear() {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    req_timestamp_ = GOOGLE_LONGLONG(0);
+  }
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool req_test_response_time::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) return false
+  ::google::protobuf::uint32 tag;
+  while ((tag = input->ReadTag()) != 0) {
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // required sint64 req_timestamp = 1;
+      case 1: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int64, ::google::protobuf::internal::WireFormatLite::TYPE_SINT64>(
+                 input, &req_timestamp_)));
+          set_has_req_timestamp();
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectAtEnd()) return true;
+        break;
+      }
+
+      default: {
+      handle_uninterpreted:
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          return true;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+  return true;
+#undef DO_
+}
+
+void req_test_response_time::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // required sint64 req_timestamp = 1;
+  if (has_req_timestamp()) {
+    ::google::protobuf::internal::WireFormatLite::WriteSInt64(1, this->req_timestamp(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+}
+
+::google::protobuf::uint8* req_test_response_time::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // required sint64 req_timestamp = 1;
+  if (has_req_timestamp()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteSInt64ToArray(1, this->req_timestamp(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  return target;
+}
+
+int req_test_response_time::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // required sint64 req_timestamp = 1;
+    if (has_req_timestamp()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::SInt64Size(
+          this->req_timestamp());
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void req_test_response_time::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const req_test_response_time* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const req_test_response_time*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void req_test_response_time::MergeFrom(const req_test_response_time& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_req_timestamp()) {
+      set_req_timestamp(from.req_timestamp());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void req_test_response_time::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void req_test_response_time::CopyFrom(const req_test_response_time& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool req_test_response_time::IsInitialized() const {
+  if ((_has_bits_[0] & 0x00000001) != 0x00000001) return false;
+
+  return true;
+}
+
+void req_test_response_time::Swap(req_test_response_time* other) {
+  if (other != this) {
+    std::swap(req_timestamp_, other->req_timestamp_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata req_test_response_time::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = req_test_response_time_descriptor_;
+  metadata.reflection = req_test_response_time_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int res_test_response_time::kReqTimestampFieldNumber;
+#endif  // !_MSC_VER
+
+res_test_response_time::res_test_response_time()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+}
+
+void res_test_response_time::InitAsDefaultInstance() {
+}
+
+res_test_response_time::res_test_response_time(const res_test_response_time& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+}
+
+void res_test_response_time::SharedCtor() {
+  _cached_size_ = 0;
+  req_timestamp_ = GOOGLE_LONGLONG(0);
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+res_test_response_time::~res_test_response_time() {
+  SharedDtor();
+}
+
+void res_test_response_time::SharedDtor() {
+  if (this != default_instance_) {
+  }
+}
+
+void res_test_response_time::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* res_test_response_time::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return res_test_response_time_descriptor_;
+}
+
+const res_test_response_time& res_test_response_time::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_iod_5ftest_2eproto();
+  return *default_instance_;
+}
+
+res_test_response_time* res_test_response_time::default_instance_ = NULL;
+
+res_test_response_time* res_test_response_time::New() const {
+  return new res_test_response_time;
+}
+
+void res_test_response_time::Clear() {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    req_timestamp_ = GOOGLE_LONGLONG(0);
+  }
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool res_test_response_time::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) return false
+  ::google::protobuf::uint32 tag;
+  while ((tag = input->ReadTag()) != 0) {
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // required sint64 req_timestamp = 1;
+      case 1: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int64, ::google::protobuf::internal::WireFormatLite::TYPE_SINT64>(
+                 input, &req_timestamp_)));
+          set_has_req_timestamp();
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectAtEnd()) return true;
+        break;
+      }
+
+      default: {
+      handle_uninterpreted:
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          return true;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+  return true;
+#undef DO_
+}
+
+void res_test_response_time::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // required sint64 req_timestamp = 1;
+  if (has_req_timestamp()) {
+    ::google::protobuf::internal::WireFormatLite::WriteSInt64(1, this->req_timestamp(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+}
+
+::google::protobuf::uint8* res_test_response_time::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // required sint64 req_timestamp = 1;
+  if (has_req_timestamp()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteSInt64ToArray(1, this->req_timestamp(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  return target;
+}
+
+int res_test_response_time::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // required sint64 req_timestamp = 1;
+    if (has_req_timestamp()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::SInt64Size(
+          this->req_timestamp());
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void res_test_response_time::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const res_test_response_time* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const res_test_response_time*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void res_test_response_time::MergeFrom(const res_test_response_time& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_req_timestamp()) {
+      set_req_timestamp(from.req_timestamp());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void res_test_response_time::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void res_test_response_time::CopyFrom(const res_test_response_time& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool res_test_response_time::IsInitialized() const {
+  if ((_has_bits_[0] & 0x00000001) != 0x00000001) return false;
+
+  return true;
+}
+
+void res_test_response_time::Swap(res_test_response_time* other) {
+  if (other != this) {
+    std::swap(req_timestamp_, other->req_timestamp_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata res_test_response_time::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = res_test_response_time_descriptor_;
+  metadata.reflection = res_test_response_time_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int notify_kickout::kKickReasonFieldNumber;
+#endif  // !_MSC_VER
+
+notify_kickout::notify_kickout()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+}
+
+void notify_kickout::InitAsDefaultInstance() {
+}
+
+notify_kickout::notify_kickout(const notify_kickout& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+}
+
+void notify_kickout::SharedCtor() {
+  _cached_size_ = 0;
+  kick_reason_ = 0;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+notify_kickout::~notify_kickout() {
+  SharedDtor();
+}
+
+void notify_kickout::SharedDtor() {
+  if (this != default_instance_) {
+  }
+}
+
+void notify_kickout::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* notify_kickout::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return notify_kickout_descriptor_;
+}
+
+const notify_kickout& notify_kickout::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_iod_5ftest_2eproto();
+  return *default_instance_;
+}
+
+notify_kickout* notify_kickout::default_instance_ = NULL;
+
+notify_kickout* notify_kickout::New() const {
+  return new notify_kickout;
+}
+
+void notify_kickout::Clear() {
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    kick_reason_ = 0;
+  }
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool notify_kickout::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) return false
+  ::google::protobuf::uint32 tag;
+  while ((tag = input->ReadTag()) != 0) {
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // optional sint32 kick_reason = 1;
+      case 1: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_SINT32>(
+                 input, &kick_reason_)));
+          set_has_kick_reason();
+        } else {
+          goto handle_uninterpreted;
+        }
+        if (input->ExpectAtEnd()) return true;
+        break;
+      }
+
+      default: {
+      handle_uninterpreted:
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          return true;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+  return true;
+#undef DO_
+}
+
+void notify_kickout::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // optional sint32 kick_reason = 1;
+  if (has_kick_reason()) {
+    ::google::protobuf::internal::WireFormatLite::WriteSInt32(1, this->kick_reason(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+}
+
+::google::protobuf::uint8* notify_kickout::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // optional sint32 kick_reason = 1;
+  if (has_kick_reason()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteSInt32ToArray(1, this->kick_reason(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  return target;
+}
+
+int notify_kickout::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // optional sint32 kick_reason = 1;
+    if (has_kick_reason()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::SInt32Size(
+          this->kick_reason());
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void notify_kickout::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const notify_kickout* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const notify_kickout*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void notify_kickout::MergeFrom(const notify_kickout& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_kick_reason()) {
+      set_kick_reason(from.kick_reason());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void notify_kickout::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void notify_kickout::CopyFrom(const notify_kickout& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool notify_kickout::IsInitialized() const {
+
+  return true;
+}
+
+void notify_kickout::Swap(notify_kickout* other) {
+  if (other != this) {
+    std::swap(kick_reason_, other->kick_reason_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata notify_kickout::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = notify_kickout_descriptor_;
+  metadata.reflection = notify_kickout_reflection_;
   return metadata;
 }
 
@@ -6954,6 +7676,15 @@ void test_msg_20::Swap(test_msg_20* other) {
 ::google::protobuf::internal::ExtensionIdentifier< ::iod::protobuf::common::base_msg,
     ::google::protobuf::internal::MessageTypeTraits< ::iod::protobuf::test::req_logout >, 11, false >
   _req_logout(kReqLogoutFieldNumber, ::iod::protobuf::test::req_logout::default_instance());
+::google::protobuf::internal::ExtensionIdentifier< ::iod::protobuf::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::iod::protobuf::test::req_test_response_time >, 11, false >
+  _req_test_response_time(kReqTestResponseTimeFieldNumber, ::iod::protobuf::test::req_test_response_time::default_instance());
+::google::protobuf::internal::ExtensionIdentifier< ::iod::protobuf::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::iod::protobuf::test::res_test_response_time >, 11, false >
+  _res_test_response_time(kResTestResponseTimeFieldNumber, ::iod::protobuf::test::res_test_response_time::default_instance());
+::google::protobuf::internal::ExtensionIdentifier< ::iod::protobuf::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::iod::protobuf::test::notify_kickout >, 11, false >
+  _notify_kickout(kNotifyKickoutFieldNumber, ::iod::protobuf::test::notify_kickout::default_instance());
 ::google::protobuf::internal::ExtensionIdentifier< ::iod::protobuf::common::base_msg,
     ::google::protobuf::internal::MessageTypeTraits< ::iod::protobuf::test::test_msg_1 >, 11, false >
   _test_msg_1(kTestMsg1FieldNumber, ::iod::protobuf::test::test_msg_1::default_instance());
