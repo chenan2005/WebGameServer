@@ -18,22 +18,15 @@ public:
 		LOGIN_STATE_LOGINED,
 	};
 
-	test_client_protobuf_session(void);
-	virtual ~test_client_protobuf_session(void);
-
-	//重载
+	//--------------------------------------------------
+	//override functions
+	//--------------------------------------------------
 
 	virtual void on_closed(int reason);
-
-	//发消息
-
-	void send_req_authentication(const char* authentication, int length = 0);
-	void send_req_login(const char* authorization, int length = 0);
-	void send_req_test_info(const char* info, int length = 0);
-	void send_req_logout();
-	void send_req_test_response_time(ev_uint64_t t);
-
-	//处理消息
+	
+	//--------------------------------------------------
+	//message handle functions
+	//--------------------------------------------------
 
 	virtual void on_res_authentication(iod::protobuf::common::base_msg* msg);
 	virtual void on_res_login(iod::protobuf::common::base_msg* msg);
@@ -41,7 +34,27 @@ public:
 	virtual void on_res_test_response_time(iod::protobuf::common::base_msg* msg);
 	virtual void on_notify_kickout(iod::protobuf::common::base_msg* msg);
 
-	//属性访问
+	//--------------------------------------------------
+	//timer handle functions
+	//--------------------------------------------------
+
+	//--------------------------------------------------
+	//send message interfaces
+	//--------------------------------------------------
+
+	void send_req_authentication(const char* authentication, int length = 0);
+	void send_req_login(const char* authorization, int length = 0);
+	void send_req_test_info(const char* info, int length = 0);
+	void send_req_logout();
+	void send_req_test_response_time(ev_uint64_t t);
+
+	//--------------------------------------------------
+	//other new add interfaces
+	//--------------------------------------------------
+
+	//--------------------------------------------------
+	//attributes get/set
+	//--------------------------------------------------
 
 	void set_username(const char* username, int length = 0);
 
@@ -64,6 +77,18 @@ public:
 	inline unsigned int get_next_try_login_time() const {
 		return next_try_login_time;
 	}
+
+	//--------------------------------------------------
+	//constructor/destructor
+	//--------------------------------------------------
+
+	test_client_protobuf_session(void);
+
+	virtual ~test_client_protobuf_session(void);
+
+	//--------------------------------------------------
+	//others
+	//--------------------------------------------------
 
 protected:
 

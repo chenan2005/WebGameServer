@@ -33,7 +33,7 @@ public:
 	virtual void on_req_test_response_time(iod::protobuf::common::base_msg* msg);
 
 	//--------------------------------------------------
-	//timer handle function
+	//timer handle functions
 	//--------------------------------------------------
 
 	virtual void on_timer_close_session(void*) { close(); }

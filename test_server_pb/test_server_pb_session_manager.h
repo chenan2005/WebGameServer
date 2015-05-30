@@ -24,7 +24,7 @@ public:
 	virtual iod_session* on_req_login(struct connection_info* conn_info, iod::protobuf::common::base_msg* msg);
 
 	//--------------------------------------------------
-	//timer handle function
+	//timer handle functions
 	//--------------------------------------------------
 
 	//--------------------------------------------------
