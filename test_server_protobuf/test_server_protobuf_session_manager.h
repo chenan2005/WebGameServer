@@ -1,19 +1,18 @@
 #pragma once
 
-#include "iod_session_creator.h"
+#include "iod_session_creator_with_proto_base_msg.h"
 
 class test_server_protobuf_session;
 
 class test_server_protobuf_session_manager :
-	public iod_session_creator
+	public iod_session_creator_with_proto_base_msg
 {
+	DEC_REG_PROTO_MSG_HANDLE(test_server_protobuf_session_manager)
+
 public:
+
 	test_server_protobuf_session_manager(void);
 	virtual ~test_server_protobuf_session_manager(void);
-
-	virtual iod_session* on_none_session_packet(connection_info* conn_info, iod_packet* packet);
-
-	virtual iod_packet* preproc_session_packet(iod_session* session, iod_packet* packet);
 
 	void check_sessions();
 
@@ -24,6 +23,8 @@ public:
 	unsigned int destroy_session_count;
 
 	listener_info* l_info;
+
+	virtual iod_session* on_req_login(struct connection_info* conn_info, iod::protobuf::common::base_msg* msg);
 
 protected:
 

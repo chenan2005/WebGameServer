@@ -1,0 +1,125 @@
+package iod.protobuf.test;
+
+import "common/iod_common.proto";
+
+message req_authentication {
+	optional string userid = 1;
+	optional string authentication = 2;
+}
+
+message res_authentication {
+	optional sint32 result = 1;	
+	optional string authorization = 2;
+}
+
+message req_login {
+  optional string userid = 1;
+  optional string authorization = 2;
+}
+
+message res_login {
+  optional string userid = 1;
+  optional sint32 result = 2;	
+}
+
+message req_test_info {
+  optional string info = 1;
+}
+
+message res_test_info {
+  optional string info = 1;
+}
+
+message req_logout {
+}
+
+message test_msg_1 {
+	optional bytes test_data = 1;
+}
+message test_msg_2 {
+	optional bytes test_data = 1;
+}
+message test_msg_3 {
+	optional bytes test_data = 1;
+}
+message test_msg_4 {
+	optional bytes test_data = 1;
+}
+message test_msg_5 {
+	optional bytes test_data = 1;
+}
+message test_msg_6 {
+	optional bytes test_data = 1;
+}
+message test_msg_7 {
+	optional bytes test_data = 1;
+}
+message test_msg_8 {
+	optional bytes test_data = 1;
+}
+message test_msg_9 {
+	optional bytes test_data = 1;
+}
+message test_msg_10 {
+	optional bytes test_data = 1;
+}
+message test_msg_11 {
+	optional bytes test_data = 1;
+}
+message test_msg_12 {
+	optional bytes test_data = 1;
+}
+message test_msg_13 {
+	optional bytes test_data = 1;
+}
+message test_msg_14 {
+	optional bytes test_data = 1;
+}
+message test_msg_15 {
+	optional bytes test_data = 1;
+}
+message test_msg_16 {
+	optional bytes test_data = 1;
+}
+message test_msg_17 {
+	optional bytes test_data = 1;
+}
+message test_msg_18 {
+	optional bytes test_data = 1;
+}
+message test_msg_19 {
+	optional bytes test_data = 1;
+}
+message test_msg_20 {
+	optional bytes test_data = 1;
+}
+
+extend iod.protobuf.common.base_msg {
+	optional req_authentication _req_authentication = 1000;
+	optional res_authentication _res_authentication = 1001;
+	optional req_login _req_login = 1002;
+	optional res_login _res_login = 1003;
+	optional req_test_info _req_test_info = 1004;
+	optional res_test_info _res_test_info = 1005;
+	optional req_logout _req_logout = 1006;	
+	optional test_msg_1 _test_msg_1 =5001;
+	optional test_msg_2 _test_msg_2 =5002;
+	optional test_msg_3 _test_msg_3 =5003;
+	optional test_msg_4 _test_msg_4 =5004;
+	optional test_msg_5 _test_msg_5 =5005;
+	optional test_msg_6 _test_msg_6 =5006;
+	optional test_msg_7 _test_msg_7 =5007;
+	optional test_msg_8 _test_msg_8 =5008;
+	optional test_msg_9 _test_msg_9 =5009;
+	optional test_msg_10 _test_msg_10 =5010;
+	optional test_msg_11 _test_msg_11 =5011;
+	optional test_msg_12 _test_msg_12 =5012;
+	optional test_msg_13 _test_msg_13 =5013;
+	optional test_msg_14 _test_msg_14 =5014;
+	optional test_msg_15 _test_msg_15 =5015;
+	optional test_msg_16 _test_msg_16 =5016;
+	optional test_msg_17 _test_msg_17 =5017;
+	optional test_msg_18 _test_msg_18 =5018;
+	optional test_msg_19 _test_msg_19 =5019;
+	optional test_msg_20 _test_msg_20 =5020;
+}

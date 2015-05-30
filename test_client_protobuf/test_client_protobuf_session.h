@@ -1,8 +1,9 @@
 #pragma once
-#include "iod_session.h"
+#include "iod_session_with_proto_base_msg.h"
+#include "common/iod_common.pb.h"
 
 class test_client_protobuf_session :
-	public iod_session
+	public iod_session_with_proto_base_msg
 {
 public:
 
@@ -15,13 +16,13 @@ public:
 	test_client_protobuf_session(void);
 	virtual ~test_client_protobuf_session(void);
 
-	virtual void on_packet(iod_packet* packet);
+	virtual void on_message(iod::protobuf::common::base_msg* msg);
 
 	virtual void on_closed(int reason);
 
 	void set_username(const char* username, int length = 0);
 
-	void send_command(const char* cmd, const char* data, int data_length = 0);
+	void start_login(const char* authentication, int length);
 
 	inline const char* get_username() const {
 		return username;

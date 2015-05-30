@@ -1,11 +1,10 @@
 #include "test_client_protobuf.h"
 #include "iod_common.h"
-#include "test_helper.h"
 #include "test_client_protobuf_session.h"
 
 implement_server_instance(test_client_protobuf);
 
-const int TEST_SESSION_COUNT = 2000;
+const int TEST_SESSION_COUNT = 1;
 
 test_client_protobuf::test_client_protobuf(void)
 {
@@ -41,17 +40,17 @@ int test_client_protobuf::update_server()
 		else if (session->get_net_stat() == iod_session::SNS_CONNECTED && iod_utility::get_time_msec() > session->get_last_send_command_time() + 5) {
 			
 			if (session->get_login_state() == test_client_protobuf_session::LOGIN_STATE_NONE) {
-				session->send_command(SESSION_CMD_LOGIN, session->get_username());
+				session->start_login("abcdefg", 10);
 			}
 			else if (session->get_login_state() == test_client_protobuf_session::LOGIN_STATE_LOGINED) {
-				int r = rand() % 100;
-				if (r == 1) {
-					session->send_command(SESSION_CMD_LOGOUT, 0);
-				}
-				else {
-					session->send_command(SESSION_CMD_INFO, "test info");
-					session->send_command(SESSION_CMD_INFO, "test info 1");	
-				}
+				//int r = rand() % 100;
+				//if (r == 1) {
+				//	session->send_command(SESSION_CMD_LOGOUT, 0);
+				//}
+				//else {
+				//	session->send_command(SESSION_CMD_INFO, "test info");
+				//	session->send_command(SESSION_CMD_INFO, "test info 1");	
+				//}
 				//session->send_command(SESSION_CMD_INFO, "test info");
 			}
 		}

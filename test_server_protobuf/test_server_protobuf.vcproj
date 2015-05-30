@@ -40,7 +40,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="../common;&quot;../3rdparty/libevent-2.0.22-stable&quot;;../protocol"
+				AdditionalIncludeDirectories="../common;../protocol;&quot;../3rdparty/libevent-2.0.22-stable&quot;;&quot;../3rdparty/protobuf-2.5.0/&quot;"
 				PreprocessorDefinitions="WIN32;_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -61,7 +61,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="Ws2_32.lib ../3rdparty/libevent-2.0.22-stable/libevent_d.lib"
+				AdditionalDependencies="Ws2_32.lib ../3rdparty/libevent-2.0.22-stable/libevent_d.lib ../3rdparty/protobuf-2.5.0/libprotobuf_d.lib"
 				LinkIncremental="2"
 				IgnoreDefaultLibraryNames="libcmt"
 				GenerateDebugInformation="true"
@@ -262,14 +262,42 @@
 					RelativePath="..\common\iod_session_creator.h"
 					>
 				</File>
+				<Filter
+					Name="protobuf"
+					>
+					<File
+						RelativePath="..\protocol\common\iod_common.pb.cc"
+						>
+					</File>
+					<File
+						RelativePath="..\protocol\common\iod_common.pb.h"
+						>
+					</File>
+					<File
+						RelativePath="..\common\iod_session_creator_with_proto_base_msg.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\common\iod_session_creator_with_proto_base_msg.h"
+						>
+					</File>
+					<File
+						RelativePath="..\common\iod_session_with_proto_base_msg.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\common\iod_session_with_proto_base_msg.h"
+						>
+					</File>
+				</Filter>
 			</Filter>
 		</Filter>
 		<File
-			RelativePath="..\protocol\test_helper.cpp"
+			RelativePath="..\protocol\iod_test.pb.cc"
 			>
 		</File>
 		<File
-			RelativePath="..\protocol\test_helper.h"
+			RelativePath="..\protocol\iod_test.pb.h"
 			>
 		</File>
 		<File

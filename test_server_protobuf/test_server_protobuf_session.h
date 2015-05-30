@@ -1,8 +1,8 @@
 #pragma once
-#include "iod_session.h"
+#include "iod_session_with_proto_base_msg.h"
 
 class test_server_protobuf_session :
-	public iod_session
+	public iod_session_with_proto_base_msg
 {
 public:
 
@@ -15,13 +15,11 @@ public:
 	test_server_protobuf_session(void);
 	virtual ~test_server_protobuf_session(void);
 
-	virtual void on_packet(iod_packet* packet);
+	virtual void on_message(iod::protobuf::common::base_msg* msg);
 
 	virtual void on_closed(int reason);
 
 	void set_username(const char* username, int length = 0);
-
-	void send_command(const char* cmd, const char* data, int data_length = 0);
 
 	inline const char* get_username() const {
 		return username;
@@ -34,6 +32,8 @@ public:
 	inline unsigned int get_last_send_command_time() const {
 		return last_send_command_time;
 	}
+
+	virtual void on_req_login(iod::protobuf::common::base_msg* msg);
 
 protected:
 

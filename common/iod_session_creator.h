@@ -1,4 +1,5 @@
-#pragma once
+#ifndef __IOD_SESSION_CREATOR_H__
+#define __IOD_SESSION_CREATOR_H__
 
 #include "iod_session.h"
 
@@ -39,3 +40,5 @@ public:
 
 private:
 };
+
+#endif
