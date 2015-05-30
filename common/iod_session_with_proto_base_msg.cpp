@@ -12,6 +12,14 @@ iod_session_with_proto_base_msg::~iod_session_with_proto_base_msg( void )
 
 }
 
+void iod_session_with_proto_base_msg::on_message( iod::protobuf::common::base_msg* msg )
+{
+	if (msg_handler_map.find(msg->messge_id()) == msg_handler_map.end())
+		return;
+
+	(this->*(msg_handler_map[msg->messge_id()]))(msg);
+}
+
 bool iod_session_with_proto_base_msg::send_message( iod::protobuf::common::base_msg* msg )
 {
 	static char msg_serialize_buff[_MAX_PACKET_LENGTH];

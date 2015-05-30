@@ -6,7 +6,9 @@
 
 REG_PROTO_MSG_HANDLE_BEGIN(test_server_protobuf_session_manager, iod_session_creator_with_proto_base_msg)
 
-ADD_PROTO_MSG_HANDLE(iod::protobuf::test::kReqAuthenticationFieldNumber, test_server_protobuf_session_manager::on_req_login)
+ADD_PROTO_MSG_HANDLE(iod::protobuf::test::kReqAuthenticationFieldNumber, test_server_protobuf_session_manager::on_req_authentication)
+
+ADD_PROTO_MSG_HANDLE(iod::protobuf::test::kReqLoginFieldNumber, test_server_protobuf_session_manager::on_req_login)
 
 REG_PROTO_MSG_HANDLE_END(test_server_protobuf_session_manager)
 
@@ -24,6 +26,16 @@ test_server_protobuf_session_manager::~test_server_protobuf_session_manager(void
 	}
 }
 
+iod_session* test_server_protobuf_session_manager::on_req_authentication( struct connection_info* conn_info, iod::protobuf::common::base_msg* msg )
+{
+	return 0;
+}
+
+iod_session* test_server_protobuf_session_manager::on_req_login( struct connection_info* conn_info, iod::protobuf::common::base_msg* msg )
+{
+	return 0;
+}
+
 void test_server_protobuf_session_manager::check_sessions()
 {
 	std::map< std::string, test_server_protobuf_session* >::iterator it = sessions.begin();
@@ -37,10 +49,4 @@ void test_server_protobuf_session_manager::check_sessions()
 		}
 		it++;
 	}
-}
-
-iod_session* test_server_protobuf_session_manager::on_req_login( struct connection_info* conn_info, iod::protobuf::common::base_msg* msg )
-{
-	iod_log_info("on_req_login");
-	return 0;
 }

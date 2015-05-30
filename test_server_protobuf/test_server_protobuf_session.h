@@ -4,6 +4,8 @@
 class test_server_protobuf_session :
 	public iod_session_with_proto_base_msg
 {
+	DEC_REG_PROTO_MSG_HANDLE(test_server_protobuf_session)
+
 public:
 
 	enum {
@@ -15,7 +17,9 @@ public:
 	test_server_protobuf_session(void);
 	virtual ~test_server_protobuf_session(void);
 
-	virtual void on_message(iod::protobuf::common::base_msg* msg);
+	virtual void on_req_test_info(iod::protobuf::common::base_msg* msg);
+
+	virtual void on_req_logout(iod::protobuf::common::base_msg* msg);
 
 	virtual void on_closed(int reason);
 
@@ -32,8 +36,6 @@ public:
 	inline unsigned int get_last_send_command_time() const {
 		return last_send_command_time;
 	}
-
-	virtual void on_req_login(iod::protobuf::common::base_msg* msg);
 
 protected:
 

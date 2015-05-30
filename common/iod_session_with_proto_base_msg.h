@@ -50,7 +50,7 @@ public:
 	iod_session_with_proto_base_msg(void);
 	virtual ~iod_session_with_proto_base_msg(void);
 
-	virtual void on_message(iod::protobuf::common::base_msg* msg) = 0;
+	void on_message(iod::protobuf::common::base_msg* msg);
 
 	bool send_message(iod::protobuf::common::base_msg* msg);
 
