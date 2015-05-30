@@ -16,7 +16,7 @@ namespace iod_utility {
 		}
 		evutil_gettimeofday(&_current_timeval, 0);
 		evutil_timersub(&_current_timeval, &_start_timeval, &_timeinterval);
-		return _timeinterval.tv_sec * 1000000 + _timeinterval.tv_usec;
+		return (ev_uint64_t)_timeinterval.tv_sec * 1000000 + _timeinterval.tv_usec;
 	}
 
 }

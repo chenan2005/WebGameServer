@@ -14,17 +14,41 @@ public:
 		LOGIN_STATE_LOGINED,
 	};
 
-	test_server_pb_session(void);
-	virtual ~test_server_pb_session(void);
+	//--------------------------------------------------
+	//override functions
+	//--------------------------------------------------
+
+	virtual void on_closed(int reason);
+
+	//--------------------------------------------------
+	//message handle functions
+	//--------------------------------------------------
 
 	virtual void on_req_login(iod::protobuf::common::base_msg* msg);
+
 	virtual void on_req_test_info(iod::protobuf::common::base_msg* msg);
+
 	virtual void on_req_logout(iod::protobuf::common::base_msg* msg);
+
 	virtual void on_req_test_response_time(iod::protobuf::common::base_msg* msg);
+
+	//--------------------------------------------------
+	//timer handle function
+	//--------------------------------------------------
 
 	virtual void on_timer_close_session(void*) { close(); }
 
-	virtual void on_closed(int reason);
+	//--------------------------------------------------
+	//send message interfaces
+	//--------------------------------------------------
+
+	//--------------------------------------------------
+	//other new add interfaces
+	//--------------------------------------------------
+
+	//--------------------------------------------------
+	//attributes get/set
+	//--------------------------------------------------
 
 	void set_username(const char* username, int length = 0);
 
@@ -39,6 +63,18 @@ public:
 	inline unsigned int get_last_send_command_time() const {
 		return last_send_command_time;
 	}
+
+	//--------------------------------------------------
+	//constructor/destructor
+	//--------------------------------------------------
+
+	test_server_pb_session(void);
+
+	virtual ~test_server_pb_session(void);
+
+	//--------------------------------------------------
+	//others
+	//--------------------------------------------------
 
 protected:
 

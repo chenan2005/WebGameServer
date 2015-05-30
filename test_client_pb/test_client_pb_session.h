@@ -21,11 +21,12 @@ public:
 	test_client_protobuf_session(void);
 	virtual ~test_client_protobuf_session(void);
 
+	//重载
+
 	virtual void on_closed(int reason);
 
-	void set_username(const char* username, int length = 0);
-
 	//发消息
+
 	void send_req_authentication(const char* authentication, int length = 0);
 	void send_req_login(const char* authorization, int length = 0);
 	void send_req_test_info(const char* info, int length = 0);
@@ -33,11 +34,16 @@ public:
 	void send_req_test_response_time(ev_uint64_t t);
 
 	//处理消息
+
 	virtual void on_res_authentication(iod::protobuf::common::base_msg* msg);
 	virtual void on_res_login(iod::protobuf::common::base_msg* msg);
 	virtual void on_res_test_info(iod::protobuf::common::base_msg* msg);
 	virtual void on_res_test_response_time(iod::protobuf::common::base_msg* msg);
 	virtual void on_notify_kickout(iod::protobuf::common::base_msg* msg);
+
+	//属性访问
+
+	void set_username(const char* username, int length = 0);
 
 	inline const char* get_username() const {
 		return username;
