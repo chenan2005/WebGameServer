@@ -4,7 +4,7 @@
 #include "iod_utility.h"
 #include "iod_logsystem.h"
 
-REG_PROTO_MSG_HANDLE_BEGIN(test_server_protobuf_session_manager)
+REG_PROTO_MSG_HANDLE_BEGIN(test_server_protobuf_session_manager, iod_session_creator_with_proto_base_msg)
 
 ADD_PROTO_MSG_HANDLE(iod::protobuf::test::kReqAuthenticationFieldNumber, test_server_protobuf_session_manager::on_req_login)
 
