@@ -37,8 +37,8 @@ int test_server::update_server()
 
 void test_server::shutdown_server()
 {
-	//if (session_manager->l_info)
-	//	iod_network::shutdown_listener(session_manager->l_info);
+	if (session_manager->l_info)
+		iod_network::shutdown_listener(session_manager->l_info);
 
 	delete session_manager;
 
