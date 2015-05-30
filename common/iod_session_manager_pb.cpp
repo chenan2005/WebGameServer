@@ -1,6 +1,9 @@
 #include "iod_session_manager_pb.h"
 
-IMP_PROTO_MSG_HANDLE_MAP(iod_session_manager_pb)
+std::map< int, iod_session_manager_pb::FNC_PB_MSG_HANDLER >* iod_session_manager_pb::msg_handler_map;
+
+REG_PROTO_MSG_HANDLE_BEGIN(iod_session_manager_pb, iod_session_manager_pb)
+REG_PROTO_MSG_HANDLE_END(iod_session_manager_pb)
 
 iod_session_manager_pb::iod_session_manager_pb(void)
 {
@@ -13,10 +16,13 @@ iod_session_manager_pb::~iod_session_manager_pb(void)
 
 iod_session* iod_session_manager_pb::on_none_session_message( struct connection_info* conn_info, iod::protobuf::common::base_msg* msg )
 {
-	if (msg_handler_map.find(msg->messge_id()) == msg_handler_map.end())
+	check_register_msg_handle();
+
+	std::map< int, FNC_PB_MSG_HANDLER >::iterator it = msg_handler_map->find(msg->messge_id());
+	if (it == msg_handler_map->end())
 		return 0;
 
-	return (this->*(msg_handler_map[msg->messge_id()]))(conn_info, msg);
+	return (this->*(it->second))(conn_info, msg);
 }
 
 iod_session* iod_session_manager_pb::on_none_session_packet( struct connection_info* conn_info, iod_packet* packet )

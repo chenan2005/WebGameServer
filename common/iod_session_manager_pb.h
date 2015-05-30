@@ -4,12 +4,6 @@
 #include "iod_session_manager.h"
 #include "iod_session_pb.h"
 
-//声明消息处理函数映射表
-#define DEC_NON_SESSION_PROTO_MSG_HANDLE_MAP(classname) \
-protected: \
-	typedef iod_session* (classname::*GProtoHandlerFunc)(struct connection_info*, iod::protobuf::common::base_msg*); \
-	static std::map< int, GProtoHandlerFunc > msg_handler_map;
-
 //-------------------------------------------------------------------------------
 
 #define SAFE_GET_NONE_SESSION_EXTENSION(msg, extname, varname) \
@@ -21,7 +15,7 @@ protected: \
 
 class iod_session_manager_pb : public iod_session_manager
 {
-	DEC_NON_SESSION_PROTO_MSG_HANDLE_MAP(iod_session_manager_pb)
+	DEC_REG_PROTO_MSG_HANDLE(iod_session_manager_pb)
 
 public:
 	iod_session_manager_pb(void);
@@ -45,7 +39,11 @@ public:
 
 protected:
 
+	typedef iod_session* (iod_session_manager_pb::*FNC_PB_MSG_HANDLER)(struct connection_info*, iod::protobuf::common::base_msg*);
+
 	bool send_base_msg_to(struct connection_info* conn_info, iod::protobuf::common::base_msg* msg);
+
+	static std::map< int, FNC_PB_MSG_HANDLER > *msg_handler_map;
 };
 
 #endif

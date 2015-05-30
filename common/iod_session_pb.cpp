@@ -1,6 +1,9 @@
 #include "iod_session_pb.h"
 
-IMP_PROTO_MSG_HANDLE_MAP(iod_session_pb)
+std::map< int, iod_session_pb::FNC_PB_MSG_HANDLER >* iod_session_pb::msg_handler_map;
+
+REG_PROTO_MSG_HANDLE_BEGIN(iod_session_pb, iod_session_pb)
+REG_PROTO_MSG_HANDLE_END(iod_session_pb)
 
 iod_session_pb::iod_session_pb( void )
 {
@@ -14,10 +17,13 @@ iod_session_pb::~iod_session_pb( void )
 
 void iod_session_pb::on_message( iod::protobuf::common::base_msg* msg )
 {
-	if (msg_handler_map.find(msg->messge_id()) == msg_handler_map.end())
+	check_register_msg_handle();
+
+	std::map< int, FNC_PB_MSG_HANDLER >::iterator it = msg_handler_map->find(msg->messge_id());
+	if (it == msg_handler_map->end())
 		return;
 
-	(this->*(msg_handler_map[msg->messge_id()]))(msg);
+	(this->*(it->second))(msg);
 }
 
 void iod_session_pb::on_packet( iod_packet* packet )
