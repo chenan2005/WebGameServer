@@ -1,10 +1,10 @@
-#include "test_client_protobuf_session.h"
+#include "test_client_pb_session.h"
 #include "iod_test.pb.h"
 #include "iod_logsystem.h"
 
 using namespace iod::protobuf::test;
 
-REG_PROTO_MSG_HANDLE_BEGIN(test_client_protobuf_session, iod_session_with_proto_base_msg)
+REG_PROTO_MSG_HANDLE_BEGIN(test_client_protobuf_session, iod_session_pb)
 
 ADD_PROTO_MSG_HANDLE(_res_authentication, test_client_protobuf_session::on_res_authentication)
 ADD_PROTO_MSG_HANDLE(_res_login, test_client_protobuf_session::on_res_login)

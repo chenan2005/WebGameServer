@@ -1,21 +1,21 @@
-#include "test_client_protobuf.h"
+#include "test_client_pb.h"
 #include "iod_common.h"
-#include "test_client_protobuf_session.h"
+#include "test_client_pb_session.h"
 #include "iod_logsystem.h"
 
-implement_server_instance(test_client_protobuf);
+implement_server_instance(test_client_pb);
 
-const int TEST_SESSION_COUNT = 1;
+const int TEST_SESSION_COUNT = 500;
 
-test_client_protobuf::test_client_protobuf(void)
+test_client_pb::test_client_pb(void)
 {
 }
 
-test_client_protobuf::~test_client_protobuf(void)
+test_client_pb::~test_client_pb(void)
 {
 }
 
-bool test_client_protobuf::initialize_server()
+bool test_client_pb::initialize_server()
 {
 	for (int i = 0; i < TEST_SESSION_COUNT; i++) {
 		test_client_protobuf_session* session = new test_client_protobuf_session();
@@ -30,7 +30,7 @@ bool test_client_protobuf::initialize_server()
 	return true;
 }
 
-int test_client_protobuf::update_server()
+int test_client_pb::update_server()
 {
 	std::set< test_client_protobuf_session* >::iterator it = sessions.begin();
 	while (it != sessions.end()) {
@@ -47,12 +47,12 @@ int test_client_protobuf::update_server()
 				session->send_req_login(session->get_authorization().c_str());
 			}
 			else if (session->get_login_state() == test_client_protobuf_session::LOGIN_STATE_LOGINED) {
-				//int randvalue = rand() % 500;
-				//if (randvalue == 1)
-				//	session->send_req_logout();
-				//else
-				//	session->send_req_test_info("test info");
-				session->send_req_test_info("test info");
+				int randvalue = rand() % 500;
+				if (randvalue == 1)
+					session->send_req_logout();
+				else
+					session->send_req_test_info("test info");
+				//session->send_req_test_info("test info");
 			}
 		}
 		it++;
@@ -61,7 +61,7 @@ int test_client_protobuf::update_server()
 	return 0;
 }
 
-void test_client_protobuf::shutdown_server()
+void test_client_pb::shutdown_server()
 {
 	std::set< test_client_protobuf_session* >::iterator it = sessions.begin();
 	while (it != sessions.end()) {
@@ -70,7 +70,7 @@ void test_client_protobuf::shutdown_server()
 	}
 }
 
-void test_client_protobuf::on_winsys_kbhit(int c)
+void test_client_pb::on_winsys_kbhit(int c)
 {
 	if (c == 'p') {
 		std::set< test_client_protobuf_session* >::iterator it = sessions.begin();

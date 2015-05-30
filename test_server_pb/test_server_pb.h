@@ -3,15 +3,15 @@
 
 #include "iod_server.h"
 
-class test_server_protobuf_session_manager;
+class test_server_pb_session_manager;
 
-class test_server_protobuf	: public iod_server
+class test_server_pb	: public iod_server
 {
 public:
 
-	test_server_protobuf(void);
+	test_server_pb(void);
 
-	virtual ~test_server_protobuf(void);
+	virtual ~test_server_pb(void);
 
 protected:
 
@@ -25,7 +25,7 @@ protected:
 
 private:
 
-	test_server_protobuf_session_manager* session_manager;
+	test_server_pb_session_manager* session_manager;
 };
 
 #endif

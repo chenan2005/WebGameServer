@@ -1,11 +1,11 @@
 #pragma once
 
-#include "iod_session_creator.h"
+#include "iod_session_manager.h"
 
 class test_server_session;
 
 class test_server_session_manager :
-	public iod_session_creator
+	public iod_session_manager
 {
 public:
 	test_server_session_manager(void);

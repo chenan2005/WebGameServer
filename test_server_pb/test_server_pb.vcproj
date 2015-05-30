@@ -2,7 +2,7 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="8.00"
-	Name="test_server_protobuf"
+	Name="test_server_pb"
 	ProjectGUID="{825FDE88-8431-476B-B055-CB4102920501}"
 	RootNamespace="IODWeb_Gs"
 	Keyword="Win32Proj"
@@ -255,11 +255,11 @@
 					>
 				</File>
 				<File
-					RelativePath="..\common\iod_session_creator.cpp"
+					RelativePath="..\common\iod_session_manager.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\common\iod_session_creator.h"
+					RelativePath="..\common\iod_session_manager.h"
 					>
 				</File>
 				<File
@@ -282,19 +282,19 @@
 						>
 					</File>
 					<File
-						RelativePath="..\common\iod_session_creator_with_proto_base_msg.cpp"
+						RelativePath="..\common\iod_session_manager_pb.cpp"
 						>
 					</File>
 					<File
-						RelativePath="..\common\iod_session_creator_with_proto_base_msg.h"
+						RelativePath="..\common\iod_session_manager_pb.h"
 						>
 					</File>
 					<File
-						RelativePath="..\common\iod_session_with_proto_base_msg.cpp"
+						RelativePath="..\common\iod_session_pb.cpp"
 						>
 					</File>
 					<File
-						RelativePath="..\common\iod_session_with_proto_base_msg.h"
+						RelativePath="..\common\iod_session_pb.h"
 						>
 					</File>
 				</Filter>
@@ -309,27 +309,27 @@
 			>
 		</File>
 		<File
-			RelativePath=".\test_server_protobuf.cpp"
+			RelativePath=".\test_server_pb.cpp"
 			>
 		</File>
 		<File
-			RelativePath=".\test_server_protobuf.h"
+			RelativePath=".\test_server_pb.h"
 			>
 		</File>
 		<File
-			RelativePath=".\test_server_protobuf_session.cpp"
+			RelativePath=".\test_server_pb_session.cpp"
 			>
 		</File>
 		<File
-			RelativePath=".\test_server_protobuf_session.h"
+			RelativePath=".\test_server_pb_session.h"
 			>
 		</File>
 		<File
-			RelativePath=".\test_server_protobuf_session_manager.cpp"
+			RelativePath=".\test_server_pb_session_manager.cpp"
 			>
 		</File>
 		<File
-			RelativePath=".\test_server_protobuf_session_manager.h"
+			RelativePath=".\test_server_pb_session_manager.h"
 			>
 		</File>
 	</Files>

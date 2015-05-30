@@ -2,7 +2,7 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="8.00"
-	Name="test_client_protobuf"
+	Name="test_client_pb"
 	ProjectGUID="{10C8D923-9604-4E0C-B235-900A5D8325F3}"
 	RootNamespace="test_client_protobuf"
 	Keyword="Win32Proj"
@@ -263,11 +263,11 @@
 					>
 				</File>
 				<File
-					RelativePath="..\common\iod_session_creator.cpp"
+					RelativePath="..\common\iod_session_manager.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\common\iod_session_creator.h"
+					RelativePath="..\common\iod_session_manager.h"
 					>
 				</File>
 				<Filter
@@ -282,19 +282,19 @@
 						>
 					</File>
 					<File
-						RelativePath="..\common\iod_session_creator_with_proto_base_msg.cpp"
+						RelativePath="..\common\iod_session_manager_pb.cpp"
 						>
 					</File>
 					<File
-						RelativePath="..\common\iod_session_creator_with_proto_base_msg.h"
+						RelativePath="..\common\iod_session_manager_pb.h"
 						>
 					</File>
 					<File
-						RelativePath="..\common\iod_session_with_proto_base_msg.cpp"
+						RelativePath="..\common\iod_session_pb.cpp"
 						>
 					</File>
 					<File
-						RelativePath="..\common\iod_session_with_proto_base_msg.h"
+						RelativePath="..\common\iod_session_pb.h"
 						>
 					</File>
 				</Filter>
@@ -309,19 +309,19 @@
 			>
 		</File>
 		<File
-			RelativePath=".\test_client_protobuf.cpp"
+			RelativePath=".\test_client_pb.cpp"
 			>
 		</File>
 		<File
-			RelativePath=".\test_client_protobuf.h"
+			RelativePath=".\test_client_pb.h"
 			>
 		</File>
 		<File
-			RelativePath=".\test_client_protobuf_session.cpp"
+			RelativePath=".\test_client_pb_session.cpp"
 			>
 		</File>
 		<File
-			RelativePath=".\test_client_protobuf_session.h"
+			RelativePath=".\test_client_pb_session.h"
 			>
 		</File>
 	</Files>

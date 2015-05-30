@@ -5,9 +5,9 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test_client", "test_client\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test_server", "test_server\test_server.vcproj", "{FEC9F0FA-F8DD-4729-AA3D-F18DF14A2A8C}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test_client_protobuf", "test_client_protobuf\test_client_protobuf.vcproj", "{10C8D923-9604-4E0C-B235-900A5D8325F3}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test_client_pb", "test_client_pb\test_client_pb.vcproj", "{10C8D923-9604-4E0C-B235-900A5D8325F3}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test_server_protobuf", "test_server_protobuf\test_server_protobuf.vcproj", "{825FDE88-8431-476B-B055-CB4102920501}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test_server_pb", "test_server_pb\test_server_pb.vcproj", "{825FDE88-8431-476B-B055-CB4102920501}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

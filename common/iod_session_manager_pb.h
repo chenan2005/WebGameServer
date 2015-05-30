@@ -1,8 +1,8 @@
 #ifndef __IOD_SESSION_CREATOR_WITH_PROTO_BASE_MSG_H__
 #define __IOD_SESSION_CREATOR_WITH_PROTO_BASE_MSG_H__
 
-#include "iod_session_creator.h"
-#include "iod_session_with_proto_base_msg.h"
+#include "iod_session_manager.h"
+#include "iod_session_pb.h"
 
 //声明消息处理函数映射表
 #define DEC_NON_SESSION_PROTO_MSG_HANDLE_MAP(classname) \
@@ -19,13 +19,13 @@ protected: \
 
 //-------------------------------------------------------------------------------
 
-class iod_session_creator_with_proto_base_msg : public iod_session_creator
+class iod_session_manager_pb : public iod_session_manager
 {
-	DEC_NON_SESSION_PROTO_MSG_HANDLE_MAP(iod_session_creator_with_proto_base_msg)
+	DEC_NON_SESSION_PROTO_MSG_HANDLE_MAP(iod_session_manager_pb)
 
 public:
-	iod_session_creator_with_proto_base_msg(void);
-	virtual ~iod_session_creator_with_proto_base_msg(void);
+	iod_session_manager_pb(void);
+	virtual ~iod_session_manager_pb(void);
 
 	iod_session* on_none_session_message(struct connection_info* conn_info, iod::protobuf::common::base_msg* msg);
 

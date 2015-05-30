@@ -1,10 +1,10 @@
 #pragma once
-#include "iod_session_with_proto_base_msg.h"
+#include "iod_session_pb.h"
 
-class test_server_protobuf_session :
-	public iod_session_with_proto_base_msg
+class test_server_pb_session :
+	public iod_session_pb
 {
-	DEC_REG_PROTO_MSG_HANDLE(test_server_protobuf_session)
+	DEC_REG_PROTO_MSG_HANDLE(test_server_pb_session)
 
 public:
 
@@ -14,8 +14,8 @@ public:
 		LOGIN_STATE_LOGINED,
 	};
 
-	test_server_protobuf_session(void);
-	virtual ~test_server_protobuf_session(void);
+	test_server_pb_session(void);
+	virtual ~test_server_pb_session(void);
 
 	virtual void on_req_login(iod::protobuf::common::base_msg* msg);
 	virtual void on_req_test_info(iod::protobuf::common::base_msg* msg);

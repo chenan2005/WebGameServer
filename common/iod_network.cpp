@@ -28,7 +28,7 @@ bool initialize()
 	return true;
 }
 
-struct listener_info* start_listener(iod_session_creator* session_creator, /*对话创建器 */ const char* bind_addr, /*监听地址，格式为 hostname:port */ int conn_timeout_secs /*= 120*/, /*每个连接的超时时间：超过该时间没有收到数据则关闭连接 */ int conn_highmark /*= DEFAULT_CONNECTION_HIGHMARK /*缓冲区上限：如果缓冲区中超过highmark字节未处理，则不再接收数据。0为不限制 */)
+struct listener_info* start_listener(iod_session_manager* session_creator, /*对话创建器 */ const char* bind_addr, /*监听地址，格式为 hostname:port */ int conn_timeout_secs /*= 120*/, /*每个连接的超时时间：超过该时间没有收到数据则关闭连接 */ int conn_highmark /*= DEFAULT_CONNECTION_HIGHMARK /*缓冲区上限：如果缓冲区中超过highmark字节未处理，则不再接收数据。0为不限制 */)
 {
 	if (!is_initialized)
 		initialize();
@@ -220,7 +220,7 @@ int process_session_data(iod_session* session, struct bufferevent *bev)
 			const connection_info* conn_info = session->get_connection_info();
 			if (conn_info)
 			{
-				iod_session_creator* session_creator = conn_info->session_creator;
+				iod_session_manager* session_creator = conn_info->session_creator;
 				if (session_creator) {
 					session_creator->netstatistics.recv_byte_count += read_result;
 					session_creator->netstatistics.recv_packet_count++;
@@ -238,7 +238,7 @@ int process_session_data(iod_session* session, struct bufferevent *bev)
 	return read_result;
 }
 
-int process_none_session_data(iod_session_creator* session_creator, connection_info* conn_info)
+int process_none_session_data(iod_session_manager* session_creator, connection_info* conn_info)
 {
 	iod_packet* packet = 0;
 	int read_result = 0;

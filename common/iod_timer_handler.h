@@ -35,6 +35,8 @@ protected:
 
 private:
 
+	void destroy_timer_info(timer_info* t);
+
 	std::set< timer_info* > timer_set;
 };
 

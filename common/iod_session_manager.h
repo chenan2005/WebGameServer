@@ -4,7 +4,7 @@
 #include "iod_session.h"
 
 struct listener_info {
-	iod_session_creator* session_creator;
+	iod_session_manager* session_creator;
 	struct evconnlistener* listener;
 	int timeout_secs;
 	int highmark;
@@ -20,11 +20,11 @@ struct iod_netstatistics
 	ev_uint32_t incoming_conn_close_count;
 };
 
-class iod_session_creator : public iod_timer_handler
+class iod_session_manager : public iod_timer_handler
 {
 public:
-	iod_session_creator(void);
-	virtual ~iod_session_creator(void);
+	iod_session_manager(void);
+	virtual ~iod_session_manager(void);
 
 	inline virtual iod_packet* create_packet() { 
 		return iod_packet::create(); 

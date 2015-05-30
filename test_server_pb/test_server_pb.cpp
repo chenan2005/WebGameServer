@@ -1,21 +1,21 @@
-#include "test_server_protobuf.h"
-#include "test_server_protobuf_session_manager.h"
+#include "test_server_pb.h"
+#include "test_server_pb_session_manager.h"
 #include "iod_network.h"
 #include "iod_logsystem.h"
 
-implement_server_instance(test_server_protobuf);
+implement_server_instance(test_server_pb);
 
-test_server_protobuf::test_server_protobuf(void)
+test_server_pb::test_server_pb(void)
 {
 }
 
-test_server_protobuf::~test_server_protobuf(void)
+test_server_pb::~test_server_pb(void)
 {
 }
 
-bool test_server_protobuf::initialize_server()
+bool test_server_pb::initialize_server()
 {
-	session_manager = new test_server_protobuf_session_manager;
+	session_manager = new test_server_pb_session_manager;
 
 	session_manager->l_info = iod_network::start_listener(session_manager, "0.0.0.0:12345");
 
@@ -29,13 +29,13 @@ bool test_server_protobuf::initialize_server()
 	return true;
 }
 
-int test_server_protobuf::update_server()
+int test_server_pb::update_server()
 {
 	session_manager->check_sessions();
 	return 0;
 }
 
-void test_server_protobuf::shutdown_server()
+void test_server_pb::shutdown_server()
 {
 	if (session_manager->l_info)
 		iod_network::shutdown_listener(session_manager->l_info);
@@ -45,7 +45,7 @@ void test_server_protobuf::shutdown_server()
 	iod_log_info("server shutdown");
 }
 
-void test_server_protobuf::on_winsys_kbhit( int c )
+void test_server_pb::on_winsys_kbhit( int c )
 {
 	if (c == 'p') {
 		const iod_netstatistics& stat = session_manager->netstatistics;
@@ -71,6 +71,6 @@ void test_server_protobuf::on_winsys_kbhit( int c )
 			iod_utility::get_time_msec());
 	}
 	else if (c =='k') {
-		session_manager->random_kick(1);
+		session_manager->random_kick(rand() % 100);
 	}
 }

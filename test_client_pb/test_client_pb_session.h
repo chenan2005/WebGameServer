@@ -1,9 +1,9 @@
 #pragma once
-#include "iod_session_with_proto_base_msg.h"
+#include "iod_session_pb.h"
 #include "common/iod_common.pb.h"
 
 class test_client_protobuf_session :
-	public iod_session_with_proto_base_msg
+	public iod_session_pb
 {
 
 	DEC_REG_PROTO_MSG_HANDLE(test_client_protobuf_session)

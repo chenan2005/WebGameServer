@@ -195,6 +195,14 @@
 				RelativePath="..\common\iod_server.h"
 				>
 			</File>
+			<File
+				RelativePath="..\common\iod_timer_handler.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\common\iod_timer_handler.h"
+				>
+			</File>
 			<Filter
 				Name="utility"
 				>
@@ -255,11 +263,11 @@
 					>
 				</File>
 				<File
-					RelativePath="..\common\iod_session_creator.cpp"
+					RelativePath="..\common\iod_session_manager.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\common\iod_session_creator.h"
+					RelativePath="..\common\iod_session_manager.h"
 					>
 				</File>
 			</Filter>

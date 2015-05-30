@@ -46,16 +46,16 @@ public:\
 
 //-------------------------------------------------------------------------------
 
-class iod_session_with_proto_base_msg : public iod_session
+class iod_session_pb : public iod_session
 {
-	DEC_PROTO_MSG_HANDLE_MAP(iod_session_with_proto_base_msg)
+	DEC_PROTO_MSG_HANDLE_MAP(iod_session_pb)
 
 public:
 
-	typedef void (iod_session_with_proto_base_msg::*FNC_PROTO_MSG_HANDLER)(iod::protobuf::common::base_msg*);
+	typedef void (iod_session_pb::*FNC_PROTO_MSG_HANDLER)(iod::protobuf::common::base_msg*);
 
-	iod_session_with_proto_base_msg(void);
-	virtual ~iod_session_with_proto_base_msg(void);
+	iod_session_pb(void);
+	virtual ~iod_session_pb(void);
 
 	void on_message(iod::protobuf::common::base_msg* msg);
 

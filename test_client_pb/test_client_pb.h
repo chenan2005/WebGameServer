@@ -6,11 +6,11 @@
 
 class test_client_protobuf_session;
 
-class test_client_protobuf : public iod_server
+class test_client_pb : public iod_server
 {
 public:
-	test_client_protobuf(void);
-	~test_client_protobuf(void);
+	test_client_pb(void);
+	~test_client_pb(void);
 
 	virtual bool initialize_server();
 

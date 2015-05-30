@@ -36,7 +36,7 @@ bool iod_session::send( iod_packet* packet )
 	if (send_bytes <= 0)
 		return false;
 
-	iod_session_creator* session_creator = conn_info->session_creator;
+	iod_session_manager* session_creator = conn_info->session_creator;
 	if (session_creator) {
 		session_creator->netstatistics.send_byte_count += send_bytes;
 		session_creator->netstatistics.send_packet_count++;

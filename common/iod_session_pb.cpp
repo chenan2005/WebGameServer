@@ -1,18 +1,18 @@
-#include "iod_session_with_proto_base_msg.h"
+#include "iod_session_pb.h"
 
-IMP_PROTO_MSG_HANDLE_MAP(iod_session_with_proto_base_msg)
+IMP_PROTO_MSG_HANDLE_MAP(iod_session_pb)
 
-iod_session_with_proto_base_msg::iod_session_with_proto_base_msg( void )
+iod_session_pb::iod_session_pb( void )
 {
 
 }
 
-iod_session_with_proto_base_msg::~iod_session_with_proto_base_msg( void )
+iod_session_pb::~iod_session_pb( void )
 {
 
 }
 
-void iod_session_with_proto_base_msg::on_message( iod::protobuf::common::base_msg* msg )
+void iod_session_pb::on_message( iod::protobuf::common::base_msg* msg )
 {
 	if (msg_handler_map.find(msg->messge_id()) == msg_handler_map.end())
 		return;
@@ -20,7 +20,7 @@ void iod_session_with_proto_base_msg::on_message( iod::protobuf::common::base_ms
 	(this->*(msg_handler_map[msg->messge_id()]))(msg);
 }
 
-void iod_session_with_proto_base_msg::on_packet( iod_packet* packet )
+void iod_session_pb::on_packet( iod_packet* packet )
 {
 	iod::protobuf::common::base_msg* msg = new iod::protobuf::common::base_msg;
 	if (msg->ParseFromArray(packet->get_data(), packet->get_length()))
@@ -30,7 +30,7 @@ void iod_session_with_proto_base_msg::on_packet( iod_packet* packet )
 	delete msg;
 }
 
-bool iod_session_with_proto_base_msg::send_base_msg( iod::protobuf::common::base_msg* msg )
+bool iod_session_pb::send_base_msg( iod::protobuf::common::base_msg* msg )
 {
 	static char msg_serialize_buff[_MAX_PACKET_LENGTH];
 

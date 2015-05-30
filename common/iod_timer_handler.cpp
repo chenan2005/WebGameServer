@@ -32,12 +32,8 @@ iod_timer_handler::timer_info* iod_timer_handler::shedule_timer(int timeout_ms, 
 bool iod_timer_handler::remove_timer(timer_info* t)
 {
 	if (timer_set.find(t) != timer_set.end()) {
-		event_del(t->ev);
-		if (t->auto_release_arg && t->cb_fnc_arg)
-			delete t->cb_fnc_arg;
+		destroy_timer_info(t);
 		timer_set.erase(t);
-		event_free(t->ev);
-		delete t;
 
 		return true;
 	}
@@ -62,7 +58,6 @@ void iod_timer_handler::timeout_cb(evutil_socket_t fd, short event, void *args)
 	else {
 		if (cb_arg->auto_release_arg && cb_arg->cb_fnc_arg)
 			delete cb_arg->cb_fnc_arg;
-
 		cb_arg->handler->timer_set.erase(cb_arg);
 		event_free(cb_arg->ev);
 		delete cb_arg;
@@ -75,5 +70,19 @@ iod_timer_handler::iod_timer_handler(void)
 
 iod_timer_handler::~iod_timer_handler(void)
 {
+	std::set< timer_info* >::iterator it = timer_set.begin();
+	while (it != timer_set.end()) {
+		destroy_timer_info(*it);
+		it++;
+	}
+}
+
+void iod_timer_handler::destroy_timer_info(timer_info* t)
+{
+	event_del(t->ev);
+	if (t->auto_release_arg && t->cb_fnc_arg)
+		delete t->cb_fnc_arg;
+	event_free(t->ev);
+	delete t;
 }
 

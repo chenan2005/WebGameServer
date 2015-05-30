@@ -11,11 +11,11 @@
 #include "iod_timer_handler.h"
 
 class iod_session;
-class iod_session_creator;
+class iod_session_manager;
 
 struct connection_info
 {
-	iod_session_creator* session_creator;
+	iod_session_manager* session_creator;
 	iod_session* session;
 	struct bufferevent *conn_buffev;
 	int timeout_secs;
