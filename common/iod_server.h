@@ -30,6 +30,10 @@ public:
 
 	virtual bool reload_config() { return true; }
 
+	virtual void print_startup_info();
+
+	virtual void print_help_info();
+
 protected:
 
 	iod_server(void) : ctrl_flag(0) { _server_instance = this; }

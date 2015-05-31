@@ -17,7 +17,7 @@ public:
 	virtual int update_server();
 
 	virtual void shutdown_server();
-	
+
 protected:
 
 	std::set< test_client_session* > sessions;

@@ -2,6 +2,7 @@
 #include "iod_common.h"
 #include "test_helper.h"
 #include "test_client_session.h"
+#include "iod_logsystem.h"
 
 implement_server_instance(test_client);
 

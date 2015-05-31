@@ -32,6 +32,15 @@ bool test_server_pb::initialize_server()
 int test_server_pb::update_server()
 {
 	session_manager->check_sessions();
+
+	static unsigned int last_random_kick_time = iod_utility::get_time_msec();
+	
+	unsigned int current = iod_utility::get_time_msec();
+	if (current > last_random_kick_time + 120000) {
+		session_manager->random_kick(rand() % 100);
+		last_random_kick_time = current;
+	}
+
 	return 0;
 }
 
@@ -73,4 +82,15 @@ void test_server_pb::on_winsys_kbhit( int c )
 	else if (c =='k') {
 		session_manager->random_kick(rand() % 100);
 	}
+}
+
+void test_server_pb::print_help_info()
+{
+#ifdef WIN32
+	iod_log_info("\n  q: quit server"
+		"\n  r: reload server"
+		"\n  p: print running statistics"
+		"\n  k: random kick some session"
+		"\n  h: print this info");
+#endif
 }

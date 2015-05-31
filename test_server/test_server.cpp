@@ -24,7 +24,7 @@ bool test_server::initialize_server()
 		return false;
 	}
 
-	iod_log_info("server initialized");
+	//iod_log_info("server initialized");
 
 	return true;
 }
@@ -70,4 +70,14 @@ void test_server::on_winsys_kbhit( int c )
 			session_manager->get_session_count(),
 			iod_utility::get_time_msec());
 	}
+}
+
+void test_server::print_help_info()
+{
+#ifdef WIN32
+	iod_log_info("\n  q: quit server"
+		"\n  r: reload server"
+		"\n  p: print running statistics"
+		"\n  h: print this info");
+#endif
 }

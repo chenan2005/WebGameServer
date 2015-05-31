@@ -23,6 +23,8 @@ protected:
 
 	virtual void on_winsys_kbhit(int c);
 
+	virtual void print_help_info();
+
 private:
 
 	test_server_pb_session_manager* session_manager;

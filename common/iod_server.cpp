@@ -51,6 +51,21 @@ void iod_server::on_winsys_kbhit(int c)
 	return;
 }
 
+void iod_server::print_startup_info()
+{
+	iod_log_info("start server successfully");
+	print_help_info();
+}
+
+void iod_server::print_help_info()
+{
+#ifdef WIN32
+	iod_log_info("\n  q: quit server"
+		"\n  r: reload server"
+		"\n  h: print this info");
+#endif
+}
+
 bool iod_server::initialize_running_env()
 {
 	return true;
@@ -68,7 +83,6 @@ bool iod_server::load_config()
 
 void iod_server::shutdown_log_system()
 {
-
 }
 
 //------------------------------------------------------------
@@ -105,6 +119,8 @@ int main(int argc, char *argv[])
 	//初始化时间
 	iod_utility::get_time_msec();
 
+	server_instance->print_startup_info();
+
 	while (true)
 	{
 		server_instance->update();
@@ -117,6 +133,8 @@ int main(int argc, char *argv[])
 				server_instance->set_flag(iod_server::CTRL_FLAG_QUIT);
 			else if (c == 'r')
 				server_instance->set_flag(iod_server::CTRL_FLAG_RELOAD);
+			else if (c == 'h')
+				server_instance->print_help_info();
 			else
 				server_instance->on_winsys_kbhit(c);
 		}
