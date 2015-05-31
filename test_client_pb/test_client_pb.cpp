@@ -89,3 +89,12 @@ void test_client_pb::on_winsys_kbhit(int c)
 		}
 	}
 }
+
+void test_client_pb::print_help_info()
+{
+#ifdef WIN32
+	iod_log_info("\n  q: quit server"
+		"\n  r: reload server config"
+		"\n  p: test ping response time");
+#endif
+}

@@ -46,6 +46,11 @@ void iod_server::set_flag(unsigned int flag)
 	ctrl_flag |= flag;
 }
 
+void iod_server::clear_flag(unsigned int flag)
+{
+	ctrl_flag &= ~flag;
+}
+
 void iod_server::on_winsys_kbhit(int c)
 {
 	return;
@@ -61,7 +66,7 @@ void iod_server::print_help_info()
 {
 #ifdef WIN32
 	iod_log_info("\n  q: quit server"
-		"\n  r: reload server"
+		"\n  r: reload server config"
 		"\n  h: print this info");
 #endif
 }
@@ -140,10 +145,14 @@ int main(int argc, char *argv[])
 		}
 #endif
 
-		if (server_instance->check_flag(iod_server::CTRL_FLAG_RELOAD))
+		if (server_instance->check_flag(iod_server::CTRL_FLAG_RELOAD)) {
 			server_instance->reload_config();
-		else if (server_instance->check_flag(iod_server::CTRL_FLAG_QUIT))
+			server_instance->clear_flag(iod_server::CTRL_FLAG_RELOAD);
+		}
+		
+		if (server_instance->check_flag(iod_server::CTRL_FLAG_QUIT)) {
 			break;
+		}
 	}
 
 	iod_server::instance()->shutdown();

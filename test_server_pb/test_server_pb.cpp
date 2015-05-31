@@ -88,7 +88,7 @@ void test_server_pb::print_help_info()
 {
 #ifdef WIN32
 	iod_log_info("\n  q: quit server"
-		"\n  r: reload server"
+		"\n  r: reload server config"
 		"\n  p: print running statistics"
 		"\n  k: random kick some session"
 		"\n  h: print this info");

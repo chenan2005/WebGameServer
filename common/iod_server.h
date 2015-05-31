@@ -26,6 +26,8 @@ public:
 
 	void set_flag(unsigned int flag);
 
+	void clear_flag(unsigned int flag);
+
 	virtual void on_winsys_kbhit(int c);
 
 	virtual bool reload_config() { return true; }

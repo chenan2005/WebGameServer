@@ -20,6 +20,8 @@ public:
 	
 	virtual void on_winsys_kbhit(int c);
 
+	virtual void print_help_info();
+
 protected:
 
 	std::set< test_client_protobuf_session* > sessions;
