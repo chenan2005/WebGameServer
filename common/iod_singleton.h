@@ -3,9 +3,13 @@
 #ifndef __IOD_SINGLETON_H__
 #define __IOD_SINGLETON_H__
 
+#include "iod_micro_helper.h"
+
 template <typename T> 
 class iod_singleton
 {
+	DISALLOW_COPY_AND_ASSIGN(iod_singleton);
+
 public:
 
 	static T* instance()
@@ -28,8 +32,6 @@ protected:
 	virtual ~iod_singleton() {}
 
 private:
-
-	iod_singleton(const iod_singleton&) 	{}
 
 	static T* m_instance;
 };

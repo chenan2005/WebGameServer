@@ -3,7 +3,7 @@
 #include "iod_network.h"
 #include "iod_logsystem.h"
 
-implement_server_instance(test_server);
+IMPLEMENT_SINGLETON_INSTANCE(test_server);
 
 test_server::test_server(void)
 {

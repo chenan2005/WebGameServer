@@ -3,10 +3,12 @@
 #ifndef __IOD_SERVER_H__
 #define __IOD_SERVER_H__
 
-#define implement_server_instance(classname)  classname __instance_of_##classname
+#include "iod_micro_helper.h"
 
 class iod_server
 {
+	DISALLOW_COPY_AND_ASSIGN(iod_server);
+
 public:
 
 	enum {
@@ -90,8 +92,6 @@ protected:
 	unsigned int ctrl_flag;
 
 private:
-
-	iod_server(const iod_server&) {}
 
 	static iod_server* _server_instance;
 };

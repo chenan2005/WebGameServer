@@ -188,6 +188,10 @@
 				>
 			</File>
 			<File
+				RelativePath="..\common\iod_micro_helper.h"
+				>
+			</File>
+			<File
 				RelativePath="..\common\iod_server.cpp"
 				>
 			</File>
@@ -195,29 +199,13 @@
 				RelativePath="..\common\iod_server.h"
 				>
 			</File>
+			<File
+				RelativePath="..\common\iod_singleton.h"
+				>
+			</File>
 			<Filter
 				Name="utility"
 				>
-				<File
-					RelativePath="..\common\dictionary.c"
-					>
-				</File>
-				<File
-					RelativePath="..\common\dictionary.h"
-					>
-				</File>
-				<File
-					RelativePath="..\common\iniparser.c"
-					>
-				</File>
-				<File
-					RelativePath="..\common\iniparser.h"
-					>
-				</File>
-				<File
-					RelativePath="..\common\iod_singleton.h"
-					>
-				</File>
 				<File
 					RelativePath="..\common\iod_utility.cpp"
 					>

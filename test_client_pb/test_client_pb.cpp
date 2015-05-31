@@ -3,7 +3,7 @@
 #include "test_client_pb_session.h"
 #include "iod_logsystem.h"
 
-implement_server_instance(test_client_pb);
+IMPLEMENT_SINGLETON_INSTANCE(test_client_pb);
 
 const int TEST_SESSION_COUNT = 200;
 

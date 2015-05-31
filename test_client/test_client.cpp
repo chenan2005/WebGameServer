@@ -4,7 +4,7 @@
 #include "test_client_session.h"
 #include "iod_logsystem.h"
 
-implement_server_instance(test_client);
+IMPLEMENT_SINGLETON_INSTANCE(test_client);
 
 const int TEST_SESSION_COUNT = 2000;
 
