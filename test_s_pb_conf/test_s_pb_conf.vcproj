@@ -2,9 +2,9 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="8.00"
-	Name="test_client_pb"
-	ProjectGUID="{10C8D923-9604-4E0C-B235-900A5D8325F3}"
-	RootNamespace="test_client_protobuf"
+	Name="test_s_pb_conf"
+	ProjectGUID="{FECE5669-3173-42CE-AF14-1FEBB94F4923}"
+	RootNamespace="IODWeb_Gs"
 	Keyword="Win32Proj"
 	>
 	<Platforms>
@@ -20,7 +20,7 @@
 			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
 			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="1"
-			CharacterSet="1"
+			CharacterSet="0"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -40,7 +40,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="../common;../protocol;&quot;../3rdparty/libevent-2.0.22-stable&quot;;&quot;../3rdparty/protobuf-2.4.1&quot;"
+				AdditionalIncludeDirectories="../common;../protocol;&quot;../3rdparty/libevent-2.0.22-stable&quot;;&quot;../3rdparty/protobuf-2.4.1/&quot;"
 				PreprocessorDefinitions="WIN32;_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -203,14 +203,6 @@
 				RelativePath="..\common\iod_singleton.h"
 				>
 			</File>
-			<File
-				RelativePath="..\common\iod_timer_handler.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\common\iod_timer_handler.h"
-				>
-			</File>
 			<Filter
 				Name="utility"
 				>
@@ -258,6 +250,14 @@
 					RelativePath="..\common\iod_session_manager.h"
 					>
 				</File>
+				<File
+					RelativePath="..\common\iod_timer_handler.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\common\iod_timer_handler.h"
+					>
+				</File>
 				<Filter
 					Name="protobuf"
 					>
@@ -297,19 +297,27 @@
 			>
 		</File>
 		<File
-			RelativePath=".\test_client_pb.cpp"
+			RelativePath=".\test_s_pb_conf.cpp"
 			>
 		</File>
 		<File
-			RelativePath=".\test_client_pb.h"
+			RelativePath=".\test_s_pb_conf.h"
 			>
 		</File>
 		<File
-			RelativePath=".\test_client_pb_session.cpp"
+			RelativePath=".\test_s_pb_conf_session.cpp"
 			>
 		</File>
 		<File
-			RelativePath=".\test_client_pb_session.h"
+			RelativePath=".\test_s_pb_conf_session.h"
+			>
+		</File>
+		<File
+			RelativePath=".\test_s_pb_conf_session_manager.cpp"
+			>
+		</File>
+		<File
+			RelativePath=".\test_s_pb_conf_session_manager.h"
 			>
 		</File>
 	</Files>

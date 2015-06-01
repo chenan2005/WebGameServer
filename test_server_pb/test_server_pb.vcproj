@@ -40,7 +40,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="../common;../protocol;&quot;../3rdparty/libevent-2.0.22-stable&quot;;&quot;../3rdparty/protobuf-2.5.0/&quot;"
+				AdditionalIncludeDirectories="../common;../protocol;&quot;../3rdparty/libevent-2.0.22-stable&quot;;&quot;../3rdparty/protobuf-2.4.1/&quot;"
 				PreprocessorDefinitions="WIN32;_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -61,7 +61,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="Ws2_32.lib ../3rdparty/libevent-2.0.22-stable/libevent_d.lib ../3rdparty/protobuf-2.5.0/libprotobuf_d.lib"
+				AdditionalDependencies="Ws2_32.lib ../3rdparty/libevent-2.0.22-stable/libevent_d.lib ../3rdparty/protobuf-2.4.1/libprotobuf_d.lib"
 				LinkIncremental="2"
 				IgnoreDefaultLibraryNames="libcmt"
 				GenerateDebugInformation="true"
