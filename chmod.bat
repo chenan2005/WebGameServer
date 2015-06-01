@@ -1,1 +1,3 @@
-Cacls test_client_protobuf /t /e /c /g users:F 
+@echo off
+set /p folder=input foldername:
+Cacls %folder% /t /e /c /g users:F 
