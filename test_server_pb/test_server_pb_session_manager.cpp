@@ -12,6 +12,8 @@ ADD_PROTO_MSG_HANDLE(ReqAuthentication, test_server_pb_session_manager::onReqAut
 
 ADD_PROTO_MSG_HANDLE(ReqLogin, test_server_pb_session_manager::onReqLogin)
 
+ADD_PROTO_MSG_HANDLE(TestMsg1, test_server_pb_session_manager::onTestMsg1);
+
 REG_PROTO_MSG_HANDLE_END(test_server_pb_session_manager)
 
 
@@ -73,6 +75,20 @@ iod_session* test_server_pb_session_manager::onReqLogin( struct connection_info*
 		res.set_result(-1);
 		SEND_MESSAGE_TO(conn_info, ResLogin, res);
 	}
+
+	return 0;
+}
+
+iod_session* test_server_pb_session_manager::onTestMsg1(struct connection_info* conn_info, com::iod::pb::common::BaseMsg* msg)
+{
+	SAFE_GET_NONE_SESSION_EXTENSION(msg, TestMsg1, req);
+	TestMsg1 res;
+	std::string testData = "dfasdfdssdafksda;ljfa;lkrwepsdvcmksdapocmsdac;'asd'csdafadopramcd;acd;";
+	for (int i = 0; i < 10; i++) {
+		testData += testData;
+	}
+	res.set_test_data(testData);
+	SEND_MESSAGE_TO(conn_info, TestMsg1, res);
 
 	return 0;
 }

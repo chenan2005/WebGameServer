@@ -31,6 +31,8 @@ public:
 
 	virtual iod_session* onReqLogin(struct connection_info* conn_info, com::iod::pb::common::BaseMsg* msg);
 
+	virtual iod_session* onTestMsg1(struct connection_info* conn_info, com::iod::pb::common::BaseMsg* msg);
+
 	//---------------------------------------------------------------------
 
 	unsigned int create_session_count;
