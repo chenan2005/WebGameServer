@@ -46,6 +46,8 @@ public:
 
 	virtual void onReqTestResponseTime(com::iod::pb::common::BaseMsg* msg);
 
+	virtual void onTestMsg1(com::iod::pb::common::BaseMsg* msg);
+
 	//--------------------------------------------------
 
 	//--------------------------------------------------
