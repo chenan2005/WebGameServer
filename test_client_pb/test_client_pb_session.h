@@ -26,15 +26,15 @@ public:
 	//message senders
 	//----------------------------------------------------------
 
-	void send_req_authentication(const char* authentication, int length = 0);
+	void sendReqAuthentication(const char* authentication, int length = 0);
 
-	void send_req_login(const char* authorization, int length = 0);
+	void sendReqLogin(const char* authorization, int length = 0);
 
-	void send_req_test_info(const char* info, int length = 0);
+	void sendReqTestInfo(const char* info, int length = 0);
 
-	void send_req_logout();
+	void sendReqLogout();
 
-	void send_req_test_response_time(ev_uint64_t t);
+	void sendReqTestResponseTime(ev_uint64_t t);
 
 	//----------------------------------------------------------
 
@@ -64,15 +64,15 @@ public:
 	//message handlers
 	//---------------------------------------------------------------------
 
-	virtual void on_res_authentication(com::iod::pb::common::base_msg* msg);
+	virtual void onResAuthentication(com::iod::pb::common::BaseMsg* msg);
 
-	virtual void on_res_login(com::iod::pb::common::base_msg* msg);
+	virtual void onResLogin(com::iod::pb::common::BaseMsg* msg);
 
-	virtual void on_res_test_info(com::iod::pb::common::base_msg* msg);
+	virtual void onResTestInfo(com::iod::pb::common::BaseMsg* msg);
 
-	virtual void on_res_test_response_time(com::iod::pb::common::base_msg* msg);
+	virtual void onResTestResponseTime(com::iod::pb::common::BaseMsg* msg);
 
-	virtual void on_notify_kickout(com::iod::pb::common::base_msg* msg);
+	virtual void onNotifyKickout(com::iod::pb::common::BaseMsg* msg);
 
 	//---------------------------------------------------------------------
 

@@ -21,15 +21,15 @@ public:
 
 	void check_sessions();
 
+	inline unsigned int get_session_count() const { return (unsigned int)sessions.size(); }
+
 	//---------------------------------------------------------------------
 	//message handlers
 	//---------------------------------------------------------------------
 
-	virtual iod_session* on_req_authentication(struct connection_info* conn_info, com::iod::pb::common::base_msg* msg);
+	virtual iod_session* onReqAuthentication(struct connection_info* conn_info, com::iod::pb::common::BaseMsg* msg);
 
-	virtual iod_session* on_req_login(struct connection_info* conn_info, com::iod::pb::common::base_msg* msg);
-
-	inline unsigned int get_session_count() const { return (unsigned int)sessions.size(); }
+	virtual iod_session* onReqLogin(struct connection_info* conn_info, com::iod::pb::common::BaseMsg* msg);
 
 	//---------------------------------------------------------------------
 

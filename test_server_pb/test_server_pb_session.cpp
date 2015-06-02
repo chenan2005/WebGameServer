@@ -6,10 +6,10 @@ using namespace com::iod::pb::test;
 
 REG_PROTO_MSG_HANDLE_BEGIN(test_server_pb_session, iod_session_pb)
 
-ADD_PROTO_MSG_HANDLE(_req_login, test_server_pb_session::on_req_login);
-ADD_PROTO_MSG_HANDLE(_req_test_info, test_server_pb_session::on_req_test_info);
-ADD_PROTO_MSG_HANDLE(_req_logout, test_server_pb_session::on_req_logout);
-ADD_PROTO_MSG_HANDLE(_req_test_response_time, test_server_pb_session::on_req_test_response_time);
+ADD_PROTO_MSG_HANDLE(ReqLogin, test_server_pb_session::onReqLogin);
+ADD_PROTO_MSG_HANDLE(ReqTestInfo, test_server_pb_session::onReqTestInfo);
+ADD_PROTO_MSG_HANDLE(ReqLogout, test_server_pb_session::onReqLogout);
+ADD_PROTO_MSG_HANDLE(ReqTestResponseTime, test_server_pb_session::onReqTestResponseTime);
 
 REG_PROTO_MSG_HANDLE_END(test_server_pb_session)
 
@@ -23,33 +23,33 @@ test_server_pb_session::~test_server_pb_session(void)
 {
 }
 
-void test_server_pb_session::on_req_login(com::iod::pb::common::base_msg* msg)
+void test_server_pb_session::onReqLogin(com::iod::pb::common::BaseMsg* msg)
 {
-	SAFE_GET_EXTENSION(msg, req_login, req);
+	SAFE_GET_EXTENSION(msg, ReqLogin, req);
 
 	set_login_state(LOGIN_STATE_LOGINED);
 }
 
-void test_server_pb_session::on_req_test_info(com::iod::pb::common::base_msg* msg)
+void test_server_pb_session::onReqTestInfo(com::iod::pb::common::BaseMsg* msg)
 {
-	SAFE_GET_EXTENSION(msg, req_test_info, req);
-	res_test_info res;
+	SAFE_GET_EXTENSION(msg, ReqTestInfo, req);
+	ResTestInfo res;
 	res.set_info("response" + req.info());
-	send_message(_res_test_info, res);
+	SESSION_SEND_MESSAGE(ResTestInfo, res);
 }
 
-void test_server_pb_session::on_req_logout( com::iod::pb::common::base_msg* msg )
+void test_server_pb_session::onReqLogout( com::iod::pb::common::BaseMsg* msg )
 {
-	SAFE_GET_EXTENSION(msg, req_logout, req);
+	SAFE_GET_EXTENSION(msg, ReqLogout, req);
 	close(0);
 }
 
-void test_server_pb_session::on_req_test_response_time(com::iod::pb::common::base_msg* msg)
+void test_server_pb_session::onReqTestResponseTime(com::iod::pb::common::BaseMsg* msg)
 {
-	SAFE_GET_EXTENSION(msg, req_test_response_time, req);
-	res_test_response_time res;
+	SAFE_GET_EXTENSION(msg, ReqTestResponseTime, req);
+	ResTestResponseTime res;
 	res.set_req_timestamp(req.req_timestamp());
-	send_message(_res_test_response_time, res);
+	SESSION_SEND_MESSAGE(ResTestResponseTime, res);
 }
 
 void test_server_pb_session::on_closed( int reason )

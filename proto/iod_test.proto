@@ -2,139 +2,139 @@ package com.iod.pb.test;
 
 import "common/iod_common.proto";
 
-message req_authentication {
-	optional string userid = 1;
+message ReqAuthentication {
+	optional string user_id = 1;
 	optional string authentication = 2;
 }
 
-message res_authentication {
+message ResAuthentication {
 	optional sint32 result = 1;	
 	optional string authorization = 2;
 }
 
-message req_login {
-  optional string userid = 1;
+message ReqLogin {
+  optional string user_id = 1;
   optional string authorization = 2;
 }
 
-message res_login {
-  optional string userid = 1;
+message ResLogin {
+  optional string user_id = 1;
   optional sint32 result = 2;	
 }
 
-message req_test_info {
+message ReqTestInfo {
   optional string info = 1;
 }
 
-message res_test_info {
+message ResTestInfo {
   optional string info = 1;
 }
 
-message req_logout {
+message ReqLogout {
 }
 
-message req_test_response_time {
+message ReqTestResponseTime {
 	required sint64 req_timestamp = 1;
 }
 
-message res_test_response_time {
+message ResTestResponseTime {
 	required sint64 req_timestamp = 1;
 }
 
-message notify_kickout {
+message NotifyKickout {
 	optional sint32 kick_reason = 1;
 }
 
-message test_msg_1 {
+message TestMsg1 {
 	optional bytes test_data = 1;
 }
-message test_msg_2 {
+message TestMsg2 {
 	optional bytes test_data = 1;
 }
-message test_msg_3 {
+message TestMsg3 {
 	optional bytes test_data = 1;
 }
-message test_msg_4 {
+message TestMsg4 {
 	optional bytes test_data = 1;
 }
-message test_msg_5 {
+message TestMsg5 {
 	optional bytes test_data = 1;
 }
-message test_msg_6 {
+message TestMsg6 {
 	optional bytes test_data = 1;
 }
-message test_msg_7 {
+message TestMsg7 {
 	optional bytes test_data = 1;
 }
-message test_msg_8 {
+message TestMsg8 {
 	optional bytes test_data = 1;
 }
-message test_msg_9 {
+message TestMsg9 {
 	optional bytes test_data = 1;
 }
-message test_msg_10 {
+message TestMsg10 {
 	optional bytes test_data = 1;
 }
-message test_msg_11 {
+message TestMsg11 {
 	optional bytes test_data = 1;
 }
-message test_msg_12 {
+message TestMsg12 {
 	optional bytes test_data = 1;
 }
-message test_msg_13 {
+message TestMsg13 {
 	optional bytes test_data = 1;
 }
-message test_msg_14 {
+message TestMsg14 {
 	optional bytes test_data = 1;
 }
-message test_msg_15 {
+message TestMsg15 {
 	optional bytes test_data = 1;
 }
-message test_msg_16 {
+message TestMsg16 {
 	optional bytes test_data = 1;
 }
-message test_msg_17 {
+message TestMsg17 {
 	optional bytes test_data = 1;
 }
-message test_msg_18 {
+message TestMsg18 {
 	optional bytes test_data = 1;
 }
-message test_msg_19 {
+message TestMsg19 {
 	optional bytes test_data = 1;
 }
-message test_msg_20 {
+message TestMsg20 {
 	optional bytes test_data = 1;
 }
 
-extend com.iod.pb.common.base_msg {
-	optional req_authentication _req_authentication = 1000;
-	optional res_authentication _res_authentication = 1001;
-	optional req_login _req_login = 1002;
-	optional res_login _res_login = 1003;
-	optional req_test_info _req_test_info = 1004;
-	optional res_test_info _res_test_info = 1005;
-	optional req_logout _req_logout = 1006;	
-	optional req_test_response_time _req_test_response_time = 1007;
-	optional res_test_response_time _res_test_response_time = 1008;
-	optional notify_kickout _notify_kickout = 1009;
-	optional test_msg_1 _test_msg_1 =5001;
-	optional test_msg_2 _test_msg_2 =5002;
-	optional test_msg_3 _test_msg_3 =5003;
-	optional test_msg_4 _test_msg_4 =5004;
-	optional test_msg_5 _test_msg_5 =5005;
-	optional test_msg_6 _test_msg_6 =5006;
-	optional test_msg_7 _test_msg_7 =5007;
-	optional test_msg_8 _test_msg_8 =5008;
-	optional test_msg_9 _test_msg_9 =5009;
-	optional test_msg_10 _test_msg_10 =5010;
-	optional test_msg_11 _test_msg_11 =5011;
-	optional test_msg_12 _test_msg_12 =5012;
-	optional test_msg_13 _test_msg_13 =5013;
-	optional test_msg_14 _test_msg_14 =5014;
-	optional test_msg_15 _test_msg_15 =5015;
-	optional test_msg_16 _test_msg_16 =5016;
-	optional test_msg_17 _test_msg_17 =5017;
-	optional test_msg_18 _test_msg_18 =5018;
-	optional test_msg_19 _test_msg_19 =5019;
-	optional test_msg_20 _test_msg_20 =5020;
+extend com.iod.pb.common.BaseMsg {
+	optional ReqAuthentication idReqAuthentication = 1000;
+	optional ResAuthentication idResAuthentication = 1001;
+	optional ReqLogin idReqLogin = 1002;
+	optional ResLogin idResLogin = 1003;
+	optional ReqTestInfo idReqTestInfo = 1004;
+	optional ResTestInfo idResTestInfo = 1005;
+	optional ReqLogout idReqLogout = 1006;	
+	optional ReqTestResponseTime idReqTestResponseTime = 1007;
+	optional ResTestResponseTime idResTestResponseTime = 1008;
+	optional NotifyKickout idNotifyKickout = 1009;
+	optional TestMsg1 idTestMsg1 =5001;
+	optional TestMsg2 idTestMsg2 =5002;
+	optional TestMsg3 idTestMsg3 =5003;
+	optional TestMsg4 idTestMsg4 =5004;
+	optional TestMsg5 idTestMsg5 =5005;
+	optional TestMsg6 idTestMsg6 =5006;
+	optional TestMsg7 idTestMsg7 =5007;
+	optional TestMsg8 idTestMsg8 =5008;
+	optional TestMsg9 idTestMsg9 =5009;
+	optional TestMsg10 idTestMsg10 =5010;
+	optional TestMsg11 idTestMsg11 =5011;
+	optional TestMsg12 idTestMsg12 =5012;
+	optional TestMsg13 idTestMsg13 =5013;
+	optional TestMsg14 idTestMsg14 =5014;
+	optional TestMsg15 idTestMsg15 =5015;
+	optional TestMsg16 idTestMsg16 =5016;
+	optional TestMsg17 idTestMsg17 =5017;
+	optional TestMsg18 idTestMsg18 =5018;
+	optional TestMsg19 idTestMsg19 =5019;
+	optional TestMsg20 idTestMsg20 =5020;
 }

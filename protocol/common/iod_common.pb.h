@@ -35,18 +35,18 @@ void  protobuf_AddDesc_common_2fiod_5fcommon_2eproto();
 void protobuf_AssignDesc_common_2fiod_5fcommon_2eproto();
 void protobuf_ShutdownFile_common_2fiod_5fcommon_2eproto();
 
-class base_msg;
+class BaseMsg;
 
 // ===================================================================
 
-class base_msg : public ::google::protobuf::Message {
+class BaseMsg : public ::google::protobuf::Message {
  public:
-  base_msg();
-  virtual ~base_msg();
+  BaseMsg();
+  virtual ~BaseMsg();
   
-  base_msg(const base_msg& from);
+  BaseMsg(const BaseMsg& from);
   
-  inline base_msg& operator=(const base_msg& from) {
+  inline BaseMsg& operator=(const BaseMsg& from) {
     CopyFrom(from);
     return *this;
   }
@@ -60,17 +60,17 @@ class base_msg : public ::google::protobuf::Message {
   }
   
   static const ::google::protobuf::Descriptor* descriptor();
-  static const base_msg& default_instance();
+  static const BaseMsg& default_instance();
   
-  void Swap(base_msg* other);
+  void Swap(BaseMsg* other);
   
   // implements Message ----------------------------------------------
   
-  base_msg* New() const;
+  BaseMsg* New() const;
   void CopyFrom(const ::google::protobuf::Message& from);
   void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const base_msg& from);
-  void MergeFrom(const base_msg& from);
+  void CopyFrom(const BaseMsg& from);
+  void MergeFrom(const BaseMsg& from);
   void Clear();
   bool IsInitialized() const;
   
@@ -114,15 +114,15 @@ class base_msg : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 flags() const;
   inline void set_flags(::google::protobuf::int32 value);
   
-  // required sint32 messge_id = 4;
-  inline bool has_messge_id() const;
-  inline void clear_messge_id();
-  static const int kMessgeIdFieldNumber = 4;
-  inline ::google::protobuf::int32 messge_id() const;
-  inline void set_messge_id(::google::protobuf::int32 value);
+  // required sint32 message_id = 4;
+  inline bool has_message_id() const;
+  inline void clear_message_id();
+  static const int kMessageIdFieldNumber = 4;
+  inline ::google::protobuf::int32 message_id() const;
+  inline void set_message_id(::google::protobuf::int32 value);
   
-  GOOGLE_PROTOBUF_EXTENSION_ACCESSORS(base_msg)
-  // @@protoc_insertion_point(class_scope:com.iod.pb.common.base_msg)
+  GOOGLE_PROTOBUF_EXTENSION_ACCESSORS(BaseMsg)
+  // @@protoc_insertion_point(class_scope:com.iod.pb.common.BaseMsg)
  private:
   inline void set_has_from();
   inline void clear_has_from();
@@ -130,8 +130,8 @@ class base_msg : public ::google::protobuf::Message {
   inline void clear_has_to();
   inline void set_has_flags();
   inline void clear_has_flags();
-  inline void set_has_messge_id();
-  inline void clear_has_messge_id();
+  inline void set_has_message_id();
+  inline void clear_has_message_id();
   
   ::google::protobuf::internal::ExtensionSet _extensions_;
   
@@ -140,7 +140,7 @@ class base_msg : public ::google::protobuf::Message {
   ::google::protobuf::int32 from_;
   ::google::protobuf::int32 to_;
   ::google::protobuf::int32 flags_;
-  ::google::protobuf::int32 messge_id_;
+  ::google::protobuf::int32 message_id_;
   
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(4 + 31) / 32];
@@ -150,101 +150,101 @@ class base_msg : public ::google::protobuf::Message {
   friend void protobuf_ShutdownFile_common_2fiod_5fcommon_2eproto();
   
   void InitAsDefaultInstance();
-  static base_msg* default_instance_;
+  static BaseMsg* default_instance_;
 };
 // ===================================================================
 
 
 // ===================================================================
 
-// base_msg
+// BaseMsg
 
 // optional sint32 from = 1;
-inline bool base_msg::has_from() const {
+inline bool BaseMsg::has_from() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void base_msg::set_has_from() {
+inline void BaseMsg::set_has_from() {
   _has_bits_[0] |= 0x00000001u;
 }
-inline void base_msg::clear_has_from() {
+inline void BaseMsg::clear_has_from() {
   _has_bits_[0] &= ~0x00000001u;
 }
-inline void base_msg::clear_from() {
+inline void BaseMsg::clear_from() {
   from_ = 0;
   clear_has_from();
 }
-inline ::google::protobuf::int32 base_msg::from() const {
+inline ::google::protobuf::int32 BaseMsg::from() const {
   return from_;
 }
-inline void base_msg::set_from(::google::protobuf::int32 value) {
+inline void BaseMsg::set_from(::google::protobuf::int32 value) {
   set_has_from();
   from_ = value;
 }
 
 // optional sint32 to = 2;
-inline bool base_msg::has_to() const {
+inline bool BaseMsg::has_to() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
-inline void base_msg::set_has_to() {
+inline void BaseMsg::set_has_to() {
   _has_bits_[0] |= 0x00000002u;
 }
-inline void base_msg::clear_has_to() {
+inline void BaseMsg::clear_has_to() {
   _has_bits_[0] &= ~0x00000002u;
 }
-inline void base_msg::clear_to() {
+inline void BaseMsg::clear_to() {
   to_ = 0;
   clear_has_to();
 }
-inline ::google::protobuf::int32 base_msg::to() const {
+inline ::google::protobuf::int32 BaseMsg::to() const {
   return to_;
 }
-inline void base_msg::set_to(::google::protobuf::int32 value) {
+inline void BaseMsg::set_to(::google::protobuf::int32 value) {
   set_has_to();
   to_ = value;
 }
 
 // optional sint32 flags = 3;
-inline bool base_msg::has_flags() const {
+inline bool BaseMsg::has_flags() const {
   return (_has_bits_[0] & 0x00000004u) != 0;
 }
-inline void base_msg::set_has_flags() {
+inline void BaseMsg::set_has_flags() {
   _has_bits_[0] |= 0x00000004u;
 }
-inline void base_msg::clear_has_flags() {
+inline void BaseMsg::clear_has_flags() {
   _has_bits_[0] &= ~0x00000004u;
 }
-inline void base_msg::clear_flags() {
+inline void BaseMsg::clear_flags() {
   flags_ = 0;
   clear_has_flags();
 }
-inline ::google::protobuf::int32 base_msg::flags() const {
+inline ::google::protobuf::int32 BaseMsg::flags() const {
   return flags_;
 }
-inline void base_msg::set_flags(::google::protobuf::int32 value) {
+inline void BaseMsg::set_flags(::google::protobuf::int32 value) {
   set_has_flags();
   flags_ = value;
 }
 
-// required sint32 messge_id = 4;
-inline bool base_msg::has_messge_id() const {
+// required sint32 message_id = 4;
+inline bool BaseMsg::has_message_id() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
-inline void base_msg::set_has_messge_id() {
+inline void BaseMsg::set_has_message_id() {
   _has_bits_[0] |= 0x00000008u;
 }
-inline void base_msg::clear_has_messge_id() {
+inline void BaseMsg::clear_has_message_id() {
   _has_bits_[0] &= ~0x00000008u;
 }
-inline void base_msg::clear_messge_id() {
-  messge_id_ = 0;
-  clear_has_messge_id();
+inline void BaseMsg::clear_message_id() {
+  message_id_ = 0;
+  clear_has_message_id();
 }
-inline ::google::protobuf::int32 base_msg::messge_id() const {
-  return messge_id_;
+inline ::google::protobuf::int32 BaseMsg::message_id() const {
+  return message_id_;
 }
-inline void base_msg::set_messge_id(::google::protobuf::int32 value) {
-  set_has_messge_id();
-  messge_id_ = value;
+inline void BaseMsg::set_message_id(::google::protobuf::int32 value) {
+  set_has_message_id();
+  message_id_ = value;
 }
 
 

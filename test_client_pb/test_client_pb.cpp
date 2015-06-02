@@ -41,17 +41,17 @@ int test_client_pb::update_server()
 		else if (session->get_net_stat() == iod_session::SNS_CONNECTED && iod_utility::get_time_msec() > session->get_last_send_command_time() + 5) {
 			
 			if (session->get_login_state() == test_client_protobuf_session::LOGIN_STATE_NONE) {
-				session->send_req_authentication(session->get_username());
+				session->sendReqAuthentication(session->get_username());
 			}
 			else if (session->get_login_state() == test_client_protobuf_session::LOGIN_STATE_AUTHENTICATED) {
-				session->send_req_login(session->get_authorization().c_str());
+				session->sendReqLogin(session->get_authorization().c_str());
 			}
 			else if (session->get_login_state() == test_client_protobuf_session::LOGIN_STATE_LOGINED) {
 				int randvalue = rand() % 500;
 				if (randvalue == 1)
-					session->send_req_logout();
+					session->sendReqLogout();
 				else
-					session->send_req_test_info("test info");
+					session->sendReqTestInfo("test info");
 				//session->send_req_test_info("test info");
 			}
 		}
@@ -78,7 +78,7 @@ void test_client_pb::on_winsys_kbhit(int c)
 		while (it != sessions.end()) {
 			test_client_protobuf_session* session = *it;
 			if (session->get_login_state() == test_client_protobuf_session::LOGIN_STATE_LOGINED) {
-				session->send_req_test_response_time(iod_utility::get_time_usec());
+				session->sendReqTestResponseTime(iod_utility::get_time_usec());
 				has_send = true;
 				break;
 			}

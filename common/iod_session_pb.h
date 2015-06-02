@@ -23,8 +23,8 @@ void classname::register_msg_handle()\
 	std::map< int, FNC_PB_MSG_HANDLER >& m = *baseclass::msg_handler_map;
 
 //注册消息处理函数
-#define ADD_PROTO_MSG_HANDLE(mapid, mapfun) \
-	m[mapid.number()] = (FNC_PB_MSG_HANDLER)&mapfun;
+#define ADD_PROTO_MSG_HANDLE(protocol_name, mapfun) \
+	m[id##protocol_name.number()] = (FNC_PB_MSG_HANDLER)&mapfun;
 
 //注册消息处理函数实现-结束
 #define REG_PROTO_MSG_HANDLE_END(classname) \
@@ -33,10 +33,14 @@ void classname::register_msg_handle()\
 
 //-------------------------------------------------------------------------------
 
-#define SAFE_GET_EXTENSION(msg, extname, varname) \
-	if (!msg->HasExtension(_##extname)) \
+#define SAFE_GET_EXTENSION(msg, protocol_name, varname) \
+	if (!msg->HasExtension(id##protocol_name)) \
 		return; \
-	const extname& varname = msg->GetExtension(_##extname);
+	const protocol_name& varname = msg->GetExtension(id##protocol_name);
+
+//-------------------------------------------------------------------------------
+
+#define SESSION_SEND_MESSAGE(protocol_name, var) send_message(id##protocol_name, var)
 
 //-------------------------------------------------------------------------------
 
@@ -50,27 +54,27 @@ public:
 
 	virtual ~iod_session_pb(void);
 
-	void on_message(com::iod::pb::common::base_msg* msg);
+	void on_message(com::iod::pb::common::BaseMsg* msg);
 
 	//发送消息
 	template <typename _proto_TypeTraits, ::google::protobuf::internal::FieldType _field_type,  bool _is_packed>
 	inline bool send_message(
-		const ::google::protobuf::internal::ExtensionIdentifier<com::iod::pb::common::base_msg, _proto_TypeTraits, _field_type, _is_packed>& id,	
+		const ::google::protobuf::internal::ExtensionIdentifier<com::iod::pb::common::BaseMsg, _proto_TypeTraits, _field_type, _is_packed>& id,	
 		typename _proto_TypeTraits::ConstType msg)	
 	{
-		com::iod::pb::common::base_msg base_msg;
-		base_msg.set_messge_id(id.number());
-		base_msg.MutableExtension(id)->CopyFrom(msg);
-		return send_base_msg(&base_msg);
+		com::iod::pb::common::BaseMsg BaseMsg;
+		BaseMsg.set_message_id(id.number());
+		BaseMsg.MutableExtension(id)->CopyFrom(msg);
+		return send_basemsg(&BaseMsg);
 	}
 
 	virtual void on_packet(iod_packet* packet);
 
 protected:
 
-	typedef void (iod_session_pb::*FNC_PB_MSG_HANDLER)(com::iod::pb::common::base_msg*);
+	typedef void (iod_session_pb::*FNC_PB_MSG_HANDLER)(com::iod::pb::common::BaseMsg*);
 
-	bool send_base_msg(com::iod::pb::common::base_msg* msg);
+	bool send_basemsg(com::iod::pb::common::BaseMsg* msg);
 
 	static std::map< int, FNC_PB_MSG_HANDLER > *msg_handler_map;
 

@@ -15,11 +15,11 @@ iod_session_pb::~iod_session_pb( void )
 
 }
 
-void iod_session_pb::on_message( com::iod::pb::common::base_msg* msg )
+void iod_session_pb::on_message( com::iod::pb::common::BaseMsg* msg )
 {
 	check_register_msg_handle();
 
-	std::map< int, FNC_PB_MSG_HANDLER >::iterator it = msg_handler_map->find(msg->messge_id());
+	std::map< int, FNC_PB_MSG_HANDLER >::iterator it = msg_handler_map->find(msg->message_id());
 	if (it == msg_handler_map->end())
 		return;
 
@@ -28,7 +28,7 @@ void iod_session_pb::on_message( com::iod::pb::common::base_msg* msg )
 
 void iod_session_pb::on_packet( iod_packet* packet )
 {
-	com::iod::pb::common::base_msg* msg = new com::iod::pb::common::base_msg;
+	com::iod::pb::common::BaseMsg* msg = new com::iod::pb::common::BaseMsg;
 	if (msg->ParseFromArray(packet->get_data(), packet->get_length()))
 	{
 		on_message(msg);
@@ -36,7 +36,7 @@ void iod_session_pb::on_packet( iod_packet* packet )
 	delete msg;
 }
 
-bool iod_session_pb::send_base_msg( com::iod::pb::common::base_msg* msg )
+bool iod_session_pb::send_basemsg( com::iod::pb::common::BaseMsg* msg )
 {
 	static char msg_serialize_buff[_MAX_PACKET_LENGTH];
 

@@ -14,11 +14,11 @@ iod_session_manager_pb::~iod_session_manager_pb(void)
 {
 }
 
-iod_session* iod_session_manager_pb::on_none_session_message( struct connection_info* conn_info, com::iod::pb::common::base_msg* msg )
+iod_session* iod_session_manager_pb::on_none_session_message( struct connection_info* conn_info, com::iod::pb::common::BaseMsg* msg )
 {
 	check_register_msg_handle();
 
-	std::map< int, FNC_PB_MSG_HANDLER >::iterator it = msg_handler_map->find(msg->messge_id());
+	std::map< int, FNC_PB_MSG_HANDLER >::iterator it = msg_handler_map->find(msg->message_id());
 	if (it == msg_handler_map->end())
 		return 0;
 
@@ -28,7 +28,7 @@ iod_session* iod_session_manager_pb::on_none_session_message( struct connection_
 iod_session* iod_session_manager_pb::on_none_session_packet( struct connection_info* conn_info, iod_packet* packet )
 {
 	iod_session* session = 0;
-	com::iod::pb::common::base_msg* msg = new com::iod::pb::common::base_msg;
+	com::iod::pb::common::BaseMsg* msg = new com::iod::pb::common::BaseMsg;
 	if (msg->ParseFromArray(packet->get_data(), packet->get_length()))
 		session = on_none_session_message(conn_info, msg);
 
@@ -37,7 +37,7 @@ iod_session* iod_session_manager_pb::on_none_session_packet( struct connection_i
 	return session;
 }
 
-bool iod_session_manager_pb::send_base_msg_to(struct connection_info* conn_info, com::iod::pb::common::base_msg* msg)
+bool iod_session_manager_pb::send_basemsg_to(struct connection_info* conn_info, com::iod::pb::common::BaseMsg* msg)
 {
 	static char none_session_msg_serialize_buff[_MAX_PACKET_LENGTH];
 

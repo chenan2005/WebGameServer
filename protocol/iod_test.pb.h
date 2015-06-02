@@ -36,47 +36,47 @@ void  protobuf_AddDesc_iod_5ftest_2eproto();
 void protobuf_AssignDesc_iod_5ftest_2eproto();
 void protobuf_ShutdownFile_iod_5ftest_2eproto();
 
-class req_authentication;
-class res_authentication;
-class req_login;
-class res_login;
-class req_test_info;
-class res_test_info;
-class req_logout;
-class req_test_response_time;
-class res_test_response_time;
-class notify_kickout;
-class test_msg_1;
-class test_msg_2;
-class test_msg_3;
-class test_msg_4;
-class test_msg_5;
-class test_msg_6;
-class test_msg_7;
-class test_msg_8;
-class test_msg_9;
-class test_msg_10;
-class test_msg_11;
-class test_msg_12;
-class test_msg_13;
-class test_msg_14;
-class test_msg_15;
-class test_msg_16;
-class test_msg_17;
-class test_msg_18;
-class test_msg_19;
-class test_msg_20;
+class ReqAuthentication;
+class ResAuthentication;
+class ReqLogin;
+class ResLogin;
+class ReqTestInfo;
+class ResTestInfo;
+class ReqLogout;
+class ReqTestResponseTime;
+class ResTestResponseTime;
+class NotifyKickout;
+class TestMsg1;
+class TestMsg2;
+class TestMsg3;
+class TestMsg4;
+class TestMsg5;
+class TestMsg6;
+class TestMsg7;
+class TestMsg8;
+class TestMsg9;
+class TestMsg10;
+class TestMsg11;
+class TestMsg12;
+class TestMsg13;
+class TestMsg14;
+class TestMsg15;
+class TestMsg16;
+class TestMsg17;
+class TestMsg18;
+class TestMsg19;
+class TestMsg20;
 
 // ===================================================================
 
-class req_authentication : public ::google::protobuf::Message {
+class ReqAuthentication : public ::google::protobuf::Message {
  public:
-  req_authentication();
-  virtual ~req_authentication();
+  ReqAuthentication();
+  virtual ~ReqAuthentication();
   
-  req_authentication(const req_authentication& from);
+  ReqAuthentication(const ReqAuthentication& from);
   
-  inline req_authentication& operator=(const req_authentication& from) {
+  inline ReqAuthentication& operator=(const ReqAuthentication& from) {
     CopyFrom(from);
     return *this;
   }
@@ -90,17 +90,17 @@ class req_authentication : public ::google::protobuf::Message {
   }
   
   static const ::google::protobuf::Descriptor* descriptor();
-  static const req_authentication& default_instance();
+  static const ReqAuthentication& default_instance();
   
-  void Swap(req_authentication* other);
+  void Swap(ReqAuthentication* other);
   
   // implements Message ----------------------------------------------
   
-  req_authentication* New() const;
+  ReqAuthentication* New() const;
   void CopyFrom(const ::google::protobuf::Message& from);
   void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const req_authentication& from);
-  void MergeFrom(const req_authentication& from);
+  void CopyFrom(const ReqAuthentication& from);
+  void MergeFrom(const ReqAuthentication& from);
   void Clear();
   bool IsInitialized() const;
   
@@ -123,16 +123,16 @@ class req_authentication : public ::google::protobuf::Message {
   
   // accessors -------------------------------------------------------
   
-  // optional string userid = 1;
-  inline bool has_userid() const;
-  inline void clear_userid();
-  static const int kUseridFieldNumber = 1;
-  inline const ::std::string& userid() const;
-  inline void set_userid(const ::std::string& value);
-  inline void set_userid(const char* value);
-  inline void set_userid(const char* value, size_t size);
-  inline ::std::string* mutable_userid();
-  inline ::std::string* release_userid();
+  // optional string user_id = 1;
+  inline bool has_user_id() const;
+  inline void clear_user_id();
+  static const int kUserIdFieldNumber = 1;
+  inline const ::std::string& user_id() const;
+  inline void set_user_id(const ::std::string& value);
+  inline void set_user_id(const char* value);
+  inline void set_user_id(const char* value, size_t size);
+  inline ::std::string* mutable_user_id();
+  inline ::std::string* release_user_id();
   
   // optional string authentication = 2;
   inline bool has_authentication() const;
@@ -145,16 +145,16 @@ class req_authentication : public ::google::protobuf::Message {
   inline ::std::string* mutable_authentication();
   inline ::std::string* release_authentication();
   
-  // @@protoc_insertion_point(class_scope:com.iod.pb.test.req_authentication)
+  // @@protoc_insertion_point(class_scope:com.iod.pb.test.ReqAuthentication)
  private:
-  inline void set_has_userid();
-  inline void clear_has_userid();
+  inline void set_has_user_id();
+  inline void clear_has_user_id();
   inline void set_has_authentication();
   inline void clear_has_authentication();
   
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
   
-  ::std::string* userid_;
+  ::std::string* user_id_;
   ::std::string* authentication_;
   
   mutable int _cached_size_;
@@ -165,18 +165,18 @@ class req_authentication : public ::google::protobuf::Message {
   friend void protobuf_ShutdownFile_iod_5ftest_2eproto();
   
   void InitAsDefaultInstance();
-  static req_authentication* default_instance_;
+  static ReqAuthentication* default_instance_;
 };
 // -------------------------------------------------------------------
 
-class res_authentication : public ::google::protobuf::Message {
+class ResAuthentication : public ::google::protobuf::Message {
  public:
-  res_authentication();
-  virtual ~res_authentication();
+  ResAuthentication();
+  virtual ~ResAuthentication();
   
-  res_authentication(const res_authentication& from);
+  ResAuthentication(const ResAuthentication& from);
   
-  inline res_authentication& operator=(const res_authentication& from) {
+  inline ResAuthentication& operator=(const ResAuthentication& from) {
     CopyFrom(from);
     return *this;
   }
@@ -190,17 +190,17 @@ class res_authentication : public ::google::protobuf::Message {
   }
   
   static const ::google::protobuf::Descriptor* descriptor();
-  static const res_authentication& default_instance();
+  static const ResAuthentication& default_instance();
   
-  void Swap(res_authentication* other);
+  void Swap(ResAuthentication* other);
   
   // implements Message ----------------------------------------------
   
-  res_authentication* New() const;
+  ResAuthentication* New() const;
   void CopyFrom(const ::google::protobuf::Message& from);
   void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const res_authentication& from);
-  void MergeFrom(const res_authentication& from);
+  void CopyFrom(const ResAuthentication& from);
+  void MergeFrom(const ResAuthentication& from);
   void Clear();
   bool IsInitialized() const;
   
@@ -241,7 +241,7 @@ class res_authentication : public ::google::protobuf::Message {
   inline ::std::string* mutable_authorization();
   inline ::std::string* release_authorization();
   
-  // @@protoc_insertion_point(class_scope:com.iod.pb.test.res_authentication)
+  // @@protoc_insertion_point(class_scope:com.iod.pb.test.ResAuthentication)
  private:
   inline void set_has_result();
   inline void clear_has_result();
@@ -261,18 +261,18 @@ class res_authentication : public ::google::protobuf::Message {
   friend void protobuf_ShutdownFile_iod_5ftest_2eproto();
   
   void InitAsDefaultInstance();
-  static res_authentication* default_instance_;
+  static ResAuthentication* default_instance_;
 };
 // -------------------------------------------------------------------
 
-class req_login : public ::google::protobuf::Message {
+class ReqLogin : public ::google::protobuf::Message {
  public:
-  req_login();
-  virtual ~req_login();
+  ReqLogin();
+  virtual ~ReqLogin();
   
-  req_login(const req_login& from);
+  ReqLogin(const ReqLogin& from);
   
-  inline req_login& operator=(const req_login& from) {
+  inline ReqLogin& operator=(const ReqLogin& from) {
     CopyFrom(from);
     return *this;
   }
@@ -286,17 +286,17 @@ class req_login : public ::google::protobuf::Message {
   }
   
   static const ::google::protobuf::Descriptor* descriptor();
-  static const req_login& default_instance();
+  static const ReqLogin& default_instance();
   
-  void Swap(req_login* other);
+  void Swap(ReqLogin* other);
   
   // implements Message ----------------------------------------------
   
-  req_login* New() const;
+  ReqLogin* New() const;
   void CopyFrom(const ::google::protobuf::Message& from);
   void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const req_login& from);
-  void MergeFrom(const req_login& from);
+  void CopyFrom(const ReqLogin& from);
+  void MergeFrom(const ReqLogin& from);
   void Clear();
   bool IsInitialized() const;
   
@@ -319,16 +319,16 @@ class req_login : public ::google::protobuf::Message {
   
   // accessors -------------------------------------------------------
   
-  // optional string userid = 1;
-  inline bool has_userid() const;
-  inline void clear_userid();
-  static const int kUseridFieldNumber = 1;
-  inline const ::std::string& userid() const;
-  inline void set_userid(const ::std::string& value);
-  inline void set_userid(const char* value);
-  inline void set_userid(const char* value, size_t size);
-  inline ::std::string* mutable_userid();
-  inline ::std::string* release_userid();
+  // optional string user_id = 1;
+  inline bool has_user_id() const;
+  inline void clear_user_id();
+  static const int kUserIdFieldNumber = 1;
+  inline const ::std::string& user_id() const;
+  inline void set_user_id(const ::std::string& value);
+  inline void set_user_id(const char* value);
+  inline void set_user_id(const char* value, size_t size);
+  inline ::std::string* mutable_user_id();
+  inline ::std::string* release_user_id();
   
   // optional string authorization = 2;
   inline bool has_authorization() const;
@@ -341,16 +341,16 @@ class req_login : public ::google::protobuf::Message {
   inline ::std::string* mutable_authorization();
   inline ::std::string* release_authorization();
   
-  // @@protoc_insertion_point(class_scope:com.iod.pb.test.req_login)
+  // @@protoc_insertion_point(class_scope:com.iod.pb.test.ReqLogin)
  private:
-  inline void set_has_userid();
-  inline void clear_has_userid();
+  inline void set_has_user_id();
+  inline void clear_has_user_id();
   inline void set_has_authorization();
   inline void clear_has_authorization();
   
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
   
-  ::std::string* userid_;
+  ::std::string* user_id_;
   ::std::string* authorization_;
   
   mutable int _cached_size_;
@@ -361,18 +361,18 @@ class req_login : public ::google::protobuf::Message {
   friend void protobuf_ShutdownFile_iod_5ftest_2eproto();
   
   void InitAsDefaultInstance();
-  static req_login* default_instance_;
+  static ReqLogin* default_instance_;
 };
 // -------------------------------------------------------------------
 
-class res_login : public ::google::protobuf::Message {
+class ResLogin : public ::google::protobuf::Message {
  public:
-  res_login();
-  virtual ~res_login();
+  ResLogin();
+  virtual ~ResLogin();
   
-  res_login(const res_login& from);
+  ResLogin(const ResLogin& from);
   
-  inline res_login& operator=(const res_login& from) {
+  inline ResLogin& operator=(const ResLogin& from) {
     CopyFrom(from);
     return *this;
   }
@@ -386,17 +386,17 @@ class res_login : public ::google::protobuf::Message {
   }
   
   static const ::google::protobuf::Descriptor* descriptor();
-  static const res_login& default_instance();
+  static const ResLogin& default_instance();
   
-  void Swap(res_login* other);
+  void Swap(ResLogin* other);
   
   // implements Message ----------------------------------------------
   
-  res_login* New() const;
+  ResLogin* New() const;
   void CopyFrom(const ::google::protobuf::Message& from);
   void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const res_login& from);
-  void MergeFrom(const res_login& from);
+  void CopyFrom(const ResLogin& from);
+  void MergeFrom(const ResLogin& from);
   void Clear();
   bool IsInitialized() const;
   
@@ -419,16 +419,16 @@ class res_login : public ::google::protobuf::Message {
   
   // accessors -------------------------------------------------------
   
-  // optional string userid = 1;
-  inline bool has_userid() const;
-  inline void clear_userid();
-  static const int kUseridFieldNumber = 1;
-  inline const ::std::string& userid() const;
-  inline void set_userid(const ::std::string& value);
-  inline void set_userid(const char* value);
-  inline void set_userid(const char* value, size_t size);
-  inline ::std::string* mutable_userid();
-  inline ::std::string* release_userid();
+  // optional string user_id = 1;
+  inline bool has_user_id() const;
+  inline void clear_user_id();
+  static const int kUserIdFieldNumber = 1;
+  inline const ::std::string& user_id() const;
+  inline void set_user_id(const ::std::string& value);
+  inline void set_user_id(const char* value);
+  inline void set_user_id(const char* value, size_t size);
+  inline ::std::string* mutable_user_id();
+  inline ::std::string* release_user_id();
   
   // optional sint32 result = 2;
   inline bool has_result() const;
@@ -437,16 +437,16 @@ class res_login : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 result() const;
   inline void set_result(::google::protobuf::int32 value);
   
-  // @@protoc_insertion_point(class_scope:com.iod.pb.test.res_login)
+  // @@protoc_insertion_point(class_scope:com.iod.pb.test.ResLogin)
  private:
-  inline void set_has_userid();
-  inline void clear_has_userid();
+  inline void set_has_user_id();
+  inline void clear_has_user_id();
   inline void set_has_result();
   inline void clear_has_result();
   
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
   
-  ::std::string* userid_;
+  ::std::string* user_id_;
   ::google::protobuf::int32 result_;
   
   mutable int _cached_size_;
@@ -457,18 +457,18 @@ class res_login : public ::google::protobuf::Message {
   friend void protobuf_ShutdownFile_iod_5ftest_2eproto();
   
   void InitAsDefaultInstance();
-  static res_login* default_instance_;
+  static ResLogin* default_instance_;
 };
 // -------------------------------------------------------------------
 
-class req_test_info : public ::google::protobuf::Message {
+class ReqTestInfo : public ::google::protobuf::Message {
  public:
-  req_test_info();
-  virtual ~req_test_info();
+  ReqTestInfo();
+  virtual ~ReqTestInfo();
   
-  req_test_info(const req_test_info& from);
+  ReqTestInfo(const ReqTestInfo& from);
   
-  inline req_test_info& operator=(const req_test_info& from) {
+  inline ReqTestInfo& operator=(const ReqTestInfo& from) {
     CopyFrom(from);
     return *this;
   }
@@ -482,17 +482,17 @@ class req_test_info : public ::google::protobuf::Message {
   }
   
   static const ::google::protobuf::Descriptor* descriptor();
-  static const req_test_info& default_instance();
+  static const ReqTestInfo& default_instance();
   
-  void Swap(req_test_info* other);
+  void Swap(ReqTestInfo* other);
   
   // implements Message ----------------------------------------------
   
-  req_test_info* New() const;
+  ReqTestInfo* New() const;
   void CopyFrom(const ::google::protobuf::Message& from);
   void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const req_test_info& from);
-  void MergeFrom(const req_test_info& from);
+  void CopyFrom(const ReqTestInfo& from);
+  void MergeFrom(const ReqTestInfo& from);
   void Clear();
   bool IsInitialized() const;
   
@@ -526,7 +526,7 @@ class req_test_info : public ::google::protobuf::Message {
   inline ::std::string* mutable_info();
   inline ::std::string* release_info();
   
-  // @@protoc_insertion_point(class_scope:com.iod.pb.test.req_test_info)
+  // @@protoc_insertion_point(class_scope:com.iod.pb.test.ReqTestInfo)
  private:
   inline void set_has_info();
   inline void clear_has_info();
@@ -543,18 +543,18 @@ class req_test_info : public ::google::protobuf::Message {
   friend void protobuf_ShutdownFile_iod_5ftest_2eproto();
   
   void InitAsDefaultInstance();
-  static req_test_info* default_instance_;
+  static ReqTestInfo* default_instance_;
 };
 // -------------------------------------------------------------------
 
-class res_test_info : public ::google::protobuf::Message {
+class ResTestInfo : public ::google::protobuf::Message {
  public:
-  res_test_info();
-  virtual ~res_test_info();
+  ResTestInfo();
+  virtual ~ResTestInfo();
   
-  res_test_info(const res_test_info& from);
+  ResTestInfo(const ResTestInfo& from);
   
-  inline res_test_info& operator=(const res_test_info& from) {
+  inline ResTestInfo& operator=(const ResTestInfo& from) {
     CopyFrom(from);
     return *this;
   }
@@ -568,17 +568,17 @@ class res_test_info : public ::google::protobuf::Message {
   }
   
   static const ::google::protobuf::Descriptor* descriptor();
-  static const res_test_info& default_instance();
+  static const ResTestInfo& default_instance();
   
-  void Swap(res_test_info* other);
+  void Swap(ResTestInfo* other);
   
   // implements Message ----------------------------------------------
   
-  res_test_info* New() const;
+  ResTestInfo* New() const;
   void CopyFrom(const ::google::protobuf::Message& from);
   void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const res_test_info& from);
-  void MergeFrom(const res_test_info& from);
+  void CopyFrom(const ResTestInfo& from);
+  void MergeFrom(const ResTestInfo& from);
   void Clear();
   bool IsInitialized() const;
   
@@ -612,7 +612,7 @@ class res_test_info : public ::google::protobuf::Message {
   inline ::std::string* mutable_info();
   inline ::std::string* release_info();
   
-  // @@protoc_insertion_point(class_scope:com.iod.pb.test.res_test_info)
+  // @@protoc_insertion_point(class_scope:com.iod.pb.test.ResTestInfo)
  private:
   inline void set_has_info();
   inline void clear_has_info();
@@ -629,18 +629,18 @@ class res_test_info : public ::google::protobuf::Message {
   friend void protobuf_ShutdownFile_iod_5ftest_2eproto();
   
   void InitAsDefaultInstance();
-  static res_test_info* default_instance_;
+  static ResTestInfo* default_instance_;
 };
 // -------------------------------------------------------------------
 
-class req_logout : public ::google::protobuf::Message {
+class ReqLogout : public ::google::protobuf::Message {
  public:
-  req_logout();
-  virtual ~req_logout();
+  ReqLogout();
+  virtual ~ReqLogout();
   
-  req_logout(const req_logout& from);
+  ReqLogout(const ReqLogout& from);
   
-  inline req_logout& operator=(const req_logout& from) {
+  inline ReqLogout& operator=(const ReqLogout& from) {
     CopyFrom(from);
     return *this;
   }
@@ -654,17 +654,17 @@ class req_logout : public ::google::protobuf::Message {
   }
   
   static const ::google::protobuf::Descriptor* descriptor();
-  static const req_logout& default_instance();
+  static const ReqLogout& default_instance();
   
-  void Swap(req_logout* other);
+  void Swap(ReqLogout* other);
   
   // implements Message ----------------------------------------------
   
-  req_logout* New() const;
+  ReqLogout* New() const;
   void CopyFrom(const ::google::protobuf::Message& from);
   void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const req_logout& from);
-  void MergeFrom(const req_logout& from);
+  void CopyFrom(const ReqLogout& from);
+  void MergeFrom(const ReqLogout& from);
   void Clear();
   bool IsInitialized() const;
   
@@ -687,7 +687,7 @@ class req_logout : public ::google::protobuf::Message {
   
   // accessors -------------------------------------------------------
   
-  // @@protoc_insertion_point(class_scope:com.iod.pb.test.req_logout)
+  // @@protoc_insertion_point(class_scope:com.iod.pb.test.ReqLogout)
  private:
   
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -701,18 +701,18 @@ class req_logout : public ::google::protobuf::Message {
   friend void protobuf_ShutdownFile_iod_5ftest_2eproto();
   
   void InitAsDefaultInstance();
-  static req_logout* default_instance_;
+  static ReqLogout* default_instance_;
 };
 // -------------------------------------------------------------------
 
-class req_test_response_time : public ::google::protobuf::Message {
+class ReqTestResponseTime : public ::google::protobuf::Message {
  public:
-  req_test_response_time();
-  virtual ~req_test_response_time();
+  ReqTestResponseTime();
+  virtual ~ReqTestResponseTime();
   
-  req_test_response_time(const req_test_response_time& from);
+  ReqTestResponseTime(const ReqTestResponseTime& from);
   
-  inline req_test_response_time& operator=(const req_test_response_time& from) {
+  inline ReqTestResponseTime& operator=(const ReqTestResponseTime& from) {
     CopyFrom(from);
     return *this;
   }
@@ -726,17 +726,17 @@ class req_test_response_time : public ::google::protobuf::Message {
   }
   
   static const ::google::protobuf::Descriptor* descriptor();
-  static const req_test_response_time& default_instance();
+  static const ReqTestResponseTime& default_instance();
   
-  void Swap(req_test_response_time* other);
+  void Swap(ReqTestResponseTime* other);
   
   // implements Message ----------------------------------------------
   
-  req_test_response_time* New() const;
+  ReqTestResponseTime* New() const;
   void CopyFrom(const ::google::protobuf::Message& from);
   void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const req_test_response_time& from);
-  void MergeFrom(const req_test_response_time& from);
+  void CopyFrom(const ReqTestResponseTime& from);
+  void MergeFrom(const ReqTestResponseTime& from);
   void Clear();
   bool IsInitialized() const;
   
@@ -766,7 +766,7 @@ class req_test_response_time : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 req_timestamp() const;
   inline void set_req_timestamp(::google::protobuf::int64 value);
   
-  // @@protoc_insertion_point(class_scope:com.iod.pb.test.req_test_response_time)
+  // @@protoc_insertion_point(class_scope:com.iod.pb.test.ReqTestResponseTime)
  private:
   inline void set_has_req_timestamp();
   inline void clear_has_req_timestamp();
@@ -783,18 +783,18 @@ class req_test_response_time : public ::google::protobuf::Message {
   friend void protobuf_ShutdownFile_iod_5ftest_2eproto();
   
   void InitAsDefaultInstance();
-  static req_test_response_time* default_instance_;
+  static ReqTestResponseTime* default_instance_;
 };
 // -------------------------------------------------------------------
 
-class res_test_response_time : public ::google::protobuf::Message {
+class ResTestResponseTime : public ::google::protobuf::Message {
  public:
-  res_test_response_time();
-  virtual ~res_test_response_time();
+  ResTestResponseTime();
+  virtual ~ResTestResponseTime();
   
-  res_test_response_time(const res_test_response_time& from);
+  ResTestResponseTime(const ResTestResponseTime& from);
   
-  inline res_test_response_time& operator=(const res_test_response_time& from) {
+  inline ResTestResponseTime& operator=(const ResTestResponseTime& from) {
     CopyFrom(from);
     return *this;
   }
@@ -808,17 +808,17 @@ class res_test_response_time : public ::google::protobuf::Message {
   }
   
   static const ::google::protobuf::Descriptor* descriptor();
-  static const res_test_response_time& default_instance();
+  static const ResTestResponseTime& default_instance();
   
-  void Swap(res_test_response_time* other);
+  void Swap(ResTestResponseTime* other);
   
   // implements Message ----------------------------------------------
   
-  res_test_response_time* New() const;
+  ResTestResponseTime* New() const;
   void CopyFrom(const ::google::protobuf::Message& from);
   void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const res_test_response_time& from);
-  void MergeFrom(const res_test_response_time& from);
+  void CopyFrom(const ResTestResponseTime& from);
+  void MergeFrom(const ResTestResponseTime& from);
   void Clear();
   bool IsInitialized() const;
   
@@ -848,7 +848,7 @@ class res_test_response_time : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 req_timestamp() const;
   inline void set_req_timestamp(::google::protobuf::int64 value);
   
-  // @@protoc_insertion_point(class_scope:com.iod.pb.test.res_test_response_time)
+  // @@protoc_insertion_point(class_scope:com.iod.pb.test.ResTestResponseTime)
  private:
   inline void set_has_req_timestamp();
   inline void clear_has_req_timestamp();
@@ -865,18 +865,18 @@ class res_test_response_time : public ::google::protobuf::Message {
   friend void protobuf_ShutdownFile_iod_5ftest_2eproto();
   
   void InitAsDefaultInstance();
-  static res_test_response_time* default_instance_;
+  static ResTestResponseTime* default_instance_;
 };
 // -------------------------------------------------------------------
 
-class notify_kickout : public ::google::protobuf::Message {
+class NotifyKickout : public ::google::protobuf::Message {
  public:
-  notify_kickout();
-  virtual ~notify_kickout();
+  NotifyKickout();
+  virtual ~NotifyKickout();
   
-  notify_kickout(const notify_kickout& from);
+  NotifyKickout(const NotifyKickout& from);
   
-  inline notify_kickout& operator=(const notify_kickout& from) {
+  inline NotifyKickout& operator=(const NotifyKickout& from) {
     CopyFrom(from);
     return *this;
   }
@@ -890,17 +890,17 @@ class notify_kickout : public ::google::protobuf::Message {
   }
   
   static const ::google::protobuf::Descriptor* descriptor();
-  static const notify_kickout& default_instance();
+  static const NotifyKickout& default_instance();
   
-  void Swap(notify_kickout* other);
+  void Swap(NotifyKickout* other);
   
   // implements Message ----------------------------------------------
   
-  notify_kickout* New() const;
+  NotifyKickout* New() const;
   void CopyFrom(const ::google::protobuf::Message& from);
   void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const notify_kickout& from);
-  void MergeFrom(const notify_kickout& from);
+  void CopyFrom(const NotifyKickout& from);
+  void MergeFrom(const NotifyKickout& from);
   void Clear();
   bool IsInitialized() const;
   
@@ -930,7 +930,7 @@ class notify_kickout : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 kick_reason() const;
   inline void set_kick_reason(::google::protobuf::int32 value);
   
-  // @@protoc_insertion_point(class_scope:com.iod.pb.test.notify_kickout)
+  // @@protoc_insertion_point(class_scope:com.iod.pb.test.NotifyKickout)
  private:
   inline void set_has_kick_reason();
   inline void clear_has_kick_reason();
@@ -947,18 +947,18 @@ class notify_kickout : public ::google::protobuf::Message {
   friend void protobuf_ShutdownFile_iod_5ftest_2eproto();
   
   void InitAsDefaultInstance();
-  static notify_kickout* default_instance_;
+  static NotifyKickout* default_instance_;
 };
 // -------------------------------------------------------------------
 
-class test_msg_1 : public ::google::protobuf::Message {
+class TestMsg1 : public ::google::protobuf::Message {
  public:
-  test_msg_1();
-  virtual ~test_msg_1();
+  TestMsg1();
+  virtual ~TestMsg1();
   
-  test_msg_1(const test_msg_1& from);
+  TestMsg1(const TestMsg1& from);
   
-  inline test_msg_1& operator=(const test_msg_1& from) {
+  inline TestMsg1& operator=(const TestMsg1& from) {
     CopyFrom(from);
     return *this;
   }
@@ -972,17 +972,17 @@ class test_msg_1 : public ::google::protobuf::Message {
   }
   
   static const ::google::protobuf::Descriptor* descriptor();
-  static const test_msg_1& default_instance();
+  static const TestMsg1& default_instance();
   
-  void Swap(test_msg_1* other);
+  void Swap(TestMsg1* other);
   
   // implements Message ----------------------------------------------
   
-  test_msg_1* New() const;
+  TestMsg1* New() const;
   void CopyFrom(const ::google::protobuf::Message& from);
   void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const test_msg_1& from);
-  void MergeFrom(const test_msg_1& from);
+  void CopyFrom(const TestMsg1& from);
+  void MergeFrom(const TestMsg1& from);
   void Clear();
   bool IsInitialized() const;
   
@@ -1016,7 +1016,7 @@ class test_msg_1 : public ::google::protobuf::Message {
   inline ::std::string* mutable_test_data();
   inline ::std::string* release_test_data();
   
-  // @@protoc_insertion_point(class_scope:com.iod.pb.test.test_msg_1)
+  // @@protoc_insertion_point(class_scope:com.iod.pb.test.TestMsg1)
  private:
   inline void set_has_test_data();
   inline void clear_has_test_data();
@@ -1033,18 +1033,18 @@ class test_msg_1 : public ::google::protobuf::Message {
   friend void protobuf_ShutdownFile_iod_5ftest_2eproto();
   
   void InitAsDefaultInstance();
-  static test_msg_1* default_instance_;
+  static TestMsg1* default_instance_;
 };
 // -------------------------------------------------------------------
 
-class test_msg_2 : public ::google::protobuf::Message {
+class TestMsg2 : public ::google::protobuf::Message {
  public:
-  test_msg_2();
-  virtual ~test_msg_2();
+  TestMsg2();
+  virtual ~TestMsg2();
   
-  test_msg_2(const test_msg_2& from);
+  TestMsg2(const TestMsg2& from);
   
-  inline test_msg_2& operator=(const test_msg_2& from) {
+  inline TestMsg2& operator=(const TestMsg2& from) {
     CopyFrom(from);
     return *this;
   }
@@ -1058,17 +1058,17 @@ class test_msg_2 : public ::google::protobuf::Message {
   }
   
   static const ::google::protobuf::Descriptor* descriptor();
-  static const test_msg_2& default_instance();
+  static const TestMsg2& default_instance();
   
-  void Swap(test_msg_2* other);
+  void Swap(TestMsg2* other);
   
   // implements Message ----------------------------------------------
   
-  test_msg_2* New() const;
+  TestMsg2* New() const;
   void CopyFrom(const ::google::protobuf::Message& from);
   void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const test_msg_2& from);
-  void MergeFrom(const test_msg_2& from);
+  void CopyFrom(const TestMsg2& from);
+  void MergeFrom(const TestMsg2& from);
   void Clear();
   bool IsInitialized() const;
   
@@ -1102,7 +1102,7 @@ class test_msg_2 : public ::google::protobuf::Message {
   inline ::std::string* mutable_test_data();
   inline ::std::string* release_test_data();
   
-  // @@protoc_insertion_point(class_scope:com.iod.pb.test.test_msg_2)
+  // @@protoc_insertion_point(class_scope:com.iod.pb.test.TestMsg2)
  private:
   inline void set_has_test_data();
   inline void clear_has_test_data();
@@ -1119,18 +1119,18 @@ class test_msg_2 : public ::google::protobuf::Message {
   friend void protobuf_ShutdownFile_iod_5ftest_2eproto();
   
   void InitAsDefaultInstance();
-  static test_msg_2* default_instance_;
+  static TestMsg2* default_instance_;
 };
 // -------------------------------------------------------------------
 
-class test_msg_3 : public ::google::protobuf::Message {
+class TestMsg3 : public ::google::protobuf::Message {
  public:
-  test_msg_3();
-  virtual ~test_msg_3();
+  TestMsg3();
+  virtual ~TestMsg3();
   
-  test_msg_3(const test_msg_3& from);
+  TestMsg3(const TestMsg3& from);
   
-  inline test_msg_3& operator=(const test_msg_3& from) {
+  inline TestMsg3& operator=(const TestMsg3& from) {
     CopyFrom(from);
     return *this;
   }
@@ -1144,17 +1144,17 @@ class test_msg_3 : public ::google::protobuf::Message {
   }
   
   static const ::google::protobuf::Descriptor* descriptor();
-  static const test_msg_3& default_instance();
+  static const TestMsg3& default_instance();
   
-  void Swap(test_msg_3* other);
+  void Swap(TestMsg3* other);
   
   // implements Message ----------------------------------------------
   
-  test_msg_3* New() const;
+  TestMsg3* New() const;
   void CopyFrom(const ::google::protobuf::Message& from);
   void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const test_msg_3& from);
-  void MergeFrom(const test_msg_3& from);
+  void CopyFrom(const TestMsg3& from);
+  void MergeFrom(const TestMsg3& from);
   void Clear();
   bool IsInitialized() const;
   
@@ -1188,7 +1188,7 @@ class test_msg_3 : public ::google::protobuf::Message {
   inline ::std::string* mutable_test_data();
   inline ::std::string* release_test_data();
   
-  // @@protoc_insertion_point(class_scope:com.iod.pb.test.test_msg_3)
+  // @@protoc_insertion_point(class_scope:com.iod.pb.test.TestMsg3)
  private:
   inline void set_has_test_data();
   inline void clear_has_test_data();
@@ -1205,18 +1205,18 @@ class test_msg_3 : public ::google::protobuf::Message {
   friend void protobuf_ShutdownFile_iod_5ftest_2eproto();
   
   void InitAsDefaultInstance();
-  static test_msg_3* default_instance_;
+  static TestMsg3* default_instance_;
 };
 // -------------------------------------------------------------------
 
-class test_msg_4 : public ::google::protobuf::Message {
+class TestMsg4 : public ::google::protobuf::Message {
  public:
-  test_msg_4();
-  virtual ~test_msg_4();
+  TestMsg4();
+  virtual ~TestMsg4();
   
-  test_msg_4(const test_msg_4& from);
+  TestMsg4(const TestMsg4& from);
   
-  inline test_msg_4& operator=(const test_msg_4& from) {
+  inline TestMsg4& operator=(const TestMsg4& from) {
     CopyFrom(from);
     return *this;
   }
@@ -1230,17 +1230,17 @@ class test_msg_4 : public ::google::protobuf::Message {
   }
   
   static const ::google::protobuf::Descriptor* descriptor();
-  static const test_msg_4& default_instance();
+  static const TestMsg4& default_instance();
   
-  void Swap(test_msg_4* other);
+  void Swap(TestMsg4* other);
   
   // implements Message ----------------------------------------------
   
-  test_msg_4* New() const;
+  TestMsg4* New() const;
   void CopyFrom(const ::google::protobuf::Message& from);
   void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const test_msg_4& from);
-  void MergeFrom(const test_msg_4& from);
+  void CopyFrom(const TestMsg4& from);
+  void MergeFrom(const TestMsg4& from);
   void Clear();
   bool IsInitialized() const;
   
@@ -1274,7 +1274,7 @@ class test_msg_4 : public ::google::protobuf::Message {
   inline ::std::string* mutable_test_data();
   inline ::std::string* release_test_data();
   
-  // @@protoc_insertion_point(class_scope:com.iod.pb.test.test_msg_4)
+  // @@protoc_insertion_point(class_scope:com.iod.pb.test.TestMsg4)
  private:
   inline void set_has_test_data();
   inline void clear_has_test_data();
@@ -1291,18 +1291,18 @@ class test_msg_4 : public ::google::protobuf::Message {
   friend void protobuf_ShutdownFile_iod_5ftest_2eproto();
   
   void InitAsDefaultInstance();
-  static test_msg_4* default_instance_;
+  static TestMsg4* default_instance_;
 };
 // -------------------------------------------------------------------
 
-class test_msg_5 : public ::google::protobuf::Message {
+class TestMsg5 : public ::google::protobuf::Message {
  public:
-  test_msg_5();
-  virtual ~test_msg_5();
+  TestMsg5();
+  virtual ~TestMsg5();
   
-  test_msg_5(const test_msg_5& from);
+  TestMsg5(const TestMsg5& from);
   
-  inline test_msg_5& operator=(const test_msg_5& from) {
+  inline TestMsg5& operator=(const TestMsg5& from) {
     CopyFrom(from);
     return *this;
   }
@@ -1316,17 +1316,17 @@ class test_msg_5 : public ::google::protobuf::Message {
   }
   
   static const ::google::protobuf::Descriptor* descriptor();
-  static const test_msg_5& default_instance();
+  static const TestMsg5& default_instance();
   
-  void Swap(test_msg_5* other);
+  void Swap(TestMsg5* other);
   
   // implements Message ----------------------------------------------
   
-  test_msg_5* New() const;
+  TestMsg5* New() const;
   void CopyFrom(const ::google::protobuf::Message& from);
   void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const test_msg_5& from);
-  void MergeFrom(const test_msg_5& from);
+  void CopyFrom(const TestMsg5& from);
+  void MergeFrom(const TestMsg5& from);
   void Clear();
   bool IsInitialized() const;
   
@@ -1360,7 +1360,7 @@ class test_msg_5 : public ::google::protobuf::Message {
   inline ::std::string* mutable_test_data();
   inline ::std::string* release_test_data();
   
-  // @@protoc_insertion_point(class_scope:com.iod.pb.test.test_msg_5)
+  // @@protoc_insertion_point(class_scope:com.iod.pb.test.TestMsg5)
  private:
   inline void set_has_test_data();
   inline void clear_has_test_data();
@@ -1377,18 +1377,18 @@ class test_msg_5 : public ::google::protobuf::Message {
   friend void protobuf_ShutdownFile_iod_5ftest_2eproto();
   
   void InitAsDefaultInstance();
-  static test_msg_5* default_instance_;
+  static TestMsg5* default_instance_;
 };
 // -------------------------------------------------------------------
 
-class test_msg_6 : public ::google::protobuf::Message {
+class TestMsg6 : public ::google::protobuf::Message {
  public:
-  test_msg_6();
-  virtual ~test_msg_6();
+  TestMsg6();
+  virtual ~TestMsg6();
   
-  test_msg_6(const test_msg_6& from);
+  TestMsg6(const TestMsg6& from);
   
-  inline test_msg_6& operator=(const test_msg_6& from) {
+  inline TestMsg6& operator=(const TestMsg6& from) {
     CopyFrom(from);
     return *this;
   }
@@ -1402,17 +1402,17 @@ class test_msg_6 : public ::google::protobuf::Message {
   }
   
   static const ::google::protobuf::Descriptor* descriptor();
-  static const test_msg_6& default_instance();
+  static const TestMsg6& default_instance();
   
-  void Swap(test_msg_6* other);
+  void Swap(TestMsg6* other);
   
   // implements Message ----------------------------------------------
   
-  test_msg_6* New() const;
+  TestMsg6* New() const;
   void CopyFrom(const ::google::protobuf::Message& from);
   void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const test_msg_6& from);
-  void MergeFrom(const test_msg_6& from);
+  void CopyFrom(const TestMsg6& from);
+  void MergeFrom(const TestMsg6& from);
   void Clear();
   bool IsInitialized() const;
   
@@ -1446,7 +1446,7 @@ class test_msg_6 : public ::google::protobuf::Message {
   inline ::std::string* mutable_test_data();
   inline ::std::string* release_test_data();
   
-  // @@protoc_insertion_point(class_scope:com.iod.pb.test.test_msg_6)
+  // @@protoc_insertion_point(class_scope:com.iod.pb.test.TestMsg6)
  private:
   inline void set_has_test_data();
   inline void clear_has_test_data();
@@ -1463,18 +1463,18 @@ class test_msg_6 : public ::google::protobuf::Message {
   friend void protobuf_ShutdownFile_iod_5ftest_2eproto();
   
   void InitAsDefaultInstance();
-  static test_msg_6* default_instance_;
+  static TestMsg6* default_instance_;
 };
 // -------------------------------------------------------------------
 
-class test_msg_7 : public ::google::protobuf::Message {
+class TestMsg7 : public ::google::protobuf::Message {
  public:
-  test_msg_7();
-  virtual ~test_msg_7();
+  TestMsg7();
+  virtual ~TestMsg7();
   
-  test_msg_7(const test_msg_7& from);
+  TestMsg7(const TestMsg7& from);
   
-  inline test_msg_7& operator=(const test_msg_7& from) {
+  inline TestMsg7& operator=(const TestMsg7& from) {
     CopyFrom(from);
     return *this;
   }
@@ -1488,17 +1488,17 @@ class test_msg_7 : public ::google::protobuf::Message {
   }
   
   static const ::google::protobuf::Descriptor* descriptor();
-  static const test_msg_7& default_instance();
+  static const TestMsg7& default_instance();
   
-  void Swap(test_msg_7* other);
+  void Swap(TestMsg7* other);
   
   // implements Message ----------------------------------------------
   
-  test_msg_7* New() const;
+  TestMsg7* New() const;
   void CopyFrom(const ::google::protobuf::Message& from);
   void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const test_msg_7& from);
-  void MergeFrom(const test_msg_7& from);
+  void CopyFrom(const TestMsg7& from);
+  void MergeFrom(const TestMsg7& from);
   void Clear();
   bool IsInitialized() const;
   
@@ -1532,7 +1532,7 @@ class test_msg_7 : public ::google::protobuf::Message {
   inline ::std::string* mutable_test_data();
   inline ::std::string* release_test_data();
   
-  // @@protoc_insertion_point(class_scope:com.iod.pb.test.test_msg_7)
+  // @@protoc_insertion_point(class_scope:com.iod.pb.test.TestMsg7)
  private:
   inline void set_has_test_data();
   inline void clear_has_test_data();
@@ -1549,18 +1549,18 @@ class test_msg_7 : public ::google::protobuf::Message {
   friend void protobuf_ShutdownFile_iod_5ftest_2eproto();
   
   void InitAsDefaultInstance();
-  static test_msg_7* default_instance_;
+  static TestMsg7* default_instance_;
 };
 // -------------------------------------------------------------------
 
-class test_msg_8 : public ::google::protobuf::Message {
+class TestMsg8 : public ::google::protobuf::Message {
  public:
-  test_msg_8();
-  virtual ~test_msg_8();
+  TestMsg8();
+  virtual ~TestMsg8();
   
-  test_msg_8(const test_msg_8& from);
+  TestMsg8(const TestMsg8& from);
   
-  inline test_msg_8& operator=(const test_msg_8& from) {
+  inline TestMsg8& operator=(const TestMsg8& from) {
     CopyFrom(from);
     return *this;
   }
@@ -1574,17 +1574,17 @@ class test_msg_8 : public ::google::protobuf::Message {
   }
   
   static const ::google::protobuf::Descriptor* descriptor();
-  static const test_msg_8& default_instance();
+  static const TestMsg8& default_instance();
   
-  void Swap(test_msg_8* other);
+  void Swap(TestMsg8* other);
   
   // implements Message ----------------------------------------------
   
-  test_msg_8* New() const;
+  TestMsg8* New() const;
   void CopyFrom(const ::google::protobuf::Message& from);
   void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const test_msg_8& from);
-  void MergeFrom(const test_msg_8& from);
+  void CopyFrom(const TestMsg8& from);
+  void MergeFrom(const TestMsg8& from);
   void Clear();
   bool IsInitialized() const;
   
@@ -1618,7 +1618,7 @@ class test_msg_8 : public ::google::protobuf::Message {
   inline ::std::string* mutable_test_data();
   inline ::std::string* release_test_data();
   
-  // @@protoc_insertion_point(class_scope:com.iod.pb.test.test_msg_8)
+  // @@protoc_insertion_point(class_scope:com.iod.pb.test.TestMsg8)
  private:
   inline void set_has_test_data();
   inline void clear_has_test_data();
@@ -1635,18 +1635,18 @@ class test_msg_8 : public ::google::protobuf::Message {
   friend void protobuf_ShutdownFile_iod_5ftest_2eproto();
   
   void InitAsDefaultInstance();
-  static test_msg_8* default_instance_;
+  static TestMsg8* default_instance_;
 };
 // -------------------------------------------------------------------
 
-class test_msg_9 : public ::google::protobuf::Message {
+class TestMsg9 : public ::google::protobuf::Message {
  public:
-  test_msg_9();
-  virtual ~test_msg_9();
+  TestMsg9();
+  virtual ~TestMsg9();
   
-  test_msg_9(const test_msg_9& from);
+  TestMsg9(const TestMsg9& from);
   
-  inline test_msg_9& operator=(const test_msg_9& from) {
+  inline TestMsg9& operator=(const TestMsg9& from) {
     CopyFrom(from);
     return *this;
   }
@@ -1660,17 +1660,17 @@ class test_msg_9 : public ::google::protobuf::Message {
   }
   
   static const ::google::protobuf::Descriptor* descriptor();
-  static const test_msg_9& default_instance();
+  static const TestMsg9& default_instance();
   
-  void Swap(test_msg_9* other);
+  void Swap(TestMsg9* other);
   
   // implements Message ----------------------------------------------
   
-  test_msg_9* New() const;
+  TestMsg9* New() const;
   void CopyFrom(const ::google::protobuf::Message& from);
   void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const test_msg_9& from);
-  void MergeFrom(const test_msg_9& from);
+  void CopyFrom(const TestMsg9& from);
+  void MergeFrom(const TestMsg9& from);
   void Clear();
   bool IsInitialized() const;
   
@@ -1704,7 +1704,7 @@ class test_msg_9 : public ::google::protobuf::Message {
   inline ::std::string* mutable_test_data();
   inline ::std::string* release_test_data();
   
-  // @@protoc_insertion_point(class_scope:com.iod.pb.test.test_msg_9)
+  // @@protoc_insertion_point(class_scope:com.iod.pb.test.TestMsg9)
  private:
   inline void set_has_test_data();
   inline void clear_has_test_data();
@@ -1721,18 +1721,18 @@ class test_msg_9 : public ::google::protobuf::Message {
   friend void protobuf_ShutdownFile_iod_5ftest_2eproto();
   
   void InitAsDefaultInstance();
-  static test_msg_9* default_instance_;
+  static TestMsg9* default_instance_;
 };
 // -------------------------------------------------------------------
 
-class test_msg_10 : public ::google::protobuf::Message {
+class TestMsg10 : public ::google::protobuf::Message {
  public:
-  test_msg_10();
-  virtual ~test_msg_10();
+  TestMsg10();
+  virtual ~TestMsg10();
   
-  test_msg_10(const test_msg_10& from);
+  TestMsg10(const TestMsg10& from);
   
-  inline test_msg_10& operator=(const test_msg_10& from) {
+  inline TestMsg10& operator=(const TestMsg10& from) {
     CopyFrom(from);
     return *this;
   }
@@ -1746,17 +1746,17 @@ class test_msg_10 : public ::google::protobuf::Message {
   }
   
   static const ::google::protobuf::Descriptor* descriptor();
-  static const test_msg_10& default_instance();
+  static const TestMsg10& default_instance();
   
-  void Swap(test_msg_10* other);
+  void Swap(TestMsg10* other);
   
   // implements Message ----------------------------------------------
   
-  test_msg_10* New() const;
+  TestMsg10* New() const;
   void CopyFrom(const ::google::protobuf::Message& from);
   void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const test_msg_10& from);
-  void MergeFrom(const test_msg_10& from);
+  void CopyFrom(const TestMsg10& from);
+  void MergeFrom(const TestMsg10& from);
   void Clear();
   bool IsInitialized() const;
   
@@ -1790,7 +1790,7 @@ class test_msg_10 : public ::google::protobuf::Message {
   inline ::std::string* mutable_test_data();
   inline ::std::string* release_test_data();
   
-  // @@protoc_insertion_point(class_scope:com.iod.pb.test.test_msg_10)
+  // @@protoc_insertion_point(class_scope:com.iod.pb.test.TestMsg10)
  private:
   inline void set_has_test_data();
   inline void clear_has_test_data();
@@ -1807,18 +1807,18 @@ class test_msg_10 : public ::google::protobuf::Message {
   friend void protobuf_ShutdownFile_iod_5ftest_2eproto();
   
   void InitAsDefaultInstance();
-  static test_msg_10* default_instance_;
+  static TestMsg10* default_instance_;
 };
 // -------------------------------------------------------------------
 
-class test_msg_11 : public ::google::protobuf::Message {
+class TestMsg11 : public ::google::protobuf::Message {
  public:
-  test_msg_11();
-  virtual ~test_msg_11();
+  TestMsg11();
+  virtual ~TestMsg11();
   
-  test_msg_11(const test_msg_11& from);
+  TestMsg11(const TestMsg11& from);
   
-  inline test_msg_11& operator=(const test_msg_11& from) {
+  inline TestMsg11& operator=(const TestMsg11& from) {
     CopyFrom(from);
     return *this;
   }
@@ -1832,17 +1832,17 @@ class test_msg_11 : public ::google::protobuf::Message {
   }
   
   static const ::google::protobuf::Descriptor* descriptor();
-  static const test_msg_11& default_instance();
+  static const TestMsg11& default_instance();
   
-  void Swap(test_msg_11* other);
+  void Swap(TestMsg11* other);
   
   // implements Message ----------------------------------------------
   
-  test_msg_11* New() const;
+  TestMsg11* New() const;
   void CopyFrom(const ::google::protobuf::Message& from);
   void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const test_msg_11& from);
-  void MergeFrom(const test_msg_11& from);
+  void CopyFrom(const TestMsg11& from);
+  void MergeFrom(const TestMsg11& from);
   void Clear();
   bool IsInitialized() const;
   
@@ -1876,7 +1876,7 @@ class test_msg_11 : public ::google::protobuf::Message {
   inline ::std::string* mutable_test_data();
   inline ::std::string* release_test_data();
   
-  // @@protoc_insertion_point(class_scope:com.iod.pb.test.test_msg_11)
+  // @@protoc_insertion_point(class_scope:com.iod.pb.test.TestMsg11)
  private:
   inline void set_has_test_data();
   inline void clear_has_test_data();
@@ -1893,18 +1893,18 @@ class test_msg_11 : public ::google::protobuf::Message {
   friend void protobuf_ShutdownFile_iod_5ftest_2eproto();
   
   void InitAsDefaultInstance();
-  static test_msg_11* default_instance_;
+  static TestMsg11* default_instance_;
 };
 // -------------------------------------------------------------------
 
-class test_msg_12 : public ::google::protobuf::Message {
+class TestMsg12 : public ::google::protobuf::Message {
  public:
-  test_msg_12();
-  virtual ~test_msg_12();
+  TestMsg12();
+  virtual ~TestMsg12();
   
-  test_msg_12(const test_msg_12& from);
+  TestMsg12(const TestMsg12& from);
   
-  inline test_msg_12& operator=(const test_msg_12& from) {
+  inline TestMsg12& operator=(const TestMsg12& from) {
     CopyFrom(from);
     return *this;
   }
@@ -1918,17 +1918,17 @@ class test_msg_12 : public ::google::protobuf::Message {
   }
   
   static const ::google::protobuf::Descriptor* descriptor();
-  static const test_msg_12& default_instance();
+  static const TestMsg12& default_instance();
   
-  void Swap(test_msg_12* other);
+  void Swap(TestMsg12* other);
   
   // implements Message ----------------------------------------------
   
-  test_msg_12* New() const;
+  TestMsg12* New() const;
   void CopyFrom(const ::google::protobuf::Message& from);
   void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const test_msg_12& from);
-  void MergeFrom(const test_msg_12& from);
+  void CopyFrom(const TestMsg12& from);
+  void MergeFrom(const TestMsg12& from);
   void Clear();
   bool IsInitialized() const;
   
@@ -1962,7 +1962,7 @@ class test_msg_12 : public ::google::protobuf::Message {
   inline ::std::string* mutable_test_data();
   inline ::std::string* release_test_data();
   
-  // @@protoc_insertion_point(class_scope:com.iod.pb.test.test_msg_12)
+  // @@protoc_insertion_point(class_scope:com.iod.pb.test.TestMsg12)
  private:
   inline void set_has_test_data();
   inline void clear_has_test_data();
@@ -1979,18 +1979,18 @@ class test_msg_12 : public ::google::protobuf::Message {
   friend void protobuf_ShutdownFile_iod_5ftest_2eproto();
   
   void InitAsDefaultInstance();
-  static test_msg_12* default_instance_;
+  static TestMsg12* default_instance_;
 };
 // -------------------------------------------------------------------
 
-class test_msg_13 : public ::google::protobuf::Message {
+class TestMsg13 : public ::google::protobuf::Message {
  public:
-  test_msg_13();
-  virtual ~test_msg_13();
+  TestMsg13();
+  virtual ~TestMsg13();
   
-  test_msg_13(const test_msg_13& from);
+  TestMsg13(const TestMsg13& from);
   
-  inline test_msg_13& operator=(const test_msg_13& from) {
+  inline TestMsg13& operator=(const TestMsg13& from) {
     CopyFrom(from);
     return *this;
   }
@@ -2004,17 +2004,17 @@ class test_msg_13 : public ::google::protobuf::Message {
   }
   
   static const ::google::protobuf::Descriptor* descriptor();
-  static const test_msg_13& default_instance();
+  static const TestMsg13& default_instance();
   
-  void Swap(test_msg_13* other);
+  void Swap(TestMsg13* other);
   
   // implements Message ----------------------------------------------
   
-  test_msg_13* New() const;
+  TestMsg13* New() const;
   void CopyFrom(const ::google::protobuf::Message& from);
   void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const test_msg_13& from);
-  void MergeFrom(const test_msg_13& from);
+  void CopyFrom(const TestMsg13& from);
+  void MergeFrom(const TestMsg13& from);
   void Clear();
   bool IsInitialized() const;
   
@@ -2048,7 +2048,7 @@ class test_msg_13 : public ::google::protobuf::Message {
   inline ::std::string* mutable_test_data();
   inline ::std::string* release_test_data();
   
-  // @@protoc_insertion_point(class_scope:com.iod.pb.test.test_msg_13)
+  // @@protoc_insertion_point(class_scope:com.iod.pb.test.TestMsg13)
  private:
   inline void set_has_test_data();
   inline void clear_has_test_data();
@@ -2065,18 +2065,18 @@ class test_msg_13 : public ::google::protobuf::Message {
   friend void protobuf_ShutdownFile_iod_5ftest_2eproto();
   
   void InitAsDefaultInstance();
-  static test_msg_13* default_instance_;
+  static TestMsg13* default_instance_;
 };
 // -------------------------------------------------------------------
 
-class test_msg_14 : public ::google::protobuf::Message {
+class TestMsg14 : public ::google::protobuf::Message {
  public:
-  test_msg_14();
-  virtual ~test_msg_14();
+  TestMsg14();
+  virtual ~TestMsg14();
   
-  test_msg_14(const test_msg_14& from);
+  TestMsg14(const TestMsg14& from);
   
-  inline test_msg_14& operator=(const test_msg_14& from) {
+  inline TestMsg14& operator=(const TestMsg14& from) {
     CopyFrom(from);
     return *this;
   }
@@ -2090,17 +2090,17 @@ class test_msg_14 : public ::google::protobuf::Message {
   }
   
   static const ::google::protobuf::Descriptor* descriptor();
-  static const test_msg_14& default_instance();
+  static const TestMsg14& default_instance();
   
-  void Swap(test_msg_14* other);
+  void Swap(TestMsg14* other);
   
   // implements Message ----------------------------------------------
   
-  test_msg_14* New() const;
+  TestMsg14* New() const;
   void CopyFrom(const ::google::protobuf::Message& from);
   void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const test_msg_14& from);
-  void MergeFrom(const test_msg_14& from);
+  void CopyFrom(const TestMsg14& from);
+  void MergeFrom(const TestMsg14& from);
   void Clear();
   bool IsInitialized() const;
   
@@ -2134,7 +2134,7 @@ class test_msg_14 : public ::google::protobuf::Message {
   inline ::std::string* mutable_test_data();
   inline ::std::string* release_test_data();
   
-  // @@protoc_insertion_point(class_scope:com.iod.pb.test.test_msg_14)
+  // @@protoc_insertion_point(class_scope:com.iod.pb.test.TestMsg14)
  private:
   inline void set_has_test_data();
   inline void clear_has_test_data();
@@ -2151,18 +2151,18 @@ class test_msg_14 : public ::google::protobuf::Message {
   friend void protobuf_ShutdownFile_iod_5ftest_2eproto();
   
   void InitAsDefaultInstance();
-  static test_msg_14* default_instance_;
+  static TestMsg14* default_instance_;
 };
 // -------------------------------------------------------------------
 
-class test_msg_15 : public ::google::protobuf::Message {
+class TestMsg15 : public ::google::protobuf::Message {
  public:
-  test_msg_15();
-  virtual ~test_msg_15();
+  TestMsg15();
+  virtual ~TestMsg15();
   
-  test_msg_15(const test_msg_15& from);
+  TestMsg15(const TestMsg15& from);
   
-  inline test_msg_15& operator=(const test_msg_15& from) {
+  inline TestMsg15& operator=(const TestMsg15& from) {
     CopyFrom(from);
     return *this;
   }
@@ -2176,17 +2176,17 @@ class test_msg_15 : public ::google::protobuf::Message {
   }
   
   static const ::google::protobuf::Descriptor* descriptor();
-  static const test_msg_15& default_instance();
+  static const TestMsg15& default_instance();
   
-  void Swap(test_msg_15* other);
+  void Swap(TestMsg15* other);
   
   // implements Message ----------------------------------------------
   
-  test_msg_15* New() const;
+  TestMsg15* New() const;
   void CopyFrom(const ::google::protobuf::Message& from);
   void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const test_msg_15& from);
-  void MergeFrom(const test_msg_15& from);
+  void CopyFrom(const TestMsg15& from);
+  void MergeFrom(const TestMsg15& from);
   void Clear();
   bool IsInitialized() const;
   
@@ -2220,7 +2220,7 @@ class test_msg_15 : public ::google::protobuf::Message {
   inline ::std::string* mutable_test_data();
   inline ::std::string* release_test_data();
   
-  // @@protoc_insertion_point(class_scope:com.iod.pb.test.test_msg_15)
+  // @@protoc_insertion_point(class_scope:com.iod.pb.test.TestMsg15)
  private:
   inline void set_has_test_data();
   inline void clear_has_test_data();
@@ -2237,18 +2237,18 @@ class test_msg_15 : public ::google::protobuf::Message {
   friend void protobuf_ShutdownFile_iod_5ftest_2eproto();
   
   void InitAsDefaultInstance();
-  static test_msg_15* default_instance_;
+  static TestMsg15* default_instance_;
 };
 // -------------------------------------------------------------------
 
-class test_msg_16 : public ::google::protobuf::Message {
+class TestMsg16 : public ::google::protobuf::Message {
  public:
-  test_msg_16();
-  virtual ~test_msg_16();
+  TestMsg16();
+  virtual ~TestMsg16();
   
-  test_msg_16(const test_msg_16& from);
+  TestMsg16(const TestMsg16& from);
   
-  inline test_msg_16& operator=(const test_msg_16& from) {
+  inline TestMsg16& operator=(const TestMsg16& from) {
     CopyFrom(from);
     return *this;
   }
@@ -2262,17 +2262,17 @@ class test_msg_16 : public ::google::protobuf::Message {
   }
   
   static const ::google::protobuf::Descriptor* descriptor();
-  static const test_msg_16& default_instance();
+  static const TestMsg16& default_instance();
   
-  void Swap(test_msg_16* other);
+  void Swap(TestMsg16* other);
   
   // implements Message ----------------------------------------------
   
-  test_msg_16* New() const;
+  TestMsg16* New() const;
   void CopyFrom(const ::google::protobuf::Message& from);
   void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const test_msg_16& from);
-  void MergeFrom(const test_msg_16& from);
+  void CopyFrom(const TestMsg16& from);
+  void MergeFrom(const TestMsg16& from);
   void Clear();
   bool IsInitialized() const;
   
@@ -2306,7 +2306,7 @@ class test_msg_16 : public ::google::protobuf::Message {
   inline ::std::string* mutable_test_data();
   inline ::std::string* release_test_data();
   
-  // @@protoc_insertion_point(class_scope:com.iod.pb.test.test_msg_16)
+  // @@protoc_insertion_point(class_scope:com.iod.pb.test.TestMsg16)
  private:
   inline void set_has_test_data();
   inline void clear_has_test_data();
@@ -2323,18 +2323,18 @@ class test_msg_16 : public ::google::protobuf::Message {
   friend void protobuf_ShutdownFile_iod_5ftest_2eproto();
   
   void InitAsDefaultInstance();
-  static test_msg_16* default_instance_;
+  static TestMsg16* default_instance_;
 };
 // -------------------------------------------------------------------
 
-class test_msg_17 : public ::google::protobuf::Message {
+class TestMsg17 : public ::google::protobuf::Message {
  public:
-  test_msg_17();
-  virtual ~test_msg_17();
+  TestMsg17();
+  virtual ~TestMsg17();
   
-  test_msg_17(const test_msg_17& from);
+  TestMsg17(const TestMsg17& from);
   
-  inline test_msg_17& operator=(const test_msg_17& from) {
+  inline TestMsg17& operator=(const TestMsg17& from) {
     CopyFrom(from);
     return *this;
   }
@@ -2348,17 +2348,17 @@ class test_msg_17 : public ::google::protobuf::Message {
   }
   
   static const ::google::protobuf::Descriptor* descriptor();
-  static const test_msg_17& default_instance();
+  static const TestMsg17& default_instance();
   
-  void Swap(test_msg_17* other);
+  void Swap(TestMsg17* other);
   
   // implements Message ----------------------------------------------
   
-  test_msg_17* New() const;
+  TestMsg17* New() const;
   void CopyFrom(const ::google::protobuf::Message& from);
   void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const test_msg_17& from);
-  void MergeFrom(const test_msg_17& from);
+  void CopyFrom(const TestMsg17& from);
+  void MergeFrom(const TestMsg17& from);
   void Clear();
   bool IsInitialized() const;
   
@@ -2392,7 +2392,7 @@ class test_msg_17 : public ::google::protobuf::Message {
   inline ::std::string* mutable_test_data();
   inline ::std::string* release_test_data();
   
-  // @@protoc_insertion_point(class_scope:com.iod.pb.test.test_msg_17)
+  // @@protoc_insertion_point(class_scope:com.iod.pb.test.TestMsg17)
  private:
   inline void set_has_test_data();
   inline void clear_has_test_data();
@@ -2409,18 +2409,18 @@ class test_msg_17 : public ::google::protobuf::Message {
   friend void protobuf_ShutdownFile_iod_5ftest_2eproto();
   
   void InitAsDefaultInstance();
-  static test_msg_17* default_instance_;
+  static TestMsg17* default_instance_;
 };
 // -------------------------------------------------------------------
 
-class test_msg_18 : public ::google::protobuf::Message {
+class TestMsg18 : public ::google::protobuf::Message {
  public:
-  test_msg_18();
-  virtual ~test_msg_18();
+  TestMsg18();
+  virtual ~TestMsg18();
   
-  test_msg_18(const test_msg_18& from);
+  TestMsg18(const TestMsg18& from);
   
-  inline test_msg_18& operator=(const test_msg_18& from) {
+  inline TestMsg18& operator=(const TestMsg18& from) {
     CopyFrom(from);
     return *this;
   }
@@ -2434,17 +2434,17 @@ class test_msg_18 : public ::google::protobuf::Message {
   }
   
   static const ::google::protobuf::Descriptor* descriptor();
-  static const test_msg_18& default_instance();
+  static const TestMsg18& default_instance();
   
-  void Swap(test_msg_18* other);
+  void Swap(TestMsg18* other);
   
   // implements Message ----------------------------------------------
   
-  test_msg_18* New() const;
+  TestMsg18* New() const;
   void CopyFrom(const ::google::protobuf::Message& from);
   void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const test_msg_18& from);
-  void MergeFrom(const test_msg_18& from);
+  void CopyFrom(const TestMsg18& from);
+  void MergeFrom(const TestMsg18& from);
   void Clear();
   bool IsInitialized() const;
   
@@ -2478,7 +2478,7 @@ class test_msg_18 : public ::google::protobuf::Message {
   inline ::std::string* mutable_test_data();
   inline ::std::string* release_test_data();
   
-  // @@protoc_insertion_point(class_scope:com.iod.pb.test.test_msg_18)
+  // @@protoc_insertion_point(class_scope:com.iod.pb.test.TestMsg18)
  private:
   inline void set_has_test_data();
   inline void clear_has_test_data();
@@ -2495,18 +2495,18 @@ class test_msg_18 : public ::google::protobuf::Message {
   friend void protobuf_ShutdownFile_iod_5ftest_2eproto();
   
   void InitAsDefaultInstance();
-  static test_msg_18* default_instance_;
+  static TestMsg18* default_instance_;
 };
 // -------------------------------------------------------------------
 
-class test_msg_19 : public ::google::protobuf::Message {
+class TestMsg19 : public ::google::protobuf::Message {
  public:
-  test_msg_19();
-  virtual ~test_msg_19();
+  TestMsg19();
+  virtual ~TestMsg19();
   
-  test_msg_19(const test_msg_19& from);
+  TestMsg19(const TestMsg19& from);
   
-  inline test_msg_19& operator=(const test_msg_19& from) {
+  inline TestMsg19& operator=(const TestMsg19& from) {
     CopyFrom(from);
     return *this;
   }
@@ -2520,17 +2520,17 @@ class test_msg_19 : public ::google::protobuf::Message {
   }
   
   static const ::google::protobuf::Descriptor* descriptor();
-  static const test_msg_19& default_instance();
+  static const TestMsg19& default_instance();
   
-  void Swap(test_msg_19* other);
+  void Swap(TestMsg19* other);
   
   // implements Message ----------------------------------------------
   
-  test_msg_19* New() const;
+  TestMsg19* New() const;
   void CopyFrom(const ::google::protobuf::Message& from);
   void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const test_msg_19& from);
-  void MergeFrom(const test_msg_19& from);
+  void CopyFrom(const TestMsg19& from);
+  void MergeFrom(const TestMsg19& from);
   void Clear();
   bool IsInitialized() const;
   
@@ -2564,7 +2564,7 @@ class test_msg_19 : public ::google::protobuf::Message {
   inline ::std::string* mutable_test_data();
   inline ::std::string* release_test_data();
   
-  // @@protoc_insertion_point(class_scope:com.iod.pb.test.test_msg_19)
+  // @@protoc_insertion_point(class_scope:com.iod.pb.test.TestMsg19)
  private:
   inline void set_has_test_data();
   inline void clear_has_test_data();
@@ -2581,18 +2581,18 @@ class test_msg_19 : public ::google::protobuf::Message {
   friend void protobuf_ShutdownFile_iod_5ftest_2eproto();
   
   void InitAsDefaultInstance();
-  static test_msg_19* default_instance_;
+  static TestMsg19* default_instance_;
 };
 // -------------------------------------------------------------------
 
-class test_msg_20 : public ::google::protobuf::Message {
+class TestMsg20 : public ::google::protobuf::Message {
  public:
-  test_msg_20();
-  virtual ~test_msg_20();
+  TestMsg20();
+  virtual ~TestMsg20();
   
-  test_msg_20(const test_msg_20& from);
+  TestMsg20(const TestMsg20& from);
   
-  inline test_msg_20& operator=(const test_msg_20& from) {
+  inline TestMsg20& operator=(const TestMsg20& from) {
     CopyFrom(from);
     return *this;
   }
@@ -2606,17 +2606,17 @@ class test_msg_20 : public ::google::protobuf::Message {
   }
   
   static const ::google::protobuf::Descriptor* descriptor();
-  static const test_msg_20& default_instance();
+  static const TestMsg20& default_instance();
   
-  void Swap(test_msg_20* other);
+  void Swap(TestMsg20* other);
   
   // implements Message ----------------------------------------------
   
-  test_msg_20* New() const;
+  TestMsg20* New() const;
   void CopyFrom(const ::google::protobuf::Message& from);
   void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const test_msg_20& from);
-  void MergeFrom(const test_msg_20& from);
+  void CopyFrom(const TestMsg20& from);
+  void MergeFrom(const TestMsg20& from);
   void Clear();
   bool IsInitialized() const;
   
@@ -2650,7 +2650,7 @@ class test_msg_20 : public ::google::protobuf::Message {
   inline ::std::string* mutable_test_data();
   inline ::std::string* release_test_data();
   
-  // @@protoc_insertion_point(class_scope:com.iod.pb.test.test_msg_20)
+  // @@protoc_insertion_point(class_scope:com.iod.pb.test.TestMsg20)
  private:
   inline void set_has_test_data();
   inline void clear_has_test_data();
@@ -2667,241 +2667,241 @@ class test_msg_20 : public ::google::protobuf::Message {
   friend void protobuf_ShutdownFile_iod_5ftest_2eproto();
   
   void InitAsDefaultInstance();
-  static test_msg_20* default_instance_;
+  static TestMsg20* default_instance_;
 };
 // ===================================================================
 
-static const int kReqAuthenticationFieldNumber = 1000;
-extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::req_authentication >, 11, false >
-  _req_authentication;
-static const int kResAuthenticationFieldNumber = 1001;
-extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::res_authentication >, 11, false >
-  _res_authentication;
-static const int kReqLoginFieldNumber = 1002;
-extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::req_login >, 11, false >
-  _req_login;
-static const int kResLoginFieldNumber = 1003;
-extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::res_login >, 11, false >
-  _res_login;
-static const int kReqTestInfoFieldNumber = 1004;
-extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::req_test_info >, 11, false >
-  _req_test_info;
-static const int kResTestInfoFieldNumber = 1005;
-extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::res_test_info >, 11, false >
-  _res_test_info;
-static const int kReqLogoutFieldNumber = 1006;
-extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::req_logout >, 11, false >
-  _req_logout;
-static const int kReqTestResponseTimeFieldNumber = 1007;
-extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::req_test_response_time >, 11, false >
-  _req_test_response_time;
-static const int kResTestResponseTimeFieldNumber = 1008;
-extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::res_test_response_time >, 11, false >
-  _res_test_response_time;
-static const int kNotifyKickoutFieldNumber = 1009;
-extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::notify_kickout >, 11, false >
-  _notify_kickout;
-static const int kTestMsg1FieldNumber = 5001;
-extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::test_msg_1 >, 11, false >
-  _test_msg_1;
-static const int kTestMsg2FieldNumber = 5002;
-extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::test_msg_2 >, 11, false >
-  _test_msg_2;
-static const int kTestMsg3FieldNumber = 5003;
-extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::test_msg_3 >, 11, false >
-  _test_msg_3;
-static const int kTestMsg4FieldNumber = 5004;
-extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::test_msg_4 >, 11, false >
-  _test_msg_4;
-static const int kTestMsg5FieldNumber = 5005;
-extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::test_msg_5 >, 11, false >
-  _test_msg_5;
-static const int kTestMsg6FieldNumber = 5006;
-extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::test_msg_6 >, 11, false >
-  _test_msg_6;
-static const int kTestMsg7FieldNumber = 5007;
-extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::test_msg_7 >, 11, false >
-  _test_msg_7;
-static const int kTestMsg8FieldNumber = 5008;
-extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::test_msg_8 >, 11, false >
-  _test_msg_8;
-static const int kTestMsg9FieldNumber = 5009;
-extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::test_msg_9 >, 11, false >
-  _test_msg_9;
-static const int kTestMsg10FieldNumber = 5010;
-extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::test_msg_10 >, 11, false >
-  _test_msg_10;
-static const int kTestMsg11FieldNumber = 5011;
-extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::test_msg_11 >, 11, false >
-  _test_msg_11;
-static const int kTestMsg12FieldNumber = 5012;
-extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::test_msg_12 >, 11, false >
-  _test_msg_12;
-static const int kTestMsg13FieldNumber = 5013;
-extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::test_msg_13 >, 11, false >
-  _test_msg_13;
-static const int kTestMsg14FieldNumber = 5014;
-extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::test_msg_14 >, 11, false >
-  _test_msg_14;
-static const int kTestMsg15FieldNumber = 5015;
-extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::test_msg_15 >, 11, false >
-  _test_msg_15;
-static const int kTestMsg16FieldNumber = 5016;
-extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::test_msg_16 >, 11, false >
-  _test_msg_16;
-static const int kTestMsg17FieldNumber = 5017;
-extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::test_msg_17 >, 11, false >
-  _test_msg_17;
-static const int kTestMsg18FieldNumber = 5018;
-extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::test_msg_18 >, 11, false >
-  _test_msg_18;
-static const int kTestMsg19FieldNumber = 5019;
-extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::test_msg_19 >, 11, false >
-  _test_msg_19;
-static const int kTestMsg20FieldNumber = 5020;
-extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::test_msg_20 >, 11, false >
-  _test_msg_20;
+static const int kIdReqAuthenticationFieldNumber = 1000;
+extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::BaseMsg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::ReqAuthentication >, 11, false >
+  idReqAuthentication;
+static const int kIdResAuthenticationFieldNumber = 1001;
+extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::BaseMsg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::ResAuthentication >, 11, false >
+  idResAuthentication;
+static const int kIdReqLoginFieldNumber = 1002;
+extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::BaseMsg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::ReqLogin >, 11, false >
+  idReqLogin;
+static const int kIdResLoginFieldNumber = 1003;
+extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::BaseMsg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::ResLogin >, 11, false >
+  idResLogin;
+static const int kIdReqTestInfoFieldNumber = 1004;
+extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::BaseMsg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::ReqTestInfo >, 11, false >
+  idReqTestInfo;
+static const int kIdResTestInfoFieldNumber = 1005;
+extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::BaseMsg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::ResTestInfo >, 11, false >
+  idResTestInfo;
+static const int kIdReqLogoutFieldNumber = 1006;
+extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::BaseMsg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::ReqLogout >, 11, false >
+  idReqLogout;
+static const int kIdReqTestResponseTimeFieldNumber = 1007;
+extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::BaseMsg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::ReqTestResponseTime >, 11, false >
+  idReqTestResponseTime;
+static const int kIdResTestResponseTimeFieldNumber = 1008;
+extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::BaseMsg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::ResTestResponseTime >, 11, false >
+  idResTestResponseTime;
+static const int kIdNotifyKickoutFieldNumber = 1009;
+extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::BaseMsg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::NotifyKickout >, 11, false >
+  idNotifyKickout;
+static const int kIdTestMsg1FieldNumber = 5001;
+extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::BaseMsg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::TestMsg1 >, 11, false >
+  idTestMsg1;
+static const int kIdTestMsg2FieldNumber = 5002;
+extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::BaseMsg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::TestMsg2 >, 11, false >
+  idTestMsg2;
+static const int kIdTestMsg3FieldNumber = 5003;
+extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::BaseMsg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::TestMsg3 >, 11, false >
+  idTestMsg3;
+static const int kIdTestMsg4FieldNumber = 5004;
+extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::BaseMsg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::TestMsg4 >, 11, false >
+  idTestMsg4;
+static const int kIdTestMsg5FieldNumber = 5005;
+extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::BaseMsg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::TestMsg5 >, 11, false >
+  idTestMsg5;
+static const int kIdTestMsg6FieldNumber = 5006;
+extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::BaseMsg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::TestMsg6 >, 11, false >
+  idTestMsg6;
+static const int kIdTestMsg7FieldNumber = 5007;
+extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::BaseMsg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::TestMsg7 >, 11, false >
+  idTestMsg7;
+static const int kIdTestMsg8FieldNumber = 5008;
+extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::BaseMsg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::TestMsg8 >, 11, false >
+  idTestMsg8;
+static const int kIdTestMsg9FieldNumber = 5009;
+extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::BaseMsg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::TestMsg9 >, 11, false >
+  idTestMsg9;
+static const int kIdTestMsg10FieldNumber = 5010;
+extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::BaseMsg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::TestMsg10 >, 11, false >
+  idTestMsg10;
+static const int kIdTestMsg11FieldNumber = 5011;
+extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::BaseMsg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::TestMsg11 >, 11, false >
+  idTestMsg11;
+static const int kIdTestMsg12FieldNumber = 5012;
+extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::BaseMsg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::TestMsg12 >, 11, false >
+  idTestMsg12;
+static const int kIdTestMsg13FieldNumber = 5013;
+extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::BaseMsg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::TestMsg13 >, 11, false >
+  idTestMsg13;
+static const int kIdTestMsg14FieldNumber = 5014;
+extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::BaseMsg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::TestMsg14 >, 11, false >
+  idTestMsg14;
+static const int kIdTestMsg15FieldNumber = 5015;
+extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::BaseMsg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::TestMsg15 >, 11, false >
+  idTestMsg15;
+static const int kIdTestMsg16FieldNumber = 5016;
+extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::BaseMsg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::TestMsg16 >, 11, false >
+  idTestMsg16;
+static const int kIdTestMsg17FieldNumber = 5017;
+extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::BaseMsg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::TestMsg17 >, 11, false >
+  idTestMsg17;
+static const int kIdTestMsg18FieldNumber = 5018;
+extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::BaseMsg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::TestMsg18 >, 11, false >
+  idTestMsg18;
+static const int kIdTestMsg19FieldNumber = 5019;
+extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::BaseMsg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::TestMsg19 >, 11, false >
+  idTestMsg19;
+static const int kIdTestMsg20FieldNumber = 5020;
+extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::BaseMsg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::TestMsg20 >, 11, false >
+  idTestMsg20;
 
 // ===================================================================
 
-// req_authentication
+// ReqAuthentication
 
-// optional string userid = 1;
-inline bool req_authentication::has_userid() const {
+// optional string user_id = 1;
+inline bool ReqAuthentication::has_user_id() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void req_authentication::set_has_userid() {
+inline void ReqAuthentication::set_has_user_id() {
   _has_bits_[0] |= 0x00000001u;
 }
-inline void req_authentication::clear_has_userid() {
+inline void ReqAuthentication::clear_has_user_id() {
   _has_bits_[0] &= ~0x00000001u;
 }
-inline void req_authentication::clear_userid() {
-  if (userid_ != &::google::protobuf::internal::kEmptyString) {
-    userid_->clear();
+inline void ReqAuthentication::clear_user_id() {
+  if (user_id_ != &::google::protobuf::internal::kEmptyString) {
+    user_id_->clear();
   }
-  clear_has_userid();
+  clear_has_user_id();
 }
-inline const ::std::string& req_authentication::userid() const {
-  return *userid_;
+inline const ::std::string& ReqAuthentication::user_id() const {
+  return *user_id_;
 }
-inline void req_authentication::set_userid(const ::std::string& value) {
-  set_has_userid();
-  if (userid_ == &::google::protobuf::internal::kEmptyString) {
-    userid_ = new ::std::string;
+inline void ReqAuthentication::set_user_id(const ::std::string& value) {
+  set_has_user_id();
+  if (user_id_ == &::google::protobuf::internal::kEmptyString) {
+    user_id_ = new ::std::string;
   }
-  userid_->assign(value);
+  user_id_->assign(value);
 }
-inline void req_authentication::set_userid(const char* value) {
-  set_has_userid();
-  if (userid_ == &::google::protobuf::internal::kEmptyString) {
-    userid_ = new ::std::string;
+inline void ReqAuthentication::set_user_id(const char* value) {
+  set_has_user_id();
+  if (user_id_ == &::google::protobuf::internal::kEmptyString) {
+    user_id_ = new ::std::string;
   }
-  userid_->assign(value);
+  user_id_->assign(value);
 }
-inline void req_authentication::set_userid(const char* value, size_t size) {
-  set_has_userid();
-  if (userid_ == &::google::protobuf::internal::kEmptyString) {
-    userid_ = new ::std::string;
+inline void ReqAuthentication::set_user_id(const char* value, size_t size) {
+  set_has_user_id();
+  if (user_id_ == &::google::protobuf::internal::kEmptyString) {
+    user_id_ = new ::std::string;
   }
-  userid_->assign(reinterpret_cast<const char*>(value), size);
+  user_id_->assign(reinterpret_cast<const char*>(value), size);
 }
-inline ::std::string* req_authentication::mutable_userid() {
-  set_has_userid();
-  if (userid_ == &::google::protobuf::internal::kEmptyString) {
-    userid_ = new ::std::string;
+inline ::std::string* ReqAuthentication::mutable_user_id() {
+  set_has_user_id();
+  if (user_id_ == &::google::protobuf::internal::kEmptyString) {
+    user_id_ = new ::std::string;
   }
-  return userid_;
+  return user_id_;
 }
-inline ::std::string* req_authentication::release_userid() {
-  clear_has_userid();
-  if (userid_ == &::google::protobuf::internal::kEmptyString) {
+inline ::std::string* ReqAuthentication::release_user_id() {
+  clear_has_user_id();
+  if (user_id_ == &::google::protobuf::internal::kEmptyString) {
     return NULL;
   } else {
-    ::std::string* temp = userid_;
-    userid_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+    ::std::string* temp = user_id_;
+    user_id_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
     return temp;
   }
 }
 
 // optional string authentication = 2;
-inline bool req_authentication::has_authentication() const {
+inline bool ReqAuthentication::has_authentication() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
-inline void req_authentication::set_has_authentication() {
+inline void ReqAuthentication::set_has_authentication() {
   _has_bits_[0] |= 0x00000002u;
 }
-inline void req_authentication::clear_has_authentication() {
+inline void ReqAuthentication::clear_has_authentication() {
   _has_bits_[0] &= ~0x00000002u;
 }
-inline void req_authentication::clear_authentication() {
+inline void ReqAuthentication::clear_authentication() {
   if (authentication_ != &::google::protobuf::internal::kEmptyString) {
     authentication_->clear();
   }
   clear_has_authentication();
 }
-inline const ::std::string& req_authentication::authentication() const {
+inline const ::std::string& ReqAuthentication::authentication() const {
   return *authentication_;
 }
-inline void req_authentication::set_authentication(const ::std::string& value) {
+inline void ReqAuthentication::set_authentication(const ::std::string& value) {
   set_has_authentication();
   if (authentication_ == &::google::protobuf::internal::kEmptyString) {
     authentication_ = new ::std::string;
   }
   authentication_->assign(value);
 }
-inline void req_authentication::set_authentication(const char* value) {
+inline void ReqAuthentication::set_authentication(const char* value) {
   set_has_authentication();
   if (authentication_ == &::google::protobuf::internal::kEmptyString) {
     authentication_ = new ::std::string;
   }
   authentication_->assign(value);
 }
-inline void req_authentication::set_authentication(const char* value, size_t size) {
+inline void ReqAuthentication::set_authentication(const char* value, size_t size) {
   set_has_authentication();
   if (authentication_ == &::google::protobuf::internal::kEmptyString) {
     authentication_ = new ::std::string;
   }
   authentication_->assign(reinterpret_cast<const char*>(value), size);
 }
-inline ::std::string* req_authentication::mutable_authentication() {
+inline ::std::string* ReqAuthentication::mutable_authentication() {
   set_has_authentication();
   if (authentication_ == &::google::protobuf::internal::kEmptyString) {
     authentication_ = new ::std::string;
   }
   return authentication_;
 }
-inline ::std::string* req_authentication::release_authentication() {
+inline ::std::string* ReqAuthentication::release_authentication() {
   clear_has_authentication();
   if (authentication_ == &::google::protobuf::internal::kEmptyString) {
     return NULL;
@@ -2914,78 +2914,78 @@ inline ::std::string* req_authentication::release_authentication() {
 
 // -------------------------------------------------------------------
 
-// res_authentication
+// ResAuthentication
 
 // optional sint32 result = 1;
-inline bool res_authentication::has_result() const {
+inline bool ResAuthentication::has_result() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void res_authentication::set_has_result() {
+inline void ResAuthentication::set_has_result() {
   _has_bits_[0] |= 0x00000001u;
 }
-inline void res_authentication::clear_has_result() {
+inline void ResAuthentication::clear_has_result() {
   _has_bits_[0] &= ~0x00000001u;
 }
-inline void res_authentication::clear_result() {
+inline void ResAuthentication::clear_result() {
   result_ = 0;
   clear_has_result();
 }
-inline ::google::protobuf::int32 res_authentication::result() const {
+inline ::google::protobuf::int32 ResAuthentication::result() const {
   return result_;
 }
-inline void res_authentication::set_result(::google::protobuf::int32 value) {
+inline void ResAuthentication::set_result(::google::protobuf::int32 value) {
   set_has_result();
   result_ = value;
 }
 
 // optional string authorization = 2;
-inline bool res_authentication::has_authorization() const {
+inline bool ResAuthentication::has_authorization() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
-inline void res_authentication::set_has_authorization() {
+inline void ResAuthentication::set_has_authorization() {
   _has_bits_[0] |= 0x00000002u;
 }
-inline void res_authentication::clear_has_authorization() {
+inline void ResAuthentication::clear_has_authorization() {
   _has_bits_[0] &= ~0x00000002u;
 }
-inline void res_authentication::clear_authorization() {
+inline void ResAuthentication::clear_authorization() {
   if (authorization_ != &::google::protobuf::internal::kEmptyString) {
     authorization_->clear();
   }
   clear_has_authorization();
 }
-inline const ::std::string& res_authentication::authorization() const {
+inline const ::std::string& ResAuthentication::authorization() const {
   return *authorization_;
 }
-inline void res_authentication::set_authorization(const ::std::string& value) {
+inline void ResAuthentication::set_authorization(const ::std::string& value) {
   set_has_authorization();
   if (authorization_ == &::google::protobuf::internal::kEmptyString) {
     authorization_ = new ::std::string;
   }
   authorization_->assign(value);
 }
-inline void res_authentication::set_authorization(const char* value) {
+inline void ResAuthentication::set_authorization(const char* value) {
   set_has_authorization();
   if (authorization_ == &::google::protobuf::internal::kEmptyString) {
     authorization_ = new ::std::string;
   }
   authorization_->assign(value);
 }
-inline void res_authentication::set_authorization(const char* value, size_t size) {
+inline void ResAuthentication::set_authorization(const char* value, size_t size) {
   set_has_authorization();
   if (authorization_ == &::google::protobuf::internal::kEmptyString) {
     authorization_ = new ::std::string;
   }
   authorization_->assign(reinterpret_cast<const char*>(value), size);
 }
-inline ::std::string* res_authentication::mutable_authorization() {
+inline ::std::string* ResAuthentication::mutable_authorization() {
   set_has_authorization();
   if (authorization_ == &::google::protobuf::internal::kEmptyString) {
     authorization_ = new ::std::string;
   }
   return authorization_;
 }
-inline ::std::string* res_authentication::release_authorization() {
+inline ::std::string* ResAuthentication::release_authorization() {
   clear_has_authorization();
   if (authorization_ == &::google::protobuf::internal::kEmptyString) {
     return NULL;
@@ -2998,114 +2998,114 @@ inline ::std::string* res_authentication::release_authorization() {
 
 // -------------------------------------------------------------------
 
-// req_login
+// ReqLogin
 
-// optional string userid = 1;
-inline bool req_login::has_userid() const {
+// optional string user_id = 1;
+inline bool ReqLogin::has_user_id() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void req_login::set_has_userid() {
+inline void ReqLogin::set_has_user_id() {
   _has_bits_[0] |= 0x00000001u;
 }
-inline void req_login::clear_has_userid() {
+inline void ReqLogin::clear_has_user_id() {
   _has_bits_[0] &= ~0x00000001u;
 }
-inline void req_login::clear_userid() {
-  if (userid_ != &::google::protobuf::internal::kEmptyString) {
-    userid_->clear();
+inline void ReqLogin::clear_user_id() {
+  if (user_id_ != &::google::protobuf::internal::kEmptyString) {
+    user_id_->clear();
   }
-  clear_has_userid();
+  clear_has_user_id();
 }
-inline const ::std::string& req_login::userid() const {
-  return *userid_;
+inline const ::std::string& ReqLogin::user_id() const {
+  return *user_id_;
 }
-inline void req_login::set_userid(const ::std::string& value) {
-  set_has_userid();
-  if (userid_ == &::google::protobuf::internal::kEmptyString) {
-    userid_ = new ::std::string;
+inline void ReqLogin::set_user_id(const ::std::string& value) {
+  set_has_user_id();
+  if (user_id_ == &::google::protobuf::internal::kEmptyString) {
+    user_id_ = new ::std::string;
   }
-  userid_->assign(value);
+  user_id_->assign(value);
 }
-inline void req_login::set_userid(const char* value) {
-  set_has_userid();
-  if (userid_ == &::google::protobuf::internal::kEmptyString) {
-    userid_ = new ::std::string;
+inline void ReqLogin::set_user_id(const char* value) {
+  set_has_user_id();
+  if (user_id_ == &::google::protobuf::internal::kEmptyString) {
+    user_id_ = new ::std::string;
   }
-  userid_->assign(value);
+  user_id_->assign(value);
 }
-inline void req_login::set_userid(const char* value, size_t size) {
-  set_has_userid();
-  if (userid_ == &::google::protobuf::internal::kEmptyString) {
-    userid_ = new ::std::string;
+inline void ReqLogin::set_user_id(const char* value, size_t size) {
+  set_has_user_id();
+  if (user_id_ == &::google::protobuf::internal::kEmptyString) {
+    user_id_ = new ::std::string;
   }
-  userid_->assign(reinterpret_cast<const char*>(value), size);
+  user_id_->assign(reinterpret_cast<const char*>(value), size);
 }
-inline ::std::string* req_login::mutable_userid() {
-  set_has_userid();
-  if (userid_ == &::google::protobuf::internal::kEmptyString) {
-    userid_ = new ::std::string;
+inline ::std::string* ReqLogin::mutable_user_id() {
+  set_has_user_id();
+  if (user_id_ == &::google::protobuf::internal::kEmptyString) {
+    user_id_ = new ::std::string;
   }
-  return userid_;
+  return user_id_;
 }
-inline ::std::string* req_login::release_userid() {
-  clear_has_userid();
-  if (userid_ == &::google::protobuf::internal::kEmptyString) {
+inline ::std::string* ReqLogin::release_user_id() {
+  clear_has_user_id();
+  if (user_id_ == &::google::protobuf::internal::kEmptyString) {
     return NULL;
   } else {
-    ::std::string* temp = userid_;
-    userid_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+    ::std::string* temp = user_id_;
+    user_id_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
     return temp;
   }
 }
 
 // optional string authorization = 2;
-inline bool req_login::has_authorization() const {
+inline bool ReqLogin::has_authorization() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
-inline void req_login::set_has_authorization() {
+inline void ReqLogin::set_has_authorization() {
   _has_bits_[0] |= 0x00000002u;
 }
-inline void req_login::clear_has_authorization() {
+inline void ReqLogin::clear_has_authorization() {
   _has_bits_[0] &= ~0x00000002u;
 }
-inline void req_login::clear_authorization() {
+inline void ReqLogin::clear_authorization() {
   if (authorization_ != &::google::protobuf::internal::kEmptyString) {
     authorization_->clear();
   }
   clear_has_authorization();
 }
-inline const ::std::string& req_login::authorization() const {
+inline const ::std::string& ReqLogin::authorization() const {
   return *authorization_;
 }
-inline void req_login::set_authorization(const ::std::string& value) {
+inline void ReqLogin::set_authorization(const ::std::string& value) {
   set_has_authorization();
   if (authorization_ == &::google::protobuf::internal::kEmptyString) {
     authorization_ = new ::std::string;
   }
   authorization_->assign(value);
 }
-inline void req_login::set_authorization(const char* value) {
+inline void ReqLogin::set_authorization(const char* value) {
   set_has_authorization();
   if (authorization_ == &::google::protobuf::internal::kEmptyString) {
     authorization_ = new ::std::string;
   }
   authorization_->assign(value);
 }
-inline void req_login::set_authorization(const char* value, size_t size) {
+inline void ReqLogin::set_authorization(const char* value, size_t size) {
   set_has_authorization();
   if (authorization_ == &::google::protobuf::internal::kEmptyString) {
     authorization_ = new ::std::string;
   }
   authorization_->assign(reinterpret_cast<const char*>(value), size);
 }
-inline ::std::string* req_login::mutable_authorization() {
+inline ::std::string* ReqLogin::mutable_authorization() {
   set_has_authorization();
   if (authorization_ == &::google::protobuf::internal::kEmptyString) {
     authorization_ = new ::std::string;
   }
   return authorization_;
 }
-inline ::std::string* req_login::release_authorization() {
+inline ::std::string* ReqLogin::release_authorization() {
   clear_has_authorization();
   if (authorization_ == &::google::protobuf::internal::kEmptyString) {
     return NULL;
@@ -3118,140 +3118,140 @@ inline ::std::string* req_login::release_authorization() {
 
 // -------------------------------------------------------------------
 
-// res_login
+// ResLogin
 
-// optional string userid = 1;
-inline bool res_login::has_userid() const {
+// optional string user_id = 1;
+inline bool ResLogin::has_user_id() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void res_login::set_has_userid() {
+inline void ResLogin::set_has_user_id() {
   _has_bits_[0] |= 0x00000001u;
 }
-inline void res_login::clear_has_userid() {
+inline void ResLogin::clear_has_user_id() {
   _has_bits_[0] &= ~0x00000001u;
 }
-inline void res_login::clear_userid() {
-  if (userid_ != &::google::protobuf::internal::kEmptyString) {
-    userid_->clear();
+inline void ResLogin::clear_user_id() {
+  if (user_id_ != &::google::protobuf::internal::kEmptyString) {
+    user_id_->clear();
   }
-  clear_has_userid();
+  clear_has_user_id();
 }
-inline const ::std::string& res_login::userid() const {
-  return *userid_;
+inline const ::std::string& ResLogin::user_id() const {
+  return *user_id_;
 }
-inline void res_login::set_userid(const ::std::string& value) {
-  set_has_userid();
-  if (userid_ == &::google::protobuf::internal::kEmptyString) {
-    userid_ = new ::std::string;
+inline void ResLogin::set_user_id(const ::std::string& value) {
+  set_has_user_id();
+  if (user_id_ == &::google::protobuf::internal::kEmptyString) {
+    user_id_ = new ::std::string;
   }
-  userid_->assign(value);
+  user_id_->assign(value);
 }
-inline void res_login::set_userid(const char* value) {
-  set_has_userid();
-  if (userid_ == &::google::protobuf::internal::kEmptyString) {
-    userid_ = new ::std::string;
+inline void ResLogin::set_user_id(const char* value) {
+  set_has_user_id();
+  if (user_id_ == &::google::protobuf::internal::kEmptyString) {
+    user_id_ = new ::std::string;
   }
-  userid_->assign(value);
+  user_id_->assign(value);
 }
-inline void res_login::set_userid(const char* value, size_t size) {
-  set_has_userid();
-  if (userid_ == &::google::protobuf::internal::kEmptyString) {
-    userid_ = new ::std::string;
+inline void ResLogin::set_user_id(const char* value, size_t size) {
+  set_has_user_id();
+  if (user_id_ == &::google::protobuf::internal::kEmptyString) {
+    user_id_ = new ::std::string;
   }
-  userid_->assign(reinterpret_cast<const char*>(value), size);
+  user_id_->assign(reinterpret_cast<const char*>(value), size);
 }
-inline ::std::string* res_login::mutable_userid() {
-  set_has_userid();
-  if (userid_ == &::google::protobuf::internal::kEmptyString) {
-    userid_ = new ::std::string;
+inline ::std::string* ResLogin::mutable_user_id() {
+  set_has_user_id();
+  if (user_id_ == &::google::protobuf::internal::kEmptyString) {
+    user_id_ = new ::std::string;
   }
-  return userid_;
+  return user_id_;
 }
-inline ::std::string* res_login::release_userid() {
-  clear_has_userid();
-  if (userid_ == &::google::protobuf::internal::kEmptyString) {
+inline ::std::string* ResLogin::release_user_id() {
+  clear_has_user_id();
+  if (user_id_ == &::google::protobuf::internal::kEmptyString) {
     return NULL;
   } else {
-    ::std::string* temp = userid_;
-    userid_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+    ::std::string* temp = user_id_;
+    user_id_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
     return temp;
   }
 }
 
 // optional sint32 result = 2;
-inline bool res_login::has_result() const {
+inline bool ResLogin::has_result() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
-inline void res_login::set_has_result() {
+inline void ResLogin::set_has_result() {
   _has_bits_[0] |= 0x00000002u;
 }
-inline void res_login::clear_has_result() {
+inline void ResLogin::clear_has_result() {
   _has_bits_[0] &= ~0x00000002u;
 }
-inline void res_login::clear_result() {
+inline void ResLogin::clear_result() {
   result_ = 0;
   clear_has_result();
 }
-inline ::google::protobuf::int32 res_login::result() const {
+inline ::google::protobuf::int32 ResLogin::result() const {
   return result_;
 }
-inline void res_login::set_result(::google::protobuf::int32 value) {
+inline void ResLogin::set_result(::google::protobuf::int32 value) {
   set_has_result();
   result_ = value;
 }
 
 // -------------------------------------------------------------------
 
-// req_test_info
+// ReqTestInfo
 
 // optional string info = 1;
-inline bool req_test_info::has_info() const {
+inline bool ReqTestInfo::has_info() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void req_test_info::set_has_info() {
+inline void ReqTestInfo::set_has_info() {
   _has_bits_[0] |= 0x00000001u;
 }
-inline void req_test_info::clear_has_info() {
+inline void ReqTestInfo::clear_has_info() {
   _has_bits_[0] &= ~0x00000001u;
 }
-inline void req_test_info::clear_info() {
+inline void ReqTestInfo::clear_info() {
   if (info_ != &::google::protobuf::internal::kEmptyString) {
     info_->clear();
   }
   clear_has_info();
 }
-inline const ::std::string& req_test_info::info() const {
+inline const ::std::string& ReqTestInfo::info() const {
   return *info_;
 }
-inline void req_test_info::set_info(const ::std::string& value) {
+inline void ReqTestInfo::set_info(const ::std::string& value) {
   set_has_info();
   if (info_ == &::google::protobuf::internal::kEmptyString) {
     info_ = new ::std::string;
   }
   info_->assign(value);
 }
-inline void req_test_info::set_info(const char* value) {
+inline void ReqTestInfo::set_info(const char* value) {
   set_has_info();
   if (info_ == &::google::protobuf::internal::kEmptyString) {
     info_ = new ::std::string;
   }
   info_->assign(value);
 }
-inline void req_test_info::set_info(const char* value, size_t size) {
+inline void ReqTestInfo::set_info(const char* value, size_t size) {
   set_has_info();
   if (info_ == &::google::protobuf::internal::kEmptyString) {
     info_ = new ::std::string;
   }
   info_->assign(reinterpret_cast<const char*>(value), size);
 }
-inline ::std::string* req_test_info::mutable_info() {
+inline ::std::string* ReqTestInfo::mutable_info() {
   set_has_info();
   if (info_ == &::google::protobuf::internal::kEmptyString) {
     info_ = new ::std::string;
   }
   return info_;
 }
-inline ::std::string* req_test_info::release_info() {
+inline ::std::string* ReqTestInfo::release_info() {
   clear_has_info();
   if (info_ == &::google::protobuf::internal::kEmptyString) {
     return NULL;
@@ -3264,56 +3264,56 @@ inline ::std::string* req_test_info::release_info() {
 
 // -------------------------------------------------------------------
 
-// res_test_info
+// ResTestInfo
 
 // optional string info = 1;
-inline bool res_test_info::has_info() const {
+inline bool ResTestInfo::has_info() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void res_test_info::set_has_info() {
+inline void ResTestInfo::set_has_info() {
   _has_bits_[0] |= 0x00000001u;
 }
-inline void res_test_info::clear_has_info() {
+inline void ResTestInfo::clear_has_info() {
   _has_bits_[0] &= ~0x00000001u;
 }
-inline void res_test_info::clear_info() {
+inline void ResTestInfo::clear_info() {
   if (info_ != &::google::protobuf::internal::kEmptyString) {
     info_->clear();
   }
   clear_has_info();
 }
-inline const ::std::string& res_test_info::info() const {
+inline const ::std::string& ResTestInfo::info() const {
   return *info_;
 }
-inline void res_test_info::set_info(const ::std::string& value) {
+inline void ResTestInfo::set_info(const ::std::string& value) {
   set_has_info();
   if (info_ == &::google::protobuf::internal::kEmptyString) {
     info_ = new ::std::string;
   }
   info_->assign(value);
 }
-inline void res_test_info::set_info(const char* value) {
+inline void ResTestInfo::set_info(const char* value) {
   set_has_info();
   if (info_ == &::google::protobuf::internal::kEmptyString) {
     info_ = new ::std::string;
   }
   info_->assign(value);
 }
-inline void res_test_info::set_info(const char* value, size_t size) {
+inline void ResTestInfo::set_info(const char* value, size_t size) {
   set_has_info();
   if (info_ == &::google::protobuf::internal::kEmptyString) {
     info_ = new ::std::string;
   }
   info_->assign(reinterpret_cast<const char*>(value), size);
 }
-inline ::std::string* res_test_info::mutable_info() {
+inline ::std::string* ResTestInfo::mutable_info() {
   set_has_info();
   if (info_ == &::google::protobuf::internal::kEmptyString) {
     info_ = new ::std::string;
   }
   return info_;
 }
-inline ::std::string* res_test_info::release_info() {
+inline ::std::string* ResTestInfo::release_info() {
   clear_has_info();
   if (info_ == &::google::protobuf::internal::kEmptyString) {
     return NULL;
@@ -3326,138 +3326,138 @@ inline ::std::string* res_test_info::release_info() {
 
 // -------------------------------------------------------------------
 
-// req_logout
+// ReqLogout
 
 // -------------------------------------------------------------------
 
-// req_test_response_time
+// ReqTestResponseTime
 
 // required sint64 req_timestamp = 1;
-inline bool req_test_response_time::has_req_timestamp() const {
+inline bool ReqTestResponseTime::has_req_timestamp() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void req_test_response_time::set_has_req_timestamp() {
+inline void ReqTestResponseTime::set_has_req_timestamp() {
   _has_bits_[0] |= 0x00000001u;
 }
-inline void req_test_response_time::clear_has_req_timestamp() {
+inline void ReqTestResponseTime::clear_has_req_timestamp() {
   _has_bits_[0] &= ~0x00000001u;
 }
-inline void req_test_response_time::clear_req_timestamp() {
+inline void ReqTestResponseTime::clear_req_timestamp() {
   req_timestamp_ = GOOGLE_LONGLONG(0);
   clear_has_req_timestamp();
 }
-inline ::google::protobuf::int64 req_test_response_time::req_timestamp() const {
+inline ::google::protobuf::int64 ReqTestResponseTime::req_timestamp() const {
   return req_timestamp_;
 }
-inline void req_test_response_time::set_req_timestamp(::google::protobuf::int64 value) {
+inline void ReqTestResponseTime::set_req_timestamp(::google::protobuf::int64 value) {
   set_has_req_timestamp();
   req_timestamp_ = value;
 }
 
 // -------------------------------------------------------------------
 
-// res_test_response_time
+// ResTestResponseTime
 
 // required sint64 req_timestamp = 1;
-inline bool res_test_response_time::has_req_timestamp() const {
+inline bool ResTestResponseTime::has_req_timestamp() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void res_test_response_time::set_has_req_timestamp() {
+inline void ResTestResponseTime::set_has_req_timestamp() {
   _has_bits_[0] |= 0x00000001u;
 }
-inline void res_test_response_time::clear_has_req_timestamp() {
+inline void ResTestResponseTime::clear_has_req_timestamp() {
   _has_bits_[0] &= ~0x00000001u;
 }
-inline void res_test_response_time::clear_req_timestamp() {
+inline void ResTestResponseTime::clear_req_timestamp() {
   req_timestamp_ = GOOGLE_LONGLONG(0);
   clear_has_req_timestamp();
 }
-inline ::google::protobuf::int64 res_test_response_time::req_timestamp() const {
+inline ::google::protobuf::int64 ResTestResponseTime::req_timestamp() const {
   return req_timestamp_;
 }
-inline void res_test_response_time::set_req_timestamp(::google::protobuf::int64 value) {
+inline void ResTestResponseTime::set_req_timestamp(::google::protobuf::int64 value) {
   set_has_req_timestamp();
   req_timestamp_ = value;
 }
 
 // -------------------------------------------------------------------
 
-// notify_kickout
+// NotifyKickout
 
 // optional sint32 kick_reason = 1;
-inline bool notify_kickout::has_kick_reason() const {
+inline bool NotifyKickout::has_kick_reason() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void notify_kickout::set_has_kick_reason() {
+inline void NotifyKickout::set_has_kick_reason() {
   _has_bits_[0] |= 0x00000001u;
 }
-inline void notify_kickout::clear_has_kick_reason() {
+inline void NotifyKickout::clear_has_kick_reason() {
   _has_bits_[0] &= ~0x00000001u;
 }
-inline void notify_kickout::clear_kick_reason() {
+inline void NotifyKickout::clear_kick_reason() {
   kick_reason_ = 0;
   clear_has_kick_reason();
 }
-inline ::google::protobuf::int32 notify_kickout::kick_reason() const {
+inline ::google::protobuf::int32 NotifyKickout::kick_reason() const {
   return kick_reason_;
 }
-inline void notify_kickout::set_kick_reason(::google::protobuf::int32 value) {
+inline void NotifyKickout::set_kick_reason(::google::protobuf::int32 value) {
   set_has_kick_reason();
   kick_reason_ = value;
 }
 
 // -------------------------------------------------------------------
 
-// test_msg_1
+// TestMsg1
 
 // optional bytes test_data = 1;
-inline bool test_msg_1::has_test_data() const {
+inline bool TestMsg1::has_test_data() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void test_msg_1::set_has_test_data() {
+inline void TestMsg1::set_has_test_data() {
   _has_bits_[0] |= 0x00000001u;
 }
-inline void test_msg_1::clear_has_test_data() {
+inline void TestMsg1::clear_has_test_data() {
   _has_bits_[0] &= ~0x00000001u;
 }
-inline void test_msg_1::clear_test_data() {
+inline void TestMsg1::clear_test_data() {
   if (test_data_ != &::google::protobuf::internal::kEmptyString) {
     test_data_->clear();
   }
   clear_has_test_data();
 }
-inline const ::std::string& test_msg_1::test_data() const {
+inline const ::std::string& TestMsg1::test_data() const {
   return *test_data_;
 }
-inline void test_msg_1::set_test_data(const ::std::string& value) {
+inline void TestMsg1::set_test_data(const ::std::string& value) {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   test_data_->assign(value);
 }
-inline void test_msg_1::set_test_data(const char* value) {
+inline void TestMsg1::set_test_data(const char* value) {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   test_data_->assign(value);
 }
-inline void test_msg_1::set_test_data(const void* value, size_t size) {
+inline void TestMsg1::set_test_data(const void* value, size_t size) {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   test_data_->assign(reinterpret_cast<const char*>(value), size);
 }
-inline ::std::string* test_msg_1::mutable_test_data() {
+inline ::std::string* TestMsg1::mutable_test_data() {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   return test_data_;
 }
-inline ::std::string* test_msg_1::release_test_data() {
+inline ::std::string* TestMsg1::release_test_data() {
   clear_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     return NULL;
@@ -3470,56 +3470,56 @@ inline ::std::string* test_msg_1::release_test_data() {
 
 // -------------------------------------------------------------------
 
-// test_msg_2
+// TestMsg2
 
 // optional bytes test_data = 1;
-inline bool test_msg_2::has_test_data() const {
+inline bool TestMsg2::has_test_data() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void test_msg_2::set_has_test_data() {
+inline void TestMsg2::set_has_test_data() {
   _has_bits_[0] |= 0x00000001u;
 }
-inline void test_msg_2::clear_has_test_data() {
+inline void TestMsg2::clear_has_test_data() {
   _has_bits_[0] &= ~0x00000001u;
 }
-inline void test_msg_2::clear_test_data() {
+inline void TestMsg2::clear_test_data() {
   if (test_data_ != &::google::protobuf::internal::kEmptyString) {
     test_data_->clear();
   }
   clear_has_test_data();
 }
-inline const ::std::string& test_msg_2::test_data() const {
+inline const ::std::string& TestMsg2::test_data() const {
   return *test_data_;
 }
-inline void test_msg_2::set_test_data(const ::std::string& value) {
+inline void TestMsg2::set_test_data(const ::std::string& value) {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   test_data_->assign(value);
 }
-inline void test_msg_2::set_test_data(const char* value) {
+inline void TestMsg2::set_test_data(const char* value) {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   test_data_->assign(value);
 }
-inline void test_msg_2::set_test_data(const void* value, size_t size) {
+inline void TestMsg2::set_test_data(const void* value, size_t size) {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   test_data_->assign(reinterpret_cast<const char*>(value), size);
 }
-inline ::std::string* test_msg_2::mutable_test_data() {
+inline ::std::string* TestMsg2::mutable_test_data() {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   return test_data_;
 }
-inline ::std::string* test_msg_2::release_test_data() {
+inline ::std::string* TestMsg2::release_test_data() {
   clear_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     return NULL;
@@ -3532,56 +3532,56 @@ inline ::std::string* test_msg_2::release_test_data() {
 
 // -------------------------------------------------------------------
 
-// test_msg_3
+// TestMsg3
 
 // optional bytes test_data = 1;
-inline bool test_msg_3::has_test_data() const {
+inline bool TestMsg3::has_test_data() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void test_msg_3::set_has_test_data() {
+inline void TestMsg3::set_has_test_data() {
   _has_bits_[0] |= 0x00000001u;
 }
-inline void test_msg_3::clear_has_test_data() {
+inline void TestMsg3::clear_has_test_data() {
   _has_bits_[0] &= ~0x00000001u;
 }
-inline void test_msg_3::clear_test_data() {
+inline void TestMsg3::clear_test_data() {
   if (test_data_ != &::google::protobuf::internal::kEmptyString) {
     test_data_->clear();
   }
   clear_has_test_data();
 }
-inline const ::std::string& test_msg_3::test_data() const {
+inline const ::std::string& TestMsg3::test_data() const {
   return *test_data_;
 }
-inline void test_msg_3::set_test_data(const ::std::string& value) {
+inline void TestMsg3::set_test_data(const ::std::string& value) {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   test_data_->assign(value);
 }
-inline void test_msg_3::set_test_data(const char* value) {
+inline void TestMsg3::set_test_data(const char* value) {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   test_data_->assign(value);
 }
-inline void test_msg_3::set_test_data(const void* value, size_t size) {
+inline void TestMsg3::set_test_data(const void* value, size_t size) {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   test_data_->assign(reinterpret_cast<const char*>(value), size);
 }
-inline ::std::string* test_msg_3::mutable_test_data() {
+inline ::std::string* TestMsg3::mutable_test_data() {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   return test_data_;
 }
-inline ::std::string* test_msg_3::release_test_data() {
+inline ::std::string* TestMsg3::release_test_data() {
   clear_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     return NULL;
@@ -3594,56 +3594,56 @@ inline ::std::string* test_msg_3::release_test_data() {
 
 // -------------------------------------------------------------------
 
-// test_msg_4
+// TestMsg4
 
 // optional bytes test_data = 1;
-inline bool test_msg_4::has_test_data() const {
+inline bool TestMsg4::has_test_data() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void test_msg_4::set_has_test_data() {
+inline void TestMsg4::set_has_test_data() {
   _has_bits_[0] |= 0x00000001u;
 }
-inline void test_msg_4::clear_has_test_data() {
+inline void TestMsg4::clear_has_test_data() {
   _has_bits_[0] &= ~0x00000001u;
 }
-inline void test_msg_4::clear_test_data() {
+inline void TestMsg4::clear_test_data() {
   if (test_data_ != &::google::protobuf::internal::kEmptyString) {
     test_data_->clear();
   }
   clear_has_test_data();
 }
-inline const ::std::string& test_msg_4::test_data() const {
+inline const ::std::string& TestMsg4::test_data() const {
   return *test_data_;
 }
-inline void test_msg_4::set_test_data(const ::std::string& value) {
+inline void TestMsg4::set_test_data(const ::std::string& value) {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   test_data_->assign(value);
 }
-inline void test_msg_4::set_test_data(const char* value) {
+inline void TestMsg4::set_test_data(const char* value) {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   test_data_->assign(value);
 }
-inline void test_msg_4::set_test_data(const void* value, size_t size) {
+inline void TestMsg4::set_test_data(const void* value, size_t size) {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   test_data_->assign(reinterpret_cast<const char*>(value), size);
 }
-inline ::std::string* test_msg_4::mutable_test_data() {
+inline ::std::string* TestMsg4::mutable_test_data() {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   return test_data_;
 }
-inline ::std::string* test_msg_4::release_test_data() {
+inline ::std::string* TestMsg4::release_test_data() {
   clear_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     return NULL;
@@ -3656,56 +3656,56 @@ inline ::std::string* test_msg_4::release_test_data() {
 
 // -------------------------------------------------------------------
 
-// test_msg_5
+// TestMsg5
 
 // optional bytes test_data = 1;
-inline bool test_msg_5::has_test_data() const {
+inline bool TestMsg5::has_test_data() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void test_msg_5::set_has_test_data() {
+inline void TestMsg5::set_has_test_data() {
   _has_bits_[0] |= 0x00000001u;
 }
-inline void test_msg_5::clear_has_test_data() {
+inline void TestMsg5::clear_has_test_data() {
   _has_bits_[0] &= ~0x00000001u;
 }
-inline void test_msg_5::clear_test_data() {
+inline void TestMsg5::clear_test_data() {
   if (test_data_ != &::google::protobuf::internal::kEmptyString) {
     test_data_->clear();
   }
   clear_has_test_data();
 }
-inline const ::std::string& test_msg_5::test_data() const {
+inline const ::std::string& TestMsg5::test_data() const {
   return *test_data_;
 }
-inline void test_msg_5::set_test_data(const ::std::string& value) {
+inline void TestMsg5::set_test_data(const ::std::string& value) {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   test_data_->assign(value);
 }
-inline void test_msg_5::set_test_data(const char* value) {
+inline void TestMsg5::set_test_data(const char* value) {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   test_data_->assign(value);
 }
-inline void test_msg_5::set_test_data(const void* value, size_t size) {
+inline void TestMsg5::set_test_data(const void* value, size_t size) {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   test_data_->assign(reinterpret_cast<const char*>(value), size);
 }
-inline ::std::string* test_msg_5::mutable_test_data() {
+inline ::std::string* TestMsg5::mutable_test_data() {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   return test_data_;
 }
-inline ::std::string* test_msg_5::release_test_data() {
+inline ::std::string* TestMsg5::release_test_data() {
   clear_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     return NULL;
@@ -3718,56 +3718,56 @@ inline ::std::string* test_msg_5::release_test_data() {
 
 // -------------------------------------------------------------------
 
-// test_msg_6
+// TestMsg6
 
 // optional bytes test_data = 1;
-inline bool test_msg_6::has_test_data() const {
+inline bool TestMsg6::has_test_data() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void test_msg_6::set_has_test_data() {
+inline void TestMsg6::set_has_test_data() {
   _has_bits_[0] |= 0x00000001u;
 }
-inline void test_msg_6::clear_has_test_data() {
+inline void TestMsg6::clear_has_test_data() {
   _has_bits_[0] &= ~0x00000001u;
 }
-inline void test_msg_6::clear_test_data() {
+inline void TestMsg6::clear_test_data() {
   if (test_data_ != &::google::protobuf::internal::kEmptyString) {
     test_data_->clear();
   }
   clear_has_test_data();
 }
-inline const ::std::string& test_msg_6::test_data() const {
+inline const ::std::string& TestMsg6::test_data() const {
   return *test_data_;
 }
-inline void test_msg_6::set_test_data(const ::std::string& value) {
+inline void TestMsg6::set_test_data(const ::std::string& value) {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   test_data_->assign(value);
 }
-inline void test_msg_6::set_test_data(const char* value) {
+inline void TestMsg6::set_test_data(const char* value) {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   test_data_->assign(value);
 }
-inline void test_msg_6::set_test_data(const void* value, size_t size) {
+inline void TestMsg6::set_test_data(const void* value, size_t size) {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   test_data_->assign(reinterpret_cast<const char*>(value), size);
 }
-inline ::std::string* test_msg_6::mutable_test_data() {
+inline ::std::string* TestMsg6::mutable_test_data() {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   return test_data_;
 }
-inline ::std::string* test_msg_6::release_test_data() {
+inline ::std::string* TestMsg6::release_test_data() {
   clear_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     return NULL;
@@ -3780,56 +3780,56 @@ inline ::std::string* test_msg_6::release_test_data() {
 
 // -------------------------------------------------------------------
 
-// test_msg_7
+// TestMsg7
 
 // optional bytes test_data = 1;
-inline bool test_msg_7::has_test_data() const {
+inline bool TestMsg7::has_test_data() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void test_msg_7::set_has_test_data() {
+inline void TestMsg7::set_has_test_data() {
   _has_bits_[0] |= 0x00000001u;
 }
-inline void test_msg_7::clear_has_test_data() {
+inline void TestMsg7::clear_has_test_data() {
   _has_bits_[0] &= ~0x00000001u;
 }
-inline void test_msg_7::clear_test_data() {
+inline void TestMsg7::clear_test_data() {
   if (test_data_ != &::google::protobuf::internal::kEmptyString) {
     test_data_->clear();
   }
   clear_has_test_data();
 }
-inline const ::std::string& test_msg_7::test_data() const {
+inline const ::std::string& TestMsg7::test_data() const {
   return *test_data_;
 }
-inline void test_msg_7::set_test_data(const ::std::string& value) {
+inline void TestMsg7::set_test_data(const ::std::string& value) {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   test_data_->assign(value);
 }
-inline void test_msg_7::set_test_data(const char* value) {
+inline void TestMsg7::set_test_data(const char* value) {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   test_data_->assign(value);
 }
-inline void test_msg_7::set_test_data(const void* value, size_t size) {
+inline void TestMsg7::set_test_data(const void* value, size_t size) {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   test_data_->assign(reinterpret_cast<const char*>(value), size);
 }
-inline ::std::string* test_msg_7::mutable_test_data() {
+inline ::std::string* TestMsg7::mutable_test_data() {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   return test_data_;
 }
-inline ::std::string* test_msg_7::release_test_data() {
+inline ::std::string* TestMsg7::release_test_data() {
   clear_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     return NULL;
@@ -3842,56 +3842,56 @@ inline ::std::string* test_msg_7::release_test_data() {
 
 // -------------------------------------------------------------------
 
-// test_msg_8
+// TestMsg8
 
 // optional bytes test_data = 1;
-inline bool test_msg_8::has_test_data() const {
+inline bool TestMsg8::has_test_data() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void test_msg_8::set_has_test_data() {
+inline void TestMsg8::set_has_test_data() {
   _has_bits_[0] |= 0x00000001u;
 }
-inline void test_msg_8::clear_has_test_data() {
+inline void TestMsg8::clear_has_test_data() {
   _has_bits_[0] &= ~0x00000001u;
 }
-inline void test_msg_8::clear_test_data() {
+inline void TestMsg8::clear_test_data() {
   if (test_data_ != &::google::protobuf::internal::kEmptyString) {
     test_data_->clear();
   }
   clear_has_test_data();
 }
-inline const ::std::string& test_msg_8::test_data() const {
+inline const ::std::string& TestMsg8::test_data() const {
   return *test_data_;
 }
-inline void test_msg_8::set_test_data(const ::std::string& value) {
+inline void TestMsg8::set_test_data(const ::std::string& value) {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   test_data_->assign(value);
 }
-inline void test_msg_8::set_test_data(const char* value) {
+inline void TestMsg8::set_test_data(const char* value) {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   test_data_->assign(value);
 }
-inline void test_msg_8::set_test_data(const void* value, size_t size) {
+inline void TestMsg8::set_test_data(const void* value, size_t size) {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   test_data_->assign(reinterpret_cast<const char*>(value), size);
 }
-inline ::std::string* test_msg_8::mutable_test_data() {
+inline ::std::string* TestMsg8::mutable_test_data() {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   return test_data_;
 }
-inline ::std::string* test_msg_8::release_test_data() {
+inline ::std::string* TestMsg8::release_test_data() {
   clear_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     return NULL;
@@ -3904,56 +3904,56 @@ inline ::std::string* test_msg_8::release_test_data() {
 
 // -------------------------------------------------------------------
 
-// test_msg_9
+// TestMsg9
 
 // optional bytes test_data = 1;
-inline bool test_msg_9::has_test_data() const {
+inline bool TestMsg9::has_test_data() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void test_msg_9::set_has_test_data() {
+inline void TestMsg9::set_has_test_data() {
   _has_bits_[0] |= 0x00000001u;
 }
-inline void test_msg_9::clear_has_test_data() {
+inline void TestMsg9::clear_has_test_data() {
   _has_bits_[0] &= ~0x00000001u;
 }
-inline void test_msg_9::clear_test_data() {
+inline void TestMsg9::clear_test_data() {
   if (test_data_ != &::google::protobuf::internal::kEmptyString) {
     test_data_->clear();
   }
   clear_has_test_data();
 }
-inline const ::std::string& test_msg_9::test_data() const {
+inline const ::std::string& TestMsg9::test_data() const {
   return *test_data_;
 }
-inline void test_msg_9::set_test_data(const ::std::string& value) {
+inline void TestMsg9::set_test_data(const ::std::string& value) {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   test_data_->assign(value);
 }
-inline void test_msg_9::set_test_data(const char* value) {
+inline void TestMsg9::set_test_data(const char* value) {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   test_data_->assign(value);
 }
-inline void test_msg_9::set_test_data(const void* value, size_t size) {
+inline void TestMsg9::set_test_data(const void* value, size_t size) {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   test_data_->assign(reinterpret_cast<const char*>(value), size);
 }
-inline ::std::string* test_msg_9::mutable_test_data() {
+inline ::std::string* TestMsg9::mutable_test_data() {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   return test_data_;
 }
-inline ::std::string* test_msg_9::release_test_data() {
+inline ::std::string* TestMsg9::release_test_data() {
   clear_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     return NULL;
@@ -3966,56 +3966,56 @@ inline ::std::string* test_msg_9::release_test_data() {
 
 // -------------------------------------------------------------------
 
-// test_msg_10
+// TestMsg10
 
 // optional bytes test_data = 1;
-inline bool test_msg_10::has_test_data() const {
+inline bool TestMsg10::has_test_data() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void test_msg_10::set_has_test_data() {
+inline void TestMsg10::set_has_test_data() {
   _has_bits_[0] |= 0x00000001u;
 }
-inline void test_msg_10::clear_has_test_data() {
+inline void TestMsg10::clear_has_test_data() {
   _has_bits_[0] &= ~0x00000001u;
 }
-inline void test_msg_10::clear_test_data() {
+inline void TestMsg10::clear_test_data() {
   if (test_data_ != &::google::protobuf::internal::kEmptyString) {
     test_data_->clear();
   }
   clear_has_test_data();
 }
-inline const ::std::string& test_msg_10::test_data() const {
+inline const ::std::string& TestMsg10::test_data() const {
   return *test_data_;
 }
-inline void test_msg_10::set_test_data(const ::std::string& value) {
+inline void TestMsg10::set_test_data(const ::std::string& value) {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   test_data_->assign(value);
 }
-inline void test_msg_10::set_test_data(const char* value) {
+inline void TestMsg10::set_test_data(const char* value) {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   test_data_->assign(value);
 }
-inline void test_msg_10::set_test_data(const void* value, size_t size) {
+inline void TestMsg10::set_test_data(const void* value, size_t size) {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   test_data_->assign(reinterpret_cast<const char*>(value), size);
 }
-inline ::std::string* test_msg_10::mutable_test_data() {
+inline ::std::string* TestMsg10::mutable_test_data() {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   return test_data_;
 }
-inline ::std::string* test_msg_10::release_test_data() {
+inline ::std::string* TestMsg10::release_test_data() {
   clear_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     return NULL;
@@ -4028,56 +4028,56 @@ inline ::std::string* test_msg_10::release_test_data() {
 
 // -------------------------------------------------------------------
 
-// test_msg_11
+// TestMsg11
 
 // optional bytes test_data = 1;
-inline bool test_msg_11::has_test_data() const {
+inline bool TestMsg11::has_test_data() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void test_msg_11::set_has_test_data() {
+inline void TestMsg11::set_has_test_data() {
   _has_bits_[0] |= 0x00000001u;
 }
-inline void test_msg_11::clear_has_test_data() {
+inline void TestMsg11::clear_has_test_data() {
   _has_bits_[0] &= ~0x00000001u;
 }
-inline void test_msg_11::clear_test_data() {
+inline void TestMsg11::clear_test_data() {
   if (test_data_ != &::google::protobuf::internal::kEmptyString) {
     test_data_->clear();
   }
   clear_has_test_data();
 }
-inline const ::std::string& test_msg_11::test_data() const {
+inline const ::std::string& TestMsg11::test_data() const {
   return *test_data_;
 }
-inline void test_msg_11::set_test_data(const ::std::string& value) {
+inline void TestMsg11::set_test_data(const ::std::string& value) {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   test_data_->assign(value);
 }
-inline void test_msg_11::set_test_data(const char* value) {
+inline void TestMsg11::set_test_data(const char* value) {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   test_data_->assign(value);
 }
-inline void test_msg_11::set_test_data(const void* value, size_t size) {
+inline void TestMsg11::set_test_data(const void* value, size_t size) {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   test_data_->assign(reinterpret_cast<const char*>(value), size);
 }
-inline ::std::string* test_msg_11::mutable_test_data() {
+inline ::std::string* TestMsg11::mutable_test_data() {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   return test_data_;
 }
-inline ::std::string* test_msg_11::release_test_data() {
+inline ::std::string* TestMsg11::release_test_data() {
   clear_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     return NULL;
@@ -4090,56 +4090,56 @@ inline ::std::string* test_msg_11::release_test_data() {
 
 // -------------------------------------------------------------------
 
-// test_msg_12
+// TestMsg12
 
 // optional bytes test_data = 1;
-inline bool test_msg_12::has_test_data() const {
+inline bool TestMsg12::has_test_data() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void test_msg_12::set_has_test_data() {
+inline void TestMsg12::set_has_test_data() {
   _has_bits_[0] |= 0x00000001u;
 }
-inline void test_msg_12::clear_has_test_data() {
+inline void TestMsg12::clear_has_test_data() {
   _has_bits_[0] &= ~0x00000001u;
 }
-inline void test_msg_12::clear_test_data() {
+inline void TestMsg12::clear_test_data() {
   if (test_data_ != &::google::protobuf::internal::kEmptyString) {
     test_data_->clear();
   }
   clear_has_test_data();
 }
-inline const ::std::string& test_msg_12::test_data() const {
+inline const ::std::string& TestMsg12::test_data() const {
   return *test_data_;
 }
-inline void test_msg_12::set_test_data(const ::std::string& value) {
+inline void TestMsg12::set_test_data(const ::std::string& value) {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   test_data_->assign(value);
 }
-inline void test_msg_12::set_test_data(const char* value) {
+inline void TestMsg12::set_test_data(const char* value) {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   test_data_->assign(value);
 }
-inline void test_msg_12::set_test_data(const void* value, size_t size) {
+inline void TestMsg12::set_test_data(const void* value, size_t size) {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   test_data_->assign(reinterpret_cast<const char*>(value), size);
 }
-inline ::std::string* test_msg_12::mutable_test_data() {
+inline ::std::string* TestMsg12::mutable_test_data() {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   return test_data_;
 }
-inline ::std::string* test_msg_12::release_test_data() {
+inline ::std::string* TestMsg12::release_test_data() {
   clear_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     return NULL;
@@ -4152,56 +4152,56 @@ inline ::std::string* test_msg_12::release_test_data() {
 
 // -------------------------------------------------------------------
 
-// test_msg_13
+// TestMsg13
 
 // optional bytes test_data = 1;
-inline bool test_msg_13::has_test_data() const {
+inline bool TestMsg13::has_test_data() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void test_msg_13::set_has_test_data() {
+inline void TestMsg13::set_has_test_data() {
   _has_bits_[0] |= 0x00000001u;
 }
-inline void test_msg_13::clear_has_test_data() {
+inline void TestMsg13::clear_has_test_data() {
   _has_bits_[0] &= ~0x00000001u;
 }
-inline void test_msg_13::clear_test_data() {
+inline void TestMsg13::clear_test_data() {
   if (test_data_ != &::google::protobuf::internal::kEmptyString) {
     test_data_->clear();
   }
   clear_has_test_data();
 }
-inline const ::std::string& test_msg_13::test_data() const {
+inline const ::std::string& TestMsg13::test_data() const {
   return *test_data_;
 }
-inline void test_msg_13::set_test_data(const ::std::string& value) {
+inline void TestMsg13::set_test_data(const ::std::string& value) {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   test_data_->assign(value);
 }
-inline void test_msg_13::set_test_data(const char* value) {
+inline void TestMsg13::set_test_data(const char* value) {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   test_data_->assign(value);
 }
-inline void test_msg_13::set_test_data(const void* value, size_t size) {
+inline void TestMsg13::set_test_data(const void* value, size_t size) {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   test_data_->assign(reinterpret_cast<const char*>(value), size);
 }
-inline ::std::string* test_msg_13::mutable_test_data() {
+inline ::std::string* TestMsg13::mutable_test_data() {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   return test_data_;
 }
-inline ::std::string* test_msg_13::release_test_data() {
+inline ::std::string* TestMsg13::release_test_data() {
   clear_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     return NULL;
@@ -4214,56 +4214,56 @@ inline ::std::string* test_msg_13::release_test_data() {
 
 // -------------------------------------------------------------------
 
-// test_msg_14
+// TestMsg14
 
 // optional bytes test_data = 1;
-inline bool test_msg_14::has_test_data() const {
+inline bool TestMsg14::has_test_data() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void test_msg_14::set_has_test_data() {
+inline void TestMsg14::set_has_test_data() {
   _has_bits_[0] |= 0x00000001u;
 }
-inline void test_msg_14::clear_has_test_data() {
+inline void TestMsg14::clear_has_test_data() {
   _has_bits_[0] &= ~0x00000001u;
 }
-inline void test_msg_14::clear_test_data() {
+inline void TestMsg14::clear_test_data() {
   if (test_data_ != &::google::protobuf::internal::kEmptyString) {
     test_data_->clear();
   }
   clear_has_test_data();
 }
-inline const ::std::string& test_msg_14::test_data() const {
+inline const ::std::string& TestMsg14::test_data() const {
   return *test_data_;
 }
-inline void test_msg_14::set_test_data(const ::std::string& value) {
+inline void TestMsg14::set_test_data(const ::std::string& value) {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   test_data_->assign(value);
 }
-inline void test_msg_14::set_test_data(const char* value) {
+inline void TestMsg14::set_test_data(const char* value) {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   test_data_->assign(value);
 }
-inline void test_msg_14::set_test_data(const void* value, size_t size) {
+inline void TestMsg14::set_test_data(const void* value, size_t size) {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   test_data_->assign(reinterpret_cast<const char*>(value), size);
 }
-inline ::std::string* test_msg_14::mutable_test_data() {
+inline ::std::string* TestMsg14::mutable_test_data() {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   return test_data_;
 }
-inline ::std::string* test_msg_14::release_test_data() {
+inline ::std::string* TestMsg14::release_test_data() {
   clear_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     return NULL;
@@ -4276,56 +4276,56 @@ inline ::std::string* test_msg_14::release_test_data() {
 
 // -------------------------------------------------------------------
 
-// test_msg_15
+// TestMsg15
 
 // optional bytes test_data = 1;
-inline bool test_msg_15::has_test_data() const {
+inline bool TestMsg15::has_test_data() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void test_msg_15::set_has_test_data() {
+inline void TestMsg15::set_has_test_data() {
   _has_bits_[0] |= 0x00000001u;
 }
-inline void test_msg_15::clear_has_test_data() {
+inline void TestMsg15::clear_has_test_data() {
   _has_bits_[0] &= ~0x00000001u;
 }
-inline void test_msg_15::clear_test_data() {
+inline void TestMsg15::clear_test_data() {
   if (test_data_ != &::google::protobuf::internal::kEmptyString) {
     test_data_->clear();
   }
   clear_has_test_data();
 }
-inline const ::std::string& test_msg_15::test_data() const {
+inline const ::std::string& TestMsg15::test_data() const {
   return *test_data_;
 }
-inline void test_msg_15::set_test_data(const ::std::string& value) {
+inline void TestMsg15::set_test_data(const ::std::string& value) {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   test_data_->assign(value);
 }
-inline void test_msg_15::set_test_data(const char* value) {
+inline void TestMsg15::set_test_data(const char* value) {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   test_data_->assign(value);
 }
-inline void test_msg_15::set_test_data(const void* value, size_t size) {
+inline void TestMsg15::set_test_data(const void* value, size_t size) {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   test_data_->assign(reinterpret_cast<const char*>(value), size);
 }
-inline ::std::string* test_msg_15::mutable_test_data() {
+inline ::std::string* TestMsg15::mutable_test_data() {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   return test_data_;
 }
-inline ::std::string* test_msg_15::release_test_data() {
+inline ::std::string* TestMsg15::release_test_data() {
   clear_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     return NULL;
@@ -4338,56 +4338,56 @@ inline ::std::string* test_msg_15::release_test_data() {
 
 // -------------------------------------------------------------------
 
-// test_msg_16
+// TestMsg16
 
 // optional bytes test_data = 1;
-inline bool test_msg_16::has_test_data() const {
+inline bool TestMsg16::has_test_data() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void test_msg_16::set_has_test_data() {
+inline void TestMsg16::set_has_test_data() {
   _has_bits_[0] |= 0x00000001u;
 }
-inline void test_msg_16::clear_has_test_data() {
+inline void TestMsg16::clear_has_test_data() {
   _has_bits_[0] &= ~0x00000001u;
 }
-inline void test_msg_16::clear_test_data() {
+inline void TestMsg16::clear_test_data() {
   if (test_data_ != &::google::protobuf::internal::kEmptyString) {
     test_data_->clear();
   }
   clear_has_test_data();
 }
-inline const ::std::string& test_msg_16::test_data() const {
+inline const ::std::string& TestMsg16::test_data() const {
   return *test_data_;
 }
-inline void test_msg_16::set_test_data(const ::std::string& value) {
+inline void TestMsg16::set_test_data(const ::std::string& value) {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   test_data_->assign(value);
 }
-inline void test_msg_16::set_test_data(const char* value) {
+inline void TestMsg16::set_test_data(const char* value) {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   test_data_->assign(value);
 }
-inline void test_msg_16::set_test_data(const void* value, size_t size) {
+inline void TestMsg16::set_test_data(const void* value, size_t size) {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   test_data_->assign(reinterpret_cast<const char*>(value), size);
 }
-inline ::std::string* test_msg_16::mutable_test_data() {
+inline ::std::string* TestMsg16::mutable_test_data() {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   return test_data_;
 }
-inline ::std::string* test_msg_16::release_test_data() {
+inline ::std::string* TestMsg16::release_test_data() {
   clear_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     return NULL;
@@ -4400,56 +4400,56 @@ inline ::std::string* test_msg_16::release_test_data() {
 
 // -------------------------------------------------------------------
 
-// test_msg_17
+// TestMsg17
 
 // optional bytes test_data = 1;
-inline bool test_msg_17::has_test_data() const {
+inline bool TestMsg17::has_test_data() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void test_msg_17::set_has_test_data() {
+inline void TestMsg17::set_has_test_data() {
   _has_bits_[0] |= 0x00000001u;
 }
-inline void test_msg_17::clear_has_test_data() {
+inline void TestMsg17::clear_has_test_data() {
   _has_bits_[0] &= ~0x00000001u;
 }
-inline void test_msg_17::clear_test_data() {
+inline void TestMsg17::clear_test_data() {
   if (test_data_ != &::google::protobuf::internal::kEmptyString) {
     test_data_->clear();
   }
   clear_has_test_data();
 }
-inline const ::std::string& test_msg_17::test_data() const {
+inline const ::std::string& TestMsg17::test_data() const {
   return *test_data_;
 }
-inline void test_msg_17::set_test_data(const ::std::string& value) {
+inline void TestMsg17::set_test_data(const ::std::string& value) {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   test_data_->assign(value);
 }
-inline void test_msg_17::set_test_data(const char* value) {
+inline void TestMsg17::set_test_data(const char* value) {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   test_data_->assign(value);
 }
-inline void test_msg_17::set_test_data(const void* value, size_t size) {
+inline void TestMsg17::set_test_data(const void* value, size_t size) {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   test_data_->assign(reinterpret_cast<const char*>(value), size);
 }
-inline ::std::string* test_msg_17::mutable_test_data() {
+inline ::std::string* TestMsg17::mutable_test_data() {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   return test_data_;
 }
-inline ::std::string* test_msg_17::release_test_data() {
+inline ::std::string* TestMsg17::release_test_data() {
   clear_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     return NULL;
@@ -4462,56 +4462,56 @@ inline ::std::string* test_msg_17::release_test_data() {
 
 // -------------------------------------------------------------------
 
-// test_msg_18
+// TestMsg18
 
 // optional bytes test_data = 1;
-inline bool test_msg_18::has_test_data() const {
+inline bool TestMsg18::has_test_data() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void test_msg_18::set_has_test_data() {
+inline void TestMsg18::set_has_test_data() {
   _has_bits_[0] |= 0x00000001u;
 }
-inline void test_msg_18::clear_has_test_data() {
+inline void TestMsg18::clear_has_test_data() {
   _has_bits_[0] &= ~0x00000001u;
 }
-inline void test_msg_18::clear_test_data() {
+inline void TestMsg18::clear_test_data() {
   if (test_data_ != &::google::protobuf::internal::kEmptyString) {
     test_data_->clear();
   }
   clear_has_test_data();
 }
-inline const ::std::string& test_msg_18::test_data() const {
+inline const ::std::string& TestMsg18::test_data() const {
   return *test_data_;
 }
-inline void test_msg_18::set_test_data(const ::std::string& value) {
+inline void TestMsg18::set_test_data(const ::std::string& value) {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   test_data_->assign(value);
 }
-inline void test_msg_18::set_test_data(const char* value) {
+inline void TestMsg18::set_test_data(const char* value) {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   test_data_->assign(value);
 }
-inline void test_msg_18::set_test_data(const void* value, size_t size) {
+inline void TestMsg18::set_test_data(const void* value, size_t size) {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   test_data_->assign(reinterpret_cast<const char*>(value), size);
 }
-inline ::std::string* test_msg_18::mutable_test_data() {
+inline ::std::string* TestMsg18::mutable_test_data() {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   return test_data_;
 }
-inline ::std::string* test_msg_18::release_test_data() {
+inline ::std::string* TestMsg18::release_test_data() {
   clear_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     return NULL;
@@ -4524,56 +4524,56 @@ inline ::std::string* test_msg_18::release_test_data() {
 
 // -------------------------------------------------------------------
 
-// test_msg_19
+// TestMsg19
 
 // optional bytes test_data = 1;
-inline bool test_msg_19::has_test_data() const {
+inline bool TestMsg19::has_test_data() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void test_msg_19::set_has_test_data() {
+inline void TestMsg19::set_has_test_data() {
   _has_bits_[0] |= 0x00000001u;
 }
-inline void test_msg_19::clear_has_test_data() {
+inline void TestMsg19::clear_has_test_data() {
   _has_bits_[0] &= ~0x00000001u;
 }
-inline void test_msg_19::clear_test_data() {
+inline void TestMsg19::clear_test_data() {
   if (test_data_ != &::google::protobuf::internal::kEmptyString) {
     test_data_->clear();
   }
   clear_has_test_data();
 }
-inline const ::std::string& test_msg_19::test_data() const {
+inline const ::std::string& TestMsg19::test_data() const {
   return *test_data_;
 }
-inline void test_msg_19::set_test_data(const ::std::string& value) {
+inline void TestMsg19::set_test_data(const ::std::string& value) {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   test_data_->assign(value);
 }
-inline void test_msg_19::set_test_data(const char* value) {
+inline void TestMsg19::set_test_data(const char* value) {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   test_data_->assign(value);
 }
-inline void test_msg_19::set_test_data(const void* value, size_t size) {
+inline void TestMsg19::set_test_data(const void* value, size_t size) {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   test_data_->assign(reinterpret_cast<const char*>(value), size);
 }
-inline ::std::string* test_msg_19::mutable_test_data() {
+inline ::std::string* TestMsg19::mutable_test_data() {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   return test_data_;
 }
-inline ::std::string* test_msg_19::release_test_data() {
+inline ::std::string* TestMsg19::release_test_data() {
   clear_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     return NULL;
@@ -4586,56 +4586,56 @@ inline ::std::string* test_msg_19::release_test_data() {
 
 // -------------------------------------------------------------------
 
-// test_msg_20
+// TestMsg20
 
 // optional bytes test_data = 1;
-inline bool test_msg_20::has_test_data() const {
+inline bool TestMsg20::has_test_data() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void test_msg_20::set_has_test_data() {
+inline void TestMsg20::set_has_test_data() {
   _has_bits_[0] |= 0x00000001u;
 }
-inline void test_msg_20::clear_has_test_data() {
+inline void TestMsg20::clear_has_test_data() {
   _has_bits_[0] &= ~0x00000001u;
 }
-inline void test_msg_20::clear_test_data() {
+inline void TestMsg20::clear_test_data() {
   if (test_data_ != &::google::protobuf::internal::kEmptyString) {
     test_data_->clear();
   }
   clear_has_test_data();
 }
-inline const ::std::string& test_msg_20::test_data() const {
+inline const ::std::string& TestMsg20::test_data() const {
   return *test_data_;
 }
-inline void test_msg_20::set_test_data(const ::std::string& value) {
+inline void TestMsg20::set_test_data(const ::std::string& value) {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   test_data_->assign(value);
 }
-inline void test_msg_20::set_test_data(const char* value) {
+inline void TestMsg20::set_test_data(const char* value) {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   test_data_->assign(value);
 }
-inline void test_msg_20::set_test_data(const void* value, size_t size) {
+inline void TestMsg20::set_test_data(const void* value, size_t size) {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   test_data_->assign(reinterpret_cast<const char*>(value), size);
 }
-inline ::std::string* test_msg_20::mutable_test_data() {
+inline ::std::string* TestMsg20::mutable_test_data() {
   set_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     test_data_ = new ::std::string;
   }
   return test_data_;
 }
-inline ::std::string* test_msg_20::release_test_data() {
+inline ::std::string* TestMsg20::release_test_data() {
   clear_has_test_data();
   if (test_data_ == &::google::protobuf::internal::kEmptyString) {
     return NULL;
