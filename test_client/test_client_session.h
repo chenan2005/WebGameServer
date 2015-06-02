@@ -13,11 +13,8 @@ public:
 	};
 
 	test_client_session(void);
+
 	virtual ~test_client_session(void);
-
-	virtual void on_packet(iod_packet* packet);
-
-	virtual void on_closed(int reason);
 
 	void set_username(const char* username, int length = 0);
 
@@ -34,6 +31,10 @@ public:
 	inline unsigned int get_last_send_command_time() const {
 		return last_send_command_time;
 	}
+
+	virtual void on_packet(iod_packet* packet);
+
+	virtual void on_closed(int reason);
 
 protected:
 

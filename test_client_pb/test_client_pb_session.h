@@ -18,43 +18,25 @@ public:
 		LOGIN_STATE_LOGINED,
 	};
 
-	//--------------------------------------------------
-	//override functions
-	//--------------------------------------------------
+	test_client_protobuf_session(void);
 
-	virtual void on_closed(int reason);
-	
-	//--------------------------------------------------
-	//message handle functions
-	//--------------------------------------------------
+	virtual ~test_client_protobuf_session(void);
 
-	virtual void on_res_authentication(iod::protobuf::common::base_msg* msg);
-	virtual void on_res_login(iod::protobuf::common::base_msg* msg);
-	virtual void on_res_test_info(iod::protobuf::common::base_msg* msg);
-	virtual void on_res_test_response_time(iod::protobuf::common::base_msg* msg);
-	virtual void on_notify_kickout(iod::protobuf::common::base_msg* msg);
-
-	//--------------------------------------------------
-	//timer handle functions
-	//--------------------------------------------------
-
-	//--------------------------------------------------
-	//send message interfaces
-	//--------------------------------------------------
+	//----------------------------------------------------------
+	//message senders
+	//----------------------------------------------------------
 
 	void send_req_authentication(const char* authentication, int length = 0);
+
 	void send_req_login(const char* authorization, int length = 0);
+
 	void send_req_test_info(const char* info, int length = 0);
+
 	void send_req_logout();
+
 	void send_req_test_response_time(ev_uint64_t t);
 
-	//--------------------------------------------------
-	//other new add interfaces
-	//--------------------------------------------------
-
-	//--------------------------------------------------
-	//attributes get/set
-	//--------------------------------------------------
+	//----------------------------------------------------------
 
 	void set_username(const char* username, int length = 0);
 
@@ -78,19 +60,29 @@ public:
 		return next_try_login_time;
 	}
 
-	//--------------------------------------------------
-	//constructor/destructor
-	//--------------------------------------------------
+	//---------------------------------------------------------------------
+	//message handlers
+	//---------------------------------------------------------------------
 
-	test_client_protobuf_session(void);
+	virtual void on_res_authentication(iod::protobuf::common::base_msg* msg);
 
-	virtual ~test_client_protobuf_session(void);
+	virtual void on_res_login(iod::protobuf::common::base_msg* msg);
 
-	//--------------------------------------------------
-	//others
-	//--------------------------------------------------
+	virtual void on_res_test_info(iod::protobuf::common::base_msg* msg);
+
+	virtual void on_res_test_response_time(iod::protobuf::common::base_msg* msg);
+
+	virtual void on_notify_kickout(iod::protobuf::common::base_msg* msg);
+
+	//---------------------------------------------------------------------
+
+	virtual void on_closed(int reason);
 
 protected:
+
+	inline void update_last_send_command_time() {
+		last_send_command_time = iod_utility::get_time_msec();
+	}
 
 	inline void set_login_state(int state) {
 		if (state != this->login_stat) {
@@ -98,10 +90,6 @@ protected:
 			if (state == LOGIN_STATE_NONE)
 				next_try_login_time = iod_utility::get_time_msec() + rand() % 11000;
 		}
-	}
-
-	inline void update_last_send_command_time() {
-		last_send_command_time = iod_utility::get_time_msec();
 	}
 
 	char username[32];

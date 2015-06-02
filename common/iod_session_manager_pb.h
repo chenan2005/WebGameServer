@@ -18,7 +18,9 @@ class iod_session_manager_pb : public iod_session_manager
 	DEC_REG_PROTO_MSG_HANDLE(iod_session_manager_pb)
 
 public:
+
 	iod_session_manager_pb(void);
+
 	virtual ~iod_session_manager_pb(void);
 
 	iod_session* on_none_session_message(struct connection_info* conn_info, iod::protobuf::common::base_msg* msg);

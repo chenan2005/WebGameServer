@@ -47,6 +47,7 @@ class iod_session_pb : public iod_session
 public:
 
 	iod_session_pb(void);
+
 	virtual ~iod_session_pb(void);
 
 	void on_message(iod::protobuf::common::base_msg* msg);
@@ -67,12 +68,11 @@ public:
 
 protected:
 
-	bool send_base_msg(iod::protobuf::common::base_msg* msg);
-
 	typedef void (iod_session_pb::*FNC_PB_MSG_HANDLER)(iod::protobuf::common::base_msg*);
 
-	static std::map< int, FNC_PB_MSG_HANDLER > *msg_handler_map;
+	bool send_base_msg(iod::protobuf::common::base_msg* msg);
 
+	static std::map< int, FNC_PB_MSG_HANDLER > *msg_handler_map;
 
 };
 

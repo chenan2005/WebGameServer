@@ -8,8 +8,6 @@
 template <typename T> 
 class iod_singleton
 {
-	DISALLOW_COPY_AND_ASSIGN(iod_singleton);
-
 public:
 
 	static T* instance()
@@ -34,6 +32,9 @@ protected:
 private:
 
 	static T* m_instance;
+
+	DISALLOW_COPY_AND_ASSIGN(iod_singleton);
+
 };
 
 template <typename T> T* iod_singleton<T>::m_instance = 0;

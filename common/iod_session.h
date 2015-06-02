@@ -24,9 +24,6 @@ struct connection_info
 
 class iod_session : public iod_timer_handler
 {
-	friend void bind_session_connection(struct connection_info *, iod_session *, int);
-	friend void unbind_session_connection(struct connection_info *, iod_session *);
-
 public:
 
 	//会话的网络状态
@@ -41,9 +38,19 @@ public:
 
 	virtual ~iod_session(void);
 
-	//----------------------------------------------------
-	//重载回调
-	//----------------------------------------------------
+	bool connect(const char* target_addr);
+
+	void close(int reason = 0);
+
+	bool send(iod_packet* packet);
+
+	void flush();
+
+	inline struct connection_info * get_connection_info() const { return conn_info; }
+
+	inline session_net_state get_net_stat() const { return net_state; }
+
+	inline unsigned int get_last_net_state_time() const { return last_net_state_time; }
 
 	inline virtual iod_packet* create_packet() { return iod_packet::create(); }
 
@@ -55,31 +62,6 @@ public:
 
 	virtual void on_closed(int reason);
 
-
-	//----------------------------------------------------
-	//行为
-	//----------------------------------------------------
-
-	bool connect(const char* target_addr);
-
-	void close(int reason = 0);
-
-	bool send(iod_packet* packet);
-
-	void flush();
-
-	//----------------------------------------------------
-	//属性
-	//----------------------------------------------------
-
-	inline struct connection_info * get_connection_info() const { return conn_info; }
-
-	inline session_net_state get_net_stat() const { return net_state; }
-
-	inline unsigned int get_last_net_state_time() const { return last_net_state_time; }
-
-	//----------------------------------------------------
-
 private:
 
 	void set_net_state(session_net_state net_state);
@@ -89,6 +71,11 @@ private:
 	session_net_state net_state;
 
 	unsigned int last_net_state_time;
+
+	friend void bind_session_connection(struct connection_info *, iod_session *, int);
+
+	friend void unbind_session_connection(struct connection_info *, iod_session *);
+
 };
 
 #endif

@@ -14,41 +14,9 @@ public:
 		LOGIN_STATE_LOGINED,
 	};
 
-	//--------------------------------------------------
-	//override functions
-	//--------------------------------------------------
+	test_server_pb_session(void);
 
-	virtual void on_closed(int reason);
-
-	//--------------------------------------------------
-	//message handle functions
-	//--------------------------------------------------
-
-	virtual void on_req_login(iod::protobuf::common::base_msg* msg);
-
-	virtual void on_req_test_info(iod::protobuf::common::base_msg* msg);
-
-	virtual void on_req_logout(iod::protobuf::common::base_msg* msg);
-
-	virtual void on_req_test_response_time(iod::protobuf::common::base_msg* msg);
-
-	//--------------------------------------------------
-	//timer handle functions
-	//--------------------------------------------------
-
-	virtual void on_timer_close_session(void*) { close(); }
-
-	//--------------------------------------------------
-	//send message interfaces
-	//--------------------------------------------------
-
-	//--------------------------------------------------
-	//other new add interfaces
-	//--------------------------------------------------
-
-	//--------------------------------------------------
-	//attributes get/set
-	//--------------------------------------------------
+	virtual ~test_server_pb_session(void);
 
 	void set_username(const char* username, int length = 0);
 
@@ -64,16 +32,28 @@ public:
 		return last_send_command_time;
 	}
 
-	//--------------------------------------------------
-	//constructor/destructor
+	virtual void on_closed(int reason);
+
+	//---------------------------------------------------------------------
+	//message handlers
+	//---------------------------------------------------------------------
+
+	virtual void on_req_login(iod::protobuf::common::base_msg* msg);
+
+	virtual void on_req_test_info(iod::protobuf::common::base_msg* msg);
+
+	virtual void on_req_logout(iod::protobuf::common::base_msg* msg);
+
+	virtual void on_req_test_response_time(iod::protobuf::common::base_msg* msg);
+
 	//--------------------------------------------------
 
-	test_server_pb_session(void);
-
-	virtual ~test_server_pb_session(void);
-
 	//--------------------------------------------------
-	//others
+	//timer handlers
+	//--------------------------------------------------
+
+	virtual void on_timer_close_session(void*) { close(); }
+
 	//--------------------------------------------------
 
 protected:

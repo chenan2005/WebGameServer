@@ -203,6 +203,14 @@
 				RelativePath="..\common\iod_singleton.h"
 				>
 			</File>
+			<File
+				RelativePath="..\common\iod_timer_handler.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\common\iod_timer_handler.h"
+				>
+			</File>
 			<Filter
 				Name="utility"
 				>
@@ -252,14 +260,6 @@
 				</File>
 			</Filter>
 		</Filter>
-		<File
-			RelativePath="..\common\iod_timer_handler.cpp"
-			>
-		</File>
-		<File
-			RelativePath="..\common\iod_timer_handler.h"
-			>
-		</File>
 		<File
 			RelativePath="..\protocol\test_helper.cpp"
 			>

@@ -7,8 +7,6 @@
 
 class iod_server
 {
-	DISALLOW_COPY_AND_ASSIGN(iod_server);
-
 public:
 
 	enum {
@@ -82,18 +80,20 @@ protected:
 	//¹Ø±Õ·þÎñÆ÷
 	virtual void shutdown_server() = 0;
 
+
 	/**
 	*************************************************************
-	others
+	protected members
 	*************************************************************
 	*/
-
 
 	unsigned int ctrl_flag;
 
 private:
 
 	static iod_server* _server_instance;
+
+	DISALLOW_COPY_AND_ASSIGN(iod_server);
 };
 
 #endif

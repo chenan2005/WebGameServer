@@ -23,8 +23,12 @@ struct iod_netstatistics
 class iod_session_manager : public iod_timer_handler
 {
 public:
+
 	iod_session_manager(void);
+
 	virtual ~iod_session_manager(void);
+
+	bool send_to(connection_info* conn_info, iod_packet* packet);
 
 	inline virtual iod_packet* create_packet() { 
 		return iod_packet::create(); 
@@ -36,11 +40,7 @@ public:
 
 	virtual iod_session* on_none_session_packet(connection_info* conn_info, iod_packet* packet) = 0;
 
-	bool send_to(connection_info* conn_info, iod_packet* packet);
-
 	iod_netstatistics netstatistics;
-
-private:
 };
 
 #endif

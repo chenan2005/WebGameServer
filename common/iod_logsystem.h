@@ -13,7 +13,9 @@ class iod_logsystem :
 	public iod_singleton< iod_logsystem >
 {
 private:
+
 	iod_logsystem(void);
+
 	virtual ~iod_logsystem(void);
 };
 

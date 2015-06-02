@@ -5,10 +5,6 @@
 
 #define _MAX_PACKET_LENGTH 32768u
 
-class iod_packet;
-
-typedef iod_packet* (*FNC_PACKET_CONSTRUCTOR)();
-
 class iod_packet
 {
 public:
@@ -32,10 +28,6 @@ public:
 		delete packet;
 	}
 
-	virtual int read(struct bufferevent* bufev);
-
-	virtual int write(struct bufferevent *bufev);
-
 	inline virtual void set_data(const char* data, int length) {
 		reset();
 		this->data = (char*)malloc(length);
@@ -50,6 +42,10 @@ public:
 	inline const char* get_data() const { 
 		return this->data; 
 	}
+
+	virtual int read(struct bufferevent* bufev);
+
+	virtual int write(struct bufferevent *bufev);
 
 protected:
 
@@ -74,5 +70,7 @@ private:
 
 	char* data;
 };
+
+typedef iod_packet* (*FNC_PACKET_CONSTRUCTOR)();
 
 #endif
