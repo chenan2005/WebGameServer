@@ -15,7 +15,7 @@ iod_session_pb::~iod_session_pb( void )
 
 }
 
-void iod_session_pb::on_message( iod::protobuf::common::base_msg* msg )
+void iod_session_pb::on_message( iod_pb::common::base_msg* msg )
 {
 	check_register_msg_handle();
 
@@ -28,7 +28,7 @@ void iod_session_pb::on_message( iod::protobuf::common::base_msg* msg )
 
 void iod_session_pb::on_packet( iod_packet* packet )
 {
-	iod::protobuf::common::base_msg* msg = new iod::protobuf::common::base_msg;
+	iod_pb::common::base_msg* msg = new iod_pb::common::base_msg;
 	if (msg->ParseFromArray(packet->get_data(), packet->get_length()))
 	{
 		on_message(msg);
@@ -36,7 +36,7 @@ void iod_session_pb::on_packet( iod_packet* packet )
 	delete msg;
 }
 
-bool iod_session_pb::send_base_msg( iod::protobuf::common::base_msg* msg )
+bool iod_session_pb::send_base_msg( iod_pb::common::base_msg* msg )
 {
 	static char msg_serialize_buff[_MAX_PACKET_LENGTH];
 

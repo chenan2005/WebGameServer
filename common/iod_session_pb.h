@@ -50,15 +50,15 @@ public:
 
 	virtual ~iod_session_pb(void);
 
-	void on_message(iod::protobuf::common::base_msg* msg);
+	void on_message(iod_pb::common::base_msg* msg);
 
 	//·¢ËÍÏûÏ¢
 	template <typename _proto_TypeTraits, ::google::protobuf::internal::FieldType _field_type,  bool _is_packed>
 	inline bool send_message(
-		const ::google::protobuf::internal::ExtensionIdentifier<iod::protobuf::common::base_msg, _proto_TypeTraits, _field_type, _is_packed>& id,	
+		const ::google::protobuf::internal::ExtensionIdentifier<iod_pb::common::base_msg, _proto_TypeTraits, _field_type, _is_packed>& id,	
 		typename _proto_TypeTraits::ConstType msg)	
 	{
-		iod::protobuf::common::base_msg base_msg;
+		iod_pb::common::base_msg base_msg;
 		base_msg.set_messge_id(id.number());
 		base_msg.MutableExtension(id)->CopyFrom(msg);
 		return send_base_msg(&base_msg);
@@ -68,9 +68,9 @@ public:
 
 protected:
 
-	typedef void (iod_session_pb::*FNC_PB_MSG_HANDLER)(iod::protobuf::common::base_msg*);
+	typedef void (iod_session_pb::*FNC_PB_MSG_HANDLER)(iod_pb::common::base_msg*);
 
-	bool send_base_msg(iod::protobuf::common::base_msg* msg);
+	bool send_base_msg(iod_pb::common::base_msg* msg);
 
 	static std::map< int, FNC_PB_MSG_HANDLER > *msg_handler_map;
 

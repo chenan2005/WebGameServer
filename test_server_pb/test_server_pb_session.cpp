@@ -2,7 +2,7 @@
 #include "iod_logsystem.h"
 #include "iod_test.pb.h"
 
-using namespace iod::protobuf::test;
+using namespace iod_pb::test;
 
 REG_PROTO_MSG_HANDLE_BEGIN(test_server_pb_session, iod_session_pb)
 
@@ -23,14 +23,14 @@ test_server_pb_session::~test_server_pb_session(void)
 {
 }
 
-void test_server_pb_session::on_req_login(iod::protobuf::common::base_msg* msg)
+void test_server_pb_session::on_req_login(iod_pb::common::base_msg* msg)
 {
 	SAFE_GET_EXTENSION(msg, req_login, req);
 
 	set_login_state(LOGIN_STATE_LOGINED);
 }
 
-void test_server_pb_session::on_req_test_info(iod::protobuf::common::base_msg* msg)
+void test_server_pb_session::on_req_test_info(iod_pb::common::base_msg* msg)
 {
 	SAFE_GET_EXTENSION(msg, req_test_info, req);
 	res_test_info res;
@@ -38,13 +38,13 @@ void test_server_pb_session::on_req_test_info(iod::protobuf::common::base_msg* m
 	send_message(_res_test_info, res);
 }
 
-void test_server_pb_session::on_req_logout( iod::protobuf::common::base_msg* msg )
+void test_server_pb_session::on_req_logout( iod_pb::common::base_msg* msg )
 {
 	SAFE_GET_EXTENSION(msg, req_logout, req);
 	close(0);
 }
 
-void test_server_pb_session::on_req_test_response_time(iod::protobuf::common::base_msg* msg)
+void test_server_pb_session::on_req_test_response_time(iod_pb::common::base_msg* msg)
 {
 	SAFE_GET_EXTENSION(msg, req_test_response_time, req);
 	res_test_response_time res;

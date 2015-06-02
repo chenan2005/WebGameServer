@@ -4,7 +4,7 @@
 #include "iod_utility.h"
 #include "iod_logsystem.h"
 
-using namespace iod::protobuf::test;
+using namespace iod_pb::test;
 
 REG_PROTO_MSG_HANDLE_BEGIN(test_server_pb_session_manager, iod_session_manager_pb)
 
@@ -28,11 +28,11 @@ test_server_pb_session_manager::~test_server_pb_session_manager(void)
 	}
 }
 
-iod_session* test_server_pb_session_manager::on_req_authentication( struct connection_info* conn_info, iod::protobuf::common::base_msg* msg )
+iod_session* test_server_pb_session_manager::on_req_authentication( struct connection_info* conn_info, iod_pb::common::base_msg* msg )
 {
 	SAFE_GET_NONE_SESSION_EXTENSION(msg, req_authentication, req);
 
-	iod::protobuf::test::res_authentication res;
+	iod_pb::test::res_authentication res;
 
 	string authoriztion("");
 	if (!validate_authentication(req.userid(), req.authentication(), authoriztion)) {
@@ -43,12 +43,12 @@ iod_session* test_server_pb_session_manager::on_req_authentication( struct conne
 		res.set_authorization(authoriztion);
 	}
 	
-	send_message_to(conn_info, iod::protobuf::test::_res_authentication, res);
+	send_message_to(conn_info, iod_pb::test::_res_authentication, res);
 	
 	return 0;
 }
 
-iod_session* test_server_pb_session_manager::on_req_login( struct connection_info* conn_info, iod::protobuf::common::base_msg* msg )
+iod_session* test_server_pb_session_manager::on_req_login( struct connection_info* conn_info, iod_pb::common::base_msg* msg )
 {
 	SAFE_GET_NONE_SESSION_EXTENSION(msg, req_login, req);
 

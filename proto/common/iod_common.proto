@@ -1,5 +1,5 @@
 
-package iod.protobuf.common;
+package iod_pb.common;
 
 message base_msg {
 	optional sint32 from = 1;

@@ -38,13 +38,13 @@ public:
 	//message handlers
 	//---------------------------------------------------------------------
 
-	virtual void on_req_login(iod::protobuf::common::base_msg* msg);
+	virtual void on_req_login(iod_pb::common::base_msg* msg);
 
-	virtual void on_req_test_info(iod::protobuf::common::base_msg* msg);
+	virtual void on_req_test_info(iod_pb::common::base_msg* msg);
 
-	virtual void on_req_logout(iod::protobuf::common::base_msg* msg);
+	virtual void on_req_logout(iod_pb::common::base_msg* msg);
 
-	virtual void on_req_test_response_time(iod::protobuf::common::base_msg* msg);
+	virtual void on_req_test_response_time(iod_pb::common::base_msg* msg);
 
 	//--------------------------------------------------
 
