@@ -3,15 +3,15 @@
 
 #include "iod_server.h"
 
-class iod_webgame_session_manager;
+class PlayerManager;
 
-class iod_webgame	: public iod_server
+class WebGameServer	: public iod_server
 {
 public:
 
-	iod_webgame(void);
+	WebGameServer(void);
 
-	virtual ~iod_webgame(void);
+	virtual ~WebGameServer(void);
 
 protected:
 
@@ -27,7 +27,7 @@ protected:
 
 private:
 
-	iod_webgame_session_manager* session_manager;
+	PlayerManager* session_manager;
 };
 
 #endif

@@ -1,21 +1,21 @@
-#include "iod_webgame.h"
-#include "iod_webgame_session_manager.h"
+#include "WebGameServer.h"
+#include "PlayerManager.h"
 #include "iod_network.h"
 #include "iod_logsystem.h"
 
-IMPLEMENT_SINGLETON_INSTANCE(iod_webgame);
+IMPLEMENT_SINGLETON_INSTANCE(WebGameServer);
 
-iod_webgame::iod_webgame(void)
+WebGameServer::WebGameServer(void)
 {
 }
 
-iod_webgame::~iod_webgame(void)
+WebGameServer::~WebGameServer(void)
 {
 }
 
-bool iod_webgame::initialize_server()
+bool WebGameServer::initialize_server()
 {
-	session_manager = new iod_webgame_session_manager;
+	session_manager = new PlayerManager;
 
 	session_manager->l_info = iod_network::start_listener(session_manager, "0.0.0.0:12345");
 
@@ -29,7 +29,7 @@ bool iod_webgame::initialize_server()
 	return true;
 }
 
-int iod_webgame::update_server()
+int WebGameServer::update_server()
 {
 	session_manager->check_sessions();
 
@@ -44,7 +44,7 @@ int iod_webgame::update_server()
 	return 0;
 }
 
-void iod_webgame::shutdown_server()
+void WebGameServer::shutdown_server()
 {
 	if (session_manager->l_info)
 		iod_network::shutdown_listener(session_manager->l_info);
@@ -54,7 +54,7 @@ void iod_webgame::shutdown_server()
 	iod_log_info("server shutdown");
 }
 
-void iod_webgame::on_winsys_kbhit( int c )
+void WebGameServer::on_winsys_kbhit( int c )
 {
 	if (c == 'p') {
 		const iod_netstatistics& stat = session_manager->netstatistics;
@@ -84,7 +84,7 @@ void iod_webgame::on_winsys_kbhit( int c )
 	}
 }
 
-void iod_webgame::print_help_info()
+void WebGameServer::print_help_info()
 {
 #ifdef WIN32
 	iod_log_info("\n  q: quit server"

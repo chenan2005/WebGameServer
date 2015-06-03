@@ -14,13 +14,32 @@ message Authorization {
     required bytes flags = 3;
 }
 
-//角色
-message RoleInfo {
-    required sint64 uid = 1;  //唯一角色ID
-    required string account = 2; //账号
-    required string name = 3; //名字
-    required sint32 create_time = 4; //创建时间
-    required bytes flags = 5; //标识信息
+//玩家索引数值
+message RoleIndexValue {
+    optional sint64 owner_uid = 1;
+    required sint32 index = 2;
+    required sint32 value = 3;
+}
+
+//玩家索引数据块
+message RoleIndexData {
+    optional sint64 owner_uid = 1;
+    required sint32 index = 2;
+    required bytes data = 3;
+}
+
+//道具索引数值
+message ItemIndexValue {
+    optional sint64 item_uid = 1;
+    required sint32 index = 2;
+    required sint32 value = 3;
+}
+
+//道具索引数据块
+message ItemIndexData {
+    optional sint64 item_uid = 1;
+    required sint32 index = 2;
+    required bytes data = 3;
 }
 
 //道具
@@ -30,6 +49,16 @@ message ItemInfo {
     required sint32 class_id = 3;  //类型ID
     required sint32 get_time = 4;  //获取时间
     required bytes flags = 5; //道具标识信息
+    required sint32 amount = 6; //道具数量
+}
+
+//角色
+message RoleInfo {
+    required sint64 uid = 1;  //唯一角色ID
+    required string account = 2; //账号
+    required string name = 3; //名字
+    required sint32 create_time = 4; //创建时间
+    required bytes flags = 5; //标识信息
 }
 
 //玩家

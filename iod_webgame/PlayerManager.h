@@ -2,18 +2,18 @@
 
 #include "iod_session_manager_pb.h"
 
-class iod_webgame_session;
+class Player;
 
-class iod_webgame_session_manager :
+class PlayerManager :
 	public iod_session_manager_pb
 {
-	DEC_REG_PROTO_MSG_HANDLE(iod_webgame_session_manager)
+	DEC_REG_PROTO_MSG_HANDLE(PlayerManager)
 
 public:
 
-	iod_webgame_session_manager(void);
+	PlayerManager(void);
 
-	virtual ~iod_webgame_session_manager(void);
+	virtual ~PlayerManager(void);
 
 	void kickout(iod_session* session, int reason);
 
@@ -31,8 +31,6 @@ public:
 
 	virtual iod_session* onReqLogin(struct connection_info* conn_info, com::iod::pb::common::BaseMsg* msg);
 
-	virtual iod_session* onTestMsg1(struct connection_info* conn_info, com::iod::pb::common::BaseMsg* msg);
-
 	//---------------------------------------------------------------------
 
 	unsigned int create_session_count;
@@ -47,5 +45,5 @@ protected:
 
 	bool validate_authorization(const std::string& userid, const std::string& authorization);
 
-	std::map< std::string, iod_webgame_session* > sessions;
+	std::map< std::string, Player* > sessions;
 };

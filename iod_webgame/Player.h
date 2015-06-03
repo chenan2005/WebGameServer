@@ -1,10 +1,12 @@
 #pragma once
 #include "iod_session_pb.h"
 
-class iod_webgame_session :
+class Room;
+
+class Player :
 	public iod_session_pb
 {
-	DEC_REG_PROTO_MSG_HANDLE(iod_webgame_session)
+	DEC_REG_PROTO_MSG_HANDLE(Player)
 
 public:
 
@@ -14,9 +16,19 @@ public:
 		LOGIN_STATE_LOGINED,
 	};
 
-	iod_webgame_session(void);
+	Player(void);
 
-	virtual ~iod_webgame_session(void);
+	virtual ~Player(void);
+
+	Room* createRoom();
+
+	bool joinRoom(int roomId);
+
+	bool leaveRoom();
+
+	bool startGame(int gameId);
+
+	bool leaveGame();
 
 	void set_username(const char* username, int length = 0);
 
@@ -46,8 +58,6 @@ public:
 
 	virtual void onReqTestResponseTime(com::iod::pb::common::BaseMsg* msg);
 
-	virtual void onTestMsg1(com::iod::pb::common::BaseMsg* msg);
-
 	//--------------------------------------------------
 
 	//--------------------------------------------------
@@ -69,4 +79,10 @@ protected:
 	int login_stat;
 
 	unsigned int last_send_command_time;
+
+private:
+
+	int roomId;
+
+	int gameId;
 };
