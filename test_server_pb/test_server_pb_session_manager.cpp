@@ -84,7 +84,7 @@ iod_session* test_server_pb_session_manager::onTestMsg1(struct connection_info* 
 	SAFE_GET_NONE_SESSION_EXTENSION(msg, TestMsg1, req);
 	TestMsg1 res;
 	std::string testData = "dfasdfdssdafksda;ljfa;lkrwepsdvcmksdapocmsdac;'asd'csdafadopramcd;acd;";
-	for (int i = 0; i < 10; i++) {
+	for (int i = 0; i < 8; i++) {
 		testData += testData;
 	}
 	res.set_test_data(testData);
