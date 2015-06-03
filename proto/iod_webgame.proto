@@ -1,0 +1,132 @@
+package com.iod.pb.webgame;
+
+import "common/iod_common.proto";
+import "iod_webgame_common.proto";
+
+message ReqAuthentication {
+	required string account = 1;
+	required bytes authentication = 2;
+}
+
+message ResAuthentication {
+	required sint32 result = 1;	
+	optional bytes authorization = 2;
+}
+
+message ReqLogin {
+  required string account = 1;
+  required bytes authorization = 2;
+}
+
+message ResLogin {
+  required sint32 result = 1;
+  optional RoleInfo role_info = 2;
+}
+
+message ReqTestInfo {
+  required string info = 1;
+}
+
+message ResTestInfo {
+  required string info = 1;
+}
+
+message ReqLogout {
+}
+
+message ReqTestResponseTime {
+	required sint32 req_timestamp = 1;
+}
+
+message ResTestResponseTime {
+	required sint32 req_timestamp = 1;
+}
+
+message NotifyKickout {
+	required sint32 kick_reason = 1;
+}
+
+message ReqRoomList {
+  required bytes filters = 1;
+  required sint32 start = 2;
+  required sint32 num = 3;
+}
+
+message ResRoomList {
+  repeated RoomSummaryInfo room_summary = 1;
+}
+
+message ReqCreateRoom {
+  required sint32 map_id = 1;
+  required RoomCreateOption create_option = 2;
+}
+
+message ResCreateRoom {
+  required sint32 result = 1;
+  required RoomInfo room_info = 2;
+}
+
+message ReqJoinRoom {
+  required sint32 room_id = 1;
+}
+
+message ResJoinRoom {
+  required sint32 result = 1;
+  required RoomInfo room_info = 2;
+}
+
+message ReqLeaveRoom {
+}
+
+message ResLeaveRoom {
+}
+
+message NotifyRoomPlayerUpdate {
+    required sint32 room_id = 1;
+    required sint32 update_type = 2; // 0 join   1 leave  2 update
+    required PlayerInfo player_info = 3;
+}
+
+message ReqStartGame {
+}
+
+message NotifyStartGame {
+  required GameInfo game_info = 1;
+}
+
+message ReqLeaveGame {
+}
+
+message ResLeaveGame {
+}
+
+message NotifyGamePlayerUpdate {
+    required sint32 game_id = 1;
+    required sint32 update_type = 2; // 0 join   1 leave  2 update
+    required PlayerInfo player_info = 3;
+}
+
+message ReqBroadCastInfo {
+    required sint32 channel = 1;  // 0 全服  1 大厅  2 房间   3 游戏  4 队友
+    required sint32 info_id = 2;
+    required sint32 info_data = 3;
+}
+
+message NotifyBroadCastInfo {
+    required string sender_name = 1;
+    required sint32 info_id = 2;
+    required sint32 info_data = 3;
+}
+
+extend com.iod.pb.common.BaseMsg {
+	optional ReqAuthentication idReqAuthentication = 1000;
+	optional ResAuthentication idResAuthentication = 1001;
+	optional ReqLogin idReqLogin = 1002;
+	optional ResLogin idResLogin = 1003;
+	optional ReqTestInfo idReqTestInfo = 1004;
+	optional ResTestInfo idResTestInfo = 1005;
+	optional ReqLogout idReqLogout = 1006;	
+	optional ReqTestResponseTime idReqTestResponseTime = 1007;
+	optional ResTestResponseTime idResTestResponseTime = 1008;
+	optional NotifyKickout idNotifyKickout = 1009;
+}
