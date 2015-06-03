@@ -26,7 +26,9 @@
 #include "common/iod_common.pb.h"
 // @@protoc_insertion_point(includes)
 
-namespace iod_pb {
+namespace com {
+namespace iod {
+namespace pb {
 namespace test {
 
 // Internal implementation detail -- do not call these.
@@ -143,7 +145,7 @@ class req_authentication : public ::google::protobuf::Message {
   inline ::std::string* mutable_authentication();
   inline ::std::string* release_authentication();
   
-  // @@protoc_insertion_point(class_scope:iod_pb.test.req_authentication)
+  // @@protoc_insertion_point(class_scope:com.iod.pb.test.req_authentication)
  private:
   inline void set_has_userid();
   inline void clear_has_userid();
@@ -239,7 +241,7 @@ class res_authentication : public ::google::protobuf::Message {
   inline ::std::string* mutable_authorization();
   inline ::std::string* release_authorization();
   
-  // @@protoc_insertion_point(class_scope:iod_pb.test.res_authentication)
+  // @@protoc_insertion_point(class_scope:com.iod.pb.test.res_authentication)
  private:
   inline void set_has_result();
   inline void clear_has_result();
@@ -339,7 +341,7 @@ class req_login : public ::google::protobuf::Message {
   inline ::std::string* mutable_authorization();
   inline ::std::string* release_authorization();
   
-  // @@protoc_insertion_point(class_scope:iod_pb.test.req_login)
+  // @@protoc_insertion_point(class_scope:com.iod.pb.test.req_login)
  private:
   inline void set_has_userid();
   inline void clear_has_userid();
@@ -435,7 +437,7 @@ class res_login : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 result() const;
   inline void set_result(::google::protobuf::int32 value);
   
-  // @@protoc_insertion_point(class_scope:iod_pb.test.res_login)
+  // @@protoc_insertion_point(class_scope:com.iod.pb.test.res_login)
  private:
   inline void set_has_userid();
   inline void clear_has_userid();
@@ -524,7 +526,7 @@ class req_test_info : public ::google::protobuf::Message {
   inline ::std::string* mutable_info();
   inline ::std::string* release_info();
   
-  // @@protoc_insertion_point(class_scope:iod_pb.test.req_test_info)
+  // @@protoc_insertion_point(class_scope:com.iod.pb.test.req_test_info)
  private:
   inline void set_has_info();
   inline void clear_has_info();
@@ -610,7 +612,7 @@ class res_test_info : public ::google::protobuf::Message {
   inline ::std::string* mutable_info();
   inline ::std::string* release_info();
   
-  // @@protoc_insertion_point(class_scope:iod_pb.test.res_test_info)
+  // @@protoc_insertion_point(class_scope:com.iod.pb.test.res_test_info)
  private:
   inline void set_has_info();
   inline void clear_has_info();
@@ -685,7 +687,7 @@ class req_logout : public ::google::protobuf::Message {
   
   // accessors -------------------------------------------------------
   
-  // @@protoc_insertion_point(class_scope:iod_pb.test.req_logout)
+  // @@protoc_insertion_point(class_scope:com.iod.pb.test.req_logout)
  private:
   
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
@@ -764,7 +766,7 @@ class req_test_response_time : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 req_timestamp() const;
   inline void set_req_timestamp(::google::protobuf::int64 value);
   
-  // @@protoc_insertion_point(class_scope:iod_pb.test.req_test_response_time)
+  // @@protoc_insertion_point(class_scope:com.iod.pb.test.req_test_response_time)
  private:
   inline void set_has_req_timestamp();
   inline void clear_has_req_timestamp();
@@ -846,7 +848,7 @@ class res_test_response_time : public ::google::protobuf::Message {
   inline ::google::protobuf::int64 req_timestamp() const;
   inline void set_req_timestamp(::google::protobuf::int64 value);
   
-  // @@protoc_insertion_point(class_scope:iod_pb.test.res_test_response_time)
+  // @@protoc_insertion_point(class_scope:com.iod.pb.test.res_test_response_time)
  private:
   inline void set_has_req_timestamp();
   inline void clear_has_req_timestamp();
@@ -928,7 +930,7 @@ class notify_kickout : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 kick_reason() const;
   inline void set_kick_reason(::google::protobuf::int32 value);
   
-  // @@protoc_insertion_point(class_scope:iod_pb.test.notify_kickout)
+  // @@protoc_insertion_point(class_scope:com.iod.pb.test.notify_kickout)
  private:
   inline void set_has_kick_reason();
   inline void clear_has_kick_reason();
@@ -1014,7 +1016,7 @@ class test_msg_1 : public ::google::protobuf::Message {
   inline ::std::string* mutable_test_data();
   inline ::std::string* release_test_data();
   
-  // @@protoc_insertion_point(class_scope:iod_pb.test.test_msg_1)
+  // @@protoc_insertion_point(class_scope:com.iod.pb.test.test_msg_1)
  private:
   inline void set_has_test_data();
   inline void clear_has_test_data();
@@ -1100,7 +1102,7 @@ class test_msg_2 : public ::google::protobuf::Message {
   inline ::std::string* mutable_test_data();
   inline ::std::string* release_test_data();
   
-  // @@protoc_insertion_point(class_scope:iod_pb.test.test_msg_2)
+  // @@protoc_insertion_point(class_scope:com.iod.pb.test.test_msg_2)
  private:
   inline void set_has_test_data();
   inline void clear_has_test_data();
@@ -1186,7 +1188,7 @@ class test_msg_3 : public ::google::protobuf::Message {
   inline ::std::string* mutable_test_data();
   inline ::std::string* release_test_data();
   
-  // @@protoc_insertion_point(class_scope:iod_pb.test.test_msg_3)
+  // @@protoc_insertion_point(class_scope:com.iod.pb.test.test_msg_3)
  private:
   inline void set_has_test_data();
   inline void clear_has_test_data();
@@ -1272,7 +1274,7 @@ class test_msg_4 : public ::google::protobuf::Message {
   inline ::std::string* mutable_test_data();
   inline ::std::string* release_test_data();
   
-  // @@protoc_insertion_point(class_scope:iod_pb.test.test_msg_4)
+  // @@protoc_insertion_point(class_scope:com.iod.pb.test.test_msg_4)
  private:
   inline void set_has_test_data();
   inline void clear_has_test_data();
@@ -1358,7 +1360,7 @@ class test_msg_5 : public ::google::protobuf::Message {
   inline ::std::string* mutable_test_data();
   inline ::std::string* release_test_data();
   
-  // @@protoc_insertion_point(class_scope:iod_pb.test.test_msg_5)
+  // @@protoc_insertion_point(class_scope:com.iod.pb.test.test_msg_5)
  private:
   inline void set_has_test_data();
   inline void clear_has_test_data();
@@ -1444,7 +1446,7 @@ class test_msg_6 : public ::google::protobuf::Message {
   inline ::std::string* mutable_test_data();
   inline ::std::string* release_test_data();
   
-  // @@protoc_insertion_point(class_scope:iod_pb.test.test_msg_6)
+  // @@protoc_insertion_point(class_scope:com.iod.pb.test.test_msg_6)
  private:
   inline void set_has_test_data();
   inline void clear_has_test_data();
@@ -1530,7 +1532,7 @@ class test_msg_7 : public ::google::protobuf::Message {
   inline ::std::string* mutable_test_data();
   inline ::std::string* release_test_data();
   
-  // @@protoc_insertion_point(class_scope:iod_pb.test.test_msg_7)
+  // @@protoc_insertion_point(class_scope:com.iod.pb.test.test_msg_7)
  private:
   inline void set_has_test_data();
   inline void clear_has_test_data();
@@ -1616,7 +1618,7 @@ class test_msg_8 : public ::google::protobuf::Message {
   inline ::std::string* mutable_test_data();
   inline ::std::string* release_test_data();
   
-  // @@protoc_insertion_point(class_scope:iod_pb.test.test_msg_8)
+  // @@protoc_insertion_point(class_scope:com.iod.pb.test.test_msg_8)
  private:
   inline void set_has_test_data();
   inline void clear_has_test_data();
@@ -1702,7 +1704,7 @@ class test_msg_9 : public ::google::protobuf::Message {
   inline ::std::string* mutable_test_data();
   inline ::std::string* release_test_data();
   
-  // @@protoc_insertion_point(class_scope:iod_pb.test.test_msg_9)
+  // @@protoc_insertion_point(class_scope:com.iod.pb.test.test_msg_9)
  private:
   inline void set_has_test_data();
   inline void clear_has_test_data();
@@ -1788,7 +1790,7 @@ class test_msg_10 : public ::google::protobuf::Message {
   inline ::std::string* mutable_test_data();
   inline ::std::string* release_test_data();
   
-  // @@protoc_insertion_point(class_scope:iod_pb.test.test_msg_10)
+  // @@protoc_insertion_point(class_scope:com.iod.pb.test.test_msg_10)
  private:
   inline void set_has_test_data();
   inline void clear_has_test_data();
@@ -1874,7 +1876,7 @@ class test_msg_11 : public ::google::protobuf::Message {
   inline ::std::string* mutable_test_data();
   inline ::std::string* release_test_data();
   
-  // @@protoc_insertion_point(class_scope:iod_pb.test.test_msg_11)
+  // @@protoc_insertion_point(class_scope:com.iod.pb.test.test_msg_11)
  private:
   inline void set_has_test_data();
   inline void clear_has_test_data();
@@ -1960,7 +1962,7 @@ class test_msg_12 : public ::google::protobuf::Message {
   inline ::std::string* mutable_test_data();
   inline ::std::string* release_test_data();
   
-  // @@protoc_insertion_point(class_scope:iod_pb.test.test_msg_12)
+  // @@protoc_insertion_point(class_scope:com.iod.pb.test.test_msg_12)
  private:
   inline void set_has_test_data();
   inline void clear_has_test_data();
@@ -2046,7 +2048,7 @@ class test_msg_13 : public ::google::protobuf::Message {
   inline ::std::string* mutable_test_data();
   inline ::std::string* release_test_data();
   
-  // @@protoc_insertion_point(class_scope:iod_pb.test.test_msg_13)
+  // @@protoc_insertion_point(class_scope:com.iod.pb.test.test_msg_13)
  private:
   inline void set_has_test_data();
   inline void clear_has_test_data();
@@ -2132,7 +2134,7 @@ class test_msg_14 : public ::google::protobuf::Message {
   inline ::std::string* mutable_test_data();
   inline ::std::string* release_test_data();
   
-  // @@protoc_insertion_point(class_scope:iod_pb.test.test_msg_14)
+  // @@protoc_insertion_point(class_scope:com.iod.pb.test.test_msg_14)
  private:
   inline void set_has_test_data();
   inline void clear_has_test_data();
@@ -2218,7 +2220,7 @@ class test_msg_15 : public ::google::protobuf::Message {
   inline ::std::string* mutable_test_data();
   inline ::std::string* release_test_data();
   
-  // @@protoc_insertion_point(class_scope:iod_pb.test.test_msg_15)
+  // @@protoc_insertion_point(class_scope:com.iod.pb.test.test_msg_15)
  private:
   inline void set_has_test_data();
   inline void clear_has_test_data();
@@ -2304,7 +2306,7 @@ class test_msg_16 : public ::google::protobuf::Message {
   inline ::std::string* mutable_test_data();
   inline ::std::string* release_test_data();
   
-  // @@protoc_insertion_point(class_scope:iod_pb.test.test_msg_16)
+  // @@protoc_insertion_point(class_scope:com.iod.pb.test.test_msg_16)
  private:
   inline void set_has_test_data();
   inline void clear_has_test_data();
@@ -2390,7 +2392,7 @@ class test_msg_17 : public ::google::protobuf::Message {
   inline ::std::string* mutable_test_data();
   inline ::std::string* release_test_data();
   
-  // @@protoc_insertion_point(class_scope:iod_pb.test.test_msg_17)
+  // @@protoc_insertion_point(class_scope:com.iod.pb.test.test_msg_17)
  private:
   inline void set_has_test_data();
   inline void clear_has_test_data();
@@ -2476,7 +2478,7 @@ class test_msg_18 : public ::google::protobuf::Message {
   inline ::std::string* mutable_test_data();
   inline ::std::string* release_test_data();
   
-  // @@protoc_insertion_point(class_scope:iod_pb.test.test_msg_18)
+  // @@protoc_insertion_point(class_scope:com.iod.pb.test.test_msg_18)
  private:
   inline void set_has_test_data();
   inline void clear_has_test_data();
@@ -2562,7 +2564,7 @@ class test_msg_19 : public ::google::protobuf::Message {
   inline ::std::string* mutable_test_data();
   inline ::std::string* release_test_data();
   
-  // @@protoc_insertion_point(class_scope:iod_pb.test.test_msg_19)
+  // @@protoc_insertion_point(class_scope:com.iod.pb.test.test_msg_19)
  private:
   inline void set_has_test_data();
   inline void clear_has_test_data();
@@ -2648,7 +2650,7 @@ class test_msg_20 : public ::google::protobuf::Message {
   inline ::std::string* mutable_test_data();
   inline ::std::string* release_test_data();
   
-  // @@protoc_insertion_point(class_scope:iod_pb.test.test_msg_20)
+  // @@protoc_insertion_point(class_scope:com.iod.pb.test.test_msg_20)
  private:
   inline void set_has_test_data();
   inline void clear_has_test_data();
@@ -2670,124 +2672,124 @@ class test_msg_20 : public ::google::protobuf::Message {
 // ===================================================================
 
 static const int kReqAuthenticationFieldNumber = 1000;
-extern ::google::protobuf::internal::ExtensionIdentifier< ::iod_pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::iod_pb::test::req_authentication >, 11, false >
+extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::req_authentication >, 11, false >
   _req_authentication;
 static const int kResAuthenticationFieldNumber = 1001;
-extern ::google::protobuf::internal::ExtensionIdentifier< ::iod_pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::iod_pb::test::res_authentication >, 11, false >
+extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::res_authentication >, 11, false >
   _res_authentication;
 static const int kReqLoginFieldNumber = 1002;
-extern ::google::protobuf::internal::ExtensionIdentifier< ::iod_pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::iod_pb::test::req_login >, 11, false >
+extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::req_login >, 11, false >
   _req_login;
 static const int kResLoginFieldNumber = 1003;
-extern ::google::protobuf::internal::ExtensionIdentifier< ::iod_pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::iod_pb::test::res_login >, 11, false >
+extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::res_login >, 11, false >
   _res_login;
 static const int kReqTestInfoFieldNumber = 1004;
-extern ::google::protobuf::internal::ExtensionIdentifier< ::iod_pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::iod_pb::test::req_test_info >, 11, false >
+extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::req_test_info >, 11, false >
   _req_test_info;
 static const int kResTestInfoFieldNumber = 1005;
-extern ::google::protobuf::internal::ExtensionIdentifier< ::iod_pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::iod_pb::test::res_test_info >, 11, false >
+extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::res_test_info >, 11, false >
   _res_test_info;
 static const int kReqLogoutFieldNumber = 1006;
-extern ::google::protobuf::internal::ExtensionIdentifier< ::iod_pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::iod_pb::test::req_logout >, 11, false >
+extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::req_logout >, 11, false >
   _req_logout;
 static const int kReqTestResponseTimeFieldNumber = 1007;
-extern ::google::protobuf::internal::ExtensionIdentifier< ::iod_pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::iod_pb::test::req_test_response_time >, 11, false >
+extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::req_test_response_time >, 11, false >
   _req_test_response_time;
 static const int kResTestResponseTimeFieldNumber = 1008;
-extern ::google::protobuf::internal::ExtensionIdentifier< ::iod_pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::iod_pb::test::res_test_response_time >, 11, false >
+extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::res_test_response_time >, 11, false >
   _res_test_response_time;
 static const int kNotifyKickoutFieldNumber = 1009;
-extern ::google::protobuf::internal::ExtensionIdentifier< ::iod_pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::iod_pb::test::notify_kickout >, 11, false >
+extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::notify_kickout >, 11, false >
   _notify_kickout;
 static const int kTestMsg1FieldNumber = 5001;
-extern ::google::protobuf::internal::ExtensionIdentifier< ::iod_pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::iod_pb::test::test_msg_1 >, 11, false >
+extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::test_msg_1 >, 11, false >
   _test_msg_1;
 static const int kTestMsg2FieldNumber = 5002;
-extern ::google::protobuf::internal::ExtensionIdentifier< ::iod_pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::iod_pb::test::test_msg_2 >, 11, false >
+extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::test_msg_2 >, 11, false >
   _test_msg_2;
 static const int kTestMsg3FieldNumber = 5003;
-extern ::google::protobuf::internal::ExtensionIdentifier< ::iod_pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::iod_pb::test::test_msg_3 >, 11, false >
+extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::test_msg_3 >, 11, false >
   _test_msg_3;
 static const int kTestMsg4FieldNumber = 5004;
-extern ::google::protobuf::internal::ExtensionIdentifier< ::iod_pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::iod_pb::test::test_msg_4 >, 11, false >
+extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::test_msg_4 >, 11, false >
   _test_msg_4;
 static const int kTestMsg5FieldNumber = 5005;
-extern ::google::protobuf::internal::ExtensionIdentifier< ::iod_pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::iod_pb::test::test_msg_5 >, 11, false >
+extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::test_msg_5 >, 11, false >
   _test_msg_5;
 static const int kTestMsg6FieldNumber = 5006;
-extern ::google::protobuf::internal::ExtensionIdentifier< ::iod_pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::iod_pb::test::test_msg_6 >, 11, false >
+extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::test_msg_6 >, 11, false >
   _test_msg_6;
 static const int kTestMsg7FieldNumber = 5007;
-extern ::google::protobuf::internal::ExtensionIdentifier< ::iod_pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::iod_pb::test::test_msg_7 >, 11, false >
+extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::test_msg_7 >, 11, false >
   _test_msg_7;
 static const int kTestMsg8FieldNumber = 5008;
-extern ::google::protobuf::internal::ExtensionIdentifier< ::iod_pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::iod_pb::test::test_msg_8 >, 11, false >
+extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::test_msg_8 >, 11, false >
   _test_msg_8;
 static const int kTestMsg9FieldNumber = 5009;
-extern ::google::protobuf::internal::ExtensionIdentifier< ::iod_pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::iod_pb::test::test_msg_9 >, 11, false >
+extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::test_msg_9 >, 11, false >
   _test_msg_9;
 static const int kTestMsg10FieldNumber = 5010;
-extern ::google::protobuf::internal::ExtensionIdentifier< ::iod_pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::iod_pb::test::test_msg_10 >, 11, false >
+extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::test_msg_10 >, 11, false >
   _test_msg_10;
 static const int kTestMsg11FieldNumber = 5011;
-extern ::google::protobuf::internal::ExtensionIdentifier< ::iod_pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::iod_pb::test::test_msg_11 >, 11, false >
+extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::test_msg_11 >, 11, false >
   _test_msg_11;
 static const int kTestMsg12FieldNumber = 5012;
-extern ::google::protobuf::internal::ExtensionIdentifier< ::iod_pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::iod_pb::test::test_msg_12 >, 11, false >
+extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::test_msg_12 >, 11, false >
   _test_msg_12;
 static const int kTestMsg13FieldNumber = 5013;
-extern ::google::protobuf::internal::ExtensionIdentifier< ::iod_pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::iod_pb::test::test_msg_13 >, 11, false >
+extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::test_msg_13 >, 11, false >
   _test_msg_13;
 static const int kTestMsg14FieldNumber = 5014;
-extern ::google::protobuf::internal::ExtensionIdentifier< ::iod_pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::iod_pb::test::test_msg_14 >, 11, false >
+extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::test_msg_14 >, 11, false >
   _test_msg_14;
 static const int kTestMsg15FieldNumber = 5015;
-extern ::google::protobuf::internal::ExtensionIdentifier< ::iod_pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::iod_pb::test::test_msg_15 >, 11, false >
+extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::test_msg_15 >, 11, false >
   _test_msg_15;
 static const int kTestMsg16FieldNumber = 5016;
-extern ::google::protobuf::internal::ExtensionIdentifier< ::iod_pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::iod_pb::test::test_msg_16 >, 11, false >
+extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::test_msg_16 >, 11, false >
   _test_msg_16;
 static const int kTestMsg17FieldNumber = 5017;
-extern ::google::protobuf::internal::ExtensionIdentifier< ::iod_pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::iod_pb::test::test_msg_17 >, 11, false >
+extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::test_msg_17 >, 11, false >
   _test_msg_17;
 static const int kTestMsg18FieldNumber = 5018;
-extern ::google::protobuf::internal::ExtensionIdentifier< ::iod_pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::iod_pb::test::test_msg_18 >, 11, false >
+extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::test_msg_18 >, 11, false >
   _test_msg_18;
 static const int kTestMsg19FieldNumber = 5019;
-extern ::google::protobuf::internal::ExtensionIdentifier< ::iod_pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::iod_pb::test::test_msg_19 >, 11, false >
+extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::test_msg_19 >, 11, false >
   _test_msg_19;
 static const int kTestMsg20FieldNumber = 5020;
-extern ::google::protobuf::internal::ExtensionIdentifier< ::iod_pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::iod_pb::test::test_msg_20 >, 11, false >
+extern ::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::test_msg_20 >, 11, false >
   _test_msg_20;
 
 // ===================================================================
@@ -4648,7 +4650,9 @@ inline ::std::string* test_msg_20::release_test_data() {
 // @@protoc_insertion_point(namespace_scope)
 
 }  // namespace test
-}  // namespace iod_pb
+}  // namespace pb
+}  // namespace iod
+}  // namespace com
 
 #ifndef SWIG
 namespace google {

@@ -1,5 +1,5 @@
 
-package iod_pb.common;
+package com.iod.pb.common;
 
 message base_msg {
 	optional sint32 from = 1;

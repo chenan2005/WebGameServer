@@ -13,7 +13,9 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 
-namespace iod_pb {
+namespace com {
+namespace iod {
+namespace pb {
 namespace common {
 
 namespace {
@@ -79,9 +81,10 @@ void protobuf_AddDesc_common_2fiod_5fcommon_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-    "\n\027common/iod_common.proto\022\riod_pb.common"
-    "\"N\n\010base_msg\022\014\n\004from\030\001 \001(\021\022\n\n\002to\030\002 \001(\021\022\r"
-    "\n\005flags\030\003 \001(\021\022\021\n\tmessge_id\030\004 \002(\021*\006\010\350\007\020\221N", 120);
+    "\n\027common/iod_common.proto\022\021com.iod.pb.co"
+    "mmon\"N\n\010base_msg\022\014\n\004from\030\001 \001(\021\022\n\n\002to\030\002 \001"
+    "(\021\022\r\n\005flags\030\003 \001(\021\022\021\n\tmessge_id\030\004 \002(\021*\006\010\350"
+    "\007\020\221N", 124);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "common/iod_common.proto", &protobuf_RegisterTypes);
   base_msg::default_instance_ = new base_msg();
@@ -447,6 +450,8 @@ void base_msg::Swap(base_msg* other) {
 // @@protoc_insertion_point(namespace_scope)
 
 }  // namespace common
-}  // namespace iod_pb
+}  // namespace pb
+}  // namespace iod
+}  // namespace com
 
 // @@protoc_insertion_point(global_scope)

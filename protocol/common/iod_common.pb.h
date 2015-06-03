@@ -25,7 +25,9 @@
 #include <google/protobuf/generated_message_reflection.h>
 // @@protoc_insertion_point(includes)
 
-namespace iod_pb {
+namespace com {
+namespace iod {
+namespace pb {
 namespace common {
 
 // Internal implementation detail -- do not call these.
@@ -120,7 +122,7 @@ class base_msg : public ::google::protobuf::Message {
   inline void set_messge_id(::google::protobuf::int32 value);
   
   GOOGLE_PROTOBUF_EXTENSION_ACCESSORS(base_msg)
-  // @@protoc_insertion_point(class_scope:iod_pb.common.base_msg)
+  // @@protoc_insertion_point(class_scope:com.iod.pb.common.base_msg)
  private:
   inline void set_has_from();
   inline void clear_has_from();
@@ -249,7 +251,9 @@ inline void base_msg::set_messge_id(::google::protobuf::int32 value) {
 // @@protoc_insertion_point(namespace_scope)
 
 }  // namespace common
-}  // namespace iod_pb
+}  // namespace pb
+}  // namespace iod
+}  // namespace com
 
 #ifndef SWIG
 namespace google {

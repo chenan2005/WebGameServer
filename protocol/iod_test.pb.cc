@@ -13,7 +13,9 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 
-namespace iod_pb {
+namespace com {
+namespace iod {
+namespace pb {
 namespace test {
 
 namespace {
@@ -716,94 +718,100 @@ void protobuf_AddDesc_iod_5ftest_2eproto() {
   already_here = true;
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
-  ::iod_pb::common::protobuf_AddDesc_common_2fiod_5fcommon_2eproto();
+  ::com::iod::pb::common::protobuf_AddDesc_common_2fiod_5fcommon_2eproto();
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-    "\n\016iod_test.proto\022\013iod_pb.test\032\027common/io"
-    "d_common.proto\"<\n\022req_authentication\022\016\n\006"
-    "userid\030\001 \001(\t\022\026\n\016authentication\030\002 \001(\t\";\n\022"
-    "res_authentication\022\016\n\006result\030\001 \001(\021\022\025\n\rau"
-    "thorization\030\002 \001(\t\"2\n\treq_login\022\016\n\006userid"
-    "\030\001 \001(\t\022\025\n\rauthorization\030\002 \001(\t\"+\n\tres_log"
-    "in\022\016\n\006userid\030\001 \001(\t\022\016\n\006result\030\002 \001(\021\"\035\n\rre"
-    "q_test_info\022\014\n\004info\030\001 \001(\t\"\035\n\rres_test_in"
-    "fo\022\014\n\004info\030\001 \001(\t\"\014\n\nreq_logout\"/\n\026req_te"
-    "st_response_time\022\025\n\rreq_timestamp\030\001 \002(\022\""
-    "/\n\026res_test_response_time\022\025\n\rreq_timesta"
-    "mp\030\001 \002(\022\"%\n\016notify_kickout\022\023\n\013kick_reaso"
-    "n\030\001 \001(\021\"\037\n\ntest_msg_1\022\021\n\ttest_data\030\001 \001(\014"
-    "\"\037\n\ntest_msg_2\022\021\n\ttest_data\030\001 \001(\014\"\037\n\ntes"
-    "t_msg_3\022\021\n\ttest_data\030\001 \001(\014\"\037\n\ntest_msg_4"
-    "\022\021\n\ttest_data\030\001 \001(\014\"\037\n\ntest_msg_5\022\021\n\ttes"
-    "t_data\030\001 \001(\014\"\037\n\ntest_msg_6\022\021\n\ttest_data\030"
-    "\001 \001(\014\"\037\n\ntest_msg_7\022\021\n\ttest_data\030\001 \001(\014\"\037"
-    "\n\ntest_msg_8\022\021\n\ttest_data\030\001 \001(\014\"\037\n\ntest_"
-    "msg_9\022\021\n\ttest_data\030\001 \001(\014\" \n\013test_msg_10\022"
-    "\021\n\ttest_data\030\001 \001(\014\" \n\013test_msg_11\022\021\n\ttes"
-    "t_data\030\001 \001(\014\" \n\013test_msg_12\022\021\n\ttest_data"
-    "\030\001 \001(\014\" \n\013test_msg_13\022\021\n\ttest_data\030\001 \001(\014"
-    "\" \n\013test_msg_14\022\021\n\ttest_data\030\001 \001(\014\" \n\013te"
-    "st_msg_15\022\021\n\ttest_data\030\001 \001(\014\" \n\013test_msg"
-    "_16\022\021\n\ttest_data\030\001 \001(\014\" \n\013test_msg_17\022\021\n"
-    "\ttest_data\030\001 \001(\014\" \n\013test_msg_18\022\021\n\ttest_"
-    "data\030\001 \001(\014\" \n\013test_msg_19\022\021\n\ttest_data\030\001"
-    " \001(\014\" \n\013test_msg_20\022\021\n\ttest_data\030\001 \001(\014:V"
-    "\n\023_req_authentication\022\027.iod_pb.common.ba"
-    "se_msg\030\350\007 \001(\0132\037.iod_pb.test.req_authenti"
-    "cation:V\n\023_res_authentication\022\027.iod_pb.c"
-    "ommon.base_msg\030\351\007 \001(\0132\037.iod_pb.test.res_"
-    "authentication:D\n\n_req_login\022\027.iod_pb.co"
-    "mmon.base_msg\030\352\007 \001(\0132\026.iod_pb.test.req_l"
-    "ogin:D\n\n_res_login\022\027.iod_pb.common.base_"
-    "msg\030\353\007 \001(\0132\026.iod_pb.test.res_login:L\n\016_r"
-    "eq_test_info\022\027.iod_pb.common.base_msg\030\354\007"
-    " \001(\0132\032.iod_pb.test.req_test_info:L\n\016_res"
-    "_test_info\022\027.iod_pb.common.base_msg\030\355\007 \001"
-    "(\0132\032.iod_pb.test.res_test_info:F\n\013_req_l"
-    "ogout\022\027.iod_pb.common.base_msg\030\356\007 \001(\0132\027."
-    "iod_pb.test.req_logout:^\n\027_req_test_resp"
-    "onse_time\022\027.iod_pb.common.base_msg\030\357\007 \001("
-    "\0132#.iod_pb.test.req_test_response_time:^"
-    "\n\027_res_test_response_time\022\027.iod_pb.commo"
-    "n.base_msg\030\360\007 \001(\0132#.iod_pb.test.res_test"
-    "_response_time:N\n\017_notify_kickout\022\027.iod_"
-    "pb.common.base_msg\030\361\007 \001(\0132\033.iod_pb.test."
-    "notify_kickout:F\n\013_test_msg_1\022\027.iod_pb.c"
-    "ommon.base_msg\030\211\' \001(\0132\027.iod_pb.test.test"
-    "_msg_1:F\n\013_test_msg_2\022\027.iod_pb.common.ba"
-    "se_msg\030\212\' \001(\0132\027.iod_pb.test.test_msg_2:F"
-    "\n\013_test_msg_3\022\027.iod_pb.common.base_msg\030\213"
-    "\' \001(\0132\027.iod_pb.test.test_msg_3:F\n\013_test_"
-    "msg_4\022\027.iod_pb.common.base_msg\030\214\' \001(\0132\027."
-    "iod_pb.test.test_msg_4:F\n\013_test_msg_5\022\027."
-    "iod_pb.common.base_msg\030\215\' \001(\0132\027.iod_pb.t"
-    "est.test_msg_5:F\n\013_test_msg_6\022\027.iod_pb.c"
-    "ommon.base_msg\030\216\' \001(\0132\027.iod_pb.test.test"
-    "_msg_6:F\n\013_test_msg_7\022\027.iod_pb.common.ba"
-    "se_msg\030\217\' \001(\0132\027.iod_pb.test.test_msg_7:F"
-    "\n\013_test_msg_8\022\027.iod_pb.common.base_msg\030\220"
-    "\' \001(\0132\027.iod_pb.test.test_msg_8:F\n\013_test_"
-    "msg_9\022\027.iod_pb.common.base_msg\030\221\' \001(\0132\027."
-    "iod_pb.test.test_msg_9:H\n\014_test_msg_10\022\027"
-    ".iod_pb.common.base_msg\030\222\' \001(\0132\030.iod_pb."
-    "test.test_msg_10:H\n\014_test_msg_11\022\027.iod_p"
-    "b.common.base_msg\030\223\' \001(\0132\030.iod_pb.test.t"
-    "est_msg_11:H\n\014_test_msg_12\022\027.iod_pb.comm"
-    "on.base_msg\030\224\' \001(\0132\030.iod_pb.test.test_ms"
-    "g_12:H\n\014_test_msg_13\022\027.iod_pb.common.bas"
-    "e_msg\030\225\' \001(\0132\030.iod_pb.test.test_msg_13:H"
-    "\n\014_test_msg_14\022\027.iod_pb.common.base_msg\030"
-    "\226\' \001(\0132\030.iod_pb.test.test_msg_14:H\n\014_tes"
-    "t_msg_15\022\027.iod_pb.common.base_msg\030\227\' \001(\013"
-    "2\030.iod_pb.test.test_msg_15:H\n\014_test_msg_"
-    "16\022\027.iod_pb.common.base_msg\030\230\' \001(\0132\030.iod"
-    "_pb.test.test_msg_16:H\n\014_test_msg_17\022\027.i"
-    "od_pb.common.base_msg\030\231\' \001(\0132\030.iod_pb.te"
-    "st.test_msg_17:H\n\014_test_msg_18\022\027.iod_pb."
-    "common.base_msg\030\232\' \001(\0132\030.iod_pb.test.tes"
-    "t_msg_18:H\n\014_test_msg_19\022\027.iod_pb.common"
-    ".base_msg\030\233\' \001(\0132\030.iod_pb.test.test_msg_"
-    "19:H\n\014_test_msg_20\022\027.iod_pb.common.base_"
-    "msg\030\234\' \001(\0132\030.iod_pb.test.test_msg_20", 3436);
+    "\n\016iod_test.proto\022\017com.iod.pb.test\032\027commo"
+    "n/iod_common.proto\"<\n\022req_authentication"
+    "\022\016\n\006userid\030\001 \001(\t\022\026\n\016authentication\030\002 \001(\t"
+    "\";\n\022res_authentication\022\016\n\006result\030\001 \001(\021\022\025"
+    "\n\rauthorization\030\002 \001(\t\"2\n\treq_login\022\016\n\006us"
+    "erid\030\001 \001(\t\022\025\n\rauthorization\030\002 \001(\t\"+\n\tres"
+    "_login\022\016\n\006userid\030\001 \001(\t\022\016\n\006result\030\002 \001(\021\"\035"
+    "\n\rreq_test_info\022\014\n\004info\030\001 \001(\t\"\035\n\rres_tes"
+    "t_info\022\014\n\004info\030\001 \001(\t\"\014\n\nreq_logout\"/\n\026re"
+    "q_test_response_time\022\025\n\rreq_timestamp\030\001 "
+    "\002(\022\"/\n\026res_test_response_time\022\025\n\rreq_tim"
+    "estamp\030\001 \002(\022\"%\n\016notify_kickout\022\023\n\013kick_r"
+    "eason\030\001 \001(\021\"\037\n\ntest_msg_1\022\021\n\ttest_data\030\001"
+    " \001(\014\"\037\n\ntest_msg_2\022\021\n\ttest_data\030\001 \001(\014\"\037\n"
+    "\ntest_msg_3\022\021\n\ttest_data\030\001 \001(\014\"\037\n\ntest_m"
+    "sg_4\022\021\n\ttest_data\030\001 \001(\014\"\037\n\ntest_msg_5\022\021\n"
+    "\ttest_data\030\001 \001(\014\"\037\n\ntest_msg_6\022\021\n\ttest_d"
+    "ata\030\001 \001(\014\"\037\n\ntest_msg_7\022\021\n\ttest_data\030\001 \001"
+    "(\014\"\037\n\ntest_msg_8\022\021\n\ttest_data\030\001 \001(\014\"\037\n\nt"
+    "est_msg_9\022\021\n\ttest_data\030\001 \001(\014\" \n\013test_msg"
+    "_10\022\021\n\ttest_data\030\001 \001(\014\" \n\013test_msg_11\022\021\n"
+    "\ttest_data\030\001 \001(\014\" \n\013test_msg_12\022\021\n\ttest_"
+    "data\030\001 \001(\014\" \n\013test_msg_13\022\021\n\ttest_data\030\001"
+    " \001(\014\" \n\013test_msg_14\022\021\n\ttest_data\030\001 \001(\014\" "
+    "\n\013test_msg_15\022\021\n\ttest_data\030\001 \001(\014\" \n\013test"
+    "_msg_16\022\021\n\ttest_data\030\001 \001(\014\" \n\013test_msg_1"
+    "7\022\021\n\ttest_data\030\001 \001(\014\" \n\013test_msg_18\022\021\n\tt"
+    "est_data\030\001 \001(\014\" \n\013test_msg_19\022\021\n\ttest_da"
+    "ta\030\001 \001(\014\" \n\013test_msg_20\022\021\n\ttest_data\030\001 \001"
+    "(\014:^\n\023_req_authentication\022\033.com.iod.pb.c"
+    "ommon.base_msg\030\350\007 \001(\0132#.com.iod.pb.test."
+    "req_authentication:^\n\023_res_authenticatio"
+    "n\022\033.com.iod.pb.common.base_msg\030\351\007 \001(\0132#."
+    "com.iod.pb.test.res_authentication:L\n\n_r"
+    "eq_login\022\033.com.iod.pb.common.base_msg\030\352\007"
+    " \001(\0132\032.com.iod.pb.test.req_login:L\n\n_res"
+    "_login\022\033.com.iod.pb.common.base_msg\030\353\007 \001"
+    "(\0132\032.com.iod.pb.test.res_login:T\n\016_req_t"
+    "est_info\022\033.com.iod.pb.common.base_msg\030\354\007"
+    " \001(\0132\036.com.iod.pb.test.req_test_info:T\n\016"
+    "_res_test_info\022\033.com.iod.pb.common.base_"
+    "msg\030\355\007 \001(\0132\036.com.iod.pb.test.res_test_in"
+    "fo:N\n\013_req_logout\022\033.com.iod.pb.common.ba"
+    "se_msg\030\356\007 \001(\0132\033.com.iod.pb.test.req_logo"
+    "ut:f\n\027_req_test_response_time\022\033.com.iod."
+    "pb.common.base_msg\030\357\007 \001(\0132\'.com.iod.pb.t"
+    "est.req_test_response_time:f\n\027_res_test_"
+    "response_time\022\033.com.iod.pb.common.base_m"
+    "sg\030\360\007 \001(\0132\'.com.iod.pb.test.res_test_res"
+    "ponse_time:V\n\017_notify_kickout\022\033.com.iod."
+    "pb.common.base_msg\030\361\007 \001(\0132\037.com.iod.pb.t"
+    "est.notify_kickout:N\n\013_test_msg_1\022\033.com."
+    "iod.pb.common.base_msg\030\211\' \001(\0132\033.com.iod."
+    "pb.test.test_msg_1:N\n\013_test_msg_2\022\033.com."
+    "iod.pb.common.base_msg\030\212\' \001(\0132\033.com.iod."
+    "pb.test.test_msg_2:N\n\013_test_msg_3\022\033.com."
+    "iod.pb.common.base_msg\030\213\' \001(\0132\033.com.iod."
+    "pb.test.test_msg_3:N\n\013_test_msg_4\022\033.com."
+    "iod.pb.common.base_msg\030\214\' \001(\0132\033.com.iod."
+    "pb.test.test_msg_4:N\n\013_test_msg_5\022\033.com."
+    "iod.pb.common.base_msg\030\215\' \001(\0132\033.com.iod."
+    "pb.test.test_msg_5:N\n\013_test_msg_6\022\033.com."
+    "iod.pb.common.base_msg\030\216\' \001(\0132\033.com.iod."
+    "pb.test.test_msg_6:N\n\013_test_msg_7\022\033.com."
+    "iod.pb.common.base_msg\030\217\' \001(\0132\033.com.iod."
+    "pb.test.test_msg_7:N\n\013_test_msg_8\022\033.com."
+    "iod.pb.common.base_msg\030\220\' \001(\0132\033.com.iod."
+    "pb.test.test_msg_8:N\n\013_test_msg_9\022\033.com."
+    "iod.pb.common.base_msg\030\221\' \001(\0132\033.com.iod."
+    "pb.test.test_msg_9:P\n\014_test_msg_10\022\033.com"
+    ".iod.pb.common.base_msg\030\222\' \001(\0132\034.com.iod"
+    ".pb.test.test_msg_10:P\n\014_test_msg_11\022\033.c"
+    "om.iod.pb.common.base_msg\030\223\' \001(\0132\034.com.i"
+    "od.pb.test.test_msg_11:P\n\014_test_msg_12\022\033"
+    ".com.iod.pb.common.base_msg\030\224\' \001(\0132\034.com"
+    ".iod.pb.test.test_msg_12:P\n\014_test_msg_13"
+    "\022\033.com.iod.pb.common.base_msg\030\225\' \001(\0132\034.c"
+    "om.iod.pb.test.test_msg_13:P\n\014_test_msg_"
+    "14\022\033.com.iod.pb.common.base_msg\030\226\' \001(\0132\034"
+    ".com.iod.pb.test.test_msg_14:P\n\014_test_ms"
+    "g_15\022\033.com.iod.pb.common.base_msg\030\227\' \001(\013"
+    "2\034.com.iod.pb.test.test_msg_15:P\n\014_test_"
+    "msg_16\022\033.com.iod.pb.common.base_msg\030\230\' \001"
+    "(\0132\034.com.iod.pb.test.test_msg_16:P\n\014_tes"
+    "t_msg_17\022\033.com.iod.pb.common.base_msg\030\231\'"
+    " \001(\0132\034.com.iod.pb.test.test_msg_17:P\n\014_t"
+    "est_msg_18\022\033.com.iod.pb.common.base_msg\030"
+    "\232\' \001(\0132\034.com.iod.pb.test.test_msg_18:P\n\014"
+    "_test_msg_19\022\033.com.iod.pb.common.base_ms"
+    "g\030\233\' \001(\0132\034.com.iod.pb.test.test_msg_19:P"
+    "\n\014_test_msg_20\022\033.com.iod.pb.common.base_"
+    "msg\030\234\' \001(\0132\034.com.iod.pb.test.test_msg_20", 3680);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "iod_test.proto", &protobuf_RegisterTypes);
   req_authentication::default_instance_ = new req_authentication();
@@ -837,125 +845,125 @@ void protobuf_AddDesc_iod_5ftest_2eproto() {
   test_msg_19::default_instance_ = new test_msg_19();
   test_msg_20::default_instance_ = new test_msg_20();
   ::google::protobuf::internal::ExtensionSet::RegisterMessageExtension(
-    &::iod_pb::common::base_msg::default_instance(),
+    &::com::iod::pb::common::base_msg::default_instance(),
     1000, 11, false, false,
-    &::iod_pb::test::req_authentication::default_instance());
+    &::com::iod::pb::test::req_authentication::default_instance());
   ::google::protobuf::internal::ExtensionSet::RegisterMessageExtension(
-    &::iod_pb::common::base_msg::default_instance(),
+    &::com::iod::pb::common::base_msg::default_instance(),
     1001, 11, false, false,
-    &::iod_pb::test::res_authentication::default_instance());
+    &::com::iod::pb::test::res_authentication::default_instance());
   ::google::protobuf::internal::ExtensionSet::RegisterMessageExtension(
-    &::iod_pb::common::base_msg::default_instance(),
+    &::com::iod::pb::common::base_msg::default_instance(),
     1002, 11, false, false,
-    &::iod_pb::test::req_login::default_instance());
+    &::com::iod::pb::test::req_login::default_instance());
   ::google::protobuf::internal::ExtensionSet::RegisterMessageExtension(
-    &::iod_pb::common::base_msg::default_instance(),
+    &::com::iod::pb::common::base_msg::default_instance(),
     1003, 11, false, false,
-    &::iod_pb::test::res_login::default_instance());
+    &::com::iod::pb::test::res_login::default_instance());
   ::google::protobuf::internal::ExtensionSet::RegisterMessageExtension(
-    &::iod_pb::common::base_msg::default_instance(),
+    &::com::iod::pb::common::base_msg::default_instance(),
     1004, 11, false, false,
-    &::iod_pb::test::req_test_info::default_instance());
+    &::com::iod::pb::test::req_test_info::default_instance());
   ::google::protobuf::internal::ExtensionSet::RegisterMessageExtension(
-    &::iod_pb::common::base_msg::default_instance(),
+    &::com::iod::pb::common::base_msg::default_instance(),
     1005, 11, false, false,
-    &::iod_pb::test::res_test_info::default_instance());
+    &::com::iod::pb::test::res_test_info::default_instance());
   ::google::protobuf::internal::ExtensionSet::RegisterMessageExtension(
-    &::iod_pb::common::base_msg::default_instance(),
+    &::com::iod::pb::common::base_msg::default_instance(),
     1006, 11, false, false,
-    &::iod_pb::test::req_logout::default_instance());
+    &::com::iod::pb::test::req_logout::default_instance());
   ::google::protobuf::internal::ExtensionSet::RegisterMessageExtension(
-    &::iod_pb::common::base_msg::default_instance(),
+    &::com::iod::pb::common::base_msg::default_instance(),
     1007, 11, false, false,
-    &::iod_pb::test::req_test_response_time::default_instance());
+    &::com::iod::pb::test::req_test_response_time::default_instance());
   ::google::protobuf::internal::ExtensionSet::RegisterMessageExtension(
-    &::iod_pb::common::base_msg::default_instance(),
+    &::com::iod::pb::common::base_msg::default_instance(),
     1008, 11, false, false,
-    &::iod_pb::test::res_test_response_time::default_instance());
+    &::com::iod::pb::test::res_test_response_time::default_instance());
   ::google::protobuf::internal::ExtensionSet::RegisterMessageExtension(
-    &::iod_pb::common::base_msg::default_instance(),
+    &::com::iod::pb::common::base_msg::default_instance(),
     1009, 11, false, false,
-    &::iod_pb::test::notify_kickout::default_instance());
+    &::com::iod::pb::test::notify_kickout::default_instance());
   ::google::protobuf::internal::ExtensionSet::RegisterMessageExtension(
-    &::iod_pb::common::base_msg::default_instance(),
+    &::com::iod::pb::common::base_msg::default_instance(),
     5001, 11, false, false,
-    &::iod_pb::test::test_msg_1::default_instance());
+    &::com::iod::pb::test::test_msg_1::default_instance());
   ::google::protobuf::internal::ExtensionSet::RegisterMessageExtension(
-    &::iod_pb::common::base_msg::default_instance(),
+    &::com::iod::pb::common::base_msg::default_instance(),
     5002, 11, false, false,
-    &::iod_pb::test::test_msg_2::default_instance());
+    &::com::iod::pb::test::test_msg_2::default_instance());
   ::google::protobuf::internal::ExtensionSet::RegisterMessageExtension(
-    &::iod_pb::common::base_msg::default_instance(),
+    &::com::iod::pb::common::base_msg::default_instance(),
     5003, 11, false, false,
-    &::iod_pb::test::test_msg_3::default_instance());
+    &::com::iod::pb::test::test_msg_3::default_instance());
   ::google::protobuf::internal::ExtensionSet::RegisterMessageExtension(
-    &::iod_pb::common::base_msg::default_instance(),
+    &::com::iod::pb::common::base_msg::default_instance(),
     5004, 11, false, false,
-    &::iod_pb::test::test_msg_4::default_instance());
+    &::com::iod::pb::test::test_msg_4::default_instance());
   ::google::protobuf::internal::ExtensionSet::RegisterMessageExtension(
-    &::iod_pb::common::base_msg::default_instance(),
+    &::com::iod::pb::common::base_msg::default_instance(),
     5005, 11, false, false,
-    &::iod_pb::test::test_msg_5::default_instance());
+    &::com::iod::pb::test::test_msg_5::default_instance());
   ::google::protobuf::internal::ExtensionSet::RegisterMessageExtension(
-    &::iod_pb::common::base_msg::default_instance(),
+    &::com::iod::pb::common::base_msg::default_instance(),
     5006, 11, false, false,
-    &::iod_pb::test::test_msg_6::default_instance());
+    &::com::iod::pb::test::test_msg_6::default_instance());
   ::google::protobuf::internal::ExtensionSet::RegisterMessageExtension(
-    &::iod_pb::common::base_msg::default_instance(),
+    &::com::iod::pb::common::base_msg::default_instance(),
     5007, 11, false, false,
-    &::iod_pb::test::test_msg_7::default_instance());
+    &::com::iod::pb::test::test_msg_7::default_instance());
   ::google::protobuf::internal::ExtensionSet::RegisterMessageExtension(
-    &::iod_pb::common::base_msg::default_instance(),
+    &::com::iod::pb::common::base_msg::default_instance(),
     5008, 11, false, false,
-    &::iod_pb::test::test_msg_8::default_instance());
+    &::com::iod::pb::test::test_msg_8::default_instance());
   ::google::protobuf::internal::ExtensionSet::RegisterMessageExtension(
-    &::iod_pb::common::base_msg::default_instance(),
+    &::com::iod::pb::common::base_msg::default_instance(),
     5009, 11, false, false,
-    &::iod_pb::test::test_msg_9::default_instance());
+    &::com::iod::pb::test::test_msg_9::default_instance());
   ::google::protobuf::internal::ExtensionSet::RegisterMessageExtension(
-    &::iod_pb::common::base_msg::default_instance(),
+    &::com::iod::pb::common::base_msg::default_instance(),
     5010, 11, false, false,
-    &::iod_pb::test::test_msg_10::default_instance());
+    &::com::iod::pb::test::test_msg_10::default_instance());
   ::google::protobuf::internal::ExtensionSet::RegisterMessageExtension(
-    &::iod_pb::common::base_msg::default_instance(),
+    &::com::iod::pb::common::base_msg::default_instance(),
     5011, 11, false, false,
-    &::iod_pb::test::test_msg_11::default_instance());
+    &::com::iod::pb::test::test_msg_11::default_instance());
   ::google::protobuf::internal::ExtensionSet::RegisterMessageExtension(
-    &::iod_pb::common::base_msg::default_instance(),
+    &::com::iod::pb::common::base_msg::default_instance(),
     5012, 11, false, false,
-    &::iod_pb::test::test_msg_12::default_instance());
+    &::com::iod::pb::test::test_msg_12::default_instance());
   ::google::protobuf::internal::ExtensionSet::RegisterMessageExtension(
-    &::iod_pb::common::base_msg::default_instance(),
+    &::com::iod::pb::common::base_msg::default_instance(),
     5013, 11, false, false,
-    &::iod_pb::test::test_msg_13::default_instance());
+    &::com::iod::pb::test::test_msg_13::default_instance());
   ::google::protobuf::internal::ExtensionSet::RegisterMessageExtension(
-    &::iod_pb::common::base_msg::default_instance(),
+    &::com::iod::pb::common::base_msg::default_instance(),
     5014, 11, false, false,
-    &::iod_pb::test::test_msg_14::default_instance());
+    &::com::iod::pb::test::test_msg_14::default_instance());
   ::google::protobuf::internal::ExtensionSet::RegisterMessageExtension(
-    &::iod_pb::common::base_msg::default_instance(),
+    &::com::iod::pb::common::base_msg::default_instance(),
     5015, 11, false, false,
-    &::iod_pb::test::test_msg_15::default_instance());
+    &::com::iod::pb::test::test_msg_15::default_instance());
   ::google::protobuf::internal::ExtensionSet::RegisterMessageExtension(
-    &::iod_pb::common::base_msg::default_instance(),
+    &::com::iod::pb::common::base_msg::default_instance(),
     5016, 11, false, false,
-    &::iod_pb::test::test_msg_16::default_instance());
+    &::com::iod::pb::test::test_msg_16::default_instance());
   ::google::protobuf::internal::ExtensionSet::RegisterMessageExtension(
-    &::iod_pb::common::base_msg::default_instance(),
+    &::com::iod::pb::common::base_msg::default_instance(),
     5017, 11, false, false,
-    &::iod_pb::test::test_msg_17::default_instance());
+    &::com::iod::pb::test::test_msg_17::default_instance());
   ::google::protobuf::internal::ExtensionSet::RegisterMessageExtension(
-    &::iod_pb::common::base_msg::default_instance(),
+    &::com::iod::pb::common::base_msg::default_instance(),
     5018, 11, false, false,
-    &::iod_pb::test::test_msg_18::default_instance());
+    &::com::iod::pb::test::test_msg_18::default_instance());
   ::google::protobuf::internal::ExtensionSet::RegisterMessageExtension(
-    &::iod_pb::common::base_msg::default_instance(),
+    &::com::iod::pb::common::base_msg::default_instance(),
     5019, 11, false, false,
-    &::iod_pb::test::test_msg_19::default_instance());
+    &::com::iod::pb::test::test_msg_19::default_instance());
   ::google::protobuf::internal::ExtensionSet::RegisterMessageExtension(
-    &::iod_pb::common::base_msg::default_instance(),
+    &::com::iod::pb::common::base_msg::default_instance(),
     5020, 11, false, false,
-    &::iod_pb::test::test_msg_20::default_instance());
+    &::com::iod::pb::test::test_msg_20::default_instance());
   req_authentication::default_instance_->InitAsDefaultInstance();
   res_authentication::default_instance_->InitAsDefaultInstance();
   req_login::default_instance_->InitAsDefaultInstance();
@@ -7612,100 +7620,102 @@ void test_msg_20::Swap(test_msg_20* other) {
   return metadata;
 }
 
-::google::protobuf::internal::ExtensionIdentifier< ::iod_pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::iod_pb::test::req_authentication >, 11, false >
-  _req_authentication(kReqAuthenticationFieldNumber, ::iod_pb::test::req_authentication::default_instance());
-::google::protobuf::internal::ExtensionIdentifier< ::iod_pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::iod_pb::test::res_authentication >, 11, false >
-  _res_authentication(kResAuthenticationFieldNumber, ::iod_pb::test::res_authentication::default_instance());
-::google::protobuf::internal::ExtensionIdentifier< ::iod_pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::iod_pb::test::req_login >, 11, false >
-  _req_login(kReqLoginFieldNumber, ::iod_pb::test::req_login::default_instance());
-::google::protobuf::internal::ExtensionIdentifier< ::iod_pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::iod_pb::test::res_login >, 11, false >
-  _res_login(kResLoginFieldNumber, ::iod_pb::test::res_login::default_instance());
-::google::protobuf::internal::ExtensionIdentifier< ::iod_pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::iod_pb::test::req_test_info >, 11, false >
-  _req_test_info(kReqTestInfoFieldNumber, ::iod_pb::test::req_test_info::default_instance());
-::google::protobuf::internal::ExtensionIdentifier< ::iod_pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::iod_pb::test::res_test_info >, 11, false >
-  _res_test_info(kResTestInfoFieldNumber, ::iod_pb::test::res_test_info::default_instance());
-::google::protobuf::internal::ExtensionIdentifier< ::iod_pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::iod_pb::test::req_logout >, 11, false >
-  _req_logout(kReqLogoutFieldNumber, ::iod_pb::test::req_logout::default_instance());
-::google::protobuf::internal::ExtensionIdentifier< ::iod_pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::iod_pb::test::req_test_response_time >, 11, false >
-  _req_test_response_time(kReqTestResponseTimeFieldNumber, ::iod_pb::test::req_test_response_time::default_instance());
-::google::protobuf::internal::ExtensionIdentifier< ::iod_pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::iod_pb::test::res_test_response_time >, 11, false >
-  _res_test_response_time(kResTestResponseTimeFieldNumber, ::iod_pb::test::res_test_response_time::default_instance());
-::google::protobuf::internal::ExtensionIdentifier< ::iod_pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::iod_pb::test::notify_kickout >, 11, false >
-  _notify_kickout(kNotifyKickoutFieldNumber, ::iod_pb::test::notify_kickout::default_instance());
-::google::protobuf::internal::ExtensionIdentifier< ::iod_pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::iod_pb::test::test_msg_1 >, 11, false >
-  _test_msg_1(kTestMsg1FieldNumber, ::iod_pb::test::test_msg_1::default_instance());
-::google::protobuf::internal::ExtensionIdentifier< ::iod_pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::iod_pb::test::test_msg_2 >, 11, false >
-  _test_msg_2(kTestMsg2FieldNumber, ::iod_pb::test::test_msg_2::default_instance());
-::google::protobuf::internal::ExtensionIdentifier< ::iod_pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::iod_pb::test::test_msg_3 >, 11, false >
-  _test_msg_3(kTestMsg3FieldNumber, ::iod_pb::test::test_msg_3::default_instance());
-::google::protobuf::internal::ExtensionIdentifier< ::iod_pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::iod_pb::test::test_msg_4 >, 11, false >
-  _test_msg_4(kTestMsg4FieldNumber, ::iod_pb::test::test_msg_4::default_instance());
-::google::protobuf::internal::ExtensionIdentifier< ::iod_pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::iod_pb::test::test_msg_5 >, 11, false >
-  _test_msg_5(kTestMsg5FieldNumber, ::iod_pb::test::test_msg_5::default_instance());
-::google::protobuf::internal::ExtensionIdentifier< ::iod_pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::iod_pb::test::test_msg_6 >, 11, false >
-  _test_msg_6(kTestMsg6FieldNumber, ::iod_pb::test::test_msg_6::default_instance());
-::google::protobuf::internal::ExtensionIdentifier< ::iod_pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::iod_pb::test::test_msg_7 >, 11, false >
-  _test_msg_7(kTestMsg7FieldNumber, ::iod_pb::test::test_msg_7::default_instance());
-::google::protobuf::internal::ExtensionIdentifier< ::iod_pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::iod_pb::test::test_msg_8 >, 11, false >
-  _test_msg_8(kTestMsg8FieldNumber, ::iod_pb::test::test_msg_8::default_instance());
-::google::protobuf::internal::ExtensionIdentifier< ::iod_pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::iod_pb::test::test_msg_9 >, 11, false >
-  _test_msg_9(kTestMsg9FieldNumber, ::iod_pb::test::test_msg_9::default_instance());
-::google::protobuf::internal::ExtensionIdentifier< ::iod_pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::iod_pb::test::test_msg_10 >, 11, false >
-  _test_msg_10(kTestMsg10FieldNumber, ::iod_pb::test::test_msg_10::default_instance());
-::google::protobuf::internal::ExtensionIdentifier< ::iod_pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::iod_pb::test::test_msg_11 >, 11, false >
-  _test_msg_11(kTestMsg11FieldNumber, ::iod_pb::test::test_msg_11::default_instance());
-::google::protobuf::internal::ExtensionIdentifier< ::iod_pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::iod_pb::test::test_msg_12 >, 11, false >
-  _test_msg_12(kTestMsg12FieldNumber, ::iod_pb::test::test_msg_12::default_instance());
-::google::protobuf::internal::ExtensionIdentifier< ::iod_pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::iod_pb::test::test_msg_13 >, 11, false >
-  _test_msg_13(kTestMsg13FieldNumber, ::iod_pb::test::test_msg_13::default_instance());
-::google::protobuf::internal::ExtensionIdentifier< ::iod_pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::iod_pb::test::test_msg_14 >, 11, false >
-  _test_msg_14(kTestMsg14FieldNumber, ::iod_pb::test::test_msg_14::default_instance());
-::google::protobuf::internal::ExtensionIdentifier< ::iod_pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::iod_pb::test::test_msg_15 >, 11, false >
-  _test_msg_15(kTestMsg15FieldNumber, ::iod_pb::test::test_msg_15::default_instance());
-::google::protobuf::internal::ExtensionIdentifier< ::iod_pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::iod_pb::test::test_msg_16 >, 11, false >
-  _test_msg_16(kTestMsg16FieldNumber, ::iod_pb::test::test_msg_16::default_instance());
-::google::protobuf::internal::ExtensionIdentifier< ::iod_pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::iod_pb::test::test_msg_17 >, 11, false >
-  _test_msg_17(kTestMsg17FieldNumber, ::iod_pb::test::test_msg_17::default_instance());
-::google::protobuf::internal::ExtensionIdentifier< ::iod_pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::iod_pb::test::test_msg_18 >, 11, false >
-  _test_msg_18(kTestMsg18FieldNumber, ::iod_pb::test::test_msg_18::default_instance());
-::google::protobuf::internal::ExtensionIdentifier< ::iod_pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::iod_pb::test::test_msg_19 >, 11, false >
-  _test_msg_19(kTestMsg19FieldNumber, ::iod_pb::test::test_msg_19::default_instance());
-::google::protobuf::internal::ExtensionIdentifier< ::iod_pb::common::base_msg,
-    ::google::protobuf::internal::MessageTypeTraits< ::iod_pb::test::test_msg_20 >, 11, false >
-  _test_msg_20(kTestMsg20FieldNumber, ::iod_pb::test::test_msg_20::default_instance());
+::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::req_authentication >, 11, false >
+  _req_authentication(kReqAuthenticationFieldNumber, ::com::iod::pb::test::req_authentication::default_instance());
+::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::res_authentication >, 11, false >
+  _res_authentication(kResAuthenticationFieldNumber, ::com::iod::pb::test::res_authentication::default_instance());
+::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::req_login >, 11, false >
+  _req_login(kReqLoginFieldNumber, ::com::iod::pb::test::req_login::default_instance());
+::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::res_login >, 11, false >
+  _res_login(kResLoginFieldNumber, ::com::iod::pb::test::res_login::default_instance());
+::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::req_test_info >, 11, false >
+  _req_test_info(kReqTestInfoFieldNumber, ::com::iod::pb::test::req_test_info::default_instance());
+::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::res_test_info >, 11, false >
+  _res_test_info(kResTestInfoFieldNumber, ::com::iod::pb::test::res_test_info::default_instance());
+::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::req_logout >, 11, false >
+  _req_logout(kReqLogoutFieldNumber, ::com::iod::pb::test::req_logout::default_instance());
+::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::req_test_response_time >, 11, false >
+  _req_test_response_time(kReqTestResponseTimeFieldNumber, ::com::iod::pb::test::req_test_response_time::default_instance());
+::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::res_test_response_time >, 11, false >
+  _res_test_response_time(kResTestResponseTimeFieldNumber, ::com::iod::pb::test::res_test_response_time::default_instance());
+::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::notify_kickout >, 11, false >
+  _notify_kickout(kNotifyKickoutFieldNumber, ::com::iod::pb::test::notify_kickout::default_instance());
+::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::test_msg_1 >, 11, false >
+  _test_msg_1(kTestMsg1FieldNumber, ::com::iod::pb::test::test_msg_1::default_instance());
+::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::test_msg_2 >, 11, false >
+  _test_msg_2(kTestMsg2FieldNumber, ::com::iod::pb::test::test_msg_2::default_instance());
+::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::test_msg_3 >, 11, false >
+  _test_msg_3(kTestMsg3FieldNumber, ::com::iod::pb::test::test_msg_3::default_instance());
+::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::test_msg_4 >, 11, false >
+  _test_msg_4(kTestMsg4FieldNumber, ::com::iod::pb::test::test_msg_4::default_instance());
+::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::test_msg_5 >, 11, false >
+  _test_msg_5(kTestMsg5FieldNumber, ::com::iod::pb::test::test_msg_5::default_instance());
+::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::test_msg_6 >, 11, false >
+  _test_msg_6(kTestMsg6FieldNumber, ::com::iod::pb::test::test_msg_6::default_instance());
+::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::test_msg_7 >, 11, false >
+  _test_msg_7(kTestMsg7FieldNumber, ::com::iod::pb::test::test_msg_7::default_instance());
+::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::test_msg_8 >, 11, false >
+  _test_msg_8(kTestMsg8FieldNumber, ::com::iod::pb::test::test_msg_8::default_instance());
+::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::test_msg_9 >, 11, false >
+  _test_msg_9(kTestMsg9FieldNumber, ::com::iod::pb::test::test_msg_9::default_instance());
+::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::test_msg_10 >, 11, false >
+  _test_msg_10(kTestMsg10FieldNumber, ::com::iod::pb::test::test_msg_10::default_instance());
+::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::test_msg_11 >, 11, false >
+  _test_msg_11(kTestMsg11FieldNumber, ::com::iod::pb::test::test_msg_11::default_instance());
+::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::test_msg_12 >, 11, false >
+  _test_msg_12(kTestMsg12FieldNumber, ::com::iod::pb::test::test_msg_12::default_instance());
+::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::test_msg_13 >, 11, false >
+  _test_msg_13(kTestMsg13FieldNumber, ::com::iod::pb::test::test_msg_13::default_instance());
+::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::test_msg_14 >, 11, false >
+  _test_msg_14(kTestMsg14FieldNumber, ::com::iod::pb::test::test_msg_14::default_instance());
+::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::test_msg_15 >, 11, false >
+  _test_msg_15(kTestMsg15FieldNumber, ::com::iod::pb::test::test_msg_15::default_instance());
+::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::test_msg_16 >, 11, false >
+  _test_msg_16(kTestMsg16FieldNumber, ::com::iod::pb::test::test_msg_16::default_instance());
+::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::test_msg_17 >, 11, false >
+  _test_msg_17(kTestMsg17FieldNumber, ::com::iod::pb::test::test_msg_17::default_instance());
+::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::test_msg_18 >, 11, false >
+  _test_msg_18(kTestMsg18FieldNumber, ::com::iod::pb::test::test_msg_18::default_instance());
+::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::test_msg_19 >, 11, false >
+  _test_msg_19(kTestMsg19FieldNumber, ::com::iod::pb::test::test_msg_19::default_instance());
+::google::protobuf::internal::ExtensionIdentifier< ::com::iod::pb::common::base_msg,
+    ::google::protobuf::internal::MessageTypeTraits< ::com::iod::pb::test::test_msg_20 >, 11, false >
+  _test_msg_20(kTestMsg20FieldNumber, ::com::iod::pb::test::test_msg_20::default_instance());
 
 // @@protoc_insertion_point(namespace_scope)
 
 }  // namespace test
-}  // namespace iod_pb
+}  // namespace pb
+}  // namespace iod
+}  // namespace com
 
 // @@protoc_insertion_point(global_scope)

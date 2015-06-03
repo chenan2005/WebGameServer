@@ -25,9 +25,9 @@ public:
 	//message handlers
 	//---------------------------------------------------------------------
 
-	virtual iod_session* on_req_authentication(struct connection_info* conn_info, iod_pb::common::base_msg* msg);
+	virtual iod_session* on_req_authentication(struct connection_info* conn_info, com::iod::pb::common::base_msg* msg);
 
-	virtual iod_session* on_req_login(struct connection_info* conn_info, iod_pb::common::base_msg* msg);
+	virtual iod_session* on_req_login(struct connection_info* conn_info, com::iod::pb::common::base_msg* msg);
 
 	inline unsigned int get_session_count() const { return (unsigned int)sessions.size(); }
 

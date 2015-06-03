@@ -64,15 +64,15 @@ public:
 	//message handlers
 	//---------------------------------------------------------------------
 
-	virtual void on_res_authentication(iod_pb::common::base_msg* msg);
+	virtual void on_res_authentication(com::iod::pb::common::base_msg* msg);
 
-	virtual void on_res_login(iod_pb::common::base_msg* msg);
+	virtual void on_res_login(com::iod::pb::common::base_msg* msg);
 
-	virtual void on_res_test_info(iod_pb::common::base_msg* msg);
+	virtual void on_res_test_info(com::iod::pb::common::base_msg* msg);
 
-	virtual void on_res_test_response_time(iod_pb::common::base_msg* msg);
+	virtual void on_res_test_response_time(com::iod::pb::common::base_msg* msg);
 
-	virtual void on_notify_kickout(iod_pb::common::base_msg* msg);
+	virtual void on_notify_kickout(com::iod::pb::common::base_msg* msg);
 
 	//---------------------------------------------------------------------
 

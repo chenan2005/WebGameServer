@@ -2,7 +2,7 @@
 #include "iod_test.pb.h"
 #include "iod_logsystem.h"
 
-using namespace iod_pb::test;
+using namespace com::iod::pb::test;
 
 REG_PROTO_MSG_HANDLE_BEGIN(test_client_protobuf_session, iod_session_pb)
 
@@ -102,7 +102,7 @@ void test_client_protobuf_session::send_req_test_response_time(ev_uint64_t t)
 	//update_last_send_command_time();
 }
 
-void test_client_protobuf_session::on_res_authentication(iod_pb::common::base_msg* msg)
+void test_client_protobuf_session::on_res_authentication(com::iod::pb::common::base_msg* msg)
 {
 	SAFE_GET_EXTENSION(msg, res_authentication, res);
 	if (res.result() == 0) {
@@ -114,7 +114,7 @@ void test_client_protobuf_session::on_res_authentication(iod_pb::common::base_ms
 	}
 }
 
-void test_client_protobuf_session::on_res_login(iod_pb::common::base_msg* msg)
+void test_client_protobuf_session::on_res_login(com::iod::pb::common::base_msg* msg)
 {
 	SAFE_GET_EXTENSION(msg, res_login, res);
 	if (res.result() == 0) {
@@ -125,18 +125,18 @@ void test_client_protobuf_session::on_res_login(iod_pb::common::base_msg* msg)
 	}
 }
 
-void test_client_protobuf_session::on_res_test_info(iod_pb::common::base_msg* msg)
+void test_client_protobuf_session::on_res_test_info(com::iod::pb::common::base_msg* msg)
 {
 	SAFE_GET_EXTENSION(msg, res_test_info, res);
 }
 
-void test_client_protobuf_session::on_res_test_response_time(iod_pb::common::base_msg* msg)
+void test_client_protobuf_session::on_res_test_response_time(com::iod::pb::common::base_msg* msg)
 {
 	SAFE_GET_EXTENSION(msg, res_test_response_time, res);
 	iod_log_info("user %s, response time %llu", get_username(), iod_utility::get_time_usec() - res.req_timestamp());
 }
 
-void test_client_protobuf_session::on_notify_kickout(iod_pb::common::base_msg* msg)
+void test_client_protobuf_session::on_notify_kickout(com::iod::pb::common::base_msg* msg)
 {
 	SAFE_GET_EXTENSION(msg, notify_kickout, notify);
 	iod_log_info("user %s kickout by server, reason %d", get_username(), notify.kick_reason());

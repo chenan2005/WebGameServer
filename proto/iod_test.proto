@@ -1,4 +1,4 @@
-package iod_pb.test;
+package com.iod.pb.test;
 
 import "common/iod_common.proto";
 
@@ -106,7 +106,7 @@ message test_msg_20 {
 	optional bytes test_data = 1;
 }
 
-extend iod_pb.common.base_msg {
+extend com.iod.pb.common.base_msg {
 	optional req_authentication _req_authentication = 1000;
 	optional res_authentication _res_authentication = 1001;
 	optional req_login _req_login = 1002;
