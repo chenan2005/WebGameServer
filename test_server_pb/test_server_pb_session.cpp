@@ -24,7 +24,7 @@ test_server_pb_session::~test_server_pb_session(void)
 {
 }
 
-void* test_server_pb_session::onReqLogin(connection_info* from, com::iod::pb::common::BaseMsg* msg)
+void* test_server_pb_session::onReqLogin(connection_info* from, BaseMsgPb* msg)
 {
 	SAFE_GET_EXTENSION(msg, ReqLogin, req);
 
@@ -33,7 +33,7 @@ void* test_server_pb_session::onReqLogin(connection_info* from, com::iod::pb::co
 	return 0;
 }
 
-void* test_server_pb_session::onReqTestInfo(connection_info* from, com::iod::pb::common::BaseMsg* msg)
+void* test_server_pb_session::onReqTestInfo(connection_info* from, BaseMsgPb* msg)
 {
 	SAFE_GET_EXTENSION(msg, ReqTestInfo, req);
 	ResTestInfo res;
@@ -43,7 +43,7 @@ void* test_server_pb_session::onReqTestInfo(connection_info* from, com::iod::pb:
 	return 0;
 }
 
-void* test_server_pb_session::onReqLogout(connection_info* from, com::iod::pb::common::BaseMsg* msg )
+void* test_server_pb_session::onReqLogout(connection_info* from, BaseMsgPb* msg )
 {
 	SAFE_GET_EXTENSION(msg, ReqLogout, req);
 	close(0);
@@ -51,7 +51,7 @@ void* test_server_pb_session::onReqLogout(connection_info* from, com::iod::pb::c
 	return 0;
 }
 
-void* test_server_pb_session::onReqTestResponseTime(connection_info* from, com::iod::pb::common::BaseMsg* msg)
+void* test_server_pb_session::onReqTestResponseTime(connection_info* from, BaseMsgPb* msg)
 {
 	SAFE_GET_EXTENSION(msg, ReqTestResponseTime, req);
 	ResTestResponseTime res;
@@ -61,7 +61,7 @@ void* test_server_pb_session::onReqTestResponseTime(connection_info* from, com::
 	return 0;
 }
 
-void* test_server_pb_session::onTestMsg1(connection_info* from, com::iod::pb::common::BaseMsg* msg)
+void* test_server_pb_session::onTestMsg1(connection_info* from, BaseMsgPb* msg)
 {
 	SAFE_GET_EXTENSION(msg, TestMsg1, req);
 	TestMsg1 res;

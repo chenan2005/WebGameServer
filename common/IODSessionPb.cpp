@@ -13,12 +13,12 @@ IODSessionPb::~IODSessionPb( void )
 
 }
 
-void IODSessionPb::on_message( com::iod::pb::common::BaseMsg* msg )
+void IODSessionPb::on_message( BaseMsgPb* msg )
 {
 	DISPATCH_MESSAGE(this->get_connection_info(), msg);
 }
 
-bool IODSessionPb::send_basemsg( com::iod::pb::common::BaseMsg* msg )
+bool IODSessionPb::send_basemsg( BaseMsgPb* msg )
 {
 	static char msg_serialize_buff[_MAX_PACKET_LENGTH];
 
@@ -36,7 +36,7 @@ bool IODSessionPb::send_basemsg( com::iod::pb::common::BaseMsg* msg )
 	return true;
 }
 
-bool IODSessionPb::send_basemsg_to(struct connection_info* conn_info, com::iod::pb::common::BaseMsg* msg)
+bool IODSessionPb::send_basemsg_to(struct connection_info* conn_info, BaseMsgPb* msg)
 {
 	static char none_session_msg_serialize_buff[_MAX_PACKET_LENGTH];
 
@@ -59,7 +59,7 @@ bool IODSessionPb::send_basemsg_to(struct connection_info* conn_info, com::iod::
 
 void IODSessionPb::on_packet( IODPacket* packet )
 {
-	com::iod::pb::common::BaseMsg* msg = new com::iod::pb::common::BaseMsg;
+	BaseMsgPb* msg = new BaseMsgPb;
 	if (msg->ParseFromArray(packet->get_data(), packet->get_length()))
 	{
 		on_message(msg);

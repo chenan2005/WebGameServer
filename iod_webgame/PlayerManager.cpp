@@ -28,7 +28,7 @@ PlayerManager::~PlayerManager(void)
 	}
 }
 
-void* PlayerManager::onReqAuthentication( struct connection_info* conn_info, com::iod::pb::common::BaseMsg* msg )
+void* PlayerManager::onReqAuthentication( struct connection_info* conn_info, BaseMsgPb* msg )
 {
 	SAFE_GET_EXTENSION(msg, ReqAuthentication, req);
 
@@ -48,7 +48,7 @@ void* PlayerManager::onReqAuthentication( struct connection_info* conn_info, com
 	return 0;
 }
 
-void* PlayerManager::onReqLogin( struct connection_info* conn_info, com::iod::pb::common::BaseMsg* msg )
+void* PlayerManager::onReqLogin( struct connection_info* conn_info, BaseMsgPb* msg )
 {
 	SAFE_GET_EXTENSION(msg, ReqLogin, req);
 

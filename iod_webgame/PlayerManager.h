@@ -27,9 +27,9 @@ public:
 	//message handlers
 	//---------------------------------------------------------------------
 
-	virtual void* onReqAuthentication(struct connection_info* conn_info, com::iod::pb::common::BaseMsg* msg);
+	virtual void* onReqAuthentication(struct connection_info* conn_info, BaseMsgPb* msg);
 
-	virtual void* onReqLogin(struct connection_info* conn_info, com::iod::pb::common::BaseMsg* msg);
+	virtual void* onReqLogin(struct connection_info* conn_info, BaseMsgPb* msg);
 
 	//---------------------------------------------------------------------
 

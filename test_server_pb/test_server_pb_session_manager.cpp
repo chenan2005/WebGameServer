@@ -30,7 +30,7 @@ test_server_pb_session_manager::~test_server_pb_session_manager(void)
 	}
 }
 
-void* test_server_pb_session_manager::onReqAuthentication( struct connection_info* conn_info, com::iod::pb::common::BaseMsg* msg )
+void* test_server_pb_session_manager::onReqAuthentication( struct connection_info* conn_info, BaseMsgPb* msg )
 {
 	SAFE_GET_EXTENSION(msg, ReqAuthentication, req);
 
@@ -50,7 +50,7 @@ void* test_server_pb_session_manager::onReqAuthentication( struct connection_inf
 	return 0;
 }
 
-void* test_server_pb_session_manager::onReqLogin( struct connection_info* conn_info, com::iod::pb::common::BaseMsg* msg )
+void* test_server_pb_session_manager::onReqLogin( struct connection_info* conn_info, BaseMsgPb* msg )
 {
 	SAFE_GET_EXTENSION(msg, ReqLogin, req);
 
@@ -79,7 +79,7 @@ void* test_server_pb_session_manager::onReqLogin( struct connection_info* conn_i
 	return 0;
 }
 
-void* test_server_pb_session_manager::onTestMsg1(struct connection_info* conn_info, com::iod::pb::common::BaseMsg* msg)
+void* test_server_pb_session_manager::onTestMsg1(struct connection_info* conn_info, BaseMsgPb* msg)
 {
 	SAFE_GET_EXTENSION(msg, TestMsg1, req);
 	TestMsg1 res;

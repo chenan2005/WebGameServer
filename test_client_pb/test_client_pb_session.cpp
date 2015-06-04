@@ -102,7 +102,7 @@ void test_client_protobuf_session::sendReqTestResponseTime(ev_uint64_t t)
 	//update_last_send_command_time();
 }
 
-void* test_client_protobuf_session::onResAuthentication(connection_info* conn_info, com::iod::pb::common::BaseMsg* msg)
+void* test_client_protobuf_session::onResAuthentication(connection_info* conn_info, BaseMsgPb* msg)
 {
 	SAFE_GET_EXTENSION(msg, ResAuthentication, res);
 	if (res.result() == 0) {
@@ -116,7 +116,7 @@ void* test_client_protobuf_session::onResAuthentication(connection_info* conn_in
 	return 0;
 }
 
-void* test_client_protobuf_session::onResLogin(connection_info* conn_info, com::iod::pb::common::BaseMsg* msg)
+void* test_client_protobuf_session::onResLogin(connection_info* conn_info, BaseMsgPb* msg)
 {
 	SAFE_GET_EXTENSION(msg, ResLogin, res);
 	if (res.result() == 0) {
@@ -129,14 +129,14 @@ void* test_client_protobuf_session::onResLogin(connection_info* conn_info, com::
 	return 0;
 }
 
-void* test_client_protobuf_session::onResTestInfo(connection_info* conn_info, com::iod::pb::common::BaseMsg* msg)
+void* test_client_protobuf_session::onResTestInfo(connection_info* conn_info, BaseMsgPb* msg)
 {
 	SAFE_GET_EXTENSION(msg, ResTestInfo, res);
 
 	return 0;
 }
 
-void* test_client_protobuf_session::onResTestResponseTime(connection_info* conn_info, com::iod::pb::common::BaseMsg* msg)
+void* test_client_protobuf_session::onResTestResponseTime(connection_info* conn_info, BaseMsgPb* msg)
 {
 	SAFE_GET_EXTENSION(msg, ResTestResponseTime, res);
 	iod_log_info("user %s, response time %llu", get_username(), IODUtility::get_time_usec() - res.req_timestamp());
@@ -144,7 +144,7 @@ void* test_client_protobuf_session::onResTestResponseTime(connection_info* conn_
 	return 0;
 }
 
-void* test_client_protobuf_session::onNotifyKickout(connection_info* conn_info, com::iod::pb::common::BaseMsg* msg)
+void* test_client_protobuf_session::onNotifyKickout(connection_info* conn_info, BaseMsgPb* msg)
 {
 	SAFE_GET_EXTENSION(msg, NotifyKickout, notify);
 	iod_log_info("user %s kickout by server, reason %d", get_username(), notify.kick_reason());

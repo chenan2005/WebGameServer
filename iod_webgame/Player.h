@@ -48,15 +48,15 @@ public:
 	//message handlers
 	//---------------------------------------------------------------------
 
-	virtual void* onReqLogin(connection_info* conn_info, com::iod::pb::common::BaseMsg* msg);
+	virtual void* onReqLogin(connection_info* conn_info, BaseMsgPb* msg);
 
-	virtual void* onReqTestInfo(connection_info* conn_info, com::iod::pb::common::BaseMsg* msg);
+	virtual void* onReqTestInfo(connection_info* conn_info, BaseMsgPb* msg);
 
-	virtual void* onReqLogout(connection_info* conn_info, com::iod::pb::common::BaseMsg* msg);
+	virtual void* onReqLogout(connection_info* conn_info, BaseMsgPb* msg);
 
-	virtual void* onReqTestResponseTime(connection_info* conn_info, com::iod::pb::common::BaseMsg* msg);
+	virtual void* onReqTestResponseTime(connection_info* conn_info, BaseMsgPb* msg);
 
-	virtual void* onReqCreateRole(connection_info* conn_info, com::iod::pb::common::BaseMsg* msg);
+	virtual void* onReqCreateRole(connection_info* conn_info, BaseMsgPb* msg);
 
 	//--------------------------------------------------
 

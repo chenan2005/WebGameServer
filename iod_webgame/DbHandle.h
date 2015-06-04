@@ -9,4 +9,6 @@ class DbHandle : public IODSessionPb
 public:
 	DbHandle(void);
 	virtual ~DbHandle(void);
+
+	virtual void* onReqLogin(connection_info* conn_info, BaseMsgPb* msg);
 };

@@ -7,11 +7,11 @@ using namespace com::iod::pb::webgame;
 
 REG_PB_MSG_HANDLE_BEGIN(Player)
 
-ADD_PB_MSG_HANDLE(ReqLogin, Player::onReqLogin);
-ADD_PB_MSG_HANDLE(ReqTestInfo, Player::onReqTestInfo);
-ADD_PB_MSG_HANDLE(ReqLogout, Player::onReqLogout);
-ADD_PB_MSG_HANDLE(ReqTestResponseTime, Player::onReqTestResponseTime);
-ADD_PB_MSG_HANDLE(ReqCreateRole, Player::onReqCreateRole);
+ADD_PB_MSG_HANDLE(ReqLogin, Player::onReqLogin)
+ADD_PB_MSG_HANDLE(ReqTestInfo, Player::onReqTestInfo)
+ADD_PB_MSG_HANDLE(ReqLogout, Player::onReqLogout)
+ADD_PB_MSG_HANDLE(ReqTestResponseTime, Player::onReqTestResponseTime)
+ADD_PB_MSG_HANDLE(ReqCreateRole, Player::onReqCreateRole)
 
 REG_PB_MSG_HANDLE_END()
 
@@ -49,7 +49,7 @@ bool Player::leaveGame()
 	return false;
 }
 
-void* Player::onReqLogin(connection_info* conn_info, com::iod::pb::common::BaseMsg* msg)
+void* Player::onReqLogin(connection_info* conn_info, BaseMsgPb* msg)
 {
 	SAFE_GET_EXTENSION(msg, ReqLogin, req);
 
@@ -58,7 +58,7 @@ void* Player::onReqLogin(connection_info* conn_info, com::iod::pb::common::BaseM
 	return 0;
 }
 
-void* Player::onReqTestInfo(connection_info* conn_info, com::iod::pb::common::BaseMsg* msg)
+void* Player::onReqTestInfo(connection_info* conn_info, BaseMsgPb* msg)
 {
 	SAFE_GET_EXTENSION(msg, ReqTestInfo, req);
 	ResTestInfo res;
@@ -68,7 +68,7 @@ void* Player::onReqTestInfo(connection_info* conn_info, com::iod::pb::common::Ba
 	return 0;
 }
 
-void* Player::onReqLogout(connection_info* conn_info, com::iod::pb::common::BaseMsg* msg )
+void* Player::onReqLogout(connection_info* conn_info, BaseMsgPb* msg )
 {
 	SAFE_GET_EXTENSION(msg, ReqLogout, req);
 	close(0);
@@ -76,7 +76,7 @@ void* Player::onReqLogout(connection_info* conn_info, com::iod::pb::common::Base
 	return 0;
 }
 
-void* Player::onReqTestResponseTime(connection_info* conn_info, com::iod::pb::common::BaseMsg* msg)
+void* Player::onReqTestResponseTime(connection_info* conn_info, BaseMsgPb* msg)
 {
 	SAFE_GET_EXTENSION(msg, ReqTestResponseTime, req);
 	ResTestResponseTime res;
@@ -86,7 +86,7 @@ void* Player::onReqTestResponseTime(connection_info* conn_info, com::iod::pb::co
 	return 0;
 }
 
-void* Player::onReqCreateRole(connection_info* conn_info, com::iod::pb::common::BaseMsg* msg )
+void* Player::onReqCreateRole(connection_info* conn_info, BaseMsgPb* msg )
 {
 	return 0;
 }

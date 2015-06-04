@@ -38,15 +38,15 @@ public:
 	//message handlers
 	//---------------------------------------------------------------------
 
-	virtual void* onReqLogin(connection_info* from, com::iod::pb::common::BaseMsg* msg);
+	virtual void* onReqLogin(connection_info* from, BaseMsgPb* msg);
 
-	virtual void* onReqTestInfo(connection_info* from, com::iod::pb::common::BaseMsg* msg);
+	virtual void* onReqTestInfo(connection_info* from, BaseMsgPb* msg);
 
-	virtual void* onReqLogout(connection_info* from, com::iod::pb::common::BaseMsg* msg);
+	virtual void* onReqLogout(connection_info* from, BaseMsgPb* msg);
 
-	virtual void* onReqTestResponseTime(connection_info* from, com::iod::pb::common::BaseMsg* msg);
+	virtual void* onReqTestResponseTime(connection_info* from, BaseMsgPb* msg);
 
-	virtual void* onTestMsg1(connection_info* from, com::iod::pb::common::BaseMsg* msg);
+	virtual void* onTestMsg1(connection_info* from, BaseMsgPb* msg);
 
 	//--------------------------------------------------
 

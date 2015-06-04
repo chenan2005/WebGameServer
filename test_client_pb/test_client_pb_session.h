@@ -64,15 +64,15 @@ public:
 	//message handlers
 	//---------------------------------------------------------------------
 
-	virtual void* onResAuthentication(connection_info* conn_info, com::iod::pb::common::BaseMsg* msg);
+	virtual void* onResAuthentication(connection_info* conn_info, BaseMsgPb* msg);
 
-	virtual void* onResLogin(connection_info* conn_info, com::iod::pb::common::BaseMsg* msg);
+	virtual void* onResLogin(connection_info* conn_info, BaseMsgPb* msg);
 
-	virtual void* onResTestInfo(connection_info* conn_info, com::iod::pb::common::BaseMsg* msg);
+	virtual void* onResTestInfo(connection_info* conn_info, BaseMsgPb* msg);
 
-	virtual void* onResTestResponseTime(connection_info* conn_info, com::iod::pb::common::BaseMsg* msg);
+	virtual void* onResTestResponseTime(connection_info* conn_info, BaseMsgPb* msg);
 
-	virtual void* onNotifyKickout(connection_info* conn_info, com::iod::pb::common::BaseMsg* msg);
+	virtual void* onNotifyKickout(connection_info* conn_info, BaseMsgPb* msg);
 
 	//---------------------------------------------------------------------
 

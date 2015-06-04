@@ -81,4 +81,6 @@ void* classname::dispatch_pb_msg(struct connection_info* from, com::iod::pb::com
 //·¢ËÍÏûÏ¢
 #define SEND_MESSAGE_TO(conn_info, protocol_name, var) send_message_to(conn_info, id##protocol_name, var)
 
+typedef com::iod::pb::common::BaseMsg BaseMsgPb;
+
 #endif
