@@ -6,15 +6,15 @@
 
 using namespace com::iod::pb::test;
 
-REG_PROTO_MSG_HANDLE_BEGIN(test_server_pb_session_manager, IODSessionManagerPb)
+REG_PB_MSG_HANDLE_BEGIN(test_server_pb_session_manager)
 
-ADD_PROTO_MSG_HANDLE(ReqAuthentication, test_server_pb_session_manager::onReqAuthentication)
+ADD_PB_MSG_HANDLE(ReqAuthentication, test_server_pb_session_manager::onReqAuthentication)
 
-ADD_PROTO_MSG_HANDLE(ReqLogin, test_server_pb_session_manager::onReqLogin)
+ADD_PB_MSG_HANDLE(ReqLogin, test_server_pb_session_manager::onReqLogin)
 
-ADD_PROTO_MSG_HANDLE(TestMsg1, test_server_pb_session_manager::onTestMsg1);
+ADD_PB_MSG_HANDLE(TestMsg1, test_server_pb_session_manager::onTestMsg1);
 
-REG_PROTO_MSG_HANDLE_END(test_server_pb_session_manager)
+REG_PB_MSG_HANDLE_END()
 
 
 test_server_pb_session_manager::test_server_pb_session_manager(void) : create_session_count(0), destroy_session_count(0), l_info(0)
@@ -30,9 +30,9 @@ test_server_pb_session_manager::~test_server_pb_session_manager(void)
 	}
 }
 
-IODSession* test_server_pb_session_manager::onReqAuthentication( struct connection_info* conn_info, com::iod::pb::common::BaseMsg* msg )
+void* test_server_pb_session_manager::onReqAuthentication( struct connection_info* conn_info, com::iod::pb::common::BaseMsg* msg )
 {
-	SAFE_GET_NONE_SESSION_EXTENSION(msg, ReqAuthentication, req);
+	SAFE_GET_EXTENSION(msg, ReqAuthentication, req);
 
 	com::iod::pb::test::ResAuthentication res;
 
@@ -50,9 +50,9 @@ IODSession* test_server_pb_session_manager::onReqAuthentication( struct connecti
 	return 0;
 }
 
-IODSession* test_server_pb_session_manager::onReqLogin( struct connection_info* conn_info, com::iod::pb::common::BaseMsg* msg )
+void* test_server_pb_session_manager::onReqLogin( struct connection_info* conn_info, com::iod::pb::common::BaseMsg* msg )
 {
-	SAFE_GET_NONE_SESSION_EXTENSION(msg, ReqLogin, req);
+	SAFE_GET_EXTENSION(msg, ReqLogin, req);
 
 	ResLogin res;
 	res.set_user_id(req.user_id());
@@ -79,9 +79,9 @@ IODSession* test_server_pb_session_manager::onReqLogin( struct connection_info* 
 	return 0;
 }
 
-IODSession* test_server_pb_session_manager::onTestMsg1(struct connection_info* conn_info, com::iod::pb::common::BaseMsg* msg)
+void* test_server_pb_session_manager::onTestMsg1(struct connection_info* conn_info, com::iod::pb::common::BaseMsg* msg)
 {
-	SAFE_GET_NONE_SESSION_EXTENSION(msg, TestMsg1, req);
+	SAFE_GET_EXTENSION(msg, TestMsg1, req);
 	TestMsg1 res;
 	std::string testData = "dfasdfdssdafksda;ljfa;lkrwepsdvcmksdapocmsdac;'asd'csdafadopramcd;acd;";
 	for (int i = 0; i < 8; i++) {

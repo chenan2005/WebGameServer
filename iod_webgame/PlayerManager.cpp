@@ -6,13 +6,13 @@
 
 using namespace com::iod::pb::webgame;
 
-REG_PROTO_MSG_HANDLE_BEGIN(PlayerManager, IODSessionManagerPb)
+REG_PB_MSG_HANDLE_BEGIN(PlayerManager)
 
-ADD_PROTO_MSG_HANDLE(ReqAuthentication, PlayerManager::onReqAuthentication)
+ADD_PB_MSG_HANDLE(ReqAuthentication, PlayerManager::onReqAuthentication)
 
-ADD_PROTO_MSG_HANDLE(ReqLogin, PlayerManager::onReqLogin)
+ADD_PB_MSG_HANDLE(ReqLogin, PlayerManager::onReqLogin)
 
-REG_PROTO_MSG_HANDLE_END(PlayerManager)
+REG_PB_MSG_HANDLE_END()
 
 
 PlayerManager::PlayerManager(void) : create_session_count(0), destroy_session_count(0), l_info(0)
@@ -28,9 +28,9 @@ PlayerManager::~PlayerManager(void)
 	}
 }
 
-IODSession* PlayerManager::onReqAuthentication( struct connection_info* conn_info, com::iod::pb::common::BaseMsg* msg )
+void* PlayerManager::onReqAuthentication( struct connection_info* conn_info, com::iod::pb::common::BaseMsg* msg )
 {
-	SAFE_GET_NONE_SESSION_EXTENSION(msg, ReqAuthentication, req);
+	SAFE_GET_EXTENSION(msg, ReqAuthentication, req);
 
 	ResAuthentication res;
 
@@ -48,9 +48,9 @@ IODSession* PlayerManager::onReqAuthentication( struct connection_info* conn_inf
 	return 0;
 }
 
-IODSession* PlayerManager::onReqLogin( struct connection_info* conn_info, com::iod::pb::common::BaseMsg* msg )
+void* PlayerManager::onReqLogin( struct connection_info* conn_info, com::iod::pb::common::BaseMsg* msg )
 {
-	SAFE_GET_NONE_SESSION_EXTENSION(msg, ReqLogin, req);
+	SAFE_GET_EXTENSION(msg, ReqLogin, req);
 
 	//ResLogin res;
 

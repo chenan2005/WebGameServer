@@ -7,7 +7,7 @@ class test_server_pb_session;
 class test_server_pb_session_manager :
 	public IODSessionManagerPb
 {
-	DEC_REG_PROTO_MSG_HANDLE(test_server_pb_session_manager)
+	DEC_PB_MSG_HANDLE(test_server_pb_session_manager)
 
 public:
 
@@ -27,11 +27,11 @@ public:
 	//message handlers
 	//---------------------------------------------------------------------
 
-	virtual IODSession* onReqAuthentication(struct connection_info* conn_info, com::iod::pb::common::BaseMsg* msg);
+	virtual void* onReqAuthentication(struct connection_info* conn_info, com::iod::pb::common::BaseMsg* msg);
 
-	virtual IODSession* onReqLogin(struct connection_info* conn_info, com::iod::pb::common::BaseMsg* msg);
+	virtual void* onReqLogin(struct connection_info* conn_info, com::iod::pb::common::BaseMsg* msg);
 
-	virtual IODSession* onTestMsg1(struct connection_info* conn_info, com::iod::pb::common::BaseMsg* msg);
+	virtual void* onTestMsg1(struct connection_info* conn_info, com::iod::pb::common::BaseMsg* msg);
 
 	//---------------------------------------------------------------------
 

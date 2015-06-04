@@ -46,6 +46,8 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
+#ifdef WIN32
+
 #if !defined(_WIN32)
 #include <sys/cdefs.h>
 #endif
@@ -401,3 +403,4 @@ find_string(const u_char *bp, int *tgt, const char * const *n1,
         return NULL;
 }
 
+#endif

@@ -1,9 +1,7 @@
 #include "IODSessionManagerPb.h"
 
-std::map< int, IODSessionManagerPb::FNC_PB_MSG_HANDLER >* IODSessionManagerPb::msg_handler_map;
-
-REG_PROTO_MSG_HANDLE_BEGIN(IODSessionManagerPb, IODSessionManagerPb)
-REG_PROTO_MSG_HANDLE_END(IODSessionManagerPb)
+REG_PB_MSG_HANDLE_BEGIN(IODSessionManagerPb)
+REG_PB_MSG_HANDLE_END()
 
 IODSessionManagerPb::IODSessionManagerPb(void)
 {
@@ -16,13 +14,7 @@ IODSessionManagerPb::~IODSessionManagerPb(void)
 
 IODSession* IODSessionManagerPb::on_none_session_message( struct connection_info* conn_info, com::iod::pb::common::BaseMsg* msg )
 {
-	check_register_msg_handle();
-
-	std::map< int, FNC_PB_MSG_HANDLER >::iterator it = msg_handler_map->find(msg->message_id());
-	if (it == msg_handler_map->end())
-		return 0;
-
-	return (this->*(it->second))(conn_info, msg);
+	return (IODSession*)DISPATCH_MESSAGE(conn_info, msg);
 }
 
 IODSession* IODSessionManagerPb::on_none_session_packet( struct connection_info* conn_info, IODPacket* packet )

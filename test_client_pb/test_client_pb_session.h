@@ -6,7 +6,7 @@ class test_client_protobuf_session :
 	public IODSessionPb
 {
 
-	DEC_REG_PROTO_MSG_HANDLE(test_client_protobuf_session)
+	DEC_PB_MSG_HANDLE(test_client_protobuf_session)
 
 public:
 
@@ -64,15 +64,15 @@ public:
 	//message handlers
 	//---------------------------------------------------------------------
 
-	virtual void onResAuthentication(com::iod::pb::common::BaseMsg* msg);
+	virtual void* onResAuthentication(connection_info* conn_info, com::iod::pb::common::BaseMsg* msg);
 
-	virtual void onResLogin(com::iod::pb::common::BaseMsg* msg);
+	virtual void* onResLogin(connection_info* conn_info, com::iod::pb::common::BaseMsg* msg);
 
-	virtual void onResTestInfo(com::iod::pb::common::BaseMsg* msg);
+	virtual void* onResTestInfo(connection_info* conn_info, com::iod::pb::common::BaseMsg* msg);
 
-	virtual void onResTestResponseTime(com::iod::pb::common::BaseMsg* msg);
+	virtual void* onResTestResponseTime(connection_info* conn_info, com::iod::pb::common::BaseMsg* msg);
 
-	virtual void onNotifyKickout(com::iod::pb::common::BaseMsg* msg);
+	virtual void* onNotifyKickout(connection_info* conn_info, com::iod::pb::common::BaseMsg* msg);
 
 	//---------------------------------------------------------------------
 

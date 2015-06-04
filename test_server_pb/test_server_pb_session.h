@@ -4,7 +4,7 @@
 class test_server_pb_session :
 	public IODSessionPb
 {
-	DEC_REG_PROTO_MSG_HANDLE(test_server_pb_session)
+	DEC_PB_MSG_HANDLE(test_server_pb_session)
 
 public:
 
@@ -38,15 +38,15 @@ public:
 	//message handlers
 	//---------------------------------------------------------------------
 
-	virtual void onReqLogin(com::iod::pb::common::BaseMsg* msg);
+	virtual void* onReqLogin(connection_info* from, com::iod::pb::common::BaseMsg* msg);
 
-	virtual void onReqTestInfo(com::iod::pb::common::BaseMsg* msg);
+	virtual void* onReqTestInfo(connection_info* from, com::iod::pb::common::BaseMsg* msg);
 
-	virtual void onReqLogout(com::iod::pb::common::BaseMsg* msg);
+	virtual void* onReqLogout(connection_info* from, com::iod::pb::common::BaseMsg* msg);
 
-	virtual void onReqTestResponseTime(com::iod::pb::common::BaseMsg* msg);
+	virtual void* onReqTestResponseTime(connection_info* from, com::iod::pb::common::BaseMsg* msg);
 
-	virtual void onTestMsg1(com::iod::pb::common::BaseMsg* msg);
+	virtual void* onTestMsg1(connection_info* from, com::iod::pb::common::BaseMsg* msg);
 
 	//--------------------------------------------------
 

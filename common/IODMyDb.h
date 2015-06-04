@@ -4,14 +4,6 @@
 
 #include "IODMyField.h"
 
-#ifdef WIN32
-int vsscanf(
-			const char  *buffer,
-			const char  *format,
-			va_list     argPtr
-			);
-#endif
-
 namespace IODMyDb
 {
 	extern MYSQL* common_mysql_connection;

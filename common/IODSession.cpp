@@ -45,6 +45,19 @@ bool IODSession::send( IODPacket* packet )
 	return true;
 }
 
+bool IODSession::send_to(connection_info* conn_info, IODPacket* packet)
+{
+	if (!conn_info || !conn_info->conn_buffev)
+		return false;
+
+	int send_bytes = packet->write(conn_info->conn_buffev);
+
+	if (send_bytes <= 0)
+		return false;
+
+	return true;
+}
+
 void IODSession::flush()
 {
 	IODNetwork::flush_connection(conn_info);

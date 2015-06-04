@@ -4,15 +4,15 @@
 
 using namespace com::iod::pb::test;
 
-REG_PROTO_MSG_HANDLE_BEGIN(test_client_protobuf_session, IODSessionPb)
+REG_PB_MSG_HANDLE_BEGIN(test_client_protobuf_session)
 
-ADD_PROTO_MSG_HANDLE(ResAuthentication, test_client_protobuf_session::onResAuthentication)
-ADD_PROTO_MSG_HANDLE(ResLogin, test_client_protobuf_session::onResLogin)
-ADD_PROTO_MSG_HANDLE(ResTestInfo, test_client_protobuf_session::onResTestInfo)
-ADD_PROTO_MSG_HANDLE(ResTestResponseTime, test_client_protobuf_session::onResTestResponseTime)
-ADD_PROTO_MSG_HANDLE(NotifyKickout, test_client_protobuf_session::onNotifyKickout)
+ADD_PB_MSG_HANDLE(ResAuthentication, test_client_protobuf_session::onResAuthentication)
+ADD_PB_MSG_HANDLE(ResLogin, test_client_protobuf_session::onResLogin)
+ADD_PB_MSG_HANDLE(ResTestInfo, test_client_protobuf_session::onResTestInfo)
+ADD_PB_MSG_HANDLE(ResTestResponseTime, test_client_protobuf_session::onResTestResponseTime)
+ADD_PB_MSG_HANDLE(NotifyKickout, test_client_protobuf_session::onNotifyKickout)
 
-REG_PROTO_MSG_HANDLE_END(test_client_protobuf_session)
+REG_PB_MSG_HANDLE_END()
 
 test_client_protobuf_session::test_client_protobuf_session(void) : login_stat(LOGIN_STATE_NONE), last_send_command_time(0), next_try_login_time(0)
 {
@@ -102,7 +102,7 @@ void test_client_protobuf_session::sendReqTestResponseTime(ev_uint64_t t)
 	//update_last_send_command_time();
 }
 
-void test_client_protobuf_session::onResAuthentication(com::iod::pb::common::BaseMsg* msg)
+void* test_client_protobuf_session::onResAuthentication(connection_info* conn_info, com::iod::pb::common::BaseMsg* msg)
 {
 	SAFE_GET_EXTENSION(msg, ResAuthentication, res);
 	if (res.result() == 0) {
@@ -112,9 +112,11 @@ void test_client_protobuf_session::onResAuthentication(com::iod::pb::common::Bas
 	else {
 		set_login_state(LOGIN_STATE_NONE);
 	}
+
+	return 0;
 }
 
-void test_client_protobuf_session::onResLogin(com::iod::pb::common::BaseMsg* msg)
+void* test_client_protobuf_session::onResLogin(connection_info* conn_info, com::iod::pb::common::BaseMsg* msg)
 {
 	SAFE_GET_EXTENSION(msg, ResLogin, res);
 	if (res.result() == 0) {
@@ -123,21 +125,29 @@ void test_client_protobuf_session::onResLogin(com::iod::pb::common::BaseMsg* msg
 	else {
 		set_login_state(LOGIN_STATE_NONE);
 	}
+
+	return 0;
 }
 
-void test_client_protobuf_session::onResTestInfo(com::iod::pb::common::BaseMsg* msg)
+void* test_client_protobuf_session::onResTestInfo(connection_info* conn_info, com::iod::pb::common::BaseMsg* msg)
 {
 	SAFE_GET_EXTENSION(msg, ResTestInfo, res);
+
+	return 0;
 }
 
-void test_client_protobuf_session::onResTestResponseTime(com::iod::pb::common::BaseMsg* msg)
+void* test_client_protobuf_session::onResTestResponseTime(connection_info* conn_info, com::iod::pb::common::BaseMsg* msg)
 {
 	SAFE_GET_EXTENSION(msg, ResTestResponseTime, res);
 	iod_log_info("user %s, response time %llu", get_username(), IODUtility::get_time_usec() - res.req_timestamp());
+
+	return 0;
 }
 
-void test_client_protobuf_session::onNotifyKickout(com::iod::pb::common::BaseMsg* msg)
+void* test_client_protobuf_session::onNotifyKickout(connection_info* conn_info, com::iod::pb::common::BaseMsg* msg)
 {
 	SAFE_GET_EXTENSION(msg, NotifyKickout, notify);
 	iod_log_info("user %s kickout by server, reason %d", get_username(), notify.kick_reason());
+
+	return 0;
 }

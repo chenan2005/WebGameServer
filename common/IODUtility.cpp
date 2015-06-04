@@ -19,24 +19,52 @@ namespace IODUtility {
 		return (ev_uint64_t)_timeinterval.tv_sec * 1000000 + _timeinterval.tv_usec;
 	}
 
-	time_t MKTime( struct tm * _Tm )
+	time_t mktimeDaylyTimeFlag( struct tm * tmInput )
 	{
-		static int s_dst_flag = -1;
-		if (s_dst_flag == -1)
-		{
-			struct tm temp_tm;
-			memcpy(&temp_tm, _Tm, sizeof(temp_tm));	//复制一份_Tm防止指针内容被localtime覆盖		
+		static int localDayLightTimeFlag = -1;
+		if (localDayLightTimeFlag == -1) {
+			struct tm tmTemp;
+			memcpy(&tmTemp, tmInput, sizeof(tmTemp));	//复制一份tmInput防止指针内容被localtime覆盖		
 			time_t currentGMTimeT = time(NULL);
-			tm *plt = localtime(&currentGMTimeT);
-			s_dst_flag = plt->tm_isdst;
-			temp_tm.tm_isdst = s_dst_flag;
-			return mktime(&temp_tm);
+			tm *tmLocal = localtime(&currentGMTimeT);
+			localDayLightTimeFlag = tmLocal->tm_isdst;
+			tmTemp.tm_isdst = localDayLightTimeFlag;
+			return mktime(&tmTemp);
 		}
-		else
-		{
-			_Tm->tm_isdst = s_dst_flag;
-			return mktime(_Tm);
+		else {
+			tmInput->tm_isdst = localDayLightTimeFlag;
+			return mktime(tmInput);
 		}
+	}
+
+	bool isWordInList(const char* wordList, const char* word)
+	{
+		int wordStart = 0;
+		int wordEnd = 0;
+		int listLength = (int)strlen(wordList);
+		int fieldLength = (int)strlen(word);
+		while (wordStart < listLength && wordEnd < listLength + 1){
+
+			//寻找单词开头
+			while (wordStart < listLength && !isWordChar(wordList[wordStart])) {
+				wordStart++;
+			}
+
+			//寻找单词结尾
+			wordEnd = wordStart + 1;
+			while (wordEnd < listLength + 1 && isWordChar(wordList[wordEnd])) {
+				wordEnd++;
+			}
+
+			//比较单词
+			if (wordEnd - wordStart == fieldLength && memcmp(wordList + wordStart, word, wordEnd - wordStart) == 0) {
+				return true;
+			}
+
+			wordStart = wordEnd + 1;
+		}
+
+		return false;
 	}
 
 }

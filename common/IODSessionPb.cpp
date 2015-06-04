@@ -1,9 +1,7 @@
 #include "IODSessionPb.h"
 
-std::map< int, IODSessionPb::FNC_PB_MSG_HANDLER >* IODSessionPb::msg_handler_map;
-
-REG_PROTO_MSG_HANDLE_BEGIN(IODSessionPb, IODSessionPb)
-REG_PROTO_MSG_HANDLE_END(IODSessionPb)
+REG_PB_MSG_HANDLE_BEGIN(IODSessionPb)
+REG_PB_MSG_HANDLE_END()
 
 IODSessionPb::IODSessionPb( void )
 {
@@ -17,23 +15,7 @@ IODSessionPb::~IODSessionPb( void )
 
 void IODSessionPb::on_message( com::iod::pb::common::BaseMsg* msg )
 {
-	check_register_msg_handle();
-
-	std::map< int, FNC_PB_MSG_HANDLER >::iterator it = msg_handler_map->find(msg->message_id());
-	if (it == msg_handler_map->end())
-		return;
-
-	(this->*(it->second))(msg);
-}
-
-void IODSessionPb::on_packet( IODPacket* packet )
-{
-	com::iod::pb::common::BaseMsg* msg = new com::iod::pb::common::BaseMsg;
-	if (msg->ParseFromArray(packet->get_data(), packet->get_length()))
-	{
-		on_message(msg);
-	}
-	delete msg;
+	DISPATCH_MESSAGE(this->get_connection_info(), msg);
 }
 
 bool IODSessionPb::send_basemsg( com::iod::pb::common::BaseMsg* msg )
@@ -52,4 +34,35 @@ bool IODSessionPb::send_basemsg( com::iod::pb::common::BaseMsg* msg )
 	destroy_packet(packet);
 
 	return true;
+}
+
+bool IODSessionPb::send_basemsg_to(struct connection_info* conn_info, com::iod::pb::common::BaseMsg* msg)
+{
+	static char none_session_msg_serialize_buff[_MAX_PACKET_LENGTH];
+
+	if (!conn_info || !conn_info->conn_buffev)
+		return false;
+
+	IODPacket* packet = create_packet();
+
+	if (!msg->SerializeToArray(none_session_msg_serialize_buff, sizeof(none_session_msg_serialize_buff)))
+		return false;
+
+	packet->set_data(none_session_msg_serialize_buff, msg->ByteSize());
+
+	send_to(conn_info, packet);
+
+	destroy_packet(packet);
+
+	return true;
+}
+
+void IODSessionPb::on_packet( IODPacket* packet )
+{
+	com::iod::pb::common::BaseMsg* msg = new com::iod::pb::common::BaseMsg;
+	if (msg->ParseFromArray(packet->get_data(), packet->get_length()))
+	{
+		on_message(msg);
+	}
+	delete msg;
 }

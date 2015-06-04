@@ -6,7 +6,7 @@ class Room;
 class Player :
 	public IODSessionPb
 {
-	DEC_REG_PROTO_MSG_HANDLE(Player)
+	DEC_PB_MSG_HANDLE(Player)
 
 public:
 
@@ -48,15 +48,15 @@ public:
 	//message handlers
 	//---------------------------------------------------------------------
 
-	virtual void onReqLogin(com::iod::pb::common::BaseMsg* msg);
+	virtual void* onReqLogin(connection_info* conn_info, com::iod::pb::common::BaseMsg* msg);
 
-	virtual void onReqTestInfo(com::iod::pb::common::BaseMsg* msg);
+	virtual void* onReqTestInfo(connection_info* conn_info, com::iod::pb::common::BaseMsg* msg);
 
-	virtual void onReqLogout(com::iod::pb::common::BaseMsg* msg);
+	virtual void* onReqLogout(connection_info* conn_info, com::iod::pb::common::BaseMsg* msg);
 
-	virtual void onReqTestResponseTime(com::iod::pb::common::BaseMsg* msg);
+	virtual void* onReqTestResponseTime(connection_info* conn_info, com::iod::pb::common::BaseMsg* msg);
 
-	virtual void onReqCreateRole(com::iod::pb::common::BaseMsg* msg);
+	virtual void* onReqCreateRole(connection_info* conn_info, com::iod::pb::common::BaseMsg* msg);
 
 	//--------------------------------------------------
 

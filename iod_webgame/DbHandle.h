@@ -4,7 +4,7 @@
 
 class DbHandle : public IODSessionPb
 {
-	DEC_REG_PROTO_MSG_HANDLE(DbHandle)
+	DEC_PB_MSG_HANDLE(DbHandle)
 
 public:
 	DbHandle(void);

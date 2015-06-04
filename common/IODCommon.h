@@ -13,6 +13,12 @@ win32
 #include <conio.h>
 #define snprintf _snprintf
 
+int vsscanf(const char  *buffer, const char  *format, va_list argPtr);
+
+extern "C" {
+	char *strptime(const char *buf, const char *fmt, struct tm *tm);
+};
+
 #elif __x86_64
 
 /**

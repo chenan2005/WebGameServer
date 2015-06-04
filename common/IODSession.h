@@ -44,6 +44,8 @@ public:
 
 	bool send(IODPacket* packet);
 
+	bool send_to(connection_info* conn_info, IODPacket* packet);
+
 	void flush();
 
 	inline struct connection_info * get_connection_info() const { return conn_info; }

@@ -1,8 +1,8 @@
 #pragma once
 
-#include "IODPbMsgHandler.h"
+#include "IODMicroHelperPb.h"
 
-class Room : public IODPbMsgHandler
+class Room
 {
 	DEC_PB_MSG_HANDLE(Room);
 

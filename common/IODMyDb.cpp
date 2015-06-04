@@ -4,54 +4,6 @@ using namespace IODMyDb;
 
 MYSQL* IODMyDb::common_mysql_connection = NULL;
 
-#ifdef WIN32
-
-int vsscanf(
-			const char  *buffer,
-			const char  *format,
-			va_list     argPtr
-			)
-{
-	//// Get an upper bound for the # of args
-	//size_t count = 0;
-	//const char *p = format;
-	//while(1)
-	//{
-	//	char c = *(p++);
-	//	if(c==0) break;
-	//	if(c=='%' && (p[0]!='*' && p[0]!='%')) ++count;
-	//}
-
-	int iResult;
-	__asm 
-	{ 
-		push ebp
-		push [buffer]
-		push [format]
-		push [argPtr]
-		mov ebp, esp
-		push edi
-		push esi
-		sub esp, 400
-		mov edi, esp
-		mov esi, [ebp]
-		mov ecx, 100
-		rep movsd
-		push [ebp + 4]
-		push [ebp + 8]
-		call dword ptr [sscanf]
-		add esp, 408
-		pop esi
-		pop edi
-		add esp, 12
-		pop ebp
-		mov iResult, eax
-	}
-
-	return iResult;
-}
-#endif
-
 bool IODMyDb::initCommonConnection(const char* address, unsigned short port, const char* user, const char* pass, const char* dbname)
 {
 	if (IODMyDb::common_mysql_connection != 0)
@@ -204,7 +156,7 @@ const char* IODMyDb::getValueFromSzIntoField( void* pRecord, const STOutFieldInf
 				}
 				else
 				{
-					*(time_t*)((char*)(pRecord) + field.m_nOffset) = IODUtility::MKTime(&tm1);
+					*(time_t*)((char*)(pRecord) + field.m_nOffset) = IODUtility::mktimeDaylyTimeFlag(&tm1);
 				}				
 			}
 

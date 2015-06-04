@@ -2,41 +2,15 @@
 #ifndef _MYSQLTABLE_H_
 #define _MYSQLTABLE_H_
 
-#include "IODMyDb.h"
 #include "IODMyField.h"
+#include "IODMyDb.h"
 
 #define SQL_STMT_LENGTH 10240
 #define SQL_VALUE_LENGTH 10240
 
 #define UNLIMITED_RECORD_COUNT 0xffffffff
 
-#define IS_CHAR_AVIALABLE(x) ((x <= 'z' && x >= 'a') || (x <= 'Z' && x >= 'A') || (x <= '9' && x >= '0') || (x == '_'))
-
-inline bool is_field_in(const char* strFieldList, const char* strField)
-{
-	int idx = 0;
-	int wordStart = 0;
-	int wordEnd = 0;
-	while (wordEnd < (int)strlen(strFieldList) + 1)
-	{
-		if (IS_CHAR_AVIALABLE(strFieldList[wordEnd]))
-		{
-			wordEnd++;
-		}
-		else
-		{
-			if (wordEnd - wordStart == (int)strlen(strField) && memcmp(strFieldList + wordStart, strField, wordEnd - wordStart) == 0)
-			{
-				return true;
-			}
-			
-			wordEnd++;
-			wordStart = wordEnd;
-		}		
-	}
-
-	return false;
-}
+#define IS_CHAR_AVIALABLE(x) 
 
 template<typename T>
 void GetFieldSzValue( const T& record, const STFieldInfo& field, const unsigned int uiMaxSize, char* szValue, size_t& sSize, const MYSQL* pConn );
@@ -746,7 +720,7 @@ bool GetUpdateStmt( EIODFieldKey eKeyType, const T& record, char* pszStmt, size_
 		size_t sValueSize = 0;
 		
 		bool bValueGet = false;
-		if ((!(fieldDescriptor.m_pFieldInfo[idx].m_eKType & IOD_FIELD_KEY_AUTO_INC)) && (!pszUpdateFieldNames || is_field_in(pszUpdateFieldNames, fieldDescriptor.m_pFieldInfo[idx].m_pszFieldName)))
+		if ((!(fieldDescriptor.m_pFieldInfo[idx].m_eKType & IOD_FIELD_KEY_AUTO_INC)) && (!pszUpdateFieldNames || isWordInList(pszUpdateFieldNames, fieldDescriptor.m_pFieldInfo[idx].m_pszFieldName)))
 		{
 			GetFieldSzValue<T>(record, fieldDescriptor.m_pFieldInfo[idx], SQL_VALUE_LENGTH, szValue, sValueSize, pConn);
 			//TRACE("%s, %d, %s", fieldDescriptor.m_pFieldInfo[idx].m_pszFieldName, sValueSize, szValue);
@@ -839,7 +813,7 @@ bool GetUpdateStmt( const char* pszCompareFieldNames, const T& record, char* psz
 		size_t sValueSize = 0;
 		
 		bool bValueGet = false;
-		if ((!(fieldDescriptor.m_pFieldInfo[idx].m_eKType & IOD_FIELD_KEY_AUTO_INC)) && (!pszUpdateFieldNames || is_field_in(pszUpdateFieldNames, fieldDescriptor.m_pFieldInfo[idx].m_pszFieldName)))
+		if ((!(fieldDescriptor.m_pFieldInfo[idx].m_eKType & IOD_FIELD_KEY_AUTO_INC)) && (!pszUpdateFieldNames || isWordInList(pszUpdateFieldNames, fieldDescriptor.m_pFieldInfo[idx].m_pszFieldName)))
 		{
 			GetFieldSzValue<T>(record, fieldDescriptor.m_pFieldInfo[idx], SQL_VALUE_LENGTH, szValue, sValueSize, pConn);
 			bValueGet = true;
@@ -863,7 +837,7 @@ bool GetUpdateStmt( const char* pszCompareFieldNames, const T& record, char* psz
 
 		//--------------------------------------------------------------------------------
 
-		if (is_field_in(pszCompareFieldNames, fieldDescriptor.m_pFieldInfo[idx].m_pszFieldName))
+		if (isWordInList(pszCompareFieldNames, fieldDescriptor.m_pFieldInfo[idx].m_pszFieldName))
 		{
 			if (!bValueGet)
 			{
@@ -924,7 +898,7 @@ bool GetInsertStmt( const T& record, char* pszStmt, size_t& size, MYSQL* pConn, 
 		}
 
 		//如果pszValidFieldNames非空，忽略pszValidFieldNames不包含的字段
-		if (pszValidFieldNames && !is_field_in(pszValidFieldNames, fieldDescriptor.m_pFieldInfo[idx].m_pszFieldName))
+		if (pszValidFieldNames && !isWordInList(pszValidFieldNames, fieldDescriptor.m_pFieldInfo[idx].m_pszFieldName))
 		{
 			continue;
 		}
@@ -1040,7 +1014,7 @@ bool GetDeleteStmt( const char* pszCompareFieldNames, const T& record, char* psz
 	{
 		//--------------------------------------------------------------------------------
 
-		if (is_field_in(pszCompareFieldNames, fieldDescriptor.m_pFieldInfo[idx].m_pszFieldName))
+		if (isWordInList(pszCompareFieldNames, fieldDescriptor.m_pFieldInfo[idx].m_pszFieldName))
 		{
 			char szValue[SQL_VALUE_LENGTH];
 			size_t sValueSize = 0;
@@ -1151,7 +1125,7 @@ bool GetQueryStmt( const char* pszCompareFieldNames, const T& record, char* pszS
 	size_t szWhereLength = 0;
 	for (unsigned short idx = 0; idx < fieldDescriptor.m_usFieldCount; idx++)
 	{
-		if (pszReturnFieldNames == NULL || is_field_in(pszReturnFieldNames, fieldDescriptor.m_pFieldInfo[idx].m_pszFieldName))
+		if (pszReturnFieldNames == NULL || isWordInList(pszReturnFieldNames, fieldDescriptor.m_pFieldInfo[idx].m_pszFieldName))
 		{
 			if (!szSelect[0])
 			{
@@ -1163,7 +1137,7 @@ bool GetQueryStmt( const char* pszCompareFieldNames, const T& record, char* pszS
 			}
 		}
 
-		if (is_field_in(pszCompareFieldNames, fieldDescriptor.m_pFieldInfo[idx].m_pszFieldName))
+		if (isWordInList(pszCompareFieldNames, fieldDescriptor.m_pFieldInfo[idx].m_pszFieldName))
 		{
 			char szValue[SQL_VALUE_LENGTH];
 			size_t sValueSize = 0;
@@ -1367,7 +1341,7 @@ const char* GetValueFromSzField( T& record, const STFieldInfo& field, const char
 				}
 				else
 				{
-					*(time_t*)((char*)(&record) + field.m_nOffset) = IODUtility::MKTime(&tm1);
+					*(time_t*)((char*)(&record) + field.m_nOffset) = IODUtility::mktimeDaylyTimeFlag(&tm1);
 				}				
 			}
 			

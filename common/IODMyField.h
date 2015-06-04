@@ -20,10 +20,6 @@
 //#define IOD_SRV_CRIT(...)
 //#define IOD_SRV_INFO(...)
 
-extern "C" {
-	char *strptime(const char *buf, const char *fmt, struct tm *tm);
-};
-
 //声明类相关表字段
 #define DECLARE_TABLE_INFO(className)	\
 private:\
