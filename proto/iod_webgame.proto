@@ -118,6 +118,16 @@ message NotifyBroadCastInfo {
     required sint32 info_data = 3;
 }
 
+message ReqCreateRole {
+    required string account = 1;
+    required string name = 2;
+}
+
+message ResCreateRole {
+    required sint32 result = 1;
+    optional RoleInfo role_info = 2;
+}
+
 extend com.iod.pb.common.BaseMsg {
 	optional ReqAuthentication idReqAuthentication = 1000;
 	optional ResAuthentication idResAuthentication = 1001;
@@ -129,4 +139,22 @@ extend com.iod.pb.common.BaseMsg {
 	optional ReqTestResponseTime idReqTestResponseTime = 1007;
 	optional ResTestResponseTime idResTestResponseTime = 1008;
 	optional NotifyKickout idNotifyKickout = 1009;
+	optional ReqRoomList idReqRoomList = 1010;
+	optional ResRoomList idResRoomList = 1011;
+	optional ReqCreateRoom idReqCreateRoom = 1012;
+	optional ResCreateRoom idResCreateRoom = 1013;
+	optional ReqJoinRoom idReqJoinRoom = 1014;	
+	optional ResJoinRoom idResJoinRoom = 1015;	
+	optional ReqLeaveRoom idReqLeaveRoom = 1016;	
+	optional ResLeaveRoom idResLeaveRoom = 1017;	
+	optional NotifyRoomPlayerUpdate idNotifyRoomPlayerUpdate = 1018;
+	optional ReqStartGame idReqStartGame = 1019;
+	optional NotifyStartGame idNotifyStartGame = 1020;
+	optional ReqLeaveGame idReqLeaveGame = 1021;
+	optional ResLeaveGame idResLeaveGame = 1022;
+	optional NotifyGamePlayerUpdate idNotifyGamePlayerUpdate = 1023;
+	optional ReqBroadCastInfo idReqBroadCastInfo = 1024;
+	optional NotifyBroadCastInfo idNotifyBroadCastInfo = 1025;
+	optional ReqCreateRole idReqCreateRole = 1026;
+	optional ResCreateRole idResCreateRole = 1027;
 }

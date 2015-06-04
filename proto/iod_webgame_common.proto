@@ -61,6 +61,19 @@ message RoleInfo {
     required bytes flags = 5; //标识信息
 }
 
+//3d position
+message Position3D {
+    required float x = 1;
+    required float y = 2;
+    required float z = 3;
+}
+
+//2d position
+message Position2D {
+    required float x = 1;
+    required float y = 2;
+}
+
 //玩家
 message PlayerInfo {
     required sint32 id = 1; //玩家实例ID
