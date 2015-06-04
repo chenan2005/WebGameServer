@@ -17,28 +17,28 @@ message Authorization {
 //玩家索引数值
 message RoleIndexValue {
     optional sint64 owner_uid = 1;
-    required sint32 index = 2;
+    required sint32 idx = 2;
     required sint32 value = 3;
 }
 
 //玩家索引数据块
 message RoleIndexData {
     optional sint64 owner_uid = 1;
-    required sint32 index = 2;
+    required sint32 idx = 2;
     required bytes data = 3;
 }
 
 //道具索引数值
 message ItemIndexValue {
     optional sint64 item_uid = 1;
-    required sint32 index = 2;
+    required sint32 idx = 2;
     required sint32 value = 3;
 }
 
 //道具索引数据块
 message ItemIndexData {
     optional sint64 item_uid = 1;
-    required sint32 index = 2;
+    required sint32 idx = 2;
     required bytes data = 3;
 }
 
