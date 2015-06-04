@@ -305,7 +305,7 @@
 			</Filter>
 		</Filter>
 		<Filter
-			Name="Protocol"
+			Name="protocol"
 			>
 			<File
 				RelativePath="..\protocol\IODWebGame.pb.cc"
@@ -340,7 +340,7 @@
 				>
 			</File>
 			<File
-				RelativePath="..\common\IODMyTable.h"
+				RelativePath="..\common\IODMyTableTpl.h"
 				>
 			</File>
 			<File

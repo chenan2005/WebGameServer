@@ -52,7 +52,7 @@ int vsscanf(
 }
 #endif
 
-bool IODMyDb::InitCommonMysqlConnection(const char* address, unsigned short port, const char* user, const char* pass, const char* dbname)
+bool IODMyDb::initCommonConnection(const char* address, unsigned short port, const char* user, const char* pass, const char* dbname)
 {
 	if (IODMyDb::common_mysql_connection != 0)
 		return false;
@@ -82,7 +82,7 @@ bool IODMyDb::InitCommonMysqlConnection(const char* address, unsigned short port
 	return true;
 }
 
-const char* IODMyDb::GetValueFromSzFieldIntoRecord( void* pRecord, const STOutFieldInfo& field, const char* szValue, unsigned long ulLength )
+const char* IODMyDb::getValueFromSzIntoField( void* pRecord, const STOutFieldInfo& field, const char* szValue, unsigned long ulLength )
 {
 	switch (field.m_eVType)
 	{
@@ -726,11 +726,11 @@ const char* IODMyDb::GetValueFromSzFieldIntoRecord( void* pRecord, const STOutFi
 //	
 //}
 
-const char* IODMyDb::FreeQuery( MYSQL* pConn, const char* pszSql, const char* pszRetValueFormat, ... )
+const char* IODMyDb::freeQuery( MYSQL* pConn, const char* pszSql, const char* pszRetValueFormat, ... )
 {
 	char szRetBuff[1024] = {0};
 
-	if (const char* pszErr = FreeQuery(pConn, pszSql, szRetBuff))
+	if (const char* pszErr = freeQuery(pConn, pszSql, szRetBuff))
 	{
 		return pszErr;
 	}
@@ -743,7 +743,7 @@ const char* IODMyDb::FreeQuery( MYSQL* pConn, const char* pszSql, const char* ps
 	return NULL;
 }
 
-const char* IODMyDb::FreeQuery( MYSQL* pConn, const char* pszSql, char* szRet /* = NULL*/ )
+const char* IODMyDb::freeQuery( MYSQL* pConn, const char* pszSql, char* szRet /* = NULL*/ )
 {
 	{
 		//IODDB::STAutoTiming stAutoTiming(pszSql, 1);
@@ -830,15 +830,15 @@ void IODMyDb::TestFreeQuery( MYSQL* pConn )
 		__out_field("outName", STQueryResult, szName, IOD_FIELD_TYPE_STRING)
 	};
 	unsigned long ulResultCount;
-	const char* pszErr1 = IODMyDb::FreeQuery(pConn, "select RoleId as outId, RoleName as outName from TRoleInfo limit 1, 10", 
+	const char* pszErr1 = IODMyDb::freeQuery(pConn, "select RoleId as outId, RoleName as outName from TRoleInfo limit 1, 10", 
 		oQueryResult /*query result pointer*/, &ulResultCount, 
 		sizeof(oQueryResult)/sizeof(STQueryResult) /*max count of query result*/, 
 		outFileInfo, 2 /*out field count*/);
 
 	char szQueryResult[100];
-	const char* pszErr2 = IODMyDb::FreeQuery(pConn, "select RoleId as outId, RoleName as outName from TRoleInfo limit 1", szQueryResult);
+	const char* pszErr2 = IODMyDb::freeQuery(pConn, "select RoleId as outId, RoleName as outName from TRoleInfo limit 1", szQueryResult);
 
 	uint64 nRetId;
 	char szRetName[64];
-	const char* pszErr3 = IODMyDb::FreeQuery(pConn, "select RoleId as outId, RoleName as outName from TRoleInfo limit 1", "%llu,%s", &nRetId, szRetName);
+	const char* pszErr3 = IODMyDb::freeQuery(pConn, "select RoleId as outId, RoleName as outName from TRoleInfo limit 1", "%llu,%s", &nRetId, szRetName);
 }
