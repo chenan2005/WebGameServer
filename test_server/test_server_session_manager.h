@@ -1,11 +1,11 @@
 #pragma once
 
-#include "iod_session_manager.h"
+#include "IODSessionManager.h"
 
 class test_server_session;
 
 class test_server_session_manager :
-	public iod_session_manager
+	public IODSessionManager
 {
 public:
 
@@ -17,9 +17,9 @@ public:
 
 	inline unsigned int get_session_count() const { return (unsigned int)sessions.size(); }
 
-	virtual iod_session* on_none_session_packet(connection_info* conn_info, iod_packet* packet);
+	virtual IODSession* on_none_session_packet(connection_info* conn_info, IODPacket* packet);
 
-	virtual iod_packet* preproc_session_packet(iod_session* session, iod_packet* packet);
+	virtual IODPacket* preproc_session_packet(IODSession* session, IODPacket* packet);
 
 	unsigned int create_session_count;
 

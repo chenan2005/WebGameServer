@@ -1,8 +1,8 @@
 #pragma once
-#include "iod_session.h"
+#include "IODSession.h"
 
 class test_server_session :
-	public iod_session
+	public IODSession
 {
 public:
 
@@ -32,7 +32,7 @@ public:
 		return last_send_command_time;
 	}
 
-	virtual void on_packet(iod_packet* packet);
+	virtual void on_packet(IODPacket* packet);
 
 	virtual void on_closed(int reason);
 

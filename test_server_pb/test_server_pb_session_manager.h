@@ -1,11 +1,11 @@
 #pragma once
 
-#include "iod_session_manager_pb.h"
+#include "IODSessionManagerPb.h"
 
 class test_server_pb_session;
 
 class test_server_pb_session_manager :
-	public iod_session_manager_pb
+	public IODSessionManagerPb
 {
 	DEC_REG_PROTO_MSG_HANDLE(test_server_pb_session_manager)
 
@@ -15,7 +15,7 @@ public:
 
 	virtual ~test_server_pb_session_manager(void);
 
-	void kickout(iod_session* session, int reason);
+	void kickout(IODSession* session, int reason);
 
 	void random_kick(int num);
 
@@ -27,11 +27,11 @@ public:
 	//message handlers
 	//---------------------------------------------------------------------
 
-	virtual iod_session* onReqAuthentication(struct connection_info* conn_info, com::iod::pb::common::BaseMsg* msg);
+	virtual IODSession* onReqAuthentication(struct connection_info* conn_info, com::iod::pb::common::BaseMsg* msg);
 
-	virtual iod_session* onReqLogin(struct connection_info* conn_info, com::iod::pb::common::BaseMsg* msg);
+	virtual IODSession* onReqLogin(struct connection_info* conn_info, com::iod::pb::common::BaseMsg* msg);
 
-	virtual iod_session* onTestMsg1(struct connection_info* conn_info, com::iod::pb::common::BaseMsg* msg);
+	virtual IODSession* onTestMsg1(struct connection_info* conn_info, com::iod::pb::common::BaseMsg* msg);
 
 	//---------------------------------------------------------------------
 

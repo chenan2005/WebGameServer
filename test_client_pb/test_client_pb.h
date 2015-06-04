@@ -2,11 +2,11 @@
 #define __TEST_CLIENT_PROTOBUF_H__
 
 #include <set>
-#include "iod_server.h"
+#include "IODServer.h"
 
 class test_client_protobuf_session;
 
-class test_client_pb : public iod_server
+class test_client_pb : public IODServer
 {
 public:
 

@@ -176,50 +176,50 @@
 			Name="framework"
 			>
 			<File
-				RelativePath="..\common\iod_common.h"
+				RelativePath="..\common\IODCommon.h"
 				>
 			</File>
 			<File
-				RelativePath="..\common\iod_logsystem.cpp"
+				RelativePath="..\common\IODLogSystem.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\common\iod_logsystem.h"
+				RelativePath="..\common\IODLogSystem.h"
 				>
 			</File>
 			<File
-				RelativePath="..\common\iod_micro_helper.h"
+				RelativePath="..\common\IODMicroHelper.h"
 				>
 			</File>
 			<File
-				RelativePath="..\common\iod_server.cpp"
+				RelativePath="..\common\IODServer.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\common\iod_server.h"
+				RelativePath="..\common\IODServer.h"
 				>
 			</File>
 			<File
-				RelativePath="..\common\iod_singleton.h"
+				RelativePath="..\common\IODSingleton.h"
 				>
 			</File>
 			<File
-				RelativePath="..\common\iod_timer_handler.cpp"
+				RelativePath="..\common\IODTimerHandler.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\common\iod_timer_handler.h"
+				RelativePath="..\common\IODTimerHandler.h"
 				>
 			</File>
 			<Filter
 				Name="utility"
 				>
 				<File
-					RelativePath="..\common\iod_utility.cpp"
+					RelativePath="..\common\IODUtility.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\common\iod_utility.h"
+					RelativePath="..\common\IODUtility.h"
 					>
 				</File>
 			</Filter>
@@ -227,35 +227,35 @@
 				Name="network"
 				>
 				<File
-					RelativePath="..\common\iod_network.cpp"
+					RelativePath="..\common\IODNetwork.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\common\iod_network.h"
+					RelativePath="..\common\IODNetwork.h"
 					>
 				</File>
 				<File
-					RelativePath="..\common\iod_packet.cpp"
+					RelativePath="..\common\IODPacket.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\common\iod_packet.h"
+					RelativePath="..\common\IODPacket.h"
 					>
 				</File>
 				<File
-					RelativePath="..\common\iod_session.cpp"
+					RelativePath="..\common\IODSession.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\common\iod_session.h"
+					RelativePath="..\common\IODSession.h"
 					>
 				</File>
 				<File
-					RelativePath="..\common\iod_session_manager.cpp"
+					RelativePath="..\common\IODSessionManager.cpp"
 					>
 				</File>
 				<File
-					RelativePath="..\common\iod_session_manager.h"
+					RelativePath="..\common\IODSessionManager.h"
 					>
 				</File>
 			</Filter>

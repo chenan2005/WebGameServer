@@ -1,8 +1,8 @@
 #pragma once
 
-#include "iod_session_pb.h"
+#include "IODSessionPb.h"
 
-class DbHandle : public iod_session_pb
+class DbHandle : public IODSessionPb
 {
 	DEC_REG_PROTO_MSG_HANDLE(DbHandle)
 

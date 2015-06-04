@@ -1,7 +1,7 @@
 #include "test_client_pb.h"
-#include "iod_common.h"
+#include "IODCommon.h"
 #include "test_client_pb_session.h"
-#include "iod_logsystem.h"
+#include "IODLogSystem.h"
 
 IMPLEMENT_SINGLETON_INSTANCE(test_client_pb);
 
@@ -35,10 +35,10 @@ int test_client_pb::update_server()
 	std::set< test_client_protobuf_session* >::iterator it = sessions.begin();
 	while (it != sessions.end()) {
 		test_client_protobuf_session* session = *it;
-		if (session->get_net_stat() == iod_session::SNS_NONE && iod_utility::get_time_msec() > session->get_next_try_login_time()) {
+		if (session->get_net_stat() == IODSession::SNS_NONE && IODUtility::get_time_msec() > session->get_next_try_login_time()) {
 			session->connect("127.0.0.1:12345");
 		}
-		else if (session->get_net_stat() == iod_session::SNS_CONNECTED && iod_utility::get_time_msec() > session->get_last_send_command_time() + 5) {
+		else if (session->get_net_stat() == IODSession::SNS_CONNECTED && IODUtility::get_time_msec() > session->get_last_send_command_time() + 5) {
 			
 			if (session->get_login_state() == test_client_protobuf_session::LOGIN_STATE_NONE) {
 				session->sendReqAuthentication(session->get_username());
@@ -78,7 +78,7 @@ void test_client_pb::on_winsys_kbhit(int c)
 		while (it != sessions.end()) {
 			test_client_protobuf_session* session = *it;
 			if (session->get_login_state() == test_client_protobuf_session::LOGIN_STATE_LOGINED) {
-				session->sendReqTestResponseTime(iod_utility::get_time_usec());
+				session->sendReqTestResponseTime(IODUtility::get_time_usec());
 				has_send = true;
 				break;
 			}

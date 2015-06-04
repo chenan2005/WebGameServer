@@ -1,10 +1,10 @@
 #include "test_client_pb_session.h"
-#include "iod_test.pb.h"
-#include "iod_logsystem.h"
+#include "IODTest.pb.h"
+#include "IODLogSystem.h"
 
 using namespace com::iod::pb::test;
 
-REG_PROTO_MSG_HANDLE_BEGIN(test_client_protobuf_session, iod_session_pb)
+REG_PROTO_MSG_HANDLE_BEGIN(test_client_protobuf_session, IODSessionPb)
 
 ADD_PROTO_MSG_HANDLE(ResAuthentication, test_client_protobuf_session::onResAuthentication)
 ADD_PROTO_MSG_HANDLE(ResLogin, test_client_protobuf_session::onResLogin)
@@ -133,7 +133,7 @@ void test_client_protobuf_session::onResTestInfo(com::iod::pb::common::BaseMsg* 
 void test_client_protobuf_session::onResTestResponseTime(com::iod::pb::common::BaseMsg* msg)
 {
 	SAFE_GET_EXTENSION(msg, ResTestResponseTime, res);
-	iod_log_info("user %s, response time %llu", get_username(), iod_utility::get_time_usec() - res.req_timestamp());
+	iod_log_info("user %s, response time %llu", get_username(), IODUtility::get_time_usec() - res.req_timestamp());
 }
 
 void test_client_protobuf_session::onNotifyKickout(com::iod::pb::common::BaseMsg* msg)

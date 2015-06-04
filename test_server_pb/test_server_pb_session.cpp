@@ -1,10 +1,10 @@
 #include "test_server_pb_session.h"
-#include "iod_logsystem.h"
-#include "iod_test.pb.h"
+#include "IODLogSystem.h"
+#include "IODTest.pb.h"
 
 using namespace com::iod::pb::test;
 
-REG_PROTO_MSG_HANDLE_BEGIN(test_server_pb_session, iod_session_pb)
+REG_PROTO_MSG_HANDLE_BEGIN(test_server_pb_session, IODSessionPb)
 
 ADD_PROTO_MSG_HANDLE(ReqLogin, test_server_pb_session::onReqLogin);
 ADD_PROTO_MSG_HANDLE(ReqTestInfo, test_server_pb_session::onReqTestInfo);

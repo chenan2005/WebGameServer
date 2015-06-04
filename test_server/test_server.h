@@ -1,11 +1,11 @@
 #ifndef __TEST_SERVER_H__
 #define __TEST_SERVER_H__
 
-#include "iod_server.h"
+#include "IODServer.h"
 
 class test_server_session_manager;
 
-class test_server	: public iod_server
+class test_server	: public IODServer
 {
 public:
 

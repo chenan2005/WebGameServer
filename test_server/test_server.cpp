@@ -1,7 +1,7 @@
 #include "test_server.h"
 #include "test_server_session_manager.h"
-#include "iod_network.h"
-#include "iod_logsystem.h"
+#include "IODNetwork.h"
+#include "IODLogSystem.h"
 
 IMPLEMENT_SINGLETON_INSTANCE(test_server);
 
@@ -17,7 +17,7 @@ bool test_server::initialize_server()
 {
 	session_manager = new test_server_session_manager;
 
-	session_manager->l_info = iod_network::start_listener(session_manager, "0.0.0.0:12345");
+	session_manager->l_info = IODNetwork::start_listener(session_manager, "0.0.0.0:12345");
 
 	if (!session_manager->l_info){
 		iod_log_error("server initialize failed!");
@@ -38,7 +38,7 @@ int test_server::update_server()
 void test_server::shutdown_server()
 {
 	if (session_manager->l_info)
-		iod_network::shutdown_listener(session_manager->l_info);
+		IODNetwork::shutdown_listener(session_manager->l_info);
 
 	delete session_manager;
 
@@ -68,7 +68,7 @@ void test_server::on_winsys_kbhit( int c )
 			session_manager->create_session_count,
 			session_manager->destroy_session_count,
 			session_manager->get_session_count(),
-			iod_utility::get_time_msec());
+			IODUtility::get_time_msec());
 	}
 }
 

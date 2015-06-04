@@ -2,11 +2,11 @@
 #define __TEST_CLIENT_H__
 
 #include <set>
-#include "iod_server.h"
+#include "IODServer.h"
 
 class test_client_session;
 
-class test_client : public iod_server
+class test_client : public IODServer
 {
 public:
 	test_client(void);

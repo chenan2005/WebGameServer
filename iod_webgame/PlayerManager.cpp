@@ -1,12 +1,12 @@
 #include "PlayerManager.h"
 #include "Player.h"
-#include "iod_webgame.pb.h"
-#include "iod_utility.h"
-#include "iod_logsystem.h"
+#include "IODWebGame.pb.h"
+#include "IODUtility.h"
+#include "IODLogSystem.h"
 
 using namespace com::iod::pb::webgame;
 
-REG_PROTO_MSG_HANDLE_BEGIN(PlayerManager, iod_session_manager_pb)
+REG_PROTO_MSG_HANDLE_BEGIN(PlayerManager, IODSessionManagerPb)
 
 ADD_PROTO_MSG_HANDLE(ReqAuthentication, PlayerManager::onReqAuthentication)
 
@@ -28,7 +28,7 @@ PlayerManager::~PlayerManager(void)
 	}
 }
 
-iod_session* PlayerManager::onReqAuthentication( struct connection_info* conn_info, com::iod::pb::common::BaseMsg* msg )
+IODSession* PlayerManager::onReqAuthentication( struct connection_info* conn_info, com::iod::pb::common::BaseMsg* msg )
 {
 	SAFE_GET_NONE_SESSION_EXTENSION(msg, ReqAuthentication, req);
 
@@ -48,7 +48,7 @@ iod_session* PlayerManager::onReqAuthentication( struct connection_info* conn_in
 	return 0;
 }
 
-iod_session* PlayerManager::onReqLogin( struct connection_info* conn_info, com::iod::pb::common::BaseMsg* msg )
+IODSession* PlayerManager::onReqLogin( struct connection_info* conn_info, com::iod::pb::common::BaseMsg* msg )
 {
 	SAFE_GET_NONE_SESSION_EXTENSION(msg, ReqLogin, req);
 
@@ -77,13 +77,13 @@ iod_session* PlayerManager::onReqLogin( struct connection_info* conn_info, com::
 }
 
 
-void PlayerManager::kickout(iod_session* session, int reason)
+void PlayerManager::kickout(IODSession* session, int reason)
 {
 	NotifyKickout notify;
 	notify.set_kick_reason(reason);
 	SEND_MESSAGE_TO(session->get_connection_info(), NotifyKickout, notify);
 	session->flush();
-	session->shedule_timer(2000, (iod_timer_handler::FNC_TIMER_CALLBACK)&Player::on_timer_close_session, 0, true);
+	session->shedule_timer(2000, (IODTimerHandler::FNC_TIMER_CALLBACK)&Player::on_timer_close_session, 0, true);
 }
 
 void PlayerManager::random_kick(int num)
@@ -91,7 +91,7 @@ void PlayerManager::random_kick(int num)
 	int kick_num = 0;
 	std::map< std::string, Player* >::iterator it = sessions.begin();
 	while (it != sessions.end()) {
-		if (it->second->get_net_stat() == iod_session::SNS_CONNECTED) {
+		if (it->second->get_net_stat() == IODSession::SNS_CONNECTED) {
 			kickout(it->second, 1);
 			kick_num++;
 		}
@@ -105,8 +105,8 @@ void PlayerManager::check_sessions()
 {
 	std::map< std::string, Player* >::iterator it = sessions.begin();
 	while (it != sessions.end()) {
-		if (it->second->get_net_stat() != iod_session::SNS_CONNECTED
-			&& iod_utility::get_time_msec() > it->second->get_last_net_state_time() + 10000) {
+		if (it->second->get_net_stat() != IODSession::SNS_CONNECTED
+			&& IODUtility::get_time_msec() > it->second->get_last_net_state_time() + 10000) {
 			delete it->second;
 			destroy_session_count++;
 			it = sessions.erase(it);

@@ -1,7 +1,7 @@
 #include "WebGameServer.h"
 #include "PlayerManager.h"
-#include "iod_network.h"
-#include "iod_logsystem.h"
+#include "IODNetwork.h"
+#include "IODLogSystem.h"
 
 IMPLEMENT_SINGLETON_INSTANCE(WebGameServer);
 
@@ -17,7 +17,7 @@ bool WebGameServer::initialize_server()
 {
 	session_manager = new PlayerManager;
 
-	session_manager->l_info = iod_network::start_listener(session_manager, "0.0.0.0:12345");
+	session_manager->l_info = IODNetwork::start_listener(session_manager, "0.0.0.0:12345");
 
 	if (!session_manager->l_info){
 		iod_log_error("server initialize failed!");
@@ -33,9 +33,9 @@ int WebGameServer::update_server()
 {
 	session_manager->check_sessions();
 
-	static unsigned int last_random_kick_time = iod_utility::get_time_msec();
+	static unsigned int last_random_kick_time = IODUtility::get_time_msec();
 	
-	unsigned int current = iod_utility::get_time_msec();
+	unsigned int current = IODUtility::get_time_msec();
 	if (current > last_random_kick_time + 120000) {
 		session_manager->random_kick(rand() % 100);
 		last_random_kick_time = current;
@@ -47,7 +47,7 @@ int WebGameServer::update_server()
 void WebGameServer::shutdown_server()
 {
 	if (session_manager->l_info)
-		iod_network::shutdown_listener(session_manager->l_info);
+		IODNetwork::shutdown_listener(session_manager->l_info);
 
 	delete session_manager;
 
@@ -77,7 +77,7 @@ void WebGameServer::on_winsys_kbhit( int c )
 			session_manager->create_session_count,
 			session_manager->destroy_session_count,
 			session_manager->get_session_count(),
-			iod_utility::get_time_msec());
+			IODUtility::get_time_msec());
 	}
 	else if (c =='k') {
 		session_manager->random_kick(rand() % 100);

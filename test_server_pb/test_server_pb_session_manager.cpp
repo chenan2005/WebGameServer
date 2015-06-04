@@ -1,12 +1,12 @@
 #include "test_server_pb_session_manager.h"
 #include "test_server_pb_session.h"
-#include "iod_test.pb.h"
-#include "iod_utility.h"
-#include "iod_logsystem.h"
+#include "IODTest.pb.h"
+#include "IODUtility.h"
+#include "IODLogSystem.h"
 
 using namespace com::iod::pb::test;
 
-REG_PROTO_MSG_HANDLE_BEGIN(test_server_pb_session_manager, iod_session_manager_pb)
+REG_PROTO_MSG_HANDLE_BEGIN(test_server_pb_session_manager, IODSessionManagerPb)
 
 ADD_PROTO_MSG_HANDLE(ReqAuthentication, test_server_pb_session_manager::onReqAuthentication)
 
@@ -30,7 +30,7 @@ test_server_pb_session_manager::~test_server_pb_session_manager(void)
 	}
 }
 
-iod_session* test_server_pb_session_manager::onReqAuthentication( struct connection_info* conn_info, com::iod::pb::common::BaseMsg* msg )
+IODSession* test_server_pb_session_manager::onReqAuthentication( struct connection_info* conn_info, com::iod::pb::common::BaseMsg* msg )
 {
 	SAFE_GET_NONE_SESSION_EXTENSION(msg, ReqAuthentication, req);
 
@@ -50,7 +50,7 @@ iod_session* test_server_pb_session_manager::onReqAuthentication( struct connect
 	return 0;
 }
 
-iod_session* test_server_pb_session_manager::onReqLogin( struct connection_info* conn_info, com::iod::pb::common::BaseMsg* msg )
+IODSession* test_server_pb_session_manager::onReqLogin( struct connection_info* conn_info, com::iod::pb::common::BaseMsg* msg )
 {
 	SAFE_GET_NONE_SESSION_EXTENSION(msg, ReqLogin, req);
 
@@ -79,7 +79,7 @@ iod_session* test_server_pb_session_manager::onReqLogin( struct connection_info*
 	return 0;
 }
 
-iod_session* test_server_pb_session_manager::onTestMsg1(struct connection_info* conn_info, com::iod::pb::common::BaseMsg* msg)
+IODSession* test_server_pb_session_manager::onTestMsg1(struct connection_info* conn_info, com::iod::pb::common::BaseMsg* msg)
 {
 	SAFE_GET_NONE_SESSION_EXTENSION(msg, TestMsg1, req);
 	TestMsg1 res;
@@ -93,13 +93,13 @@ iod_session* test_server_pb_session_manager::onTestMsg1(struct connection_info* 
 	return 0;
 }
 
-void test_server_pb_session_manager::kickout(iod_session* session, int reason)
+void test_server_pb_session_manager::kickout(IODSession* session, int reason)
 {
 	NotifyKickout notify;
 	notify.set_kick_reason(reason);
 	SEND_MESSAGE_TO(session->get_connection_info(), NotifyKickout, notify);
 	session->flush();
-	session->shedule_timer(2000, (iod_timer_handler::FNC_TIMER_CALLBACK)&test_server_pb_session::on_timer_close_session, 0, true);
+	session->shedule_timer(2000, (IODTimerHandler::FNC_TIMER_CALLBACK)&test_server_pb_session::on_timer_close_session, 0, true);
 }
 
 void test_server_pb_session_manager::random_kick(int num)
@@ -107,7 +107,7 @@ void test_server_pb_session_manager::random_kick(int num)
 	int kick_num = 0;
 	std::map< std::string, test_server_pb_session* >::iterator it = sessions.begin();
 	while (it != sessions.end()) {
-		if (it->second->get_net_stat() == iod_session::SNS_CONNECTED) {
+		if (it->second->get_net_stat() == IODSession::SNS_CONNECTED) {
 			kickout(it->second, 1);
 			kick_num++;
 		}
@@ -121,8 +121,8 @@ void test_server_pb_session_manager::check_sessions()
 {
 	std::map< std::string, test_server_pb_session* >::iterator it = sessions.begin();
 	while (it != sessions.end()) {
-		if (it->second->get_net_stat() != iod_session::SNS_CONNECTED
-			&& iod_utility::get_time_msec() > it->second->get_last_net_state_time() + 10000) {
+		if (it->second->get_net_stat() != IODSession::SNS_CONNECTED
+			&& IODUtility::get_time_msec() > it->second->get_last_net_state_time() + 10000) {
 			delete it->second;
 			destroy_session_count++;
 			it = sessions.erase(it);

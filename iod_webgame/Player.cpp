@@ -1,11 +1,11 @@
 #include "Player.h"
-#include "iod_logsystem.h"
-#include "iod_webgame.pb.h"
-#include "MySqlDB.h"
+#include "IODLogSystem.h"
+#include "IODWebGame.pb.h"
+#include "IODMyDb.h"
 
 using namespace com::iod::pb::webgame;
 
-REG_PROTO_MSG_HANDLE_BEGIN(Player, iod_session_pb)
+REG_PROTO_MSG_HANDLE_BEGIN(Player, IODSessionPb)
 
 ADD_PROTO_MSG_HANDLE(ReqLogin, Player::onReqLogin);
 ADD_PROTO_MSG_HANDLE(ReqTestInfo, Player::onReqTestInfo);

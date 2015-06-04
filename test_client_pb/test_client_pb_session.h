@@ -1,9 +1,9 @@
 #pragma once
-#include "iod_session_pb.h"
-#include "common/iod_common.pb.h"
+#include "IODSessionPb.h"
+#include "common/IODCommon.pb.h"
 
 class test_client_protobuf_session :
-	public iod_session_pb
+	public IODSessionPb
 {
 
 	DEC_REG_PROTO_MSG_HANDLE(test_client_protobuf_session)
@@ -81,14 +81,14 @@ public:
 protected:
 
 	inline void update_last_send_command_time() {
-		last_send_command_time = iod_utility::get_time_msec();
+		last_send_command_time = IODUtility::get_time_msec();
 	}
 
 	inline void set_login_state(int state) {
 		if (state != this->login_stat) {
 			this->login_stat = state;
 			if (state == LOGIN_STATE_NONE)
-				next_try_login_time = iod_utility::get_time_msec() + rand() % 11000;
+				next_try_login_time = IODUtility::get_time_msec() + rand() % 11000;
 		}
 	}
 

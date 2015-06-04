@@ -1,11 +1,11 @@
 #ifndef __TEST_SERVER_PROTOBUF_H__
 #define __TEST_SERVER_PROTOBUF_H__
 
-#include "iod_server.h"
+#include "IODServer.h"
 
 class PlayerManager;
 
-class WebGameServer	: public iod_server
+class WebGameServer	: public IODServer
 {
 public:
 

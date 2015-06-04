@@ -1,10 +1,10 @@
 #pragma once
-#include "iod_session_pb.h"
+#include "IODSessionPb.h"
 
 class Room;
 
 class Player :
-	public iod_session_pb
+	public IODSessionPb
 {
 	DEC_REG_PROTO_MSG_HANDLE(Player)
 

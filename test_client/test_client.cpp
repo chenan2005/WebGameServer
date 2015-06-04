@@ -1,8 +1,8 @@
 #include "test_client.h"
-#include "iod_common.h"
+#include "IODCommon.h"
 #include "test_helper.h"
 #include "test_client_session.h"
-#include "iod_logsystem.h"
+#include "IODLogSystem.h"
 
 IMPLEMENT_SINGLETON_INSTANCE(test_client);
 
@@ -36,10 +36,10 @@ int test_client::update_server()
 	std::set< test_client_session* >::iterator it = sessions.begin();
 	while (it != sessions.end()) {
 		test_client_session* session = *it;
-		if (session->get_net_stat() == iod_session::SNS_NONE && iod_utility::get_time_msec() > session->get_last_net_state_time() + 1000) {
+		if (session->get_net_stat() == IODSession::SNS_NONE && IODUtility::get_time_msec() > session->get_last_net_state_time() + 1000) {
 			session->connect("127.0.0.1:12345");
 		}
-		else if (session->get_net_stat() == iod_session::SNS_CONNECTED && iod_utility::get_time_msec() > session->get_last_send_command_time() + 5) {
+		else if (session->get_net_stat() == IODSession::SNS_CONNECTED && IODUtility::get_time_msec() > session->get_last_send_command_time() + 5) {
 			
 			if (session->get_login_state() == test_client_session::LOGIN_STATE_NONE) {
 				session->send_command(SESSION_CMD_LOGIN, session->get_username());

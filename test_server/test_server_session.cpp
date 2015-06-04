@@ -10,7 +10,7 @@ test_server_session::~test_server_session(void)
 {
 }
 
-void test_server_session::on_packet( iod_packet* packet )
+void test_server_session::on_packet( IODPacket* packet )
 {
 	if (test_helper::check_cmd(packet, SESSION_CMD_LOGIN)) {
 		send_command(SESSION_CMD_LOGIN_RES, get_username());
@@ -80,12 +80,12 @@ void test_server_session::send_command( const char* cmd, const char* data, int d
 		}
 	}
 
-	iod_packet* packet = create_packet();
+	IODPacket* packet = create_packet();
 	packet->set_data(s_send_buffer, packet_data_length);
 	send(packet);
 	destroy_packet(packet);
 
-	last_send_command_time = iod_utility::get_time_msec();
+	last_send_command_time = IODUtility::get_time_msec();
 
 	if (strcmp(cmd, SESSION_CMD_LOGIN) == 0 && get_login_state() == LOGIN_STATE_NONE) {
 		login_stat = LOGIN_STATE_LOGINING;

@@ -1,8 +1,8 @@
 #pragma once
 
-#include "iod_pb_msg_handler.h"
+#include "IODPbMsgHandler.h"
 
-class Room : public iod_pb_msg_handler
+class Room : public IODPbMsgHandler
 {
 	DEC_PB_MSG_HANDLE(Room);
 
