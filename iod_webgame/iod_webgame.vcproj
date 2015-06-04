@@ -270,6 +270,28 @@
 						>
 					</File>
 					<File
+						RelativePath="..\common\iod_pb_msg_handler.cpp"
+						>
+						<FileConfiguration
+							Name="Debug|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+							/>
+						</FileConfiguration>
+					</File>
+					<File
+						RelativePath="..\common\iod_pb_msg_handler.h"
+						>
+						<FileConfiguration
+							Name="Debug|Win32"
+							>
+							<Tool
+								Name="VCCustomBuildTool"
+							/>
+						</FileConfiguration>
+					</File>
+					<File
 						RelativePath="..\common\iod_session_manager_pb.cpp"
 						>
 					</File>
