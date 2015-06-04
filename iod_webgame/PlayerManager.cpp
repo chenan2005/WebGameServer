@@ -52,26 +52,26 @@ iod_session* PlayerManager::onReqLogin( struct connection_info* conn_info, com::
 {
 	SAFE_GET_NONE_SESSION_EXTENSION(msg, ReqLogin, req);
 
-	ResLogin res;
+	//ResLogin res;
 
 	if (validate_authorization(req.account(), req.authorization())) {
-		const char* username = req.account().c_str();
-		if (sessions.find(username) == sessions.end()) {
+		const std::string& account = req.account();
+		if (sessions.find(account) == sessions.end()) {
 			Player* session = new Player;
-			session->set_username(username);
-			sessions[username] = session;
+			session->setAccount(account);
+			sessions[account] = session;
 			create_session_count++;
 		}
 		
-		res.set_result(0);
-		SEND_MESSAGE_TO(conn_info, ResLogin, res);
+		//res.set_result(0);
+		//SEND_MESSAGE_TO(conn_info, ResLogin, res);
 
-		return sessions[username];
+		return sessions[account];
 	}
-	else {
-		res.set_result(-1);
-		SEND_MESSAGE_TO(conn_info, ResLogin, res);
-	}
+	//else {
+	//	res.set_result(-1);
+	//	SEND_MESSAGE_TO(conn_info, ResLogin, res);
+	//}
 
 	return 0;
 }

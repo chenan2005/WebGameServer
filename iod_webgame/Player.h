@@ -30,11 +30,9 @@ public:
 
 	bool leaveGame();
 
-	void set_username(const char* username, int length = 0);
+	void setAccount(const std::string& account) { this->account = account; }
 
-	inline const char* get_username() const {
-		return username;
-	}
+	inline const std::string& getAccount() const { return account;}
 
 	inline int get_login_state() const {
 		return login_stat;
@@ -58,6 +56,8 @@ public:
 
 	virtual void onReqTestResponseTime(com::iod::pb::common::BaseMsg* msg);
 
+	virtual void onReqCreateRole(com::iod::pb::common::BaseMsg* msg);
+
 	//--------------------------------------------------
 
 	//--------------------------------------------------
@@ -74,7 +74,7 @@ protected:
 		this->login_stat = state;
 	}
 
-	char username[32];
+	std::string account;
 
 	int login_stat;
 
