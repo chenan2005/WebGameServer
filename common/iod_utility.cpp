@@ -19,4 +19,24 @@ namespace iod_utility {
 		return (ev_uint64_t)_timeinterval.tv_sec * 1000000 + _timeinterval.tv_usec;
 	}
 
+	time_t MKTime( struct tm * _Tm )
+	{
+		static int s_dst_flag = -1;
+		if (s_dst_flag == -1)
+		{
+			struct tm temp_tm;
+			memcpy(&temp_tm, _Tm, sizeof(temp_tm));	//复制一份_Tm防止指针内容被localtime覆盖		
+			time_t currentGMTimeT = time(NULL);
+			tm *plt = localtime(&currentGMTimeT);
+			s_dst_flag = plt->tm_isdst;
+			temp_tm.tm_isdst = s_dst_flag;
+			return mktime(&temp_tm);
+		}
+		else
+		{
+			_Tm->tm_isdst = s_dst_flag;
+			return mktime(_Tm);
+		}
+	}
+
 }

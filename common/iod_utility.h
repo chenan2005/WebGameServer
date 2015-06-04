@@ -13,6 +13,8 @@ namespace iod_utility {
 		return (ev_uint32_t)(get_time_usec() / 1000);
 	}
 
+	time_t MKTime(struct tm * _Tm);
+
 }
 
 #endif
