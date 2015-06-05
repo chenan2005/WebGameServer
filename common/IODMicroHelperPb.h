@@ -7,7 +7,7 @@
 //注册消息处理函数声明
 #define DEC_PB_MSG_HANDLE(classname) \
 public:\
-	virtual void* dispatch_base_msg(struct connection_info* from, com::iod::pb::common::BaseMsg*); \
+	virtual void* process_base_msg(struct connection_info* from, com::iod::pb::common::BaseMsg*); \
 private: \
 	typedef void* (classname::*FNC_PB_MSG_HANDLER)(struct connection_info* from, com::iod::pb::common::BaseMsg*); \
 	static void register_msg_handle_of_##classname(); \
@@ -19,7 +19,7 @@ private: \
 #define REG_PB_MSG_HANDLE_BEGIN(classname) \
 bool classname::has_registered_msg_handle_of_##classname = false; \
 std::map< int, classname::FNC_PB_MSG_HANDLER > * classname::msg_handler_map_of_##classname = 0; \
-void* classname::dispatch_base_msg(struct connection_info* from, com::iod::pb::common::BaseMsg* msg) {\
+void* classname::process_base_msg(struct connection_info* from, com::iod::pb::common::BaseMsg* msg) {\
 	register_msg_handle_of_##classname();\
 	std::map< int, classname::FNC_PB_MSG_HANDLER >::iterator it = msg_handler_map_of_##classname->find(msg->message_id()); \
 	if (it == msg_handler_map_of_##classname->end()) return 0;\
@@ -36,8 +36,8 @@ void classname::register_msg_handle_of_##classname() { \
 #define REG_PB_MSG_HANDLE_INHERIT_BEGIN(classname) \
 bool classname::has_registered_msg_handle_of_##classname = false; \
 std::map< int, classname::FNC_PB_MSG_HANDLER > * classname::msg_handler_map_of_##classname = 0; \
-void* classname::dispatch_base_msg(struct connection_info* from, com::iod::pb::common::BaseMsg* msg) {\
-	__super::dispatch_base_msg(from, msg); \
+void* classname::process_base_msg(struct connection_info* from, com::iod::pb::common::BaseMsg* msg) {\
+	__super::process_base_msg(from, msg); \
 	register_msg_handle_of_##classname();\
 	std::map< int, classname::FNC_PB_MSG_HANDLER >::iterator it = msg_handler_map_of_##classname->find(msg->message_id()); \
 	if (it == msg_handler_map_of_##classname->end()) return 0;\
@@ -75,19 +75,22 @@ void* classname::dispatch_base_msg(struct connection_info* from, com::iod::pb::c
 
 //-------------------------------------------------------------------------------
 //分发消息
-#define DISPATCH_BASE_MSG(from, msg) dispatch_base_msg(from, msg)
+#define PROCESS_BASE_MSG(from, msg) process_base_msg(from, msg)
+
+//-------------------------------------------------------------------------------
+//发送消息
+#define SEND_MESSAGE_TO(conn_info, protocol_name, var) send_message_to(conn_info, id##protocol_name, var)
+
+#define SEND_MESSAGE_TO_SESSION(session, protocol_name, var) send_message_to(session->get_conn_info(), id##protocol_name, var)
+
 
 //分发消息
 #define DISPATCH_MSG(handler, from, protocolname, msg) {\
 	BaseMsgPb baseMsg; \
 	baseMsg.set_message_id(id##protocolname.number()); \
 	baseMsg.MutableExtension(id##protocolname)->CopyFrom(msg); \
-	(handler)->dispatch_base_msg(from, &baseMsg);\
+	(handler)->process_base_msg(from, &baseMsg);\
 }
-
-//-------------------------------------------------------------------------------
-//发送消息
-#define SEND_MESSAGE_TO(conn_info, protocol_name, var) send_message_to(conn_info, id##protocol_name, var)
 
 typedef com::iod::pb::common::BaseMsg BaseMsgPb;
 

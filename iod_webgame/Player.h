@@ -1,5 +1,8 @@
 #pragma once
 #include "IODSessionPb.h"
+#include "IODWebGameCommon.pb.h"
+
+using namespace com::iod::pb::webgame;
 
 class Room;
 
@@ -20,7 +23,7 @@ public:
 
 	virtual ~Player(void);
 
-	Room* createRoom();
+	Room* createRoom(const RoomCreateOption& option);
 
 	bool joinRoom(int roomId);
 
@@ -60,6 +63,26 @@ public:
 
 	virtual void* onReqCreateRole(connection_info* conn_info, BaseMsgPb* msg);
 
+	virtual void* onReqCreateRoom(connection_info* conn_info, BaseMsgPb* msg);
+
+	virtual void* onReqJoinRoom(connection_info* conn_info, BaseMsgPb* msg);
+
+	virtual void* onReqLeaveRoom(connection_info* conn_info, BaseMsgPb* msg);
+
+	virtual void* onReqStartGame(connection_info* conn_info, BaseMsgPb* msg);
+
+	virtual void* onReqLeaveGame(connection_info* conn_info, BaseMsgPb* msg);
+
+	virtual void* onReqBroadCastInfo(connection_info* conn_info, BaseMsgPb* msg);
+
+	virtual void* onResCreateRoom(connection_info* conn_info, BaseMsgPb* msg);
+
+	virtual void* onResLeaveRoom(connection_info* conn_info, BaseMsgPb* msg);
+
+	virtual void* onDbResRoleInfo(connection_info* conn_info, BaseMsgPb* msg);
+
+	virtual void* onDbResCreateRole(connection_info* conn_info, BaseMsgPb* msg);
+
 	//--------------------------------------------------
 
 	//--------------------------------------------------
@@ -69,6 +92,8 @@ public:
 	inline virtual void onTimerCloseSession(void*) { close(); }
 
 	virtual void onTimerQueryRoleTimeout(void*);
+
+	virtual void onTimerCreateRoleTimeout(void*);
 
 	//--------------------------------------------------
 
@@ -86,7 +111,11 @@ protected:
 
 private:
 
-	int roomId;
+	void initWithRoleInfo(const RoleInfo& roleInfo);
 
-	int gameId;
+	RoleInfo* _roleInfo;
+	PlayerInfo* _playerInfo;
+
+	ev_uint64_t wait_query_role_timer_uid;
+	ev_uint64_t wait_create_role_timer_uid;
 };

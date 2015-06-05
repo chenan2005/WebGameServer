@@ -14,7 +14,7 @@ IODSessionManagerPb::~IODSessionManagerPb(void)
 
 IODSession* IODSessionManagerPb::on_none_session_message( struct connection_info* conn_info, BaseMsgPb* msg )
 {
-	return (IODSession*)DISPATCH_BASE_MSG(conn_info, msg);
+	return (IODSession*)PROCESS_BASE_MSG(conn_info, msg);
 }
 
 IODSession* IODSessionManagerPb::on_none_session_packet( struct connection_info* conn_info, IODPacket* packet )

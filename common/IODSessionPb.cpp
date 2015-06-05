@@ -15,7 +15,7 @@ IODSessionPb::~IODSessionPb( void )
 
 void IODSessionPb::on_message( BaseMsgPb* msg )
 {
-	DISPATCH_BASE_MSG(this->get_connection_info(), msg);
+	PROCESS_BASE_MSG(this->get_connection_info(), msg);
 }
 
 bool IODSessionPb::send_basemsg( BaseMsgPb* msg )

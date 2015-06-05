@@ -64,6 +64,7 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="Ws2_32.lib ../3rdparty/libevent-2.0.22-stable/libevent_d.lib ../3rdparty/protobuf-2.4.1/libprotobuf_d.lib ../3rdparty/mysql-connector-6.0.2/mysqlclient_d.lib"
 				LinkIncremental="2"
+				GenerateManifest="true"
 				IgnoreDefaultLibraryNames="libcmt"
 				GenerateDebugInformation="true"
 				SubSystem="1"
@@ -367,13 +368,6 @@
 		<File
 			RelativePath=".\IODWebGameTable.cpp"
 			>
-			<FileConfiguration
-				Name="Debug|Win32"
-				>
-				<Tool
-					Name="VCCLCompilerTool"
-				/>
-			</FileConfiguration>
 		</File>
 		<File
 			RelativePath=".\IODWebGameTable.h"

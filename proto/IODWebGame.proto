@@ -59,6 +59,7 @@ message ResRoomList {
 message ReqCreateRoom {
   required sint32 map_id = 1;
   required RoomCreateOption create_option = 2;
+  optional PlayerInfo player_info = 3;
 }
 
 message ResCreateRoom {
@@ -76,6 +77,7 @@ message ResJoinRoom {
 }
 
 message ReqLeaveRoom {
+  optional string name = 1;
 }
 
 message ResLeaveRoom {
@@ -88,6 +90,7 @@ message NotifyRoomPlayerUpdate {
 }
 
 message ReqStartGame {
+    optional string name = 1;
 }
 
 message NotifyStartGame {

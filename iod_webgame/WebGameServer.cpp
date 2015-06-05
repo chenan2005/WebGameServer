@@ -2,6 +2,8 @@
 #include "PlayerManager.h"
 #include "IODNetwork.h"
 #include "IODLogSystem.h"
+#include "DbHandle.h"
+#include "RoomManager.h"
 
 IMPLEMENT_SINGLETON_INSTANCE(WebGameServer);
 
@@ -15,11 +17,13 @@ WebGameServer::~WebGameServer(void)
 
 bool WebGameServer::initialize_server()
 {
-	session_manager = new PlayerManager;
+	DbHandle::instance()->initialize("192.168.1.240", 3306, "root", "", "IODWebGame");
 
-	session_manager->l_info = IODNetwork::start_listener(session_manager, "0.0.0.0:12345");
+	sessionManager = new PlayerManager;
 
-	if (!session_manager->l_info){
+	sessionManager->l_info = IODNetwork::start_listener(sessionManager, "0.0.0.0:12345");
+
+	if (!sessionManager->l_info){
 		iod_log_error("server initialize failed!");
 		return false;
 	}
@@ -31,25 +35,26 @@ bool WebGameServer::initialize_server()
 
 int WebGameServer::update_server()
 {
-	session_manager->check_sessions();
+	RoomManager::instance()->updateStrategy();
+	sessionManager->check_sessions();
 
-	static unsigned int last_random_kick_time = IODUtility::get_time_msec();
-	
-	unsigned int current = IODUtility::get_time_msec();
-	if (current > last_random_kick_time + 120000) {
-		session_manager->random_kick(rand() % 100);
-		last_random_kick_time = current;
-	}
+	//static unsigned int last_random_kick_time = IODUtility::get_time_msec();
+	//
+	//unsigned int current = IODUtility::get_time_msec();
+	//if (current > last_random_kick_time + 120000) {
+	//	sessionManager->random_kick(rand() % 100);
+	//	last_random_kick_time = current;
+	//}
 
 	return 0;
 }
 
 void WebGameServer::shutdown_server()
 {
-	if (session_manager->l_info)
-		IODNetwork::shutdown_listener(session_manager->l_info);
+	if (sessionManager->l_info)
+		IODNetwork::shutdown_listener(sessionManager->l_info);
 
-	delete session_manager;
+	delete sessionManager;
 
 	iod_log_info("server shutdown");
 }
@@ -57,7 +62,7 @@ void WebGameServer::shutdown_server()
 void WebGameServer::on_winsys_kbhit( int c )
 {
 	if (c == 'p') {
-		const iod_netstatistics& stat = session_manager->netstatistics;
+		const iod_netstatistics& stat = sessionManager->netstatistics;
 		iod_log_info("\nrecv byte count: %llu"
 			"\nrecv packet count:%u"
 			"\nsend byte count:%llu"
@@ -74,13 +79,13 @@ void WebGameServer::on_winsys_kbhit( int c )
 			stat.send_packet_count,
 			stat.incoming_conn_count,
 			stat.incoming_conn_close_count,
-			session_manager->create_session_count,
-			session_manager->destroy_session_count,
-			session_manager->get_session_count(),
+			sessionManager->create_session_count,
+			sessionManager->destroy_session_count,
+			sessionManager->get_session_count(),
 			IODUtility::get_time_msec());
 	}
 	else if (c =='k') {
-		session_manager->random_kick(rand() % 100);
+		sessionManager->random_kick(rand() % 100);
 	}
 }
 

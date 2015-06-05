@@ -4,6 +4,7 @@
 #include "IODServer.h"
 
 class PlayerManager;
+class DbHandle;
 
 class WebGameServer	: public IODServer
 {
@@ -27,7 +28,7 @@ protected:
 
 private:
 
-	PlayerManager* session_manager;
+	PlayerManager* sessionManager;
 };
 
 #endif

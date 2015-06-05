@@ -1,7 +1,9 @@
 #include "IODTimerHandler.h"
 #include "IODNetwork.h"
 
-IODTimerHandler::timer_info* IODTimerHandler::shedule_timer(int timeout_ms, FNC_TIMER_CALLBACK cb_fnc, void* cb_fnc_arg/* = 0*/, bool repeat/* = false*/, bool auto_release_arg/* = false*/)
+ev_uint64_t IODTimerHandler::timer_info::auto_inc_timer_info_uid = 0;
+
+ev_uint64_t IODTimerHandler::shedule_timer(int timeout_ms, FNC_TIMER_CALLBACK cb_fnc, void* cb_fnc_arg/* = 0*/, bool repeat/* = false*/, bool auto_release_arg/* = false*/)
 {
 	int flag = 0;
 	if (repeat)
@@ -24,21 +26,9 @@ IODTimerHandler::timer_info* IODTimerHandler::shedule_timer(int timeout_ms, FNC_
 
 	event_add(ev, &tv);
 
-	timer_set.insert(cb_arg);
+	timer_map[cb_arg->get_uid()] = cb_arg;
 
-	return cb_arg;
-}
-
-bool IODTimerHandler::remove_timer(timer_info* t)
-{
-	if (timer_set.find(t) != timer_set.end()) {
-		destroy_timer_info(t);
-		timer_set.erase(t);
-
-		return true;
-	}
-
-	return false;
+	return cb_arg->get_uid();
 }
 
 void IODTimerHandler::timeout_cb(evutil_socket_t fd, short event, void *args)
@@ -58,7 +48,7 @@ void IODTimerHandler::timeout_cb(evutil_socket_t fd, short event, void *args)
 	else {
 		if (cb_arg->auto_release_arg && cb_arg->cb_fnc_arg)
 			delete cb_arg->cb_fnc_arg;
-		cb_arg->handler->timer_set.erase(cb_arg);
+		cb_arg->handler->timer_map.erase(cb_arg->get_uid());
 		event_free(cb_arg->ev);
 		delete cb_arg;
 	}
@@ -70,9 +60,9 @@ IODTimerHandler::IODTimerHandler(void)
 
 IODTimerHandler::~IODTimerHandler(void)
 {
-	std::set< timer_info* >::iterator it = timer_set.begin();
-	while (it != timer_set.end()) {
-		destroy_timer_info(*it);
+	std::map< ev_uint64_t, timer_info* >::iterator it = timer_map.begin();
+	while (it != timer_map.end()) {
+		destroy_timer_info(it->second);
 		it++;
 	}
 }

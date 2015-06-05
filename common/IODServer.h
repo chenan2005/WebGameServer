@@ -5,6 +5,8 @@
 
 #include "IODMicroHelper.h"
 
+#define SERVER_INSTANCE(classname) ((classname*)classname::instance())
+
 class IODServer
 {
 public:
