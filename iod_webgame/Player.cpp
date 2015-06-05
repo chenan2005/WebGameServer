@@ -91,6 +91,11 @@ void* Player::onReqCreateRole(connection_info* conn_info, BaseMsgPb* msg )
 	return 0;
 }
 
+void Player::onTimerQueryRoleTimeout(void*)
+{
+
+}
+
 void Player::on_closed( int reason )
 {
 	//iod_log_info("user %s, connection closed %d", get_username(), reason);

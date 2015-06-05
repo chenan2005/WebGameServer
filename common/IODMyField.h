@@ -23,7 +23,7 @@
 //声明类相关表字段
 #define DECLARE_TABLE_INFO(className)	\
 private:\
-	static CMySqlTable<className> ms_table;\
+	static IODMyTableTpl<className> ms_table;\
 	MYSQL* m_pConn;\
 public:\
 	className(MYSQL* pConn = NULL) { memset(this, 0, sizeof(className)); m_pConn = pConn; } \
@@ -32,7 +32,6 @@ public:\
 	DECLARE_AND_IMP_UPDATE(className);\
 	DECLARE_AND_IMP_INSERT(className);\
 	DECLARE_AND_IMP_DELETE(className);
-//	DECLARE_AND_IMP_FILTER(className);	
 
 //插入数据 声明+实现
 #define DECLARE_AND_IMP_INSERT(className)	inline const char* InsertToDb(const char* pszValidFieldNames = NULL) \
@@ -63,14 +62,9 @@ public:\
 	inline const char* DeleteFromDb(const char* pszCompareFieldNames, unsigned long* pulAffectedRows = NULL) \
 { return ms_table.DeleteRecord(m_pConn, *this, pszCompareFieldNames, pulAffectedRows); }
 
-
-////过滤（查询多个）数据 声明+实现
-//#define DECLARE_AND_IMP_FILTER(className)	inline const char* FilterFromDb(className* resultRecords, unsigned long& ulResultCount, const unsigned long ulResultMaxSize, EIODFieldKey eKeyType = IOD_FIELD_KEY_FILTER_0, const unsigned long ulStart = 0) \
-//{ return ms_table.FilterRecord(resultRecords, ulResultCount, ulResultMaxSize, *this, eKeyType, ulStart); }				
-
 //实现类相关表字段
 #define IMPLEMENT_TABLE_INIT_BEGIN(className, tableName) \
-	CMySqlTable<className> className::ms_table;\
+	IODMyTableTpl<className> className::ms_table;\
 	const STFieldDescriptor& className::GetFieldDescriptor() \
 {\
 	className* pObject = 0;\

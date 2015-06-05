@@ -1,0 +1,19 @@
+package com.iod.pb.webgame;
+
+import "common/IODCommon.proto";
+import "IODWebGameCommon.proto";
+
+message ReqRoleInfo {
+	required string account = 1;
+}
+
+message ResRoleInfo {
+	required sint32 result = 1;	
+	required string account = 2;
+	optional RoleInfo role_info = 3;
+}
+
+extend com.iod.pb.common.BaseMsg {
+	optional ReqRoleInfo idReqRoleInfo = 5000;
+	optional ResRoleInfo idResRoleInfo = 5001;
+}

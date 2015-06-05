@@ -10,6 +10,8 @@ namespace IODMyDb
 
 	bool initCommonConnection(const char* address, unsigned short port, const char* user, const char* pass, const char* dbname);
 
+	MYSQL* createConnection(const char* address, unsigned short port, const char* user, const char* pass, const char* dbname);
+
 	//返回值写入szRet字符串，用逗号隔开
 	const char* freeQuery(MYSQL* pConn, const char* pszSql, char* szRet = NULL);
 

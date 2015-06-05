@@ -83,7 +83,7 @@ void PlayerManager::kickout(IODSession* session, int reason)
 	notify.set_kick_reason(reason);
 	SEND_MESSAGE_TO(session->get_connection_info(), NotifyKickout, notify);
 	session->flush();
-	session->shedule_timer(2000, (IODTimerHandler::FNC_TIMER_CALLBACK)&Player::on_timer_close_session, 0, true);
+	session->shedule_timer(2000, (IODTimerHandler::FNC_TIMER_CALLBACK)&Player::onTimerCloseSession, 0, true);
 }
 
 void PlayerManager::random_kick(int num)

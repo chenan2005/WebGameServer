@@ -30,6 +30,8 @@ public:
 
 	bool leaveGame();
 
+	void queryRoleInfo();
+
 	void setAccount(const std::string& account) { this->account = account; }
 
 	inline const std::string& getAccount() const { return account;}
@@ -64,7 +66,9 @@ public:
 	//timer handlers
 	//--------------------------------------------------
 
-	virtual void on_timer_close_session(void*) { close(); }
+	inline virtual void onTimerCloseSession(void*) { close(); }
+
+	virtual void onTimerQueryRoleTimeout(void*);
 
 	//--------------------------------------------------
 

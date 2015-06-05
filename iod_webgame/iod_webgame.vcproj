@@ -327,6 +327,14 @@
 				RelativePath="..\protocol\IODWebGameCommon.pb.h"
 				>
 			</File>
+			<File
+				RelativePath="..\protocol\IODWebGameInternal.pb.cc"
+				>
+			</File>
+			<File
+				RelativePath="..\protocol\IODWebGameInternal.pb.h"
+				>
+			</File>
 		</Filter>
 		<Filter
 			Name="database"
@@ -361,7 +369,6 @@
 			>
 			<FileConfiguration
 				Name="Debug|Win32"
-				ExcludedFromBuild="true"
 				>
 				<Tool
 					Name="VCCLCompilerTool"
@@ -373,7 +380,6 @@
 			>
 			<FileConfiguration
 				Name="Debug|Win32"
-				ExcludedFromBuild="true"
 				>
 				<Tool
 					Name="VCCustomBuildTool"

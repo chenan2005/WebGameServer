@@ -34,6 +34,33 @@ bool IODMyDb::initCommonConnection(const char* address, unsigned short port, con
 	return true;
 }
 
+MYSQL* IODMyDb::createConnection(const char* address, unsigned short port, const char* user, const char* pass, const char* dbname)
+{
+	MYSQL* conn;
+
+	mysql_library_init(0, NULL, NULL);
+
+	bool enable_auto_reconnect = true;
+	unsigned int timeout_seconds = 3600 * 24 * 30;	//连接超时时间设为1个月
+	const char* charactset = "utf8";
+	conn = mysql_init(NULL);
+
+	mysql_options(conn, MYSQL_SET_CHARSET_NAME, charactset);
+	mysql_options(conn, MYSQL_OPT_RECONNECT, &enable_auto_reconnect);
+	mysql_options(conn, MYSQL_OPT_CONNECT_TIMEOUT, &timeout_seconds);
+
+	if (!mysql_real_connect(conn, address, user, pass, dbname, port, 0, CLIENT_MULTI_STATEMENTS))
+	{
+		delete conn;
+		return NULL;
+	}
+
+	//5.1.6版本之前 MYSQL_OPT_RECONNECT 在 mysql_real_connect之后需要重新设置
+	mysql_options(conn, MYSQL_OPT_RECONNECT, &enable_auto_reconnect);
+
+	return conn;
+}
+
 const char* IODMyDb::getValueFromSzIntoField( void* pRecord, const STOutFieldInfo& field, const char* szValue, unsigned long ulLength )
 {
 	switch (field.m_eVType)

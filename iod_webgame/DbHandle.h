@@ -10,5 +10,9 @@ public:
 	DbHandle(void);
 	virtual ~DbHandle(void);
 
-	virtual void* onReqLogin(connection_info* conn_info, BaseMsgPb* msg);
+	virtual void* onReqRoleInfo(connection_info* conn_info, BaseMsgPb* msg);
+
+private:
+
+	struct st_mysql* myConn;
 };

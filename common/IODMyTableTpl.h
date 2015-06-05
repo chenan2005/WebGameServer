@@ -720,7 +720,7 @@ bool GetUpdateStmt( EIODFieldKey eKeyType, const T& record, char* pszStmt, size_
 		size_t sValueSize = 0;
 		
 		bool bValueGet = false;
-		if ((!(fieldDescriptor.m_pFieldInfo[idx].m_eKType & IOD_FIELD_KEY_AUTO_INC)) && (!pszUpdateFieldNames || isWordInList(pszUpdateFieldNames, fieldDescriptor.m_pFieldInfo[idx].m_pszFieldName)))
+		if ((!(fieldDescriptor.m_pFieldInfo[idx].m_eKType & IOD_FIELD_KEY_AUTO_INC)) && (!pszUpdateFieldNames || IODUtility::isWordInList(pszUpdateFieldNames, fieldDescriptor.m_pFieldInfo[idx].m_pszFieldName)))
 		{
 			GetFieldSzValue<T>(record, fieldDescriptor.m_pFieldInfo[idx], SQL_VALUE_LENGTH, szValue, sValueSize, pConn);
 			//TRACE("%s, %d, %s", fieldDescriptor.m_pFieldInfo[idx].m_pszFieldName, sValueSize, szValue);
@@ -813,7 +813,7 @@ bool GetUpdateStmt( const char* pszCompareFieldNames, const T& record, char* psz
 		size_t sValueSize = 0;
 		
 		bool bValueGet = false;
-		if ((!(fieldDescriptor.m_pFieldInfo[idx].m_eKType & IOD_FIELD_KEY_AUTO_INC)) && (!pszUpdateFieldNames || isWordInList(pszUpdateFieldNames, fieldDescriptor.m_pFieldInfo[idx].m_pszFieldName)))
+		if ((!(fieldDescriptor.m_pFieldInfo[idx].m_eKType & IOD_FIELD_KEY_AUTO_INC)) && (!pszUpdateFieldNames || IODUtility::isWordInList(pszUpdateFieldNames, fieldDescriptor.m_pFieldInfo[idx].m_pszFieldName)))
 		{
 			GetFieldSzValue<T>(record, fieldDescriptor.m_pFieldInfo[idx], SQL_VALUE_LENGTH, szValue, sValueSize, pConn);
 			bValueGet = true;
@@ -837,7 +837,7 @@ bool GetUpdateStmt( const char* pszCompareFieldNames, const T& record, char* psz
 
 		//--------------------------------------------------------------------------------
 
-		if (isWordInList(pszCompareFieldNames, fieldDescriptor.m_pFieldInfo[idx].m_pszFieldName))
+		if (IODUtility::isWordInList(pszCompareFieldNames, fieldDescriptor.m_pFieldInfo[idx].m_pszFieldName))
 		{
 			if (!bValueGet)
 			{
@@ -898,7 +898,7 @@ bool GetInsertStmt( const T& record, char* pszStmt, size_t& size, MYSQL* pConn, 
 		}
 
 		//如果pszValidFieldNames非空，忽略pszValidFieldNames不包含的字段
-		if (pszValidFieldNames && !isWordInList(pszValidFieldNames, fieldDescriptor.m_pFieldInfo[idx].m_pszFieldName))
+		if (pszValidFieldNames && !IODUtility::isWordInList(pszValidFieldNames, fieldDescriptor.m_pFieldInfo[idx].m_pszFieldName))
 		{
 			continue;
 		}
@@ -1014,7 +1014,7 @@ bool GetDeleteStmt( const char* pszCompareFieldNames, const T& record, char* psz
 	{
 		//--------------------------------------------------------------------------------
 
-		if (isWordInList(pszCompareFieldNames, fieldDescriptor.m_pFieldInfo[idx].m_pszFieldName))
+		if (IODUtility::isWordInList(pszCompareFieldNames, fieldDescriptor.m_pFieldInfo[idx].m_pszFieldName))
 		{
 			char szValue[SQL_VALUE_LENGTH];
 			size_t sValueSize = 0;
@@ -1125,7 +1125,7 @@ bool GetQueryStmt( const char* pszCompareFieldNames, const T& record, char* pszS
 	size_t szWhereLength = 0;
 	for (unsigned short idx = 0; idx < fieldDescriptor.m_usFieldCount; idx++)
 	{
-		if (pszReturnFieldNames == NULL || isWordInList(pszReturnFieldNames, fieldDescriptor.m_pFieldInfo[idx].m_pszFieldName))
+		if (pszReturnFieldNames == NULL || IODUtility::isWordInList(pszReturnFieldNames, fieldDescriptor.m_pFieldInfo[idx].m_pszFieldName))
 		{
 			if (!szSelect[0])
 			{
@@ -1137,7 +1137,7 @@ bool GetQueryStmt( const char* pszCompareFieldNames, const T& record, char* pszS
 			}
 		}
 
-		if (isWordInList(pszCompareFieldNames, fieldDescriptor.m_pFieldInfo[idx].m_pszFieldName))
+		if (IODUtility::isWordInList(pszCompareFieldNames, fieldDescriptor.m_pFieldInfo[idx].m_pszFieldName))
 		{
 			char szValue[SQL_VALUE_LENGTH];
 			size_t sValueSize = 0;
